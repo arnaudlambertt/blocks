@@ -16,11 +16,9 @@ class Bloc
 
     protected:
         Bloc* m_parent;
+        std::vector <Bloc*> m_enfants;
         std::string m_basepos;
         std::string m_refpos;
-
-    private:
-        std::vector <Bloc*> m_enfants;
 };
 
 #endif // BLOC_H
