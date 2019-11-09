@@ -3,6 +3,7 @@
 
 int main()
 {
-    cout << "test" << endl;
+    std::cout << "yo" << std::endl;
+    //salut toi
     return 0;
 }
