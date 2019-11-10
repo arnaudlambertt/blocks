@@ -1,24 +1,29 @@
 # depslib dependency file v1.0
-1573330315 source:c:\users\arnaud\onedrive\codeblocks\projet-info\main.cpp
+1573353735 source:c:\users\arnaud\onedrive\codeblocks\projet-info\main.cpp
 	<iostream>
+	"src/blocs/bloc.h"
 
-1573338198 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\blocs\bloc.cpp
+1573353779 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\blocs\bloc.cpp
 	"bloc.h"
 
-1573338198 c:\users\arnaud\onedrive\codeblocks\projet-info\src\blocs\bloc.h
+1573353470 c:\users\arnaud\onedrive\codeblocks\projet-info\src\blocs\bloc.h
 	<vector>
 	"../svg/svgfile.h"
+	"../geometrie/coords.h"
+	<iostream>
+	<map>
+	<string>
 
-1573338198 c:\users\arnaud\onedrive\codeblocks\projet-info\src\svg\svgfile.h
+1573338377 c:\users\arnaud\onedrive\codeblocks\projet-info\src\svg\svgfile.h
 	<string>
 	<fstream>
 	<set>
 
-1573338198 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\svg\svgfile.cpp
+1573338377 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\svg\svgfile.cpp
 	<iostream>
 	<sstream>
 
-1573338198 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\util\util.cpp
+1573338377 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\util\util.cpp
 	"util.h"
 	<random>
 	<ctime>
@@ -35,6 +40,13 @@
 	"../util/util.h"
 	<windows.h>
 
-1573338198 c:\users\arnaud\onedrive\codeblocks\projet-info\src\util\util.h
+1573338377 c:\users\arnaud\onedrive\codeblocks\projet-info\src\util\util.h
 	<string>
+
+1573348600 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\coords.h
+
+1573348600 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\coords.cpp
+	"coords.h"
+	"../util/util.h"
+	<iostream>
 
