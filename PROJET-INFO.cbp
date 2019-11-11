@@ -39,6 +39,8 @@
 		<Unit filename="src/blocs/bloc.h" />
 		<Unit filename="src/geometrie/coords.cpp" />
 		<Unit filename="src/geometrie/coords.h" />
+		<Unit filename="src/graphisme/couleur.cpp" />
+		<Unit filename="src/graphisme/couleur.h" />
 		<Unit filename="src/svg/svgfile.cpp" />
 		<Unit filename="src/svg/svgfile.h" />
 		<Unit filename="src/util/util.cpp" />
