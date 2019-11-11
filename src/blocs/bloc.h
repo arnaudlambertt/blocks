@@ -28,8 +28,8 @@ class Bloc
 
         void dessiner(Svgfile &svgout);
 
-        Coords absoluteCoords(Coords localPos) const;
-        Coords absoluteCoords(std::string localPos) const;
+        Coords calculerAbsoluteCoords(Coords localPos) const;
+        Coords calculerAbsoluteCoords(std::string localPos) const;
 
     protected:
         Bloc* m_parent; //pointeur parent

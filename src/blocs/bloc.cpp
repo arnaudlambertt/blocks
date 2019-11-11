@@ -21,14 +21,14 @@ Bloc::~Bloc()
     //dtor
 }
 
-Coords Bloc::absoluteCoords(Coords localPos) const
+Coords Bloc::calculerAbsoluteCoords(Coords localPos) const
 {
     Coords absolute;
 
     if(m_parent != nullptr) //calcul absolute coords de basepos
         {
-            absolute.setY( m_parent->absoluteCoords( m_parent->getBasepos() ).getY() + ( m_refpos.getY() - m_parent->getBasepos().getY() )  * m_parent->getHeight() );
-            absolute.setX( m_parent->absoluteCoords( m_parent->getBasepos() ).getX() + ( m_refpos.getX() - m_parent->getBasepos().getX() )  * m_parent->getWidth() );
+            absolute.setY( m_parent->calculerAbsoluteCoords( m_parent->getBasepos() ).getY() + ( m_refpos.getY() - m_parent->getBasepos().getY() )  * m_parent->getHeight() );
+            absolute.setX( m_parent->calculerAbsoluteCoords( m_parent->getBasepos() ).getX() + ( m_refpos.getX() - m_parent->getBasepos().getX() )  * m_parent->getWidth() );
         }
 
     else
@@ -45,7 +45,14 @@ Coords Bloc::absoluteCoords(Coords localPos) const
     return absolute;
 }
 
-Coords Bloc::absoluteCoords(std::string localPos) const
+Coords Bloc::calculerAbsoluteCoords(std::string localPos) const
 {
-    return absoluteCoords(Coords{ pos[localPos[1]], pos[localPos[0]]});
+    return calculerAbsoluteCoords(Coords{ pos[localPos[1]], pos[localPos[0]]});
+}
+
+void Bloc::dessiner(Svgfile &svgout)
+{
+    svgout.addRectangle(calculerAbsoluteCoords("tl").getX(),calculerAbsoluteCoords("tl").getY(),
+                        calculerAbsoluteCoords("br").getX(),calculerAbsoluteCoords("br").getY(),
+                       m_color,1,m_border);
 }
