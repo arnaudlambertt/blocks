@@ -1,15 +1,16 @@
 # depslib dependency file v1.0
-1573353735 source:c:\users\arnaud\onedrive\codeblocks\projet-info\main.cpp
+1573489208 source:c:\users\arnaud\onedrive\codeblocks\projet-info\main.cpp
 	<iostream>
 	"src/blocs/bloc.h"
 
-1573353779 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\blocs\bloc.cpp
+1573489407 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\blocs\bloc.cpp
 	"bloc.h"
 
-1573353470 c:\users\arnaud\onedrive\codeblocks\projet-info\src\blocs\bloc.h
+1573489023 c:\users\arnaud\onedrive\codeblocks\projet-info\src\blocs\bloc.h
 	<vector>
 	"../svg/svgfile.h"
 	"../geometrie/coords.h"
+	"../graphisme/couleur.h"
 	<iostream>
 	<map>
 	<string>
@@ -43,10 +44,20 @@
 1573338377 c:\users\arnaud\onedrive\codeblocks\projet-info\src\util\util.h
 	<string>
 
-1573348600 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\coords.h
+1573354230 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\coords.h
 
-1573348600 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\coords.cpp
+1573354230 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\coords.cpp
 	"coords.h"
+	"../util/util.h"
+	<iostream>
+
+1539937684 c:\users\arnaud\onedrive\codeblocks\projet-info\src\graphisme\couleur.h
+	<string>
+	<cstdint>
+
+1539938098 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\graphisme\couleur.cpp
+	"couleur.h"
+	"../svg/svgfile.h"
 	"../util/util.h"
 	<iostream>
 

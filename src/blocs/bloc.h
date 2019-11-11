@@ -3,6 +3,7 @@
 #include <vector>
 #include "../svg/svgfile.h"
 #include "../geometrie/coords.h"
+#include "../graphisme/couleur.h"
 #include <iostream>
 #include <map>
 #include <string>
@@ -11,25 +12,39 @@ class Bloc
 {
     public:
         Bloc();
-        Bloc(Bloc* parent, double width, double height, std::string basepos, std::string refpos);
+        Bloc(Bloc* parent, std::string id, double width, double height, Couleur color, Couleur border, std::string basepos, std::string refpos, double refposX, double refposY);
         virtual ~Bloc();
 
         Bloc* getParent() { return m_parent; }
         void setParent(Bloc* val) { m_parent = val; }
-        std::vector <Bloc*> Getenfants() { return m_enfants; }
+        std::vector <Bloc*> getEnfants() { return m_enfants; }
+        std::string getId() { return m_id; }
+        double getWidth() { return m_width; }
+        double getHeight() { return m_height; }
+        Couleur getColor() { return m_color; }
+        Couleur getBorder() { return m_border; }
+        Coords getBasepos() { return m_basepos; }
+        Coords getRefpos() { return m_refpos; }
+
         void dessiner(Svgfile &svgout);
-        Coords getBaseCoords() const;
-        double getWidth() const { return m_width; }
-        double getHeight() const { return m_height; }
-        std::string getBasepos() const{ return m_basepos;}
+
+        Coords absoluteCoords(Coords localPos) const;
+        Coords absoluteCoords(std::string localPos) const;
 
     protected:
-        Bloc* m_parent;
-        std::vector <Bloc*> m_enfants;
-        double m_width;
-        double m_height;
-        std::string m_basepos;
-        std::string m_refpos;
+        Bloc* m_parent; //pointeur parent
+        std::vector <Bloc*> m_enfants; //vecteur pointeurs enfants
+
+        std::string m_id; //id
+
+        double m_width; //largeur
+        double m_height; //hauteur
+
+        Couleur m_color; //couleur remplissage
+        Couleur m_border; //couleur bordure
+
+        Coords m_basepos; //point d'attache sur son parent
+        Coords m_refpos; //point du parent sur lequel basepos s'attache
 };
 
 extern std::map<char,double> pos;
