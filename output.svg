@@ -41,8 +41,8 @@
 <text x="905" y="15" fill="lightgrey" >900</text>
 <line x1="1000" y1="0" x2="1000" y2="800" stroke="lightgrey" />
 <text x="1005" y="15" fill="lightgrey" >1000</text>
-<polygon points=" 99,99 199,99 199,199 99,199" style="fill:rgb(255,0,0);stroke:rgb(0,0,0);stroke-width:1" />
-<polygon points=" 0,0 99,0 99,99 0,99" style="fill:rgb(0,0,0);stroke:rgb(0,0,0);stroke-width:1" />
+<polygon points=" 0,0 100,0 100,100 0,100" style="fill:rgb(0,0,0);stroke:rgb(0,0,0);stroke-width:1" />
+<polygon points=" 75,75 275,75 275,275 75,275" style="fill:rgb(255,0,0);stroke:rgb(0,0,0);stroke-width:1" />
 
 
 </svg>
