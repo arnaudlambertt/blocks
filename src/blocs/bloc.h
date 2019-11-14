@@ -20,7 +20,6 @@ class Bloc
 
         Bloc* getParent() const { return m_parent; }
         void setParent(Bloc* val) { m_parent = val; }
-        std::vector <Bloc*> getEnfants() { return m_enfants; }
         std::string getId() { return m_id; }
 
         Couleur getColor() { return m_color; }
@@ -40,7 +39,7 @@ class Bloc
 
     protected:
         Bloc* m_parent; //pointeur parent
-        std::vector <Bloc*> m_enfants; //vecteur pointeurs enfants
+        std::vector <std::unique_ptr<Bloc>> m_enfants; //vecteur pointeurs enfants
 
         std::string m_id; //id
 

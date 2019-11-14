@@ -1,7 +1,7 @@
 #include "bloc.h"
 
 Bloc::Bloc()
-: Bloc{nullptr, "emptyId", std::make_unique<Disk>(), {0,0,0}, {0,0,0}}
+: Bloc{nullptr, "emptyId", std::make_unique<Rectangle>(), {0,0,0}, {0,0,0}}
 {
     //ctor
 }
