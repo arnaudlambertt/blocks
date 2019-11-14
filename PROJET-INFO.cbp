@@ -41,6 +41,8 @@
 		<Unit filename="src/blocs/bloc.h" />
 		<Unit filename="src/geometrie/coords.cpp" />
 		<Unit filename="src/geometrie/coords.h" />
+		<Unit filename="src/geometrie/disk.cpp" />
+		<Unit filename="src/geometrie/disk.h" />
 		<Unit filename="src/geometrie/geometrie.cpp" />
 		<Unit filename="src/geometrie/geometrie.h" />
 		<Unit filename="src/geometrie/matrice.cpp" />

@@ -14,6 +14,8 @@ class Svgfile
         ~Svgfile();
 
         void addDisk(double x, double y, double r, std::string color=defcol);
+        void addDisk(double x, double y, double r, std::string color, double thickness,
+                          std::string colorStroke);
         void addCircle(double x, double y, double r, double ep, std::string color=defcol);
         void addTriangle(double x1, double y1, double x2, double y2,
                          double x3, double y3, std::string colorFill,

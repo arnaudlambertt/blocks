@@ -1,10 +1,7 @@
 #include "bloc.h"
-#include "geometrie.h"
-
-std::map<char,double> pos = {{'t',-0.5},{'m',0},{'b',0.5},{'l',-0.5},{'c',0},{'r',0.5}};
 
 Bloc::Bloc()
-: Bloc{nullptr, "emptyId", std::make_unique<Rectangle>(), {0,0,0}, {0,0,0}}
+: Bloc{nullptr, "emptyId", std::make_unique<Disk>(), {0,0,0}, {0,0,0}}
 {
     //ctor
 }

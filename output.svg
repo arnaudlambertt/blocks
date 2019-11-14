@@ -41,8 +41,13 @@
 <text x="905" y="15" fill="lightgrey" >900</text>
 <line x1="1000" y1="0" x2="1000" y2="800" stroke="lightgrey" />
 <text x="1005" y="15" fill="lightgrey" >1000</text>
-<polygon points=" 0,0 100,0 100,100 0,100" style="fill:rgb(0,0,0);stroke:rgb(0,0,0);stroke-width:1" />
-<polygon points=" 75,75 275,75 275,275 75,275" style="fill:rgb(255,0,0);stroke:rgb(0,0,0);stroke-width:1" />
+<circle cx="35.3553" cy="35.3553" r="50" fill="rgb(0,0,0)" />
+<circle cx="35.3553" cy="35.3553" r="50" fill="none" stroke="rgb(0,0,0)" stroke-width="1" />
+<circle cx="106.066" cy="106.066" r="50" fill="rgb(0,0,255)" />
+<circle cx="106.066" cy="106.066" r="50" fill="none" stroke="rgb(0,0,0)" stroke-width="1" />
+<polygon points=" 106.066,156.066 306.066,156.066 306.066,256.066 106.066,256.066" style="fill:rgb(255,0,0);stroke:rgb(0,0,0);stroke-width:1" />
+<circle cx="330.815" cy="280.815" r="35" fill="rgb(255,255,255)" />
+<circle cx="330.815" cy="280.815" r="35" fill="none" stroke="rgb(0,0,0)" stroke-width="1" />
 
 
 </svg>

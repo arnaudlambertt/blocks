@@ -73,6 +73,13 @@ void Svgfile::addDisk(double x, double y, double r, std::string color)
             << "/>\n";
 }
 
+void Svgfile::addDisk(double x, double y, double r, std::string color, double thickness,
+                      std::string colorStroke)
+{
+    addDisk(x,y,r,color);
+    addCircle(x,y,r,thickness,colorStroke);
+}
+
 void Svgfile::addCircle(double x, double y, double r, double ep, std::string color)
 {
     m_ostrm << "<circle "

@@ -3,6 +3,7 @@
 #include <vector>
 #include "../geometrie/geometrie.h"
 #include "../geometrie/rectangle.h"
+#include "../geometrie/disk.h"
 #include "../graphisme/couleur.h"
 #include <iostream>
 #include <map>
@@ -30,6 +31,8 @@ class Bloc
         Coords getBasepos() const { return m_geometrie->getBasepos(); }
         Coords getRefpos() const { return m_geometrie->getRefpos(); }
 
+        Geometrie* getGeometrie() const { return m_geometrie.get(); };
+
         virtual void dessiner(Svgfile &svgout);
 
         Coords calculerAbsoluteCoords(Coords localPos) const;
@@ -47,7 +50,5 @@ class Bloc
         std::unique_ptr<Geometrie> m_geometrie;
 
 };
-
-extern std::map<char,double> pos;
 
 #endif // BLOC_H

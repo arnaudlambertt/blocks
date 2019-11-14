@@ -1,5 +1,6 @@
 #include "rectangle.h"
 #include "../blocs/bloc.h"
+#include "disk.h"
 
 Rectangle::Rectangle()
 : Rectangle{100.0,100.0,"tl","bl",0.0,0.0}
@@ -7,11 +8,10 @@ Rectangle::Rectangle()
     //ctor
 }
 
-Rectangle::Rectangle(double width, double height, std::string basepos, std::string refpos, double refposX, double refposY)
-:   m_height{height}, m_width{width}
+Rectangle::Rectangle(double width, double height,std::string basepos, std::string refpos, double refposX, double refposY)
+:   Geometrie{basepos,refpos,refposX,refposY},m_height{height}, m_width{width}
 {
-    m_basepos = {Coords { pos[basepos[1]] , pos[basepos[0]] }};
-    m_refpos = {Coords { pos[refpos[1]] + refposX, pos[refpos[0]] + refposY }};
+    //ctor
 }
 
 Rectangle::~Rectangle()
@@ -25,8 +25,16 @@ Coords Rectangle::calculerAbsoluteCoords(const Bloc* parent, Coords localPos) co
 
     if(parent != nullptr) //calcul absolute coords de basepos
         {
-            absolute.setY( parent->calculerAbsoluteCoords( parent->getBasepos() ).getY() + ( m_refpos.getY() - parent->getBasepos().getY() )  * parent->getDimensions()[1] );
-            absolute.setX( parent->calculerAbsoluteCoords( parent->getBasepos() ).getX() + ( m_refpos.getX() - parent->getBasepos().getX() )  * parent->getDimensions()[0] );
+            if(dynamic_cast<Disk*>(parent->getGeometrie()))
+            {
+                absolute.setY( parent->calculerAbsoluteCoords( parent->getBasepos() ).getY() + ( squareposToDiskpos(m_refpos).getY() - squareposToDiskpos(parent->getBasepos()).getY() )  * parent->getDimensions()[1] );
+                absolute.setX( parent->calculerAbsoluteCoords( parent->getBasepos() ).getX() + ( squareposToDiskpos(m_refpos).getX() - squareposToDiskpos(parent->getBasepos()).getX() )  * parent->getDimensions()[0] );
+            }
+            else
+            {
+                absolute.setY( parent->calculerAbsoluteCoords( parent->getBasepos() ).getY() + ( m_refpos.getY() - parent->getBasepos().getY() )  * parent->getDimensions()[1] );
+                absolute.setX( parent->calculerAbsoluteCoords( parent->getBasepos() ).getX() + ( m_refpos.getX() - parent->getBasepos().getX() )  * parent->getDimensions()[0] );
+            }
         }
 
     else
@@ -43,7 +51,7 @@ Coords Rectangle::calculerAbsoluteCoords(const Bloc* parent, Coords localPos) co
 
 Coords Rectangle::calculerAbsoluteCoords(const Bloc* parent, std::string localPos) const
 {
-    return calculerAbsoluteCoords(parent, Coords{ pos[localPos[1]], pos[localPos[0]]});
+    return calculerAbsoluteCoords(parent, Coords{ pos()[localPos[1]], pos()[localPos[0]]});
 }
 
 void Rectangle::dessiner(const Bloc* parent, Couleur color, Couleur border, Svgfile &svgout)

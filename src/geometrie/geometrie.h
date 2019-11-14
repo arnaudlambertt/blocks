@@ -5,11 +5,13 @@
 #include "../svg/svgfile.h"
 #include "../graphisme/couleur.h"
 #include <vector>
+#include <map>
 
 class Bloc;
 class Geometrie
 {
     public:
+        Geometrie(std::string basepos, std::string refpos, double refposX, double refposY);
         virtual ~Geometrie() = default;
 
         virtual void dessiner(const Bloc* parent, Couleur color, Couleur border, Svgfile &svgout) = 0;
@@ -26,5 +28,7 @@ class Geometrie
 
 
 };
+
+std::map<char,double> pos();
 
 #endif // GEOMETRIE_H
