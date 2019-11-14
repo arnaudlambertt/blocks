@@ -42,11 +42,11 @@
 <line x1="1000" y1="0" x2="1000" y2="800" stroke="lightgrey" />
 <text x="1005" y="15" fill="lightgrey" >1000</text>
 <polygon points=" 0,0 100,0 100,100 0,100" style="fill:rgb(0,0,0);stroke:rgb(0,0,0);stroke-width:1" />
-<circle cx="135.355" cy="135.355" r="50" fill="rgb(0,0,255)" />
-<circle cx="135.355" cy="135.355" r="50" fill="none" stroke="rgb(0,0,0)" stroke-width="1" />
-<polygon points=" 135.355,185.355 335.355,185.355 335.355,285.355 135.355,285.355" style="fill:rgb(255,0,0);stroke:rgb(0,0,0);stroke-width:1" />
-<circle cx="360.104" cy="310.104" r="35" fill="rgb(255,255,255)" />
-<circle cx="360.104" cy="310.104" r="35" fill="none" stroke="rgb(0,0,0)" stroke-width="1" />
+<circle cx="100" cy="100" r="50" fill="rgb(0,0,255)" />
+<circle cx="100" cy="100" r="50" fill="none" stroke="rgb(0,0,0)" stroke-width="1" />
+<polygon points=" 135.355,135.355 335.355,135.355 335.355,235.355 135.355,235.355" style="fill:rgb(255,0,0);stroke:rgb(0,0,0);stroke-width:1" />
+<circle cx="335.355" cy="185.355" r="50" fill="rgb(255,255,255)" />
+<circle cx="335.355" cy="185.355" r="50" fill="none" stroke="rgb(0,0,0)" stroke-width="1" />
 
 
 </svg>

@@ -19,39 +19,9 @@ Rectangle::~Rectangle()
     //dtor
 }
 
-Coords Rectangle::calculerAbsoluteCoords(const Bloc* parent, Coords localPos) const
-{
-    Coords absolute;
-
-    if(parent != nullptr) //calcul absolute coords de basepos
-        {
-            if(dynamic_cast<Disk*>(parent->getGeometrie()))
-            {
-                absolute.setY( parent->calculerAbsoluteCoords( parent->getBasepos() ).getY() + ( squareposToDiskpos(m_refpos).getY() - squareposToDiskpos(parent->getBasepos()).getY() )  * parent->getDimensions()[1] );
-                absolute.setX( parent->calculerAbsoluteCoords( parent->getBasepos() ).getX() + ( squareposToDiskpos(m_refpos).getX() - squareposToDiskpos(parent->getBasepos()).getX() )  * parent->getDimensions()[0] );
-            }
-            else
-            {
-                absolute.setY( parent->calculerAbsoluteCoords( parent->getBasepos() ).getY() + ( m_refpos.getY() - parent->getBasepos().getY() )  * parent->getDimensions()[1] );
-                absolute.setX( parent->calculerAbsoluteCoords( parent->getBasepos() ).getX() + ( m_refpos.getX() - parent->getBasepos().getX() )  * parent->getDimensions()[0] );
-            }
-        }
-
-    else
-        absolute = {0,0};
-
-    if(m_basepos.getY() != localPos.getY())
-        absolute.setY( absolute.getY() + (localPos.getY() - m_basepos.getY())* m_height );
-
-    if(m_basepos.getX() != localPos.getX())
-        absolute.setX( absolute.getX() + (localPos.getX() - m_basepos.getX())* m_width );
-
-    return absolute;
-}
-
 Coords Rectangle::calculerAbsoluteCoords(const Bloc* parent, std::string localPos) const
 {
-    return calculerAbsoluteCoords(parent, Coords{ pos()[localPos[1]], pos()[localPos[0]]});
+    return Geometrie::calculerAbsoluteCoords(parent, Coords{ pos()[localPos[1]], pos()[localPos[0]]});
 }
 
 void Rectangle::dessiner(const Bloc* parent, Couleur color, Couleur border, Svgfile &svgout)

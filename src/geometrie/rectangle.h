@@ -18,7 +18,6 @@ class Rectangle : public Geometrie
 
         virtual void dessiner(const Bloc* parent, Couleur color, Couleur border, Svgfile &svgout);
 
-        virtual Coords calculerAbsoluteCoords(const Bloc* parent, Coords localPos) const;
         virtual Coords calculerAbsoluteCoords(const Bloc* parent, std::string localPos) const;
 
 

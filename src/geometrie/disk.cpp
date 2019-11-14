@@ -10,7 +10,7 @@ Disk::Disk()
 Disk::Disk(double radius, std::string basepos, std::string refpos, double refposX, double refposY)
 : Geometrie{basepos,refpos,refposX,refposY}, m_radius{radius}
 {
-    //ctor
+    m_basepos = squareposToDiskpos(m_basepos);
 }
 
 Disk::~Disk()
@@ -28,39 +28,9 @@ void Disk::dessiner(const Bloc* parent, Couleur color, Couleur border, Svgfile &
     svgout.addDisk(calculerAbsoluteCoords(parent, "mc").getX(),calculerAbsoluteCoords(parent, "mc").getY(),m_radius,color,1,border);
 }
 
-Coords Disk::calculerAbsoluteCoords(const Bloc* parent, Coords localPos) const
-{
-    Coords absolute;
-
-    if(parent != nullptr) //calcul absolute coords de basepos
-        {
-            if(dynamic_cast<Disk*>(parent->getGeometrie()))
-            {
-                absolute.setY( parent->calculerAbsoluteCoords( parent->getBasepos() ).getY() + ( squareposToDiskpos(m_refpos).getY() - squareposToDiskpos(parent->getBasepos()).getY() )  * parent->getDimensions()[1] );
-                absolute.setX( parent->calculerAbsoluteCoords( parent->getBasepos() ).getX() + ( squareposToDiskpos(m_refpos).getX() - squareposToDiskpos(parent->getBasepos()).getX() )  * parent->getDimensions()[0] );
-            }
-            else
-            {
-                absolute.setY( parent->calculerAbsoluteCoords( parent->getBasepos() ).getY() + ( m_refpos.getY() - parent->getBasepos().getY() )  * parent->getDimensions()[1] );
-                absolute.setX( parent->calculerAbsoluteCoords( parent->getBasepos() ).getX() + ( m_refpos.getX() - parent->getBasepos().getX() )  * parent->getDimensions()[0] );
-            }
-        }
-
-    else
-        absolute = {0,0};
-
-    if(m_basepos.getY() != localPos.getY())
-        absolute.setY( absolute.getY() + (squareposToDiskpos(localPos).getY() - squareposToDiskpos(m_basepos).getY())*2* m_radius );
-
-    if(m_basepos.getX() != localPos.getX())
-        absolute.setX( absolute.getX() + (squareposToDiskpos(localPos).getX() - squareposToDiskpos(m_basepos).getX())*2* m_radius );
-
-    return absolute;
-}
-
 Coords Disk::calculerAbsoluteCoords(const Bloc* parent, std::string localPos) const
 {
-    return calculerAbsoluteCoords(parent, Coords{pos()[localPos[1]], pos()[localPos[0]]});
+    return Geometrie::calculerAbsoluteCoords(parent, squareposToDiskpos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
 }
 
 double abs(double a)
