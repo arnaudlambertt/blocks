@@ -3,7 +3,7 @@
 #include "disk.h"
 
 Rectangle::Rectangle()
-: Rectangle{100.0,100.0,"tl","bl",0.0,0.0}
+: Rectangle{100.0,100.0,"tl","bc",0.0,0.0}
 {
     //ctor
 }
@@ -17,6 +17,11 @@ Rectangle::Rectangle(double width, double height,std::string basepos, std::strin
 Rectangle::~Rectangle()
 {
     //dtor
+}
+
+Coords Rectangle::convertRefposEnfant(Coords refposEnfant) const
+{
+    return refposEnfant;
 }
 
 Coords Rectangle::calculerAbsoluteCoords(const Bloc* parent, std::string localPos) const

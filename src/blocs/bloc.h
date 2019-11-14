@@ -31,10 +31,11 @@ class Bloc
         Coords getBasepos() const { return m_geometrie->getBasepos(); }
         Coords getRefpos() const { return m_geometrie->getRefpos(); }
 
-        Geometrie* getGeometrie() const { return m_geometrie.get(); };
+        Geometrie* getGeometrie() const { return m_geometrie.get(); }
 
         virtual void dessiner(Svgfile &svgout);
 
+        Coords convertRefposEnfant(Coords refposEnfant) const;
         Coords calculerAbsoluteCoords(Coords localPos) const;
         Coords calculerAbsoluteCoords(std::string localPos) const;
 

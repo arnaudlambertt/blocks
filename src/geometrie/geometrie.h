@@ -19,7 +19,9 @@ class Geometrie
         Coords getRefpos() const { return m_refpos; }
         virtual std::vector<double> getDimensions() const = 0;
 
+
         Coords calculerAbsoluteCoords(const Bloc* parent, Coords localPos) const;
+        virtual Coords convertRefposEnfant(Coords refposEnfant) const = 0;
         virtual Coords calculerAbsoluteCoords(const Bloc* parent, std::string localPos) const = 0;
 
     protected:

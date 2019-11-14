@@ -13,16 +13,11 @@ Coords Geometrie::calculerAbsoluteCoords(const Bloc* parent, Coords localPos) co
 
     if(parent != nullptr) //calcul absolute coords de basepos
         {
-            if(dynamic_cast<Disk*>(parent->getGeometrie()))
-            {
-                absolute.setY( parent->calculerAbsoluteCoords( parent->getBasepos() ).getY() + ( squareposToDiskpos(m_refpos).getY() - (parent->getBasepos()).getY() )  * parent->getDimensions()[1] );
-                absolute.setX( parent->calculerAbsoluteCoords( parent->getBasepos() ).getX() + ( squareposToDiskpos(m_refpos).getX() - (parent->getBasepos()).getX() )  * parent->getDimensions()[0] );
-            }
-            else
-            {
-                absolute.setY( parent->calculerAbsoluteCoords( parent->getBasepos() ).getY() + ( m_refpos.getY() - parent->getBasepos().getY() )  * parent->getDimensions()[1] );
-                absolute.setX( parent->calculerAbsoluteCoords( parent->getBasepos() ).getX() + ( m_refpos.getX() - parent->getBasepos().getX() )  * parent->getDimensions()[0] );
-            }
+                absolute.setY( parent->calculerAbsoluteCoords( parent->getBasepos() ).getY()
+                              + ( parent->convertRefposEnfant(m_refpos).getY() - (parent->getBasepos()).getY() )  * parent->getDimensions()[1] );
+
+                absolute.setX( parent->calculerAbsoluteCoords( parent->getBasepos() ).getX()
+                              + ( parent->convertRefposEnfant(m_refpos).getX() - (parent->getBasepos()).getX() )  * parent->getDimensions()[0] );
         }
 
     else
