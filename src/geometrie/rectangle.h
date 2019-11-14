@@ -7,7 +7,7 @@ class Rectangle : public Geometrie
 {
     public:
         Rectangle();
-        Rectangle(double width, double height,std::string basepos, std::string refpos, double refposX, double refposY);
+        Rectangle(const double &width, const double &height, const std::string &basepos, const std::string &refpos, const double &refposX, const double &refposY);
         virtual ~Rectangle();
 
         std::vector<double> getDimensions() const;
@@ -16,10 +16,10 @@ class Rectangle : public Geometrie
         double getWidth() { return m_width; }
         void setWidth(double val) { m_width = val; }
 
-        virtual void dessiner(const Bloc* parent, Couleur color, Couleur border, Svgfile &svgout);
+        virtual void dessiner(const Bloc* parent, const Couleur &color, const Couleur &border, Svgfile &svgout);
 
-        virtual Coords convertRefposEnfant(Coords refposEnfant) const;
-        virtual Coords calculerAbsoluteCoords(const Bloc* parent, std::string localPos) const;
+        virtual Coords convertRefposEnfant(const Coords &refposEnfant) const;
+        virtual Coords calculerAbsoluteCoords(const Bloc* parent, const std::string &localPos) const;
 
 
     protected:

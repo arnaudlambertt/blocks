@@ -8,7 +8,7 @@ Rectangle::Rectangle()
     //ctor
 }
 
-Rectangle::Rectangle(double width, double height,std::string basepos, std::string refpos, double refposX, double refposY)
+Rectangle::Rectangle(const double &width, const double &height,const std::string &basepos, const std::string &refpos, const double &refposX, const double &refposY)
 :   Geometrie{basepos,refpos,refposX,refposY},m_height{height}, m_width{width}
 {
     //ctor
@@ -19,17 +19,17 @@ Rectangle::~Rectangle()
     //dtor
 }
 
-Coords Rectangle::convertRefposEnfant(Coords refposEnfant) const
+Coords Rectangle::convertRefposEnfant(const Coords &refposEnfant) const
 {
     return refposEnfant;
 }
 
-Coords Rectangle::calculerAbsoluteCoords(const Bloc* parent, std::string localPos) const
+Coords Rectangle::calculerAbsoluteCoords(const Bloc* parent, const std::string &localPos) const
 {
     return Geometrie::calculerAbsoluteCoords(parent, Coords{ pos()[localPos[1]], pos()[localPos[0]]});
 }
 
-void Rectangle::dessiner(const Bloc* parent, Couleur color, Couleur border, Svgfile &svgout)
+void Rectangle::dessiner(const Bloc* parent, const Couleur &color, const Couleur &border, Svgfile &svgout)
 {
     svgout.addRectangle(calculerAbsoluteCoords(parent, "tl").getX(),calculerAbsoluteCoords(parent, "tl").getY(),
                         calculerAbsoluteCoords(parent, "br").getX(),calculerAbsoluteCoords(parent, "br").getY(),

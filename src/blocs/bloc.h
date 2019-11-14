@@ -35,9 +35,9 @@ class Bloc
 
         virtual void dessiner(Svgfile &svgout);
 
-        Coords convertRefposEnfant(Coords refposEnfant) const;
-        Coords calculerAbsoluteCoords(Coords localPos) const;
-        Coords calculerAbsoluteCoords(std::string localPos) const;
+        Coords convertRefposEnfant(const Coords &refposEnfant) const;
+        Coords calculerAbsoluteCoords(const Coords &localPos) const;
+        Coords calculerAbsoluteCoords(const std::string &localPos) const;
 
     protected:
         Bloc* m_parent; //pointeur parent

@@ -12,17 +12,17 @@ Bloc::Bloc(Bloc* parent, std::string id, std::unique_ptr<Geometrie> geometrie, C
     //ctor
 }
 
-Coords Bloc::convertRefposEnfant(Coords refposEnfant) const
+Coords Bloc::convertRefposEnfant(const Coords &refposEnfant) const
 {
     return m_geometrie->convertRefposEnfant(refposEnfant);
 }
 
-Coords Bloc::calculerAbsoluteCoords(Coords localPos) const
+Coords Bloc::calculerAbsoluteCoords(const Coords &localPos) const
 {
     return m_geometrie->calculerAbsoluteCoords(m_parent, localPos);
 }
 
-Coords Bloc::calculerAbsoluteCoords(std::string localPos) const
+Coords Bloc::calculerAbsoluteCoords(const std::string &localPos) const
 {
     return m_geometrie->calculerAbsoluteCoords(m_parent, localPos);
 }

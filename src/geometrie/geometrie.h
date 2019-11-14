@@ -11,18 +11,18 @@ class Bloc;
 class Geometrie
 {
     public:
-        Geometrie(std::string basepos, std::string refpos, double refposX, double refposY);
+        Geometrie(const std::string &basepos, const std::string &refpos, const double &refposX, const double &refposY);
         virtual ~Geometrie() = default;
 
-        virtual void dessiner(const Bloc* parent, Couleur color, Couleur border, Svgfile &svgout) = 0;
+        virtual void dessiner(const Bloc* parent, const Couleur &color, const Couleur &border, Svgfile &svgout) = 0;
         Coords getBasepos() const { return m_basepos; }
         Coords getRefpos() const { return m_refpos; }
         virtual std::vector<double> getDimensions() const = 0;
 
 
-        Coords calculerAbsoluteCoords(const Bloc* parent, Coords localPos) const;
-        virtual Coords convertRefposEnfant(Coords refposEnfant) const = 0;
-        virtual Coords calculerAbsoluteCoords(const Bloc* parent, std::string localPos) const = 0;
+        Coords calculerAbsoluteCoords(const Bloc* parent, const Coords &localPos) const;
+        virtual Coords convertRefposEnfant(const Coords &refposEnfant) const = 0;
+        virtual Coords calculerAbsoluteCoords(const Bloc* parent, const std::string &localPos) const = 0;
 
     protected:
         Coords m_basepos; //point d'attache sur son parent

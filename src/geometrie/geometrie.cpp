@@ -1,13 +1,13 @@
 #include "../blocs/bloc.h"
 #include "geometrie.h"
 
-Geometrie::Geometrie(std::string basepos, std::string refpos, double refposX, double refposY)
+Geometrie::Geometrie(const std::string &basepos, const std::string &refpos, const double &refposX, const double &refposY)
 {
     m_basepos = {Coords { pos()[basepos[1]] , pos()[basepos[0]] }};
     m_refpos = {Coords { std::max(-0.5, std::min(0.5, pos()[refpos[1]] + refposX)), std::max(-0.5, std::min(0.5,pos()[refpos[0]] + refposY)) }};
 }
 
-Coords Geometrie::calculerAbsoluteCoords(const Bloc* parent, Coords localPos) const
+Coords Geometrie::calculerAbsoluteCoords(const Bloc* parent, const Coords &localPos) const
 {
     Coords absolute;
 

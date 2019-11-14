@@ -9,7 +9,7 @@ class Disk : public Geometrie
 {
     public:
         Disk();
-        Disk(double radius, std::string basepos, std::string refpos, double refposX, double refposY);
+        Disk(const double &radius, const std::string &basepos, const std::string &refpos, const double &refposX, const double &refposY);
 
         virtual ~Disk();
 
@@ -17,10 +17,10 @@ class Disk : public Geometrie
         void Setradius(double val) { m_radius = val; }
         std::vector<double> getDimensions() const;
 
-        virtual void dessiner(const Bloc* parent, Couleur color, Couleur border, Svgfile &svgout);
+        virtual void dessiner(const Bloc* parent, const Couleur &color, const Couleur &border, Svgfile &svgout);
 
-        virtual Coords convertRefposEnfant(Coords refposEnfant) const;
-        virtual Coords calculerAbsoluteCoords(const Bloc* parent, std::string localPos) const;
+        virtual Coords convertRefposEnfant(const Coords &refposEnfant) const;
+        virtual Coords calculerAbsoluteCoords(const Bloc* parent, const std::string &localPos) const;
 
     protected:
         double m_radius;

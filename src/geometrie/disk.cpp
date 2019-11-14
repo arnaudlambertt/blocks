@@ -7,7 +7,7 @@ Disk::Disk()
     //ctor
 }
 
-Disk::Disk(double radius, std::string basepos, std::string refpos, double refposX, double refposY)
+Disk::Disk(const double &radius, const std::string &basepos, const std::string &refpos, const double &refposX, const double &refposY)
 : Geometrie{basepos,refpos,refposX,refposY}, m_radius{radius}
 {
     m_basepos = squareposToDiskpos(m_basepos);
@@ -23,17 +23,17 @@ std::vector<double> Disk::getDimensions() const
     return std::vector<double> {2*m_radius,2*m_radius};
 }
 
-void Disk::dessiner(const Bloc* parent, Couleur color, Couleur border, Svgfile &svgout)
+void Disk::dessiner(const Bloc* parent, const Couleur &color, const Couleur &border, Svgfile &svgout)
 {
     svgout.addDisk(calculerAbsoluteCoords(parent, "mc").getX(),calculerAbsoluteCoords(parent, "mc").getY(),m_radius,color,1,border);
 }
 
-Coords Disk::convertRefposEnfant(Coords refposEnfant) const
+Coords Disk::convertRefposEnfant(const Coords &refposEnfant) const
 {
     return squareposToDiskpos(refposEnfant);
 }
 
-Coords Disk::calculerAbsoluteCoords(const Bloc* parent, std::string localPos) const
+Coords Disk::calculerAbsoluteCoords(const Bloc* parent, const std::string &localPos) const
 {
     return Geometrie::calculerAbsoluteCoords(parent, squareposToDiskpos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
 }
