@@ -5,6 +5,7 @@
 #include "../geometrie/rectangle.h"
 #include "../geometrie/disk.h"
 #include "../graphisme/couleur.h"
+#include "../util/util.h"
 #include <iostream>
 #include <map>
 #include <string>

@@ -9,14 +9,15 @@ int main()
     Svgfile svgout;
     svgout.addGrid();
 
-    Bloc a,c{&a,"bloc c",std::make_unique<Disk>(50,"tc","mr",0.0,0.0),Couleur{0,0,255},Couleur{0,0,0}},
-    b{&c,"bloc b",std::make_unique<Rectangle>(200,100,"tl","br",0.0,0.0),Couleur{255,0,0},Couleur{0,0,0}},
-    d{&b,"bloc d",std::make_unique<Disk>(50,"mc","mr",0,0.0),Couleur{255,255,255},Couleur{0,0,0}};
-    a.dessiner(svgout);
-    c.dessiner(svgout);
-    b.dessiner(svgout);
-    d.dessiner(svgout);
+    std::vector<Bloc*> tab;
+    for(int i = 0; i<10; ++i)
+        tab.push_back(new Bloc);
 
+    for(size_t i = 1; i<10; ++i)
+        tab[i]->setParent(tab[i-1]);
+
+    for (auto &i : tab)
+        i->dessiner(svgout);
 
 
 

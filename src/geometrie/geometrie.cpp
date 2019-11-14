@@ -4,7 +4,7 @@
 Geometrie::Geometrie(std::string basepos, std::string refpos, double refposX, double refposY)
 {
     m_basepos = {Coords { pos()[basepos[1]] , pos()[basepos[0]] }};
-    m_refpos = {Coords { pos()[refpos[1]] + refposX, pos()[refpos[0]] + refposY }};
+    m_refpos = {Coords { std::max(-0.5, std::min(0.5, pos()[refpos[1]] + refposX)), std::max(-0.5, std::min(0.5,pos()[refpos[0]] + refposY)) }};
 }
 
 Coords Geometrie::calculerAbsoluteCoords(const Bloc* parent, Coords localPos) const
