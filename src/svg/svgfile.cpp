@@ -121,8 +121,8 @@ void Svgfile::addTriangle(double x1, double y1, double x2, double y2,
 }
 
 void Svgfile::addRectangle(double x1, double y1, double x2, double y2,
-                          std::string colorFill, double thickness,
-                          std::string colorStroke)
+                           std::string colorFill, double thickness,
+                           std::string colorStroke)
 {
 
     m_ostrm << "<polygon points=\" "
@@ -130,6 +130,23 @@ void Svgfile::addRectangle(double x1, double y1, double x2, double y2,
             << x2 << "," << y1 << " "
             << x2 << "," << y2 << " "
             << x1 << "," << y2
+
+            << "\" style=\"fill:" << colorFill
+            << ";stroke:" << colorStroke
+            << ";stroke-width:" << thickness
+            << "\" />\n";
+}
+
+void Svgfile::addLosange (double x1, double y1, double x2, double y2,
+                          std::string colorFill, double thickness,
+                          std::string colorStroke)
+{
+
+    m_ostrm << "<polygon points=\" "
+            << x1 << "," << y1 << " "
+            << x2 << "," << y2 << " "
+            << x1+2*(x2-x1) << "," << y1 << " "
+            << x2 << "," << y2 + 2*(y1-y2)
 
             << "\" style=\"fill:" << colorFill
             << ";stroke:" << colorStroke

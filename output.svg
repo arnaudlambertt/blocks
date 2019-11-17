@@ -41,19 +41,15 @@
 <text x="905" y="15" fill="lightgrey" >900</text>
 <line x1="1000" y1="0" x2="1000" y2="800" stroke="lightgrey" />
 <text x="1005" y="15" fill="lightgrey" >1000</text>
-<circle cx="-3.06152e-015" cy="50" r="50" fill="white" />
-<circle cx="-3.06152e-015" cy="50" r="50" fill="none" stroke="black" stroke-width="1" />
-<circle cx="35.3553" cy="135.355" r="50" fill="white" />
-<circle cx="35.3553" cy="135.355" r="50" fill="none" stroke="black" stroke-width="1" />
-<circle cx="70.7107" cy="220.711" r="50" fill="white" />
-<circle cx="70.7107" cy="220.711" r="50" fill="none" stroke="black" stroke-width="1" />
-<circle cx="106.066" cy="306.066" r="50" fill="white" />
-<circle cx="106.066" cy="306.066" r="50" fill="none" stroke="black" stroke-width="1" />
-<polygon points=" 141.421,341.421 241.421,341.421 241.421,441.421 141.421,441.421" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<polygon points=" 241.421,441.421 341.421,441.421 341.421,541.421 241.421,541.421" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<polygon points=" 341.421,541.421 441.421,541.421 441.421,641.421 341.421,641.421" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<polygon points=" 441.421,641.421 541.421,641.421 541.421,741.421 441.421,741.421" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<polygon points=" 541.421,741.421 641.421,741.421 641.421,841.421 541.421,841.421" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 0,0 100,0 100,100 0,100" style="fill:white;stroke:black;stroke-width:1" />
+<polygon points=" 100,100 200,100 200,200 100,200" style="fill:white;stroke:black;stroke-width:1" />
+<polygon points=" 200,200 300,200 300,300 200,300" style="fill:white;stroke:black;stroke-width:1" />
+<polygon points=" 300,300 400,300 400,400 300,400" style="fill:white;stroke:black;stroke-width:1" />
+<polygon points=" 381.25,412.5 418.75,387.5 456.25,412.5 418.75,437.5" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 418.75,437.5 456.25,412.5 493.75,437.5 456.25,462.5" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 456.25,462.5 493.75,437.5 531.25,462.5 493.75,487.5" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 493.75,487.5 531.25,462.5 568.75,487.5 531.25,512.5" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 531.25,512.5 568.75,487.5 606.25,512.5 568.75,537.5" style="fill:lightgreen;stroke:black;stroke-width:1" />
 
 
 </svg>

@@ -45,6 +45,8 @@
 		<Unit filename="src/geometrie/disk.h" />
 		<Unit filename="src/geometrie/geometrie.cpp" />
 		<Unit filename="src/geometrie/geometrie.h" />
+		<Unit filename="src/geometrie/losange.cpp" />
+		<Unit filename="src/geometrie/losange.h" />
 		<Unit filename="src/geometrie/matrice.cpp" />
 		<Unit filename="src/geometrie/matrice.h" />
 		<Unit filename="src/geometrie/rectangle.cpp" />

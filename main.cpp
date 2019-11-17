@@ -2,11 +2,12 @@
 #include "src/blocs/bloc.h"
 #include "rectangle.h"
 #include "disk.h"
+#include "losange.h"
 #include <math.h>
 
 int main()
 {
-    Svgfile svgout;
+     Svgfile svgout;
     svgout.addGrid();
 
     std::vector<Bloc*> tab;
@@ -17,13 +18,14 @@ int main()
         tab[i]->setParent(tab[i-1]);
 
     for(int i = 0; i<5; ++i)
-        tab.push_back(new Bloc{tab[i+3],"rect id",std::make_unique<Rectangle>(),"lightgreen","black"});
+        tab.push_back(new Bloc{tab[i+3],"rect id",std::make_unique<Losange>(),"lightgreen","black"});
 
     for (auto &i : tab)
         i->dessiner(svgout);
 
     for(size_t i = 0; i<4; ++i)
         delete tab[i];
+
 
 
 

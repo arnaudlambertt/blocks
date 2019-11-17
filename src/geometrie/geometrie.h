@@ -20,9 +20,9 @@ class Geometrie
         virtual std::vector<double> getDimensions() const = 0;
 
 
-        Coords calculerAbsoluteCoords(const Bloc* parent, const Coords &localPos) const;
+        Coords getAbsolute(const Bloc* parent, const Coords &localPos) const;
         virtual Coords convertRefposEnfant(const Coords &refposEnfant) const = 0;
-        virtual Coords calculerAbsoluteCoords(const Bloc* parent, const std::string &localPos) const = 0;
+        virtual Coords getAbsolute(const Bloc* parent, const std::string &localPos) const = 0;
 
     protected:
         Coords m_basepos; //point d'attache sur son parent

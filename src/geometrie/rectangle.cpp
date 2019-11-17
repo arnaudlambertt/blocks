@@ -19,24 +19,26 @@ Rectangle::~Rectangle()
     //dtor
 }
 
+std::vector<double> Rectangle::getDimensions() const
+{
+    return std::vector<double> {m_width,m_height};
+}
+
 Coords Rectangle::convertRefposEnfant(const Coords &refposEnfant) const
 {
     return refposEnfant;
 }
 
-Coords Rectangle::calculerAbsoluteCoords(const Bloc* parent, const std::string &localPos) const
+Coords Rectangle::getAbsolute(const Bloc* parent, const std::string &localPos) const
 {
-    return Geometrie::calculerAbsoluteCoords(parent, Coords{ pos()[localPos[1]], pos()[localPos[0]]});
+    return Geometrie::getAbsolute(parent, Coords{ pos()[localPos[1]], pos()[localPos[0]]});
 }
 
 void Rectangle::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout)
 {
-    svgout.addRectangle(calculerAbsoluteCoords(parent, "tl").getX(),calculerAbsoluteCoords(parent, "tl").getY(),
-                        calculerAbsoluteCoords(parent, "br").getX(),calculerAbsoluteCoords(parent, "br").getY(),
+    svgout.addRectangle(getAbsolute(parent, "tl").getX(),getAbsolute(parent, "tl").getY(),
+                        getAbsolute(parent, "br").getX(),getAbsolute(parent, "br").getY(),
                        color,1,border);
 }
 
-std::vector<double> Rectangle::getDimensions() const
-{
-    return std::vector<double> {m_width,m_height};
-}
+

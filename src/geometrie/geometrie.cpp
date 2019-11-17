@@ -7,17 +7,17 @@ Geometrie::Geometrie(const std::string &basepos, const std::string &refpos, cons
     m_refpos = {Coords { std::max(-0.5, std::min(0.5, pos()[refpos[1]] + refposX)), std::max(-0.5, std::min(0.5,pos()[refpos[0]] + refposY)) }};
 }
 
-Coords Geometrie::calculerAbsoluteCoords(const Bloc* parent, const Coords &localPos) const
+Coords Geometrie::getAbsolute(const Bloc* parent, const Coords &localPos) const
 {
     Coords absolute;
 
     if(parent != nullptr) //calcul absolute coords de basepos
         {
-                absolute.setY( parent->calculerAbsoluteCoords( parent->getBasepos() ).getY()
-                              + ( parent->convertRefposEnfant(m_refpos).getY() - (parent->getBasepos()).getY() )  * parent->getDimensions()[1] );
+            absolute.setY( parent->getAbsolute( parent->getBasepos() ).getY()
+                + ( parent->convertRefposEnfant(m_refpos).getY() - (parent->getBasepos()).getY() )  * parent->getDimensions()[1] );
 
-                absolute.setX( parent->calculerAbsoluteCoords( parent->getBasepos() ).getX()
-                              + ( parent->convertRefposEnfant(m_refpos).getX() - (parent->getBasepos()).getX() )  * parent->getDimensions()[0] );
+            absolute.setX( parent->getAbsolute( parent->getBasepos() ).getX()
+                + ( parent->convertRefposEnfant(m_refpos).getX() - (parent->getBasepos()).getX() )  * parent->getDimensions()[0] );
         }
 
     else
@@ -35,5 +35,5 @@ Coords Geometrie::calculerAbsoluteCoords(const Bloc* parent, const Coords &local
 
 std::map<char,double>pos()
 {
-    return std::map<char,double> {{'t',-0.5},{'m',0},{'b',0.5},{'l',-0.5},{'c',0},{'r',0.5}};
+    return std::map<char,double> {{'t',-0.5},{'m',0.0},{'b',0.5},{'l',-0.5},{'c',0.0},{'r',0.5}};
 }

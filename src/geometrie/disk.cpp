@@ -2,7 +2,7 @@
 #include "../blocs/bloc.h"
 
 Disk::Disk()
-: Disk{50.0,"tc","br",0.0,0.0}
+: Disk{50.0,"tl","br",0.0,0.0}
 {
     //ctor
 }
@@ -25,7 +25,7 @@ std::vector<double> Disk::getDimensions() const
 
 void Disk::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout)
 {
-    svgout.addDisk(calculerAbsoluteCoords(parent, "mc").getX(),calculerAbsoluteCoords(parent, "mc").getY(),m_radius,color,1,border);
+    svgout.addDisk(getAbsolute(parent, "mc").getX(),getAbsolute(parent, "mc").getY(),m_radius,color,1,border);
 }
 
 Coords Disk::convertRefposEnfant(const Coords &refposEnfant) const
@@ -33,22 +33,22 @@ Coords Disk::convertRefposEnfant(const Coords &refposEnfant) const
     return squareposToDiskpos(refposEnfant);
 }
 
-Coords Disk::calculerAbsoluteCoords(const Bloc* parent, const std::string &localPos) const
+Coords Disk::getAbsolute(const Bloc* parent, const std::string &localPos) const
 {
-    return Geometrie::calculerAbsoluteCoords(parent, squareposToDiskpos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
+    return Geometrie::getAbsolute(parent, squareposToDiskpos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
 }
 
-double abs(double a)
+double Disk::abs(double a)
 {
     return (sqrt(a*a));
 }
 
-double signe(double a)
+double Disk::signe(double a)
 {
     return a>=0.0?1:-1;
 }
 
-Coords squareposToDiskpos(const Coords &a)
+Coords Disk::squareposToDiskpos(const Coords &a)
 {
     double angle = 2*atan2(a.getY(),a.getX() + sqrt(a.getX()*a.getX() + a.getY()*a.getY()) );
     double radius = sqrt(a.getX()*a.getX() + a.getY()*a.getY());

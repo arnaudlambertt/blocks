@@ -13,6 +13,10 @@ class Disk : public Geometrie
 
         virtual ~Disk();
 
+        static double signe(double a);
+        static double abs(double a);
+        static Coords squareposToDiskpos(const Coords &a);
+
         double Getradius() { return m_radius; }
         void Setradius(double val) { m_radius = val; }
         std::vector<double> getDimensions() const;
@@ -20,18 +24,12 @@ class Disk : public Geometrie
         virtual void dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout);
 
         virtual Coords convertRefposEnfant(const Coords &refposEnfant) const;
-        virtual Coords calculerAbsoluteCoords(const Bloc* parent, const std::string &localPos) const;
+        virtual Coords getAbsolute(const Bloc* parent, const std::string &localPos) const;
 
     protected:
         double m_radius;
 
-    private:
 };
-
-double signe(double a);
-double abs(double a);
-Coords squareposToDiskpos(const Coords &a);
-
 
 
 #endif // DISK_H
