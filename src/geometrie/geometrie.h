@@ -14,7 +14,7 @@ class Geometrie
         Geometrie(const std::string &basepos, const std::string &refpos, const double &refposX, const double &refposY);
         virtual ~Geometrie() = default;
 
-        virtual void dessiner(const Bloc* parent, const Couleur &color, const Couleur &border, Svgfile &svgout) = 0;
+        virtual void dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout) = 0;
         Coords getBasepos() const { return m_basepos; }
         Coords getRefpos() const { return m_refpos; }
         virtual std::vector<double> getDimensions() const = 0;

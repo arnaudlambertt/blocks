@@ -3,7 +3,7 @@
 #include "disk.h"
 
 Rectangle::Rectangle()
-: Rectangle{100.0,100.0,"tl","bc",0.0,0.0}
+: Rectangle{100.0,100.0,"tl","br",0.0,0.0}
 {
     //ctor
 }
@@ -29,7 +29,7 @@ Coords Rectangle::calculerAbsoluteCoords(const Bloc* parent, const std::string &
     return Geometrie::calculerAbsoluteCoords(parent, Coords{ pos()[localPos[1]], pos()[localPos[0]]});
 }
 
-void Rectangle::dessiner(const Bloc* parent, const Couleur &color, const Couleur &border, Svgfile &svgout)
+void Rectangle::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout)
 {
     svgout.addRectangle(calculerAbsoluteCoords(parent, "tl").getX(),calculerAbsoluteCoords(parent, "tl").getY(),
                         calculerAbsoluteCoords(parent, "br").getX(),calculerAbsoluteCoords(parent, "br").getY(),

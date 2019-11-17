@@ -16,7 +16,7 @@ class Rectangle : public Geometrie
         double getWidth() { return m_width; }
         void setWidth(double val) { m_width = val; }
 
-        virtual void dessiner(const Bloc* parent, const Couleur &color, const Couleur &border, Svgfile &svgout);
+        virtual void dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout);
 
         virtual Coords convertRefposEnfant(const Coords &refposEnfant) const;
         virtual Coords calculerAbsoluteCoords(const Bloc* parent, const std::string &localPos) const;

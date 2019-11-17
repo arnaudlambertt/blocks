@@ -17,7 +17,7 @@ int main()
         tab[i]->setParent(tab[i-1]);
 
     for(int i = 0; i<5; ++i)
-        tab.push_back(new Bloc{tab[i+3],"rect id",std::make_unique<Rectangle>(),Couleur{0,255,0},Couleur{0,0,0}});
+        tab.push_back(new Bloc{tab[i+3],"rect id",std::make_unique<Rectangle>(),"lightgreen","black"});
 
     for (auto &i : tab)
         i->dessiner(svgout);

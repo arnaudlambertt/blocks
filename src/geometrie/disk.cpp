@@ -2,7 +2,7 @@
 #include "../blocs/bloc.h"
 
 Disk::Disk()
-: Disk{50.0,"tl","br",0.0,0.0}
+: Disk{50.0,"tc","br",0.0,0.0}
 {
     //ctor
 }
@@ -23,7 +23,7 @@ std::vector<double> Disk::getDimensions() const
     return std::vector<double> {2*m_radius,2*m_radius};
 }
 
-void Disk::dessiner(const Bloc* parent, const Couleur &color, const Couleur &border, Svgfile &svgout)
+void Disk::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout)
 {
     svgout.addDisk(calculerAbsoluteCoords(parent, "mc").getX(),calculerAbsoluteCoords(parent, "mc").getY(),m_radius,color,1,border);
 }

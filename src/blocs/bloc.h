@@ -16,15 +16,15 @@ class Bloc
 {
     public:
         Bloc();
-        Bloc(Bloc* parent, std::string id, std::unique_ptr<Geometrie> geometrie, Couleur color, Couleur border);
+        Bloc(Bloc* parent, const std::string &id, std::unique_ptr<Geometrie> geometrie, const std::string &color, const std::string &border);
         virtual ~Bloc() = default;
 
         Bloc* getParent() const { return m_parent; }
         void setParent(Bloc* val) { m_parent = val; }
         std::string getId() { return m_id; }
 
-        Couleur getColor() { return m_color; }
-        Couleur getBorder() { return m_border; }
+        std::string getColor() { return m_color; }
+        std::string getBorder() { return m_border; }
 
         std::vector<double>  getDimensions() const { return m_geometrie->getDimensions(); }
 
@@ -45,8 +45,8 @@ class Bloc
 
         std::string m_id; //id
 
-        Couleur m_color; //couleur remplissage
-        Couleur m_border; //couleur bordure
+        std::string m_color; //couleur remplissage
+        std::string m_border; //couleur bordure
 
         std::unique_ptr<Geometrie> m_geometrie;
 

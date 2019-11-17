@@ -1,12 +1,12 @@
 #include "bloc.h"
 
 Bloc::Bloc()
-: Bloc{nullptr, "emptyId", std::make_unique<Disk>(), {255,255,255}, {0,0,0}}
+: Bloc{nullptr, "emptyId", std::make_unique<Disk>(), "white", "black"}
 {
     //ctor
 }
 
-Bloc::Bloc(Bloc* parent, std::string id, std::unique_ptr<Geometrie> geometrie, Couleur color, Couleur border)
+Bloc::Bloc(Bloc* parent,const std::string &id, std::unique_ptr<Geometrie> geometrie, const std::string &color, const std::string &border)
 : m_parent{parent}, m_id{id}, m_color{color}, m_border{border}, m_geometrie(std::move(geometrie))
 {
     //ctor

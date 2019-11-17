@@ -41,19 +41,19 @@
 <text x="905" y="15" fill="lightgrey" >900</text>
 <line x1="1000" y1="0" x2="1000" y2="800" stroke="lightgrey" />
 <text x="1005" y="15" fill="lightgrey" >1000</text>
-<circle cx="35.3553" cy="35.3553" r="50" fill="rgb(255,255,255)" />
-<circle cx="35.3553" cy="35.3553" r="50" fill="none" stroke="rgb(0,0,0)" stroke-width="1" />
-<circle cx="106.066" cy="106.066" r="50" fill="rgb(255,255,255)" />
-<circle cx="106.066" cy="106.066" r="50" fill="none" stroke="rgb(0,0,0)" stroke-width="1" />
-<circle cx="176.777" cy="176.777" r="50" fill="rgb(255,255,255)" />
-<circle cx="176.777" cy="176.777" r="50" fill="none" stroke="rgb(0,0,0)" stroke-width="1" />
-<circle cx="247.487" cy="247.487" r="50" fill="rgb(255,255,255)" />
-<circle cx="247.487" cy="247.487" r="50" fill="none" stroke="rgb(0,0,0)" stroke-width="1" />
-<polygon points=" 247.487,297.487 347.487,297.487 347.487,397.487 247.487,397.487" style="fill:rgb(0,255,0);stroke:rgb(0,0,0);stroke-width:1" />
-<polygon points=" 297.487,397.487 397.487,397.487 397.487,497.487 297.487,497.487" style="fill:rgb(0,255,0);stroke:rgb(0,0,0);stroke-width:1" />
-<polygon points=" 347.487,497.487 447.487,497.487 447.487,597.487 347.487,597.487" style="fill:rgb(0,255,0);stroke:rgb(0,0,0);stroke-width:1" />
-<polygon points=" 397.487,597.487 497.487,597.487 497.487,697.487 397.487,697.487" style="fill:rgb(0,255,0);stroke:rgb(0,0,0);stroke-width:1" />
-<polygon points=" 447.487,697.487 547.487,697.487 547.487,797.487 447.487,797.487" style="fill:rgb(0,255,0);stroke:rgb(0,0,0);stroke-width:1" />
+<circle cx="-3.06152e-015" cy="50" r="50" fill="white" />
+<circle cx="-3.06152e-015" cy="50" r="50" fill="none" stroke="black" stroke-width="1" />
+<circle cx="35.3553" cy="135.355" r="50" fill="white" />
+<circle cx="35.3553" cy="135.355" r="50" fill="none" stroke="black" stroke-width="1" />
+<circle cx="70.7107" cy="220.711" r="50" fill="white" />
+<circle cx="70.7107" cy="220.711" r="50" fill="none" stroke="black" stroke-width="1" />
+<circle cx="106.066" cy="306.066" r="50" fill="white" />
+<circle cx="106.066" cy="306.066" r="50" fill="none" stroke="black" stroke-width="1" />
+<polygon points=" 141.421,341.421 241.421,341.421 241.421,441.421 141.421,441.421" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 241.421,441.421 341.421,441.421 341.421,541.421 241.421,541.421" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 341.421,541.421 441.421,541.421 441.421,641.421 341.421,641.421" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 441.421,641.421 541.421,641.421 541.421,741.421 441.421,741.421" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 541.421,741.421 641.421,741.421 641.421,841.421 541.421,841.421" style="fill:lightgreen;stroke:black;stroke-width:1" />
 
 
 </svg>
