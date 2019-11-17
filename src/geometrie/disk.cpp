@@ -2,7 +2,7 @@
 #include "../blocs/bloc.h"
 
 Disk::Disk()
-: Disk{50.0,"tl","br",0.0,0.0}
+: Disk{50.0,"bl","tr",0.0,0.0}
 {
     //ctor
 }

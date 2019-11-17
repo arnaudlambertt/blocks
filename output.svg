@@ -45,11 +45,21 @@
 <polygon points=" 100,100 200,100 200,200 100,200" style="fill:white;stroke:black;stroke-width:1" />
 <polygon points=" 200,200 300,200 300,300 200,300" style="fill:white;stroke:black;stroke-width:1" />
 <polygon points=" 300,300 400,300 400,400 300,400" style="fill:white;stroke:black;stroke-width:1" />
-<polygon points=" 381.25,412.5 418.75,387.5 456.25,412.5 418.75,437.5" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<polygon points=" 418.75,437.5 456.25,412.5 493.75,437.5 456.25,462.5" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<polygon points=" 456.25,462.5 493.75,437.5 531.25,462.5 493.75,487.5" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<polygon points=" 493.75,487.5 531.25,462.5 568.75,487.5 531.25,512.5" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<polygon points=" 531.25,512.5 568.75,487.5 606.25,512.5 568.75,537.5" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 381.25,418.75 418.75,381.25 456.25,418.75 418.75,456.25" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 418.75,456.25 456.25,418.75 493.75,456.25 456.25,493.75" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 456.25,493.75 493.75,456.25 531.25,493.75 493.75,531.25" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 493.75,531.25 531.25,493.75 568.75,531.25 531.25,568.75" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 531.25,568.75 568.75,531.25 606.25,568.75 568.75,606.25" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<circle cx="622.855" cy="514.645" r="50" fill="lightblue" />
+<circle cx="622.855" cy="514.645" r="50" fill="none" stroke="black" stroke-width="1" />
+<circle cx="693.566" cy="443.934" r="50" fill="lightblue" />
+<circle cx="693.566" cy="443.934" r="50" fill="none" stroke="black" stroke-width="1" />
+<circle cx="764.277" cy="373.223" r="50" fill="lightblue" />
+<circle cx="764.277" cy="373.223" r="50" fill="none" stroke="black" stroke-width="1" />
+<circle cx="834.987" cy="302.513" r="50" fill="lightblue" />
+<circle cx="834.987" cy="302.513" r="50" fill="none" stroke="black" stroke-width="1" />
+<circle cx="905.698" cy="231.802" r="50" fill="lightblue" />
+<circle cx="905.698" cy="231.802" r="50" fill="none" stroke="black" stroke-width="1" />
 
 
 </svg>

@@ -20,11 +20,14 @@ int main()
     for(int i = 0; i<5; ++i)
         tab.push_back(new Bloc{tab[i+3],"rect id",std::make_unique<Losange>(),"lightgreen","black"});
 
+    for(int i = 0; i<5; ++i)
+        tab.push_back(new Bloc{tab[i+8],"diisk id",std::make_unique<Disk>(),"lightblue","black"});
+
     for (auto &i : tab)
         i->dessiner(svgout);
 
-    for(size_t i = 0; i<4; ++i)
-        delete tab[i];
+    for(auto &i : tab)
+        delete i;
 
 
 
