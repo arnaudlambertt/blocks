@@ -3,6 +3,7 @@
 #include "rectangle.h"
 #include "disk.h"
 #include "losange.h"
+#include "triangle.h"
 #include <math.h>
 
 int main()
@@ -18,7 +19,7 @@ int main()
         tab[i]->setParent(tab[i-1]);
 
     for(int i = 0; i<5; ++i)
-        tab.push_back(new Bloc{tab[i+3],"rect id",std::make_unique<Losange>(),"lightgreen","black"});
+        tab.push_back(new Bloc{tab[i+3],"rect id",std::make_unique<Triangle>(),"lightgreen","black"});
 
     for(int i = 0; i<5; ++i)
         tab.push_back(new Bloc{tab[i+8],"diisk id",std::make_unique<Disk>(),"lightblue","black"});

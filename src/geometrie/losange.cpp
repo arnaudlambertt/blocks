@@ -43,7 +43,7 @@ Coords Losange::squareposToLosangepos(const Coords &a)
 {
     bool test = false;
     double m,b;
-    Coords resultat {a.getX(),a.getY()};
+    Coords resultat = a;
 
     if(a.getX() < 0.0)
     {

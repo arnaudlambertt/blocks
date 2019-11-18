@@ -53,6 +53,8 @@
 		<Unit filename="src/geometrie/rectangle.h" />
 		<Unit filename="src/geometrie/transformation.cpp" />
 		<Unit filename="src/geometrie/transformation.h" />
+		<Unit filename="src/geometrie/triangle.cpp" />
+		<Unit filename="src/geometrie/triangle.h" />
 		<Unit filename="src/graphisme/couleur.cpp" />
 		<Unit filename="src/graphisme/couleur.h" />
 		<Unit filename="src/svg/svgfile.cpp" />
