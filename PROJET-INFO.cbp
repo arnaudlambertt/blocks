@@ -51,8 +51,12 @@
 		<Unit filename="src/geometrie/matrice.h" />
 		<Unit filename="src/geometrie/rectangle.cpp" />
 		<Unit filename="src/geometrie/rectangle.h" />
+		<Unit filename="src/geometrie/rectangle_translatable.cpp" />
+		<Unit filename="src/geometrie/rectangle_translatable.h" />
 		<Unit filename="src/geometrie/transformation.cpp" />
 		<Unit filename="src/geometrie/transformation.h" />
+		<Unit filename="src/geometrie/translatable.cpp" />
+		<Unit filename="src/geometrie/translatable.h" />
 		<Unit filename="src/geometrie/triangle.cpp" />
 		<Unit filename="src/geometrie/triangle.h" />
 		<Unit filename="src/graphisme/couleur.cpp" />

@@ -32,8 +32,3 @@ Coords Geometrie::getAbsolute(const Bloc* parent, const Coords &localPos) const
     return absolute;
 }
 
-
-std::map<char,double>pos()
-{
-    return std::map<char,double> {{'t',-0.5},{'m',0.0},{'b',0.5},{'l',-0.5},{'c',0.0},{'r',0.5}};
-}

@@ -4,6 +4,7 @@
 #include "../geometrie/geometrie.h"
 #include "../geometrie/rectangle.h"
 #include "../geometrie/disk.h"
+#include "../geometrie/rectangle_translatable.h"
 #include "../graphisme/couleur.h"
 #include "../util/util.h"
 #include <iostream>
