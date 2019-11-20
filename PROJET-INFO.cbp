@@ -43,10 +43,14 @@
 		<Unit filename="src/geometrie/coords.h" />
 		<Unit filename="src/geometrie/disk.cpp" />
 		<Unit filename="src/geometrie/disk.h" />
+		<Unit filename="src/geometrie/disk_translatable.cpp" />
+		<Unit filename="src/geometrie/disk_translatable.h" />
 		<Unit filename="src/geometrie/geometrie.cpp" />
 		<Unit filename="src/geometrie/geometrie.h" />
 		<Unit filename="src/geometrie/losange.cpp" />
 		<Unit filename="src/geometrie/losange.h" />
+		<Unit filename="src/geometrie/losange_translatable.cpp" />
+		<Unit filename="src/geometrie/losange_translatable.h" />
 		<Unit filename="src/geometrie/matrice.cpp" />
 		<Unit filename="src/geometrie/matrice.h" />
 		<Unit filename="src/geometrie/rectangle.cpp" />
@@ -59,6 +63,8 @@
 		<Unit filename="src/geometrie/translatable.h" />
 		<Unit filename="src/geometrie/triangle.cpp" />
 		<Unit filename="src/geometrie/triangle.h" />
+		<Unit filename="src/geometrie/triangle_translatable.cpp" />
+		<Unit filename="src/geometrie/triangle_translatable.h" />
 		<Unit filename="src/graphisme/couleur.cpp" />
 		<Unit filename="src/graphisme/couleur.h" />
 		<Unit filename="src/svg/svgfile.cpp" />

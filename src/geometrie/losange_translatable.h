@@ -1,20 +1,19 @@
-#ifndef RECTANGLE_TRANSLATABLE_H
-#define RECTANGLE_TRANSLATABLE_H
+#ifndef LOSANGE_TRANSLATABLE_H
+#define LOSANGE_TRANSLATABLE_H
 
-#include "rectangle.h"
+#include "losange.h"
 #include "translatable.h"
 
-class RectangleTranslatable : public Rectangle, public Translatable
+class LosangeTranslatable : public Losange, public Translatable
 {
     public:
-        RectangleTranslatable(const double &width, const double &height,const std::string &basepos,
+        LosangeTranslatable(const double &width, const double &height,const std::string &basepos,
                             const std::string &refpos, const double &refposX, const double &refposY,
                             const std::string &endpos, const double &translation);
 
-        virtual ~RectangleTranslatable();
+        virtual ~LosangeTranslatable();
 
         void dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout);
-
 };
 
-#endif // RECTANGLE_TRANSLATABLE_H
+#endif // LOSANGE_TRANSLATABLE_H

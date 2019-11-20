@@ -16,6 +16,8 @@ class Translatable
         double getTranslation() { return m_translation; }
         void setTranslation(double val) { m_translation = val; }
 
+        void dessinerAxe(const Bloc* parent, Svgfile &svgout);
+
     protected:
         Coords m_startpos;
         Coords m_endpos;
