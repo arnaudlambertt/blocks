@@ -20,9 +20,7 @@ Coords Translatable::calcRefpos() const
 
 void Translatable::dessinerAxe(const Bloc* parent, Svgfile &svgout)
 {
-    Geometrie* geo = dynamic_cast<Geometrie*> (this);
-
-    if(geo && parent != nullptr)
+    if(parent != nullptr)
         svgout.addArrow(parent->getAbsolute(m_startpos).getX(),parent->getAbsolute(m_startpos).getY(),
                         parent->getAbsolute(m_endpos).getX(),parent->getAbsolute(m_endpos).getY(), "red");
 }
