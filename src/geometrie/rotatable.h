@@ -15,7 +15,7 @@ class Rotatable
 
         Coords convertPosRot(const Coords &basepos, const Coords &localpos) const;
 
-        void dessinerAxe(const Bloc* parent, const Geometrie* rot, Svgfile &svgout);
+        void dessinerAxe(const Bloc* rot, Svgfile &svgout);
 
     protected:
 

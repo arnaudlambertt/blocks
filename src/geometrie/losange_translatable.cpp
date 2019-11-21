@@ -1,4 +1,5 @@
 #include "losange_translatable.h"
+#include "../blocs/bloc.h"
 
 LosangeTranslatable::LosangeTranslatable(const double &width, const double &height,
         const std::string &basepos,
@@ -14,8 +15,8 @@ LosangeTranslatable::~LosangeTranslatable()
     //dtor
 }
 
-void LosangeTranslatable::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile& svgout)
+void LosangeTranslatable::dessiner(const std::string &color, const std::string &border, Svgfile& svgout)
 {
-    dessinerAxe(parent, svgout);
-    Losange::dessiner(parent, color, border, svgout);
+    dessinerAxe(m_bloc->getParent(), svgout);
+    Losange::dessiner(color, border, svgout);
 }

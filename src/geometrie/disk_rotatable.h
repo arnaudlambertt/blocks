@@ -13,9 +13,9 @@ public:
 
     virtual ~DiskRotatable();
 
-    Coords getAbsolute(const Bloc* parent, const Coords &localPos) const;
+    Coords getAbsolute(const Coords &localPos) const;
 
-    void dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout);
+    void dessiner(const std::string &color, const std::string &border, Svgfile &svgout);
 };
 
 #endif // DISK_ROTATABLE_H

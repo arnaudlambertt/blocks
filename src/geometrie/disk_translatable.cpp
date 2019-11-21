@@ -1,4 +1,5 @@
 #include "disk_translatable.h"
+#include "../blocs/bloc.h"
 
 DiskTranslatable::DiskTranslatable(const double &radius,
                                    const std::string &basepos,
@@ -14,8 +15,8 @@ DiskTranslatable::~DiskTranslatable()
     //dtor
 }
 
-void DiskTranslatable::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile& svgout)
+void DiskTranslatable::dessiner(const std::string &color, const std::string &border, Svgfile& svgout)
 {
-    dessinerAxe(parent, svgout);
-    Disk::dessiner(parent, color, border, svgout);
+    dessinerAxe(m_bloc->getParent(), svgout);
+    Disk::dessiner(color, border, svgout);
 }

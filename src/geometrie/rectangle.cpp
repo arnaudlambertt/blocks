@@ -29,17 +29,17 @@ Coords Rectangle::convertRefposEnfant(const Coords &refposEnfant) const
     return refposEnfant;
 }
 
-Coords Rectangle::getAbsolute(const Bloc* parent, const std::string &localPos) const
+Coords Rectangle::getAbsolute(const std::string &localPos) const
 {
-    return getAbsolute(parent, Coords{ pos()[localPos[1]], pos()[localPos[0]]});
+    return getAbsolute(Coords{ pos()[localPos[1]], pos()[localPos[0]]});
 }
 
-void Rectangle::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout)
+void Rectangle::dessiner(const std::string &color, const std::string &border, Svgfile &svgout)
 {
-    svgout.addRectangle(getAbsolute(parent, "tl").getX(),getAbsolute(parent, "tl").getY(),
-                        getAbsolute(parent, "tr").getX(),getAbsolute(parent, "tr").getY(),
-                        getAbsolute(parent, "br").getX(),getAbsolute(parent, "br").getY(),
-                        getAbsolute(parent, "bl").getX(),getAbsolute(parent, "bl").getY(),
+    svgout.addRectangle(getAbsolute("tl").getX(),getAbsolute("tl").getY(),
+                        getAbsolute("tr").getX(),getAbsolute("tr").getY(),
+                        getAbsolute("br").getX(),getAbsolute("br").getY(),
+                        getAbsolute("bl").getX(),getAbsolute("bl").getY(),
                        color,1,border);
 }
 

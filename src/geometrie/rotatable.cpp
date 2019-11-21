@@ -22,8 +22,8 @@ Coords Rotatable::convertPosRot(const Coords &basepos, const Coords &localpos) c
     return resultat;
 }
 
-void Rotatable::dessinerAxe(const Bloc* parent, const Geometrie* rot, Svgfile &svgout)
+void Rotatable::dessinerAxe(const Bloc* rot, Svgfile &svgout)
 {
-    if(parent != nullptr)
-        svgout.addCircle(rot->getAbsolute(parent,rot->getBasepos()).getX(),rot->getAbsolute(parent,rot->getBasepos()).getY(),5,2,"red");
+    if(rot->getParent() != nullptr)
+        svgout.addCircle(rot->getAbsolute(rot->getBasepos()).getX(),rot->getAbsolute(rot->getBasepos()).getY(),5,2,"red");
 }

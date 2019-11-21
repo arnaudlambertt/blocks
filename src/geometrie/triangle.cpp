@@ -1,4 +1,5 @@
 #include "triangle.h"
+#include "../blocs/bloc.h"
 
 Triangle::Triangle()
     : Triangle{50,50,"tl","br",0.0,0.0}
@@ -27,16 +28,16 @@ Coords Triangle::convertRefposEnfant(const Coords &refposEnfant) const
     return squareposToTrianglepos(refposEnfant);
 }
 
-Coords Triangle::getAbsolute(const Bloc* parent, const std::string &localPos) const
+Coords Triangle::getAbsolute(const std::string &localPos) const
 {
-    return getAbsolute(parent, squareposToTrianglepos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
+    return getAbsolute(squareposToTrianglepos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
 }
 
-void Triangle::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout)
+void Triangle::dessiner(const std::string &color, const std::string &border, Svgfile &svgout)
 {
-    svgout.addTriangle(getAbsolute(parent, "bl").getX(),getAbsolute(parent, "bl").getY(),
-                       getAbsolute(parent, "tc").getX(),getAbsolute(parent, "tc").getY(),
-                       getAbsolute(parent, "br").getX(),getAbsolute(parent, "br").getY(),color,1,border);
+    svgout.addTriangle(getAbsolute("bl").getX(),getAbsolute("bl").getY(),
+                       getAbsolute("tc").getX(),getAbsolute("tc").getY(),
+                       getAbsolute("br").getX(),getAbsolute("br").getY(),color,1,border);
 }
 
 Coords Triangle::squareposToTrianglepos(const Coords &a)

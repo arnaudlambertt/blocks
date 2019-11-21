@@ -1,4 +1,5 @@
 #include "triangle_translatable.h"
+#include "../blocs/bloc.h"
 
 TriangleTranslatable::TriangleTranslatable(const double &width, const double &height,
 const std::string &basepos,
@@ -14,8 +15,8 @@ TriangleTranslatable::~TriangleTranslatable()
     //dtor
 }
 
-void TriangleTranslatable::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile& svgout)
+void TriangleTranslatable::dessiner(const std::string &color, const std::string &border, Svgfile& svgout)
 {
-    dessinerAxe(parent, svgout);
-    Triangle::dessiner(parent, color, border, svgout);
+    dessinerAxe(m_bloc->getParent(), svgout);
+    Triangle::dessiner(color, border, svgout);
 }

@@ -13,7 +13,7 @@ class TriangleTranslatable : public Triangle, public Translatable
 
         virtual ~TriangleTranslatable();
 
-        void dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout);
+        void dessiner(const std::string &color, const std::string &border, Svgfile &svgout);
 };
 
 #endif // TRIANGLE_TRANSLATABLE_H

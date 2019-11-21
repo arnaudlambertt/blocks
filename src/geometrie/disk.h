@@ -21,12 +21,12 @@ class Disk : public Geometrie
         void Setradius(double val) { m_radius = val; }
         std::vector<double> getDimensions() const;
 
-        virtual void dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout);
+        virtual void dessiner(const std::string &color, const std::string &border, Svgfile &svgout);
 
         virtual Coords convertRefposEnfant(const Coords &refposEnfant) const;
 
         using Geometrie::getAbsolute; //qualifier conflict fix
-        virtual Coords getAbsolute(const Bloc* parent, const std::string &localPos) const;
+        virtual Coords getAbsolute(const std::string &localPos) const;
 
     protected:
         double m_radius;

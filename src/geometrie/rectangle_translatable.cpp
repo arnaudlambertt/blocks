@@ -1,4 +1,6 @@
 #include "rectangle_translatable.h"
+#include "../blocs/bloc.h"
+
 
 RectangleTranslatable::RectangleTranslatable(const double &width, const double &height,
 const std::string &basepos,
@@ -14,8 +16,8 @@ RectangleTranslatable::~RectangleTranslatable()
     //dtor
 }
 
-void RectangleTranslatable::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile& svgout)
+void RectangleTranslatable::dessiner(const std::string &color, const std::string &border, Svgfile& svgout)
 {
-    dessinerAxe(parent, svgout);
-    Rectangle::dessiner(parent, color, border, svgout);
+    dessinerAxe(m_bloc->getParent(), svgout);
+    Rectangle::dessiner(color, border, svgout);
 }

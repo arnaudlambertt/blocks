@@ -23,9 +23,9 @@ std::vector<double> Disk::getDimensions() const
     return std::vector<double> {2*m_radius,2*m_radius};
 }
 
-void Disk::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout)
+void Disk::dessiner(const std::string &color, const std::string &border, Svgfile &svgout)
 {
-    svgout.addDisk(getAbsolute(parent, "mc").getX(),getAbsolute(parent, "mc").getY(),m_radius,color,1,border);
+    svgout.addDisk(getAbsolute("mc").getX(),getAbsolute("mc").getY(),m_radius,color,1,border);
 }
 
 Coords Disk::convertRefposEnfant(const Coords &refposEnfant) const
@@ -33,9 +33,9 @@ Coords Disk::convertRefposEnfant(const Coords &refposEnfant) const
     return squareposToDiskpos(refposEnfant);
 }
 
-Coords Disk::getAbsolute(const Bloc* parent, const std::string &localPos) const
+Coords Disk::getAbsolute(const std::string &localPos) const
 {
-    return getAbsolute(parent, squareposToDiskpos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
+    return getAbsolute(squareposToDiskpos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
 }
 
 double Disk::abs(double a)

@@ -3,7 +3,6 @@
 
 #include "rectangle.h"
 #include "translatable.h"
-#include "../blocs/bloc.h"
 
 class RectangleTranslatable : public Rectangle, public Translatable
 {
@@ -14,7 +13,7 @@ class RectangleTranslatable : public Rectangle, public Translatable
 
         virtual ~RectangleTranslatable();
 
-        void dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout);
+        void dessiner(const std::string &color, const std::string &border, Svgfile &svgout);
 
 };
 

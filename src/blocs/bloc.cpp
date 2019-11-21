@@ -1,4 +1,13 @@
 #include "bloc.h"
+#include "../geometrie/rectangle_translatable.h"
+#include "../geometrie/losange_translatable.h"
+#include "../geometrie/disk_translatable.h"
+#include "../geometrie/triangle_translatable.h"
+
+#include "../geometrie/rectangle_rotatable.h"
+#include "../geometrie/losange_rotatable.h"
+#include "../geometrie/disk_rotatable.h"
+#include "../geometrie/triangle_rotatable.h"
 
 Bloc::Bloc()
 : Bloc{nullptr, "emptyId", std::make_unique<RectangleTranslatable>(200,100,"tl","mc",0.0,0.0,"br",0.75), "orange", "black"}
@@ -9,7 +18,7 @@ Bloc::Bloc()
 Bloc::Bloc(Bloc* parent,const std::string &id, std::unique_ptr<Geometrie> geometrie, const std::string &color, const std::string &border)
 : m_parent{parent}, m_id{id}, m_color{color}, m_border{border}, m_geometrie(std::move(geometrie))
 {
-    //ctor
+    m_geometrie->setBloc(this);
 }
 
 Coords Bloc::convertRefposEnfant(const Coords &refposEnfant) const
@@ -19,15 +28,15 @@ Coords Bloc::convertRefposEnfant(const Coords &refposEnfant) const
 
 Coords Bloc::getAbsolute(const Coords &localPos) const
 {
-    return m_geometrie->getAbsolute(m_parent, localPos);
+    return m_geometrie->getAbsolute(localPos);
 }
 
 Coords Bloc::getAbsolute(const std::string &localPos) const
 {
-    return m_geometrie->getAbsolute(m_parent, localPos);
+    return m_geometrie->getAbsolute(localPos);
 }
 
 void Bloc::dessiner(Svgfile &svgout)
 {
-    m_geometrie->dessiner(m_parent, m_color, m_border, svgout);
+    m_geometrie->dessiner(m_color, m_border, svgout);
 }

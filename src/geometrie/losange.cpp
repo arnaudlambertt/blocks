@@ -1,5 +1,6 @@
 #include "losange.h"
 #include <iostream>
+#include "../blocs/bloc.h"
 
 Losange::Losange()
     : Losange{75,50,"tl","br",0.0,0.0}
@@ -28,17 +29,17 @@ Coords Losange::convertRefposEnfant(const Coords &refposEnfant) const
     return squareposToLosangepos(refposEnfant);
 }
 
-Coords Losange::getAbsolute(const Bloc* parent, const std::string &localPos) const
+Coords Losange::getAbsolute(const std::string &localPos) const
 {
-    return getAbsolute(parent, squareposToLosangepos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
+    return getAbsolute(squareposToLosangepos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
 }
 
-void Losange::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout)
+void Losange::dessiner(const std::string &color, const std::string &border, Svgfile &svgout)
 {
-    svgout.addLosange(getAbsolute(parent, "ml").getX(),getAbsolute(parent, "ml").getY(),
-                      getAbsolute(parent, "tc").getX(),getAbsolute(parent, "tc").getY(),
-                      getAbsolute(parent, "mr").getX(),getAbsolute(parent, "mr").getY(),
-                      getAbsolute(parent, "bc").getX(),getAbsolute(parent, "bc").getY(),
+    svgout.addLosange(getAbsolute( "ml").getX(),getAbsolute( "ml").getY(),
+                      getAbsolute( "tc").getX(),getAbsolute( "tc").getY(),
+                      getAbsolute( "mr").getX(),getAbsolute( "mr").getY(),
+                      getAbsolute( "bc").getX(),getAbsolute( "bc").getY(),
                       color,1,border);
 }
 

@@ -13,7 +13,7 @@ class DiskTranslatable : public Disk, public Translatable
 
         virtual ~DiskTranslatable();
 
-        void dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout);
+        void dessiner(const std::string &color, const std::string &border, Svgfile &svgout);
 };
 
 #endif // DISK_TRANSLATABLE_H
