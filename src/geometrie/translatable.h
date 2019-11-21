@@ -1,9 +1,8 @@
 #ifndef TRANSLATABLE_H
 #define TRANSLATABLE_H
 
-#include "coords.h"
 #include <string>
-//#include "../blocs/bloc.h"
+#include "geometrie.h"
 
 class Translatable
 {

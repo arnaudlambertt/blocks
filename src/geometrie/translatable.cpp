@@ -1,4 +1,3 @@
-#include "geometrie.h"
 #include "translatable.h"
 #include "../blocs/bloc.h"
 

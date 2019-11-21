@@ -1,5 +1,5 @@
 #include "rotatable.h"
-
+#include "../blocs/bloc.h"
 
 Rotatable::Rotatable(const Coords &refpos, const std::string &endpos, const double &rotation)
 : m_startpos{refpos}, m_rotation{rotation}

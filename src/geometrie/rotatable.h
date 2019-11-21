@@ -1,10 +1,8 @@
 #ifndef ROTATABLE_H
 #define ROTATABLE_H
 
-#include "coords.h"
 #include <string>
 #include "geometrie.h"
-#include "../blocs/bloc.h"
 
 class Rotatable
 {

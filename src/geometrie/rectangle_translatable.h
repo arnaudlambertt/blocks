@@ -3,6 +3,7 @@
 
 #include "rectangle.h"
 #include "translatable.h"
+#include "../blocs/bloc.h"
 
 class RectangleTranslatable : public Rectangle, public Translatable
 {
