@@ -15,9 +15,9 @@ int main()
     svgout.addGrid();
 
     Bloc a, b{&a, "recrot",
-              std::make_unique<RectangleRotatable>(200,100,"tc","br",0,0,0.25)
+              std::make_unique<RectangleRotatable>(200,100,"tc","br",0,0,35)
               ,"blue","black"}, c{&b, "diskrot2",
-                                  std::make_unique<DiskRotatable>(10,"mc","mc",0,0,0.75 )
+                                  std::make_unique<DiskRotatable>(10,"mc","mc",0,0,75 )
                                   ,"green","black"}
                             ,d{&c,"rectrot",
                             std::make_unique<Rectangle>(40,20,"tl","br",0,0)

@@ -14,9 +14,8 @@ Rotatable::~Rotatable()
 
 Coords Rotatable::convertPosRot(const Coords &basepos, const Coords &localpos) const
 {
-    double angle = m_rotation * 360.0;
     Coords resultat = localpos;
-    Transformation transfo { Rotation{basepos, angle} };
+    Transformation transfo { Rotation{basepos, m_rotation} };
     transfo.appliquer(resultat);
 
     return resultat;

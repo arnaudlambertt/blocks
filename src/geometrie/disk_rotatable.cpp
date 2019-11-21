@@ -6,7 +6,7 @@ DiskRotatable::DiskRotatable(const double &radius, const std::string &basepos,
                              const double &rotation)
     :   Disk{radius,basepos,refpos,refposX,refposY},Rotatable{rotation}
 {
-
+    //ctor
 }
 
 DiskRotatable::~DiskRotatable()
