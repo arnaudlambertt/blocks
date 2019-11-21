@@ -41,28 +41,28 @@
 <text x="905" y="15" fill="lightgrey" >900</text>
 <line x1="1000" y1="0" x2="1000" y2="800" stroke="lightgrey" />
 <text x="1005" y="15" fill="lightgrey" >1000</text>
-<polygon points=" 0,0 200,0 200,100 0,100" style="fill:white;stroke:black;stroke-width:1" />
-<line x1="100" y1="50" x2="200" y2="100" stroke="red" />
-<polygon points=" 175,87.5 375,87.5 375,187.5 175,187.5" style="fill:white;stroke:black;stroke-width:1" />
-<line x1="275" y1="137.5" x2="375" y2="187.5" stroke="red" />
-<polygon points=" 350,175 550,175 550,275 350,275" style="fill:white;stroke:black;stroke-width:1" />
-<line x1="450" y1="225" x2="550" y2="275" stroke="red" />
-<polygon points=" 525,262.5 725,262.5 725,362.5 525,362.5" style="fill:white;stroke:black;stroke-width:1" />
-<polygon points=" 705,402.5 730,352.5 755,402.5" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<polygon points=" 735,442.5 760,392.5 785,442.5" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<polygon points=" 765,482.5 790,432.5 815,482.5" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<polygon points=" 795,522.5 820,472.5 845,522.5" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<polygon points=" 825,562.5 850,512.5 875,562.5" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<circle cx="890.355" cy="487.145" r="50" fill="lightblue" />
-<circle cx="890.355" cy="487.145" r="50" fill="none" stroke="black" stroke-width="1" />
-<circle cx="961.066" cy="416.434" r="50" fill="lightblue" />
-<circle cx="961.066" cy="416.434" r="50" fill="none" stroke="black" stroke-width="1" />
-<circle cx="1031.78" cy="345.723" r="50" fill="lightblue" />
-<circle cx="1031.78" cy="345.723" r="50" fill="none" stroke="black" stroke-width="1" />
-<circle cx="1102.49" cy="275.013" r="50" fill="lightblue" />
-<circle cx="1102.49" cy="275.013" r="50" fill="none" stroke="black" stroke-width="1" />
-<circle cx="1173.2" cy="204.302" r="50" fill="lightblue" />
-<circle cx="1173.2" cy="204.302" r="50" fill="none" stroke="black" stroke-width="1" />
+<polygon points=" 0,0 100,0 100,50 0,50" style="fill:white;stroke:black;stroke-width:1" />
+<line x1="50" y1="25" x2="100" y2="50" stroke="red" />
+<polygon points=" 87.5,43.75 187.5,43.75 187.5,93.75 87.5,93.75" style="fill:white;stroke:black;stroke-width:1" />
+<line x1="137.5" y1="68.75" x2="187.5" y2="93.75" stroke="red" />
+<polygon points=" 175,87.5 275,87.5 275,137.5 175,137.5" style="fill:white;stroke:black;stroke-width:1" />
+<line x1="225" y1="112.5" x2="275" y2="137.5" stroke="red" />
+<polygon points=" 262.5,131.25 362.5,131.25 362.5,181.25 262.5,181.25" style="fill:white;stroke:black;stroke-width:1" />
+<polygon points=" 343.75,193.75 381.25,168.75 418.75,193.75 381.25,218.75" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 381.25,218.75 418.75,193.75 456.25,218.75 418.75,243.75" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 418.75,243.75 456.25,218.75 493.75,243.75 456.25,268.75" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 456.25,268.75 493.75,243.75 531.25,268.75 493.75,293.75" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<polygon points=" 493.75,293.75 531.25,268.75 568.75,293.75 531.25,318.75" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<circle cx="585.355" cy="245.895" r="50" fill="lightblue" />
+<circle cx="585.355" cy="245.895" r="50" fill="none" stroke="black" stroke-width="1" />
+<circle cx="656.066" cy="175.184" r="50" fill="lightblue" />
+<circle cx="656.066" cy="175.184" r="50" fill="none" stroke="black" stroke-width="1" />
+<circle cx="726.777" cy="104.473" r="50" fill="lightblue" />
+<circle cx="726.777" cy="104.473" r="50" fill="none" stroke="black" stroke-width="1" />
+<circle cx="797.487" cy="33.7626" r="50" fill="lightblue" />
+<circle cx="797.487" cy="33.7626" r="50" fill="none" stroke="black" stroke-width="1" />
+<circle cx="868.198" cy="-36.9481" r="50" fill="lightblue" />
+<circle cx="868.198" cy="-36.9481" r="50" fill="none" stroke="black" stroke-width="1" />
 
 
 </svg>

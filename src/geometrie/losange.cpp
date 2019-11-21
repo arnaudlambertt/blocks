@@ -36,7 +36,10 @@ Coords Losange::getAbsolute(const Bloc* parent, const std::string &localPos) con
 void Losange::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout)
 {
     svgout.addLosange(getAbsolute(parent, "ml").getX(),getAbsolute(parent, "ml").getY(),
-                      getAbsolute(parent, "tc").getX(),getAbsolute(parent, "tc").getY(),color,1,border);
+                      getAbsolute(parent, "tc").getX(),getAbsolute(parent, "tc").getY(),
+                      getAbsolute(parent, "mr").getX(),getAbsolute(parent, "mr").getY(),
+                      getAbsolute(parent, "bc").getX(),getAbsolute(parent, "bc").getY(),
+                      color,1,border);
 }
 
 Coords Losange::squareposToLosangepos(const Coords &a)

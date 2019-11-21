@@ -37,7 +37,9 @@ Coords Rectangle::getAbsolute(const Bloc* parent, const std::string &localPos) c
 void Rectangle::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout)
 {
     svgout.addRectangle(getAbsolute(parent, "tl").getX(),getAbsolute(parent, "tl").getY(),
+                        getAbsolute(parent, "tr").getX(),getAbsolute(parent, "tr").getY(),
                         getAbsolute(parent, "br").getX(),getAbsolute(parent, "br").getY(),
+                        getAbsolute(parent, "bl").getX(),getAbsolute(parent, "bl").getY(),
                        color,1,border);
 }
 
