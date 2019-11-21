@@ -15,6 +15,7 @@
 					<Add option="-g" />
 					<Add directory="sources/Blocs" />
 					<Add directory="src/geometrie" />
+					<Add directory="src/graphisme" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -26,6 +27,7 @@
 					<Add option="-O2" />
 					<Add directory="sources/Blocs" />
 					<Add directory="src/geometrie" />
+					<Add directory="src/graphisme" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -43,26 +45,36 @@
 		<Unit filename="src/geometrie/coords.h" />
 		<Unit filename="src/geometrie/disk.cpp" />
 		<Unit filename="src/geometrie/disk.h" />
+		<Unit filename="src/geometrie/disk_rotatable.cpp" />
+		<Unit filename="src/geometrie/disk_rotatable.h" />
 		<Unit filename="src/geometrie/disk_translatable.cpp" />
 		<Unit filename="src/geometrie/disk_translatable.h" />
 		<Unit filename="src/geometrie/geometrie.cpp" />
 		<Unit filename="src/geometrie/geometrie.h" />
 		<Unit filename="src/geometrie/losange.cpp" />
 		<Unit filename="src/geometrie/losange.h" />
+		<Unit filename="src/geometrie/losange_rotatable.cpp" />
+		<Unit filename="src/geometrie/losange_rotatable.h" />
 		<Unit filename="src/geometrie/losange_translatable.cpp" />
 		<Unit filename="src/geometrie/losange_translatable.h" />
 		<Unit filename="src/geometrie/matrice.cpp" />
 		<Unit filename="src/geometrie/matrice.h" />
 		<Unit filename="src/geometrie/rectangle.cpp" />
 		<Unit filename="src/geometrie/rectangle.h" />
+		<Unit filename="src/geometrie/rectangle_rotatable.cpp" />
+		<Unit filename="src/geometrie/rectangle_rotatable.h" />
 		<Unit filename="src/geometrie/rectangle_translatable.cpp" />
 		<Unit filename="src/geometrie/rectangle_translatable.h" />
+		<Unit filename="src/geometrie/rotatable.cpp" />
+		<Unit filename="src/geometrie/rotatable.h" />
 		<Unit filename="src/geometrie/transformation.cpp" />
 		<Unit filename="src/geometrie/transformation.h" />
 		<Unit filename="src/geometrie/translatable.cpp" />
 		<Unit filename="src/geometrie/translatable.h" />
 		<Unit filename="src/geometrie/triangle.cpp" />
 		<Unit filename="src/geometrie/triangle.h" />
+		<Unit filename="src/geometrie/triangle_rotatable.cpp" />
+		<Unit filename="src/geometrie/triangle_rotatable.h" />
 		<Unit filename="src/geometrie/triangle_translatable.cpp" />
 		<Unit filename="src/geometrie/triangle_translatable.h" />
 		<Unit filename="src/graphisme/couleur.cpp" />

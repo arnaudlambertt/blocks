@@ -3,6 +3,7 @@
 
 #include "coords.h"
 #include <string>
+//#include "../blocs/bloc.h"
 
 class Translatable
 {
