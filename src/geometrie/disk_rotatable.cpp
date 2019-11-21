@@ -2,10 +2,10 @@
 
 DiskRotatable::DiskRotatable(const double &radius, const std::string &basepos,
                              const std::string &refpos, const double &refposX, const double &refposY,
-                             const std::string &endpos, const double &rotation)
-    :   Disk{radius,basepos,refpos,refposX,refposY},Rotatable{m_refpos,endpos,rotation}
+                             const double &rotation)
+    :   Disk{radius,basepos,refpos,refposX,refposY},Rotatable{rotation}
 {
-    m_refpos = calcRefpos();
+
 }
 
 DiskRotatable::~DiskRotatable()
@@ -13,8 +13,13 @@ DiskRotatable::~DiskRotatable()
     //dtor
 }
 
+Coords DiskRotatable::getAbsolute(const Bloc* parent, const Coords& localPos) const
+{
+    return convertPosRot( Geometrie::getAbsolute(parent, m_basepos ), Geometrie::getAbsolute(parent, localPos ) );
+}
+
 void DiskRotatable::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile& svgout)
 {
-    dessinerAxe(parent, svgout);
     Disk::dessiner(parent, color, border, svgout);
+    dessinerAxe(parent, this, svgout);
 }

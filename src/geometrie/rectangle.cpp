@@ -31,7 +31,7 @@ Coords Rectangle::convertRefposEnfant(const Coords &refposEnfant) const
 
 Coords Rectangle::getAbsolute(const Bloc* parent, const std::string &localPos) const
 {
-    return Geometrie::getAbsolute(parent, Coords{ pos()[localPos[1]], pos()[localPos[0]]});
+    return getAbsolute(parent, Coords{ pos()[localPos[1]], pos()[localPos[0]]});
 }
 
 void Rectangle::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout)

@@ -30,7 +30,7 @@ Coords Losange::convertRefposEnfant(const Coords &refposEnfant) const
 
 Coords Losange::getAbsolute(const Bloc* parent, const std::string &localPos) const
 {
-    return Geometrie::getAbsolute(parent, squareposToLosangepos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
+    return getAbsolute(parent, squareposToLosangepos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
 }
 
 void Losange::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout)

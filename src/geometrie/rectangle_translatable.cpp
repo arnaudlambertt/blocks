@@ -6,7 +6,7 @@ const std::string &refpos, const double &refposX, const double &refposY,
 const std::string &endpos, const double &translation)
 :   Rectangle{width,height,basepos,refpos,refposX,refposY},Translatable{Rectangle::m_refpos,endpos,translation}
 {
-    m_refpos = calcRefpos();
+    translater(translation,m_refpos);
 }
 
 RectangleTranslatable::~RectangleTranslatable()

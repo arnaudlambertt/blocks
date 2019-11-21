@@ -1,7 +1,7 @@
 #include "bloc.h"
 
 Bloc::Bloc()
-: Bloc{nullptr, "emptyId", std::make_unique<RectangleTranslatable>(100,50,"tl","mc",0.0,0.0,"br",0.75), "white", "black"}
+: Bloc{nullptr, "emptyId", std::make_unique<RectangleTranslatable>(200,100,"tl","mc",0.0,0.0,"br",0.75), "orange", "black"}
 {
     //ctor
 }

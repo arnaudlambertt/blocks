@@ -1,7 +1,6 @@
 #ifndef TRANSLATABLE_H
 #define TRANSLATABLE_H
 
-#include <string>
 #include "geometrie.h"
 
 class Translatable
@@ -10,7 +9,9 @@ class Translatable
         Translatable(const Coords &startpos, const std::string &endpos, const double &translation);
         virtual ~Translatable();
 
-        Coords calcRefpos() const;
+        void calcRefpos(Coords &refpos);
+        void translater(const double &translation, Coords &refpos);
+
         Coords getEndpos() { return m_endpos; }
         void setEndpos(Coords val) { m_endpos = val; }
         double getTranslation() { return m_translation; }

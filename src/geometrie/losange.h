@@ -24,6 +24,8 @@ class Losange : public Geometrie
 
 
         virtual Coords convertRefposEnfant(const Coords &refposEnfant) const;
+
+        using Geometrie::getAbsolute; //qualifier conflict fix
         virtual Coords getAbsolute(const Bloc* parent, const std::string &localPos) const;
 
     protected:

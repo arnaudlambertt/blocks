@@ -3,10 +3,10 @@
 LosangeRotatable::LosangeRotatable(const double &width, const double &height,
                                    const std::string &basepos,
                                    const std::string &refpos, const double &refposX, const double &refposY,
-                                   const std::string &endpos, const double &rotation)
-    :   Losange{width,height,basepos,refpos,refposX,refposY},Rotatable{m_refpos,endpos,rotation}
+                                   const double &rotation)
+    :   Losange{width,height,basepos,refpos,refposX,refposY},Rotatable{rotation}
 {
-    m_refpos = calcRefpos();
+    //ctor
 }
 
 LosangeRotatable::~LosangeRotatable()
@@ -14,8 +14,13 @@ LosangeRotatable::~LosangeRotatable()
     //dtor
 }
 
+Coords LosangeRotatable::getAbsolute(const Bloc* parent, const Coords& localPos) const
+{
+    return convertPosRot( Geometrie::getAbsolute(parent, m_basepos ), Geometrie::getAbsolute(parent, localPos ) );
+}
+
 void LosangeRotatable::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile& svgout)
 {
-    dessinerAxe(parent, svgout);
     Losange::dessiner(parent, color, border, svgout);
+    dessinerAxe(parent, this, svgout);
 }

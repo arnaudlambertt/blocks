@@ -12,9 +12,9 @@ Translatable::~Translatable()
     //dtor
 }
 
-Coords Translatable::calcRefpos() const
+void Translatable::calcRefpos(Coords &refpos)
 {
-    return m_startpos + m_translation * (m_endpos - m_startpos);
+    refpos = m_startpos + m_translation * (m_endpos - m_startpos);
 }
 
 void Translatable::dessinerAxe(const Bloc* parent, Svgfile &svgout)
@@ -22,4 +22,10 @@ void Translatable::dessinerAxe(const Bloc* parent, Svgfile &svgout)
     if(parent != nullptr)
         svgout.addArrow(parent->getAbsolute(m_startpos).getX(),parent->getAbsolute(m_startpos).getY(),
                         parent->getAbsolute(m_endpos).getX(),parent->getAbsolute(m_endpos).getY(), "red");
+}
+
+void Translatable::translater(const double &translation, Coords &refpos)
+{
+    m_translation = translation;
+    calcRefpos(refpos);
 }

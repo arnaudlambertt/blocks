@@ -1,10 +1,10 @@
 #include "rotatable.h"
 #include "../blocs/bloc.h"
 
-Rotatable::Rotatable(const Coords &refpos, const std::string &endpos, const double &rotation)
-: m_startpos{refpos}, m_rotation{rotation}
+Rotatable::Rotatable(const double &rotation)
+: m_rotation{rotation}
 {
-    m_endpos = Coords { Geometrie::pos()[endpos[1]] , Geometrie::pos()[endpos[0]] };
+    //ctor
 }
 
 Rotatable::~Rotatable()
@@ -12,14 +12,18 @@ Rotatable::~Rotatable()
     //dtor
 }
 
-Coords Rotatable::calcRefpos() const
+Coords Rotatable::convertPosRot(const Coords &basepos, const Coords &localpos) const
 {
-    return m_startpos + m_rotation * (m_endpos - m_startpos);
+    double angle = m_rotation * 360.0;
+    Coords resultat = localpos;
+    Transformation transfo { Rotation{basepos, angle} };
+    transfo.appliquer(resultat);
+
+    return resultat;
 }
 
-void Rotatable::dessinerAxe(const Bloc* parent, Svgfile &svgout)
+void Rotatable::dessinerAxe(const Bloc* parent, const Geometrie* rot, Svgfile &svgout)
 {
     if(parent != nullptr)
-        svgout.addArrow(parent->getAbsolute(m_startpos).getX(),parent->getAbsolute(m_startpos).getY(),
-                        parent->getAbsolute(m_endpos).getX(),parent->getAbsolute(m_endpos).getY(), "red");
+        svgout.addCircle(rot->getAbsolute(parent,rot->getBasepos()).getX(),rot->getAbsolute(parent,rot->getBasepos()).getY(),5,2,"red");
 }

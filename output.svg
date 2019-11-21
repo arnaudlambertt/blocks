@@ -1,68 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1000" height="800">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="2000" height="2000">
 
-<line x1="0" y1="0" x2="1000" y2="0" stroke="lightgrey" />
+<line x1="0" y1="0" x2="2000" y2="0" stroke="lightgrey" />
 <text x="5" y="-5" fill="lightgrey" >0</text>
-<line x1="0" y1="100" x2="1000" y2="100" stroke="lightgrey" />
+<line x1="0" y1="100" x2="2000" y2="100" stroke="lightgrey" />
 <text x="5" y="95" fill="lightgrey" >100</text>
-<line x1="0" y1="200" x2="1000" y2="200" stroke="lightgrey" />
+<line x1="0" y1="200" x2="2000" y2="200" stroke="lightgrey" />
 <text x="5" y="195" fill="lightgrey" >200</text>
-<line x1="0" y1="300" x2="1000" y2="300" stroke="lightgrey" />
+<line x1="0" y1="300" x2="2000" y2="300" stroke="lightgrey" />
 <text x="5" y="295" fill="lightgrey" >300</text>
-<line x1="0" y1="400" x2="1000" y2="400" stroke="lightgrey" />
+<line x1="0" y1="400" x2="2000" y2="400" stroke="lightgrey" />
 <text x="5" y="395" fill="lightgrey" >400</text>
-<line x1="0" y1="500" x2="1000" y2="500" stroke="lightgrey" />
+<line x1="0" y1="500" x2="2000" y2="500" stroke="lightgrey" />
 <text x="5" y="495" fill="lightgrey" >500</text>
-<line x1="0" y1="600" x2="1000" y2="600" stroke="lightgrey" />
+<line x1="0" y1="600" x2="2000" y2="600" stroke="lightgrey" />
 <text x="5" y="595" fill="lightgrey" >600</text>
-<line x1="0" y1="700" x2="1000" y2="700" stroke="lightgrey" />
+<line x1="0" y1="700" x2="2000" y2="700" stroke="lightgrey" />
 <text x="5" y="695" fill="lightgrey" >700</text>
-<line x1="0" y1="800" x2="1000" y2="800" stroke="lightgrey" />
+<line x1="0" y1="800" x2="2000" y2="800" stroke="lightgrey" />
 <text x="5" y="795" fill="lightgrey" >800</text>
-<line x1="0" y1="0" x2="0" y2="800" stroke="lightgrey" />
+<line x1="0" y1="900" x2="2000" y2="900" stroke="lightgrey" />
+<text x="5" y="895" fill="lightgrey" >900</text>
+<line x1="0" y1="1000" x2="2000" y2="1000" stroke="lightgrey" />
+<text x="5" y="995" fill="lightgrey" >1000</text>
+<line x1="0" y1="1100" x2="2000" y2="1100" stroke="lightgrey" />
+<text x="5" y="1095" fill="lightgrey" >1100</text>
+<line x1="0" y1="1200" x2="2000" y2="1200" stroke="lightgrey" />
+<text x="5" y="1195" fill="lightgrey" >1200</text>
+<line x1="0" y1="1300" x2="2000" y2="1300" stroke="lightgrey" />
+<text x="5" y="1295" fill="lightgrey" >1300</text>
+<line x1="0" y1="1400" x2="2000" y2="1400" stroke="lightgrey" />
+<text x="5" y="1395" fill="lightgrey" >1400</text>
+<line x1="0" y1="1500" x2="2000" y2="1500" stroke="lightgrey" />
+<text x="5" y="1495" fill="lightgrey" >1500</text>
+<line x1="0" y1="1600" x2="2000" y2="1600" stroke="lightgrey" />
+<text x="5" y="1595" fill="lightgrey" >1600</text>
+<line x1="0" y1="1700" x2="2000" y2="1700" stroke="lightgrey" />
+<text x="5" y="1695" fill="lightgrey" >1700</text>
+<line x1="0" y1="1800" x2="2000" y2="1800" stroke="lightgrey" />
+<text x="5" y="1795" fill="lightgrey" >1800</text>
+<line x1="0" y1="1900" x2="2000" y2="1900" stroke="lightgrey" />
+<text x="5" y="1895" fill="lightgrey" >1900</text>
+<line x1="0" y1="2000" x2="2000" y2="2000" stroke="lightgrey" />
+<text x="5" y="1995" fill="lightgrey" >2000</text>
+<line x1="0" y1="0" x2="0" y2="2000" stroke="lightgrey" />
 <text x="5" y="15" fill="lightgrey" >0</text>
-<line x1="100" y1="0" x2="100" y2="800" stroke="lightgrey" />
+<line x1="100" y1="0" x2="100" y2="2000" stroke="lightgrey" />
 <text x="105" y="15" fill="lightgrey" >100</text>
-<line x1="200" y1="0" x2="200" y2="800" stroke="lightgrey" />
+<line x1="200" y1="0" x2="200" y2="2000" stroke="lightgrey" />
 <text x="205" y="15" fill="lightgrey" >200</text>
-<line x1="300" y1="0" x2="300" y2="800" stroke="lightgrey" />
+<line x1="300" y1="0" x2="300" y2="2000" stroke="lightgrey" />
 <text x="305" y="15" fill="lightgrey" >300</text>
-<line x1="400" y1="0" x2="400" y2="800" stroke="lightgrey" />
+<line x1="400" y1="0" x2="400" y2="2000" stroke="lightgrey" />
 <text x="405" y="15" fill="lightgrey" >400</text>
-<line x1="500" y1="0" x2="500" y2="800" stroke="lightgrey" />
+<line x1="500" y1="0" x2="500" y2="2000" stroke="lightgrey" />
 <text x="505" y="15" fill="lightgrey" >500</text>
-<line x1="600" y1="0" x2="600" y2="800" stroke="lightgrey" />
+<line x1="600" y1="0" x2="600" y2="2000" stroke="lightgrey" />
 <text x="605" y="15" fill="lightgrey" >600</text>
-<line x1="700" y1="0" x2="700" y2="800" stroke="lightgrey" />
+<line x1="700" y1="0" x2="700" y2="2000" stroke="lightgrey" />
 <text x="705" y="15" fill="lightgrey" >700</text>
-<line x1="800" y1="0" x2="800" y2="800" stroke="lightgrey" />
+<line x1="800" y1="0" x2="800" y2="2000" stroke="lightgrey" />
 <text x="805" y="15" fill="lightgrey" >800</text>
-<line x1="900" y1="0" x2="900" y2="800" stroke="lightgrey" />
+<line x1="900" y1="0" x2="900" y2="2000" stroke="lightgrey" />
 <text x="905" y="15" fill="lightgrey" >900</text>
-<line x1="1000" y1="0" x2="1000" y2="800" stroke="lightgrey" />
+<line x1="1000" y1="0" x2="1000" y2="2000" stroke="lightgrey" />
 <text x="1005" y="15" fill="lightgrey" >1000</text>
-<polygon points=" 0,0 100,0 100,50 0,50" style="fill:white;stroke:black;stroke-width:1" />
-<line x1="50" y1="25" x2="100" y2="50" stroke="red" />
-<polygon points=" 87.5,43.75 187.5,43.75 187.5,93.75 87.5,93.75" style="fill:white;stroke:black;stroke-width:1" />
-<line x1="137.5" y1="68.75" x2="187.5" y2="93.75" stroke="red" />
-<polygon points=" 175,87.5 275,87.5 275,137.5 175,137.5" style="fill:white;stroke:black;stroke-width:1" />
-<line x1="225" y1="112.5" x2="275" y2="137.5" stroke="red" />
-<polygon points=" 262.5,131.25 362.5,131.25 362.5,181.25 262.5,181.25" style="fill:white;stroke:black;stroke-width:1" />
-<polygon points=" 343.75,193.75 381.25,168.75 418.75,193.75 381.25,218.75" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<polygon points=" 381.25,218.75 418.75,193.75 456.25,218.75 418.75,243.75" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<polygon points=" 418.75,243.75 456.25,218.75 493.75,243.75 456.25,268.75" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<polygon points=" 456.25,268.75 493.75,243.75 531.25,268.75 493.75,293.75" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<polygon points=" 493.75,293.75 531.25,268.75 568.75,293.75 531.25,318.75" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<circle cx="585.355" cy="245.895" r="50" fill="lightblue" />
-<circle cx="585.355" cy="245.895" r="50" fill="none" stroke="black" stroke-width="1" />
-<circle cx="656.066" cy="175.184" r="50" fill="lightblue" />
-<circle cx="656.066" cy="175.184" r="50" fill="none" stroke="black" stroke-width="1" />
-<circle cx="726.777" cy="104.473" r="50" fill="lightblue" />
-<circle cx="726.777" cy="104.473" r="50" fill="none" stroke="black" stroke-width="1" />
-<circle cx="797.487" cy="33.7626" r="50" fill="lightblue" />
-<circle cx="797.487" cy="33.7626" r="50" fill="none" stroke="black" stroke-width="1" />
-<circle cx="868.198" cy="-36.9481" r="50" fill="lightblue" />
-<circle cx="868.198" cy="-36.9481" r="50" fill="none" stroke="black" stroke-width="1" />
+<line x1="1100" y1="0" x2="1100" y2="2000" stroke="lightgrey" />
+<text x="1105" y="15" fill="lightgrey" >1100</text>
+<line x1="1200" y1="0" x2="1200" y2="2000" stroke="lightgrey" />
+<text x="1205" y="15" fill="lightgrey" >1200</text>
+<line x1="1300" y1="0" x2="1300" y2="2000" stroke="lightgrey" />
+<text x="1305" y="15" fill="lightgrey" >1300</text>
+<line x1="1400" y1="0" x2="1400" y2="2000" stroke="lightgrey" />
+<text x="1405" y="15" fill="lightgrey" >1400</text>
+<line x1="1500" y1="0" x2="1500" y2="2000" stroke="lightgrey" />
+<text x="1505" y="15" fill="lightgrey" >1500</text>
+<line x1="1600" y1="0" x2="1600" y2="2000" stroke="lightgrey" />
+<text x="1605" y="15" fill="lightgrey" >1600</text>
+<line x1="1700" y1="0" x2="1700" y2="2000" stroke="lightgrey" />
+<text x="1705" y="15" fill="lightgrey" >1700</text>
+<line x1="1800" y1="0" x2="1800" y2="2000" stroke="lightgrey" />
+<text x="1805" y="15" fill="lightgrey" >1800</text>
+<line x1="1900" y1="0" x2="1900" y2="2000" stroke="lightgrey" />
+<text x="1905" y="15" fill="lightgrey" >1900</text>
+<line x1="2000" y1="0" x2="2000" y2="2000" stroke="lightgrey" />
+<text x="2005" y="15" fill="lightgrey" >2000</text>
+<polygon points=" 300,300 500,300 500,400 300,400" style="fill:orange;stroke:black;stroke-width:1" />
+<polygon points=" 400,400 600,400 600,500 400,500" style="fill:blue;stroke:black;stroke-width:1" />
+<circle cx="500" cy="400" r="5" fill="none" stroke="red" stroke-width="2" />
+<circle cx="550" cy="400" r="10" fill="green" />
+<circle cx="550" cy="400" r="10" fill="none" stroke="black" stroke-width="1" />
+<circle cx="550" cy="400" r="5" fill="none" stroke="red" stroke-width="2" />
+<polygon points=" 542.929,407.071 582.929,407.071 582.929,427.071 542.929,427.071" style="fill:yellow;stroke:black;stroke-width:1" />
 
 
 </svg>

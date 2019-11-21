@@ -35,7 +35,7 @@ Coords Disk::convertRefposEnfant(const Coords &refposEnfant) const
 
 Coords Disk::getAbsolute(const Bloc* parent, const std::string &localPos) const
 {
-    return Geometrie::getAbsolute(parent, squareposToDiskpos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
+    return getAbsolute(parent, squareposToDiskpos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
 }
 
 double Disk::abs(double a)

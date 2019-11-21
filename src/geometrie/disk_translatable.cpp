@@ -1,12 +1,12 @@
 #include "disk_translatable.h"
 
 DiskTranslatable::DiskTranslatable(const double &radius,
-const std::string &basepos,
-const std::string &refpos, const double &refposX, const double &refposY,
-const std::string &endpos, const double &translation)
-:   Disk{radius,basepos,refpos,refposX,refposY},Translatable{m_refpos,endpos,translation}
+                                   const std::string &basepos,
+                                   const std::string &refpos, const double &refposX, const double &refposY,
+                                   const std::string &endpos, const double &translation)
+    :   Disk{radius,basepos,refpos,refposX,refposY},Translatable{m_refpos,endpos,translation}
 {
-    m_refpos = calcRefpos();
+    translater(translation,m_refpos);
 }
 
 DiskTranslatable::~DiskTranslatable()

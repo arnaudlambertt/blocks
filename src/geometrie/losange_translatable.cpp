@@ -6,7 +6,7 @@ LosangeTranslatable::LosangeTranslatable(const double &width, const double &heig
         const std::string &endpos, const double &translation)
     :   Losange{width,height,basepos,refpos,refposX,refposY},Translatable{m_refpos,endpos,translation}
 {
-    m_refpos = calcRefpos();
+    translater(translation,m_refpos);
 }
 
 LosangeTranslatable::~LosangeTranslatable()

@@ -1,11 +1,17 @@
 #ifndef BLOC_H
 #define BLOC_H
 #include <vector>
-#include "../geometrie/geometrie.h"
-#include "../geometrie/rectangle.h"
-#include "../geometrie/disk.h"
+
 #include "../geometrie/rectangle_translatable.h"
-#include "../graphisme/couleur.h"
+#include "../geometrie/losange_translatable.h"
+#include "../geometrie/disk_translatable.h"
+#include "../geometrie/triangle_translatable.h"
+
+#include "../geometrie/rectangle_rotatable.h"
+#include "../geometrie/losange_rotatable.h"
+#include "../geometrie/disk_rotatable.h"
+#include "../geometrie/triangle_rotatable.h"
+
 #include "../util/util.h"
 #include <iostream>
 #include <map>

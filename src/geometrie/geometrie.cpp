@@ -9,19 +9,10 @@ Geometrie::Geometrie(const std::string &basepos, const std::string &refpos, cons
 
 Coords Geometrie::getAbsolute(const Bloc* parent, const Coords &localPos) const
 {
-    Coords absolute;
+    Coords absolute {300,300};
 
     if(parent != nullptr) //calcul absolute coords de basepos
-        {
-            absolute.setY( parent->getAbsolute( parent->getBasepos() ).getY()
-                + ( parent->convertRefposEnfant(m_refpos).getY() - (parent->getBasepos()).getY() )  * parent->getDimensions()[1] );
-
-            absolute.setX( parent->getAbsolute( parent->getBasepos() ).getX()
-                + ( parent->convertRefposEnfant(m_refpos).getX() - (parent->getBasepos()).getX() )  * parent->getDimensions()[0] );
-        }
-
-    else
-        absolute = {0,0};
+        absolute = parent->getAbsolute( parent->convertRefposEnfant(m_refpos));
 
     if(m_basepos.getY() != localPos.getY())
         absolute.setY( absolute.getY() + (localPos.getY() - m_basepos.getY())* getDimensions()[1] );

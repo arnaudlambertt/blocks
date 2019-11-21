@@ -29,7 +29,7 @@ Coords Triangle::convertRefposEnfant(const Coords &refposEnfant) const
 
 Coords Triangle::getAbsolute(const Bloc* parent, const std::string &localPos) const
 {
-    return Geometrie::getAbsolute(parent, squareposToTrianglepos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
+    return getAbsolute(parent, squareposToTrianglepos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
 }
 
 void Triangle::dessiner(const Bloc* parent, const std::string &color, const std::string &border, Svgfile &svgout)
