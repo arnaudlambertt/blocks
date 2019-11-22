@@ -14,22 +14,11 @@ public:
     static Coords squareposToTrianglepos(const Coords &a);
 
     std::vector<double> getDimensions() const;
-    double Getheight()
-    {
-        return m_height;
-    }
-    void Setheight(double val)
-    {
-        m_height = val;
-    }
-    double Getwidth()
-    {
-        return m_width;
-    }
-    void Setwidth(double val)
-    {
-        m_width = val;
-    }
+
+    double Getheight(){ return m_height; }
+    void Setheight(double val){ m_height = val; }
+    double Getwidth(){ return m_width; }
+    void Setwidth(double val){ m_width = val; }
 
     void dessiner(const std::string &color, const std::string &border, Svgfile &svgout);
 

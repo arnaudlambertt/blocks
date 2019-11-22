@@ -25,10 +25,7 @@ Coords Geometrie::getAbsolute(const Coords &localPos) const
     if(m_basepos.getX() != localPos.getX())
         absolute.setX( absolute.getX() + (localPos.getX() - m_basepos.getX())* getDimensions()[0] );
 
-    if(m_rotation != 0.0)
-    {
         absolute = Rotatable::convertPosRot(base,absolute, m_rotation);
-    }
 
     return absolute;
 }

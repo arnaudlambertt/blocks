@@ -85,13 +85,13 @@
 <text x="1905" y="15" fill="lightgrey" >1900</text>
 <line x1="2000" y1="0" x2="2000" y2="2000" stroke="lightgrey" />
 <text x="2005" y="15" fill="lightgrey" >2000</text>
-<polygon points=" 300,300 500,300 500,400 300,400" style="fill:orange;stroke:black;stroke-width:1" />
-<polygon points=" 429.289,470.711 570.711,329.289 641.421,400 500,541.421" style="fill:blue;stroke:black;stroke-width:1" />
-<circle cx="500" cy="400" r="5" fill="none" stroke="red" stroke-width="2" />
-<line x1="535.355" y1="435.355" x2="641.421" y2="400" stroke="red" />
-<polygon points=" 588.388,417.678 644.957,361.109 673.241,389.393 616.673,445.962" style="fill:yellow;stroke:black;stroke-width:1" />
-<polygon points=" 673.241,389.393 673.241,349.393 693.241,349.393 693.241,389.393" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<circle cx="673.241" cy="389.393" r="5" fill="none" stroke="red" stroke-width="2" />
+<polygon points=" 300,300 467.734,191.072 522.198,274.939 354.464,383.867" style="fill:orange;stroke:black;stroke-width:1" />
+<polygon points=" 553.1,370.045 491.296,179.834 586.402,148.932 648.205,339.143" style="fill:blue;stroke:black;stroke-width:1" />
+<circle cx="522.198" cy="274.939" r="5" fill="none" stroke="red" stroke-width="2" />
+<polygon points=" 617.304,244.038 586.402,148.932 586.402,148.932 617.304,244.038" style="fill:red;stroke:red;stroke-width:2.5" />
+<polygon points=" 601.853,196.485 577.131,120.4 615.174,108.04 639.895,184.124" style="fill:yellow;stroke:black;stroke-width:1" />
+<polygon points=" 615.174,108.04 579.533,89.8799 588.613,72.0598 624.254,90.2194" style="fill:lightgreen;stroke:black;stroke-width:1" />
+<circle cx="615.174" cy="108.04" r="5" fill="none" stroke="red" stroke-width="2" />
 
 
 </svg>

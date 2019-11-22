@@ -171,13 +171,16 @@ void Svgfile::addLine(double x1, double y1, double x2, double y2, std::string co
 
 void Svgfile::addArrow(double x1, double y1, double x2, double y2, std::string color)
 {
-    m_ostrm << "<line "
-            << attrib("x1", x1)
-            << attrib("y1", y1)
-            << attrib("x2", x2)
-            << attrib("y2", y2)
-            << attrib("stroke", color)
-            << "/>\n";
+   m_ostrm << "<polygon points=\" "
+            << x1 << "," << y1 << " "
+            << x2 << "," << y2 << " "
+            << x2 << "," << y2 << " "
+            << x1 << "," << y1
+
+            << "\" style=\"fill:" << color
+            << ";stroke:" << "red"
+            << ";stroke-width:" << 2.5
+            << "\" />\n";
 }
 
 void Svgfile::addCross(double x, double y, double span, std::string color)
