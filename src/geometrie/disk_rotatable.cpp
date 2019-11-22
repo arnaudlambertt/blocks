@@ -4,19 +4,14 @@
 DiskRotatable::DiskRotatable(const double &radius, const std::string &basepos,
                              const std::string &refpos, const double &refposX, const double &refposY,
                              const double &rotation)
-    :   Disk{radius,basepos,refpos,refposX,refposY},Rotatable{rotation}
+    :   Disk{radius,basepos,refpos,refposX,refposY},Rotatable{}
 {
-    //ctor
+    setRotation(rotation);
 }
 
 DiskRotatable::~DiskRotatable()
 {
     //dtor
-}
-
-Coords DiskRotatable::getAbsolute(const Coords& localPos) const
-{
-    return convertPosRot( Geometrie::getAbsolute(m_basepos ), Geometrie::getAbsolute(localPos ) );
 }
 
 void DiskRotatable::dessiner(const std::string &color, const std::string &border, Svgfile& svgout)

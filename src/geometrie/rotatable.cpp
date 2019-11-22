@@ -1,10 +1,9 @@
 #include "rotatable.h"
 #include "../blocs/bloc.h"
 
-Rotatable::Rotatable(const double &rotation)
-: m_rotation{rotation}
+Rotatable::Rotatable()
 {
-    //ctor
+
 }
 
 Rotatable::~Rotatable()
@@ -12,14 +11,23 @@ Rotatable::~Rotatable()
     //dtor
 }
 
-Coords Rotatable::convertPosRot(const Coords &basepos, const Coords &localpos) const
+Coords Rotatable::convertPosRot(const Coords &basepos, const Coords &localpos, const double &rotation)
 {
     Coords resultat = localpos;
-    Transformation transfo { Rotation{basepos, m_rotation} };
+    Transformation transfo { Rotation{basepos, rotation }};
     transfo.appliquer(resultat);
 
     return resultat;
 }
+
+//Coords Rotatable::convertPosRot(const Coords &basepos, const Coords &localpos) const
+//{
+//    Coords resultat = localpos;
+//    Transformation transfo { Rotation{basepos, m_rotation }};
+//    transfo.appliquer(resultat);
+//
+//    return resultat;
+//}
 
 void Rotatable::dessinerAxe(const Bloc* rot, Svgfile &svgout)
 {

@@ -1,5 +1,6 @@
 #include "../blocs/bloc.h"
 #include "geometrie.h"
+#include "rotatable.h"
 
 Geometrie::Geometrie(const std::string &basepos, const std::string &refpos, const double &refposX, const double &refposY)
 {
@@ -11,15 +12,23 @@ Geometrie::Geometrie(const std::string &basepos, const std::string &refpos, cons
 Coords Geometrie::getAbsolute(const Coords &localPos) const
 {
     Coords absolute {300,300};
+    Coords base;
 
     if(m_bloc->getParent() != nullptr) //calcul absolute coords de basepos
         absolute = m_bloc->getParent()->getAbsolute( m_bloc->getParent()->convertRefposEnfant(m_refpos));
+
+        base = absolute;
 
     if(m_basepos.getY() != localPos.getY())
         absolute.setY( absolute.getY() + (localPos.getY() - m_basepos.getY())* getDimensions()[1] );
 
     if(m_basepos.getX() != localPos.getX())
         absolute.setX( absolute.getX() + (localPos.getX() - m_basepos.getX())* getDimensions()[0] );
+
+    if(m_rotation != 0.0)
+    {
+        absolute = Rotatable::convertPosRot(base,absolute, m_rotation);
+    }
 
     return absolute;
 }

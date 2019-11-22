@@ -18,8 +18,12 @@ class Bloc
         Bloc(Bloc* parent, const std::string &id, std::unique_ptr<Geometrie> geometrie, const std::string &color, const std::string &border);
         virtual ~Bloc() = default;
 
+        void ajouterEnfantTEMP(Bloc *enfant_TEMP) { m_enfants_TEMP.push_back(enfant_TEMP); }
+        void updateRotationEnfantsTEMP();
+
         Bloc* getParent() const { return m_parent; }
         void setParent(Bloc* val) { m_parent = val; }
+
         std::string getId() { return m_id; }
 
         std::string getColor() { return m_color; }
@@ -41,6 +45,7 @@ class Bloc
     protected:
         Bloc* m_parent; //pointeur parent
         std::vector <std::unique_ptr<Bloc>> m_enfants; //vecteur pointeurs enfants
+        std::vector<Bloc*> m_enfants_TEMP; //TEMPORAIRE
 
         std::string m_id; //id
 

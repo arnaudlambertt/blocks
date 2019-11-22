@@ -15,18 +15,20 @@ int main()
     svgout.addGrid();
 
     Bloc a, b{&a, "recrot",
-              std::make_unique<RectangleRotatable>(200,100,"tc","br",0,0,35)
-              ,"blue","black"}, c{&b, "diskrot2",
-                                  std::make_unique<DiskRotatable>(10,"mc","mc",0,0,75 )
-                                  ,"green","black"}
-                            ,d{&c,"rectrot",
-                            std::make_unique<Rectangle>(40,20,"tl","br",0,0)
-              ,"yellow","black"};
-
+              std::make_unique<RectangleRotatable>(200,100,"tc","br",0,0,45)
+              ,"blue","black"}
+                            ,c{&b,"rectrot",
+                            std::make_unique<RectangleTranslatable>(80,40,"tl","mc",0,0,"br",0.5)
+              ,"yellow","black"}
+              ,d{&c,"rectrot2",
+                            std::make_unique<RectangleRotatable>(40,20,"tl","br",0,0,45)
+              ,"lightgreen","black"};
+    a.updateRotationEnfantsTEMP();
     a.dessiner(svgout);
     b.dessiner(svgout);
     c.dessiner(svgout);
     d.dessiner(svgout);
+
 
 //    std::vector<Bloc*> tab;
 //    for(int i = 0; i<2; ++i)

@@ -13,8 +13,6 @@ public:
 
     virtual ~LosangeRotatable();
 
-    Coords getAbsolute(const Coords &localPos) const;
-
     void dessiner(const std::string &color, const std::string &border, Svgfile &svgout);
 };
 

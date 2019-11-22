@@ -7,19 +7,16 @@
 class Rotatable
 {
     public:
-        Rotatable(const double &Rotation);
+        Rotatable();
         virtual ~Rotatable();
 
-        double getRotation() { return m_rotation; }
-        void setRotation(double val) { m_rotation = val; }
-
+        static Coords convertPosRot(const Coords &basepos, const Coords &localpos, const double &rotation);
         Coords convertPosRot(const Coords &basepos, const Coords &localpos) const;
 
         void dessinerAxe(const Bloc* rot, Svgfile &svgout);
 
     protected:
 
-        double m_rotation;
 };
 
 #endif // ROTATABLE_H

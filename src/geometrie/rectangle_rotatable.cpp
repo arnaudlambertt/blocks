@@ -5,19 +5,14 @@ RectangleRotatable::RectangleRotatable(const double &width, const double &height
                                        const std::string &basepos,
                                        const std::string &refpos, const double &refposX, const double &refposY,
                                        const double &rotation)
-    :   Rectangle{width,height,basepos,refpos,refposX,refposY},Rotatable{rotation}
+    :   Rectangle{width,height,basepos,refpos,refposX,refposY},Rotatable{}
 {
-    //ctor
+    setRotation(rotation);
 }
 
 RectangleRotatable::~RectangleRotatable()
 {
     //dtor
-}
-
-Coords RectangleRotatable::getAbsolute(const Coords& localPos) const
-{
-    return convertPosRot( Geometrie::getAbsolute(m_basepos ), Geometrie::getAbsolute(localPos ) );
 }
 
 void RectangleRotatable::dessiner(const std::string &color, const std::string &border, Svgfile& svgout)

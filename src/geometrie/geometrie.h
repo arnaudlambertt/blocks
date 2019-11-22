@@ -19,6 +19,8 @@ class Geometrie
         Coords getBasepos() const { return m_basepos; }
         Coords getRefpos() const { return m_refpos; }
         void setRefpos(const Coords &val) { m_refpos = val; }
+        void setRotation(const double &val) { m_rotation = val; }
+        double getRotation() { return m_rotation; }
         virtual std::vector<double> getDimensions() const = 0;
         Bloc* getBloc() const { return m_bloc; }
         void setBloc(Bloc* bloc) { m_bloc = bloc; }
@@ -33,6 +35,7 @@ class Geometrie
         Coords m_basepos; //point d'attache sur son parent
         Coords m_refpos; //point du parent sur lequel basepos s'attache
         Bloc* m_bloc; // Bloc auquel la forme appartient
+        double m_rotation = 0.0 ; //defaut
 
 
 };
