@@ -8,15 +8,15 @@ refpos=tl basepos=tl
 		refpos=tc refposx=25% basepos=bc
 
 
-		shape=losange id=bot width=60 height=110 color=lightseagreen
-		refpos=tl basepos=bc rotate=25
+		id=bot width=60 height=110 color=lightseagreen
+		refpos=tc basepos=bc rotate=0
 		[
 			width=8 height=8 color=orange
 			refpos=tr refposx=-15 refposy=15
 
 
 			id=arm width=80 height=20 color=turquoise
-			refpos=br endpos=tr basepos=ml
+			refpos=br endpos=tr basepos=ml 
 			[
 				id=finger1 width=10 height=20 color=lightgreen
 				refpos=bc endpos=bl basepos=tr
@@ -26,6 +26,14 @@ refpos=tl basepos=tl
 				refpos=bc endpos=br basepos=tl
 
 			]
+
+			shape=disk id=lol radius=25 color=blue
+			refpos=tc basepos=bc
+			[
+				shape=losange id=abc
+				basepos=bc refpos=tr
+				
+			]		
 		]
 	]
 ]

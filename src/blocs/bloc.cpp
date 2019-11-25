@@ -26,37 +26,30 @@ Bloc::Bloc(std::istream& ifs, Bloc* parent)
     if(std::getline(ifs, ligne))
     {
         iss.str(ligne);
-        while(iss)
+        for(int i = 0; i < 2; ++i)
         {
-            std::string raw, key, val;
+            while(iss)
+            {
+                std::string raw, key, val;
 
-            iss >> raw;
+                iss >> raw;
 
-            if(raw.find('=') != std::string::npos)
-                raw[raw.find('=')] = ' ';
+                if(raw.find('=') != std::string::npos)
+                {
+                     raw[raw.find('=')] = ' ';
 
-            std::istringstream iss2(raw);
-            iss2 >> key >> val;
+                    std::istringstream iss2(raw);
+                    iss2 >> key >> val;
 
-            infos.insert({key,val});
-        }
-        iss.clear();
-
-        std::getline(ifs, ligne);
-        iss.str(ligne);
-        while(iss)
-        {
-            std::string raw, key, val;
-
-            iss >> raw;
-
-            if(raw.find('=') != std::string::npos)
-                raw[raw.find('=')] = ' ';
-
-            std::istringstream iss2(raw);
-            iss2 >> key >> val;
-
-            infos.insert({key,val});
+                    infos.insert({key,val});
+                }
+            }
+            if(i == 0)
+            {
+                iss.clear();
+                std::getline(ifs,ligne);
+                iss.str(ligne);
+            }
         }
 
         initMembers(infos);
@@ -106,9 +99,6 @@ void Bloc::initMembers(std::map<std::string,std::string> &infos)
         m_border = infos["border"];
     else
         m_border = "black";
-
-    if(infos.find("shape") != infos.end())
-        geometrie = infos["shape"];
 
     if(infos.find("basepos") != infos.end())
         basepos = infos["basepos"];
@@ -169,18 +159,6 @@ void Bloc::initMembers(std::map<std::string,std::string> &infos)
             radius = std::stod(infos["radius"]);
     }
 
-    if(geometrie == "rectangle")
-    {
-        if(translation != -1.0 )
-            m_geometrie = std::make_unique<RectangleTranslatable>(width,height,basepos,refpos,refposX,refposY,endpos,translation);
-
-        else if(rotation != -1.0)
-            m_geometrie = std::make_unique<RectangleRotatable>(width,height,basepos,refpos,refposX,refposY,rotation);
-
-        else
-            m_geometrie = std::make_unique<Rectangle>(width,height,basepos,refpos,refposX,refposY);
-    }
-
     if(geometrie == "triangle")
     {
         if(translation != -1.0 )
@@ -193,7 +171,7 @@ void Bloc::initMembers(std::map<std::string,std::string> &infos)
             m_geometrie = std::make_unique<Triangle>(width,height,basepos,refpos,refposX,refposY);
     }
 
-    if(geometrie == "losange")
+    else if(geometrie == "losange")
     {
         if(translation != -1.0 )
             m_geometrie = std::make_unique<LosangeTranslatable>(width,height,basepos,refpos,refposX,refposY,endpos,translation);
@@ -205,7 +183,7 @@ void Bloc::initMembers(std::map<std::string,std::string> &infos)
             m_geometrie = std::make_unique<Losange>(width,height,basepos,refpos,refposX,refposY);
     }
 
-    if(geometrie == "disk")
+    else if(geometrie == "disk")
     {
         if(translation != -1.0 )
             m_geometrie = std::make_unique<DiskTranslatable>(radius,basepos,refpos,refposX,refposY,endpos,translation);
@@ -217,10 +195,22 @@ void Bloc::initMembers(std::map<std::string,std::string> &infos)
             m_geometrie = std::make_unique<Disk>(radius,basepos,refpos,refposX,refposY);
     }
 
+    else
+    {
+        if(translation != -1.0 )
+            m_geometrie = std::make_unique<RectangleTranslatable>(width,height,basepos,refpos,refposX,refposY,endpos,translation);
+
+        else if(rotation != -1.0)
+            m_geometrie = std::make_unique<RectangleRotatable>(width,height,basepos,refpos,refposX,refposY,rotation);
+
+        else
+            m_geometrie = std::make_unique<Rectangle>(width,height,basepos,refpos,refposX,refposY);
+    }
+
+    m_geometrie->setBloc(this);
 
     if(m_parent != nullptr)
         m_geometrie->setRotation(m_geometrie->getRotation() + m_parent->getGeometrie()->getRotation());
-    m_geometrie->setBloc(this);
 }
 
 Coords Bloc::convertRefposEnfant(const Coords &refposEnfant) const

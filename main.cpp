@@ -15,12 +15,11 @@ int main()
     Svgfile svgout;
     svgout.addGrid();
 
-    std::string test;
     std::ifstream file_input{"roms/simplebot.rom"};
     if ( !file_input ) throw std::runtime_error( "Can't read/open data.txt" );
 
-    Bloc room(file_input, nullptr);
-    room.dessiner(svgout);
+    std::unique_ptr<Bloc> room = std::make_unique<Bloc>(file_input, nullptr);
+    room->dessiner(svgout);
 
 //    Bloc a, b{&a, "recrot",
 //              std::make_unique<RectangleRotatable>(200,100,"tc","br",0,0,75)

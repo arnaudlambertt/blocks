@@ -88,15 +88,18 @@
 <polygon points=" 300,300 700,300 700,600 300,600" style="fill:azure;stroke:darkgrey;stroke-width:1.25" />
 <polygon points=" 260,600 740,600 740,630 260,630" style="fill:darkgrey;stroke:black;stroke-width:1.25" />
 <polygon points=" 605,580 635,580 635,600 605,600" style="fill:peru;stroke:black;stroke-width:1.25" />
-<polygon points=" 209.567,562.832 213.512,500.306 263.945,537.475 260,600" style="fill:lightseagreen;stroke:black;stroke-width:1" />
-<circle cx="260" cy="600" r="5" fill="none" stroke="red" stroke-width="2" />
-<polygon points=" 225.747,518.048 232.998,514.667 236.379,521.917 229.128,525.298" style="fill:orange;stroke:black;stroke-width:1.25" />
-<polygon points=" 287.189,587.321 240.701,487.628 240.701,487.628 287.189,587.321" style="fill:red;stroke:red;stroke-width:2.5" />
-<polygon points=" 259.719,528.411 332.224,494.602 340.676,512.728 268.171,546.538" style="fill:turquoise;stroke:black;stroke-width:1.25" />
-<polygon points=" 304.424,529.633 268.171,546.538 268.171,546.538 304.424,529.633" style="fill:red;stroke:red;stroke-width:2.5" />
-<polygon points=" 277.234,542.311 286.298,538.085 294.75,556.211 285.687,560.438" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
-<polygon points=" 304.424,529.633 340.676,512.728 340.676,512.728 304.424,529.633" style="fill:red;stroke:red;stroke-width:2.5" />
-<polygon points=" 322.55,521.181 331.613,516.954 340.065,535.08 331.002,539.307" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 470,490 530,490 530,600 470,600" style="fill:lightseagreen;stroke:black;stroke-width:1.25" />
+<circle cx="500" cy="600" r="5" fill="none" stroke="red" stroke-width="2" />
+<polygon points=" 507,505 515,505 515,513 507,513" style="fill:orange;stroke:black;stroke-width:1.25" />
+<polygon points=" 530,600 530,490 530,490 530,600" style="fill:red;stroke:red;stroke-width:2.5" />
+<polygon points=" 530,535 610,535 610,555 530,555" style="fill:turquoise;stroke:black;stroke-width:1.25" />
+<polygon points=" 570,555 530,555 530,555 570,555" style="fill:red;stroke:red;stroke-width:2.5" />
+<polygon points=" 540,555 550,555 550,575 540,575" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 570,555 610,555 610,555 570,555" style="fill:red;stroke:red;stroke-width:2.5" />
+<polygon points=" 590,555 600,555 600,575 590,575" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
+<circle cx="500" cy="465" r="25" fill="blue" />
+<circle cx="500" cy="465" r="25" fill="none" stroke="black" stroke-width="1.25" />
+<polygon points=" 492.678,422.322 517.678,397.322 542.678,422.322 517.678,447.322" style="fill:white;stroke:black;stroke-width:1" />
 
 
 </svg>
