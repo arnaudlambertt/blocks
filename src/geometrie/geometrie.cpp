@@ -11,7 +11,7 @@ Geometrie::Geometrie(const std::string &basepos, const std::string &refpos, cons
 
 Coords Geometrie::getAbsolute(const Coords &localPos) const
 {
-    Coords absolute {300,300};
+    Coords absolute {150,75};
     Coords base;
 
     if(m_bloc->getParent() != nullptr) //calcul absolute coords de basepos

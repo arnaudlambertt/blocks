@@ -18,7 +18,7 @@ class Bloc
         Bloc();
         Bloc(Bloc* parent, const std::string &id, std::unique_ptr<Geometrie> geometrie,
              const std::string &color, const std::string &border);
-        Bloc(std::istream& ifs, Bloc* parent);
+        Bloc(std::istream& ifs, Bloc* parent, int &child);
         virtual ~Bloc() = default;
 
         void initMembers(std::map<std::string,std::string> &infos);
