@@ -1,4 +1,4 @@
-#include "src/blocs/bloc.h"
+#include "src/blocs/interface_bloc.h"
 #include "../geometrie/rectangle_translatable.h"
 #include "../geometrie/losange_translatable.h"
 #include "../geometrie/disk_translatable.h"
@@ -11,15 +11,21 @@
 
 int main()
 {
-    Svgfile::s_verbose = false;
-    Svgfile svgout;
-    svgout.addGrid();
+    InterfaceBloc ib("roms/simplebot.rom");
+    ib.afficherHelp();
+    ib.userInterface();
 
-    std::ifstream file_input{"roms/simplebot.rom"};
-    if ( !file_input ) throw std::runtime_error( "Can't read/open data.txt" );
 
-    std::unique_ptr<Bloc> room = std::make_unique<Bloc>(file_input, nullptr);
-    room->dessiner(svgout);
+//    Svgfile::s_verbose = false;
+//    Svgfile svgout;
+//    svgout.addGrid();
+//
+//
+//    std::ifstream file_input{"roms/simplebot.rom"};
+//    if ( !file_input ) throw std::runtime_error( "Can't read/open data.txt" );
+//
+//    std::unique_ptr<Bloc> room = std::make_unique<Bloc>(file_input, nullptr);
+//    room->dessiner(svgout);
 
 //    Bloc a, b{&a, "recrot",
 //              std::make_unique<RectangleRotatable>(200,100,"tc","br",0,0,75)

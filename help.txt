@@ -1,0 +1,11 @@
+ @ 			Selectionner un id
+ . 			Selectionner un enfant
+ exit 			Quitter l'application
+ move			Deplacer un objet
+ rotate			Tourner un objet
+ undo / redo		Precedent / Suivant
+ catch			Attrapper un objet
+ display ids		Afficher les id de tous les objets
+ hide ids		Cacher les ids
+ display runners		Afficher les axes de translations et rotations
+ hide runners		Cacher les axes

@@ -16,6 +16,7 @@
 					<Add directory="sources/Blocs" />
 					<Add directory="src/geometrie" />
 					<Add directory="src/graphisme" />
+					<Add directory="src/blocs" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -28,6 +29,7 @@
 					<Add directory="sources/Blocs" />
 					<Add directory="src/geometrie" />
 					<Add directory="src/graphisme" />
+					<Add directory="src/blocs" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -41,6 +43,8 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/blocs/bloc.cpp" />
 		<Unit filename="src/blocs/bloc.h" />
+		<Unit filename="src/blocs/interface_bloc.cpp" />
+		<Unit filename="src/blocs/interface_bloc.h" />
 		<Unit filename="src/geometrie/coords.cpp" />
 		<Unit filename="src/geometrie/coords.h" />
 		<Unit filename="src/geometrie/disk.cpp" />

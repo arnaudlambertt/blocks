@@ -36,7 +36,7 @@ Bloc::Bloc(std::istream& ifs, Bloc* parent)
 
                 if(raw.find('=') != std::string::npos)
                 {
-                     raw[raw.find('=')] = ' ';
+                    raw[raw.find('=')] = ' ';
 
                     std::istringstream iss2(raw);
                     iss2 >> key >> val;
@@ -55,18 +55,20 @@ Bloc::Bloc(std::istream& ifs, Bloc* parent)
         initMembers(infos);
 
         std::getline(ifs, ligne);
-                iss.clear();
-                iss.str(ligne);
-                iss >> mot;
+        iss.clear();
+        iss.str(ligne);
+        iss >> mot;
         if(mot == "[")
-            do{
+            do
+            {
                 m_enfants.push_back(std::make_unique<Bloc>(ifs, this));
 
                 std::getline(ifs, ligne);
                 iss.clear();
                 iss.str(ligne);
                 iss >> mot;
-            }while(mot != "]");
+            }
+            while(mot != "]");
     }
 }
 
@@ -79,8 +81,8 @@ Bloc::Bloc(Bloc* parent,const std::string &id, std::unique_ptr<Geometrie> geomet
 
 void Bloc::initMembers(std::map<std::string,std::string> &infos)
 {
-    std::string geometrie = "rectangle", basepos = "tr" , refpos = "br" , endpos = "br";
-    double width = 50.0, height = 50.0, radius = 50.0 , translation = -1.0 , rotation = -1.0, refposX = 0.0, refposY = 0.0;
+    std::string geometrie = "rectangle", basepos = "tr", refpos = "br", endpos = "br";
+    double width = 50.0, height = 50.0, radius = 50.0, translation = -1.0, rotation = -1.0, refposX = 0.0, refposY = 0.0;
 
     if(infos.find("shape") != infos.end())
         geometrie = infos["shape"];
@@ -234,4 +236,27 @@ void Bloc::dessiner(Svgfile &svgout)
 
     for(auto &i : m_enfants)
         i->dessiner(svgout);
+}
+
+Bloc* Bloc::searchId(std::string id)
+{
+    Bloc* bloc = nullptr;
+    if(m_id == id)
+    {
+        std::cout << m_id << "FOUND" << std::endl;
+        return this;
+    }
+    else
+        for(size_t i=0; i<m_enfants.size();)
+        {
+            if(m_enfants[i]->searchId(id) != nullptr)
+            {
+                bloc = m_enfants[i].get();
+                break;
+            }
+            ++i;
+            return m_enfants[i]->searchId(id);
+        }
+
+    return bloc;
 }
