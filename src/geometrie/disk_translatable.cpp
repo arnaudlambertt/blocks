@@ -15,8 +15,8 @@ DiskTranslatable::~DiskTranslatable()
     //dtor
 }
 
-void DiskTranslatable::dessiner(const std::string &color, const std::string &border, Svgfile& svgout)
+void DiskTranslatable::dessiner(Svgfile& svgout)
 {
     dessinerAxe(m_bloc->getParent(), svgout);
-    Disk::dessiner(color, border, svgout);
+    Disk::dessiner(svgout);
 }

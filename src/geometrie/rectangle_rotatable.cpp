@@ -15,9 +15,9 @@ RectangleRotatable::~RectangleRotatable()
     //dtor
 }
 
-void RectangleRotatable::dessiner(const std::string &color, const std::string &border, Svgfile& svgout)
+void RectangleRotatable::dessiner(Svgfile& svgout)
 {
-    Rectangle::dessiner(color, border, svgout);
+    Rectangle::dessiner(svgout);
     dessinerAxe(m_bloc, svgout);
 }
 

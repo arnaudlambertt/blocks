@@ -20,7 +20,7 @@ public:
     double Getwidth(){ return m_width; }
     void Setwidth(double val){ m_width = val; }
 
-    void dessiner(const std::string &color, const std::string &border, Svgfile &svgout);
+    void dessiner(Svgfile &svgout);
 
     virtual Coords convertRefposEnfant(const Coords &refposEnfant) const;
 

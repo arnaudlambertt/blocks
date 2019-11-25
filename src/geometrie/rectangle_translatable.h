@@ -13,7 +13,7 @@ class RectangleTranslatable : public Rectangle, public Translatable
 
         virtual ~RectangleTranslatable();
 
-        void dessiner(const std::string &color, const std::string &border, Svgfile &svgout);
+        void dessiner(Svgfile &svgout);
 
 };
 

@@ -14,8 +14,8 @@ TriangleRotatable::~TriangleRotatable()
     //dtor
 }
 
-void TriangleRotatable::dessiner(const std::string &color, const std::string &border, Svgfile& svgout)
+void TriangleRotatable::dessiner(Svgfile& svgout)
 {
-    Triangle::dessiner(color, border, svgout);
+    Triangle::dessiner(svgout);
     dessinerAxe(m_bloc, svgout);
 }

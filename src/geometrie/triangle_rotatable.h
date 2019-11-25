@@ -13,7 +13,7 @@ public:
 
     virtual ~TriangleRotatable();
 
-    void dessiner(const std::string &color, const std::string &border, Svgfile &svgout);
+    void dessiner(Svgfile &svgout);
 };
 
 #endif // TRIANGLE_ROTATABLE_H

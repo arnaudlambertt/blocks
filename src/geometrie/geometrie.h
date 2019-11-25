@@ -15,12 +15,12 @@ class Geometrie
         Geometrie(const std::string &basepos, const std::string &refpos, const double &refposX, const double &refposY);
         virtual ~Geometrie() = default;
 
-        virtual void dessiner(const std::string &color, const std::string &border, Svgfile &svgout) = 0;
+        virtual void dessiner(Svgfile &svgout) = 0;
         Coords getBasepos() const { return m_basepos; }
         Coords getRefpos() const { return m_refpos; }
         void setRefpos(const Coords &val) { m_refpos = val; }
         void setRotation(const double &val) { m_rotation = val; }
-        double getRotation() { return m_rotation; }
+        double getRotation() const { return m_rotation; }
         virtual std::vector<double> getDimensions() const = 0;
         Bloc* getBloc() const { return m_bloc; }
         void setBloc(Bloc* bloc) { m_bloc = bloc; }

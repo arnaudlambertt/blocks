@@ -16,8 +16,8 @@ RectangleTranslatable::~RectangleTranslatable()
     //dtor
 }
 
-void RectangleTranslatable::dessiner(const std::string &color, const std::string &border, Svgfile& svgout)
+void RectangleTranslatable::dessiner(Svgfile& svgout)
 {
     dessinerAxe(m_bloc->getParent(), svgout);
-    Rectangle::dessiner(color, border, svgout);
+    Rectangle::dessiner(svgout);
 }

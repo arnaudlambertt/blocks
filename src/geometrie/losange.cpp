@@ -34,13 +34,13 @@ Coords Losange::getAbsolute(const std::string &localPos) const
     return getAbsolute(squareposToLosangepos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
 }
 
-void Losange::dessiner(const std::string &color, const std::string &border, Svgfile &svgout)
+void Losange::dessiner(Svgfile &svgout)
 {
     svgout.addLosange(getAbsolute( "ml").getX(),getAbsolute( "ml").getY(),
                       getAbsolute( "tc").getX(),getAbsolute( "tc").getY(),
                       getAbsolute( "mr").getX(),getAbsolute( "mr").getY(),
                       getAbsolute( "bc").getX(),getAbsolute( "bc").getY(),
-                      color,1,border);
+                      m_bloc->getColor(),1,m_bloc->getBorder());
 }
 
 Coords Losange::squareposToLosangepos(const Coords &a)

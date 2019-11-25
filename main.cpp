@@ -11,23 +11,30 @@
 
 int main()
 {
+    Svgfile::s_verbose = false;
     Svgfile svgout;
     svgout.addGrid();
 
-    Bloc a, b{&a, "recrot",
-              std::make_unique<RectangleRotatable>(200,100,"tc","br",0,0,75)
-              ,"blue","black"}
-                            ,c{&b,"rectrot",
-                            std::make_unique<RectangleTranslatable>(80,40,"tl","bc",0,0,"br",0.5)
-              ,"yellow","black"}
-              ,d{&c,"rectrot2",
-                            std::make_unique<RectangleRotatable>(40,20,"tl","br",0,0,45)
-              ,"lightgreen","black"};
-    a.updateRotationEnfantsTEMP();
-    a.dessiner(svgout);
-    b.dessiner(svgout);
-    c.dessiner(svgout);
-    d.dessiner(svgout);
+    std::string test;
+    std::ifstream file_input{"roms/simplebot.rom"};
+    if ( !file_input ) throw std::runtime_error( "Can't read/open data.txt" );
+
+    Bloc room(file_input, nullptr);
+    room.dessiner(svgout);
+
+//    Bloc a, b{&a, "recrot",
+//              std::make_unique<RectangleRotatable>(200,100,"tc","br",0,0,75)
+//              ,"blue","black"}
+//                            ,c{&b,"rectrot",
+//                            std::make_unique<RectangleTranslatable>(80,40,"tl","bc",0,0,"br",0.5)
+//              ,"yellow","black"}
+//              ,d{&c,"rectrot2",
+//                            std::make_unique<RectangleRotatable>(40,20,"tl","br",0,0,45)
+//              ,"lightgreen","black"};
+//    a.dessiner(svgout);
+//    b.dessiner(svgout);
+//    c.dessiner(svgout);
+//    d.dessiner(svgout);
 
 
 //    std::vector<Bloc*> tab;

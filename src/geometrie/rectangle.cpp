@@ -34,13 +34,13 @@ Coords Rectangle::getAbsolute(const std::string &localPos) const
     return getAbsolute(Coords{ pos()[localPos[1]], pos()[localPos[0]]});
 }
 
-void Rectangle::dessiner(const std::string &color, const std::string &border, Svgfile &svgout)
+void Rectangle::dessiner(Svgfile &svgout)
 {
     svgout.addRectangle(getAbsolute("tl").getX(),getAbsolute("tl").getY(),
                         getAbsolute("tr").getX(),getAbsolute("tr").getY(),
                         getAbsolute("br").getX(),getAbsolute("br").getY(),
                         getAbsolute("bl").getX(),getAbsolute("bl").getY(),
-                       color,1,border);
+                        m_bloc->getColor(),1.25,m_bloc->getBorder());
 }
 
 

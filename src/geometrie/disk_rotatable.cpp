@@ -14,8 +14,8 @@ DiskRotatable::~DiskRotatable()
     //dtor
 }
 
-void DiskRotatable::dessiner(const std::string &color, const std::string &border, Svgfile& svgout)
+void DiskRotatable::dessiner(Svgfile& svgout)
 {
-    Disk::dessiner(color, border, svgout);
+    Disk::dessiner(svgout);
     dessinerAxe(m_bloc, svgout);
 }

@@ -33,11 +33,12 @@ Coords Triangle::getAbsolute(const std::string &localPos) const
     return getAbsolute(squareposToTrianglepos(Coords{pos()[localPos[1]], pos()[localPos[0]]}));
 }
 
-void Triangle::dessiner(const std::string &color, const std::string &border, Svgfile &svgout)
+void Triangle::dessiner(Svgfile &svgout)
 {
     svgout.addTriangle(getAbsolute("bl").getX(),getAbsolute("bl").getY(),
                        getAbsolute("tc").getX(),getAbsolute("tc").getY(),
-                       getAbsolute("br").getX(),getAbsolute("br").getY(),color,1,border);
+                       getAbsolute("br").getX(),getAbsolute("br").getY(),
+                       m_bloc->getColor(),1.25,m_bloc->getBorder());
 }
 
 Coords Triangle::squareposToTrianglepos(const Coords &a)

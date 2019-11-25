@@ -13,7 +13,7 @@ public:
 
     virtual ~RectangleRotatable();
 
-    void dessiner(const std::string &color, const std::string &border, Svgfile &svgout);
+    void dessiner(Svgfile &svgout);
 };
 
 #endif // RECTANGLE_ROTATABLE_H

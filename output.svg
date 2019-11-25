@@ -85,13 +85,18 @@
 <text x="1905" y="15" fill="lightgrey" >1900</text>
 <line x1="2000" y1="0" x2="2000" y2="2000" stroke="lightgrey" />
 <text x="2005" y="15" fill="lightgrey" >2000</text>
-<polygon points=" 300,300 467.734,191.072 522.198,274.939 354.464,383.867" style="fill:orange;stroke:black;stroke-width:1" />
-<polygon points=" 553.1,370.045 491.296,179.834 586.402,148.932 648.205,339.143" style="fill:blue;stroke:black;stroke-width:1" />
-<circle cx="522.198" cy="274.939" r="5" fill="none" stroke="red" stroke-width="2" />
-<polygon points=" 617.304,244.038 586.402,148.932 586.402,148.932 617.304,244.038" style="fill:red;stroke:red;stroke-width:2.5" />
-<polygon points=" 601.853,196.485 577.131,120.4 615.174,108.04 639.895,184.124" style="fill:yellow;stroke:black;stroke-width:1" />
-<polygon points=" 615.174,108.04 579.533,89.8799 588.613,72.0598 624.254,90.2194" style="fill:lightgreen;stroke:black;stroke-width:1" />
-<circle cx="615.174" cy="108.04" r="5" fill="none" stroke="red" stroke-width="2" />
+<polygon points=" 300,300 700,300 700,600 300,600" style="fill:azure;stroke:darkgrey;stroke-width:1.25" />
+<polygon points=" 260,600 740,600 740,630 260,630" style="fill:darkgrey;stroke:black;stroke-width:1.25" />
+<polygon points=" 605,580 635,580 635,600 605,600" style="fill:peru;stroke:black;stroke-width:1.25" />
+<polygon points=" 209.567,562.832 213.512,500.306 263.945,537.475 260,600" style="fill:lightseagreen;stroke:black;stroke-width:1" />
+<circle cx="260" cy="600" r="5" fill="none" stroke="red" stroke-width="2" />
+<polygon points=" 225.747,518.048 232.998,514.667 236.379,521.917 229.128,525.298" style="fill:orange;stroke:black;stroke-width:1.25" />
+<polygon points=" 287.189,587.321 240.701,487.628 240.701,487.628 287.189,587.321" style="fill:red;stroke:red;stroke-width:2.5" />
+<polygon points=" 259.719,528.411 332.224,494.602 340.676,512.728 268.171,546.538" style="fill:turquoise;stroke:black;stroke-width:1.25" />
+<polygon points=" 304.424,529.633 268.171,546.538 268.171,546.538 304.424,529.633" style="fill:red;stroke:red;stroke-width:2.5" />
+<polygon points=" 277.234,542.311 286.298,538.085 294.75,556.211 285.687,560.438" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 304.424,529.633 340.676,512.728 340.676,512.728 304.424,529.633" style="fill:red;stroke:red;stroke-width:2.5" />
+<polygon points=" 322.55,521.181 331.613,516.954 340.065,535.08 331.002,539.307" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
 
 
 </svg>

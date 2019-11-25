@@ -23,9 +23,10 @@ std::vector<double> Disk::getDimensions() const
     return std::vector<double> {2*m_radius,2*m_radius};
 }
 
-void Disk::dessiner(const std::string &color, const std::string &border, Svgfile &svgout)
+void Disk::dessiner(Svgfile &svgout)
 {
-    svgout.addDisk(getAbsolute("mc").getX(),getAbsolute("mc").getY(),m_radius,color,1,border);
+    svgout.addDisk(getAbsolute("mc").getX(),getAbsolute("mc").getY(),
+                   m_radius,m_bloc->getColor(),1.25,m_bloc->getBorder());
 }
 
 Coords Disk::convertRefposEnfant(const Coords &refposEnfant) const
