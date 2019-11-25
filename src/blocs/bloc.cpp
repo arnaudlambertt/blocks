@@ -15,13 +15,13 @@ Bloc::Bloc()
     //ctor
 }
 
-Bloc::Bloc(std::istream& ifs, Bloc* parent, int &child)
+Bloc::Bloc(std::istream& ifs, Bloc* parent, bool &child)
 {
-    child = 1;
     std::string ligne, mot;
     std::istringstream iss;
     std::map<std::string, std::string> infos;
 
+    child = true;
     m_parent = parent;
 
     if(std::getline(ifs, ligne))
@@ -37,7 +37,7 @@ Bloc::Bloc(std::istream& ifs, Bloc* parent, int &child)
 
                 if(raw.find('=') != std::string::npos)
                 {
-                     raw[raw.find('=')] = ' ';
+                    raw[raw.find('=')] = ' ';
 
                     std::istringstream iss2(raw);
                     iss2 >> key >> val;
@@ -54,22 +54,34 @@ Bloc::Bloc(std::istream& ifs, Bloc* parent, int &child)
         }
 
         initMembers(infos);
-        std::cout << m_id << std::endl;
 
         std::getline(ifs, ligne);
+        iss.clear();
+        iss.str(ligne);
+        iss >> mot;
+
+        if(mot == "[") // a des enfants
+        {
+            do
+                m_enfants.push_back(std::make_unique<Bloc>(ifs, this, child));
+            while(child);
+
+            std::getline(ifs, ligne);
+            if(ligne.empty())
+                child = true;
+            else
+            {
                 iss.clear();
                 iss.str(ligne);
                 iss >> mot;
-        if(mot == "[") // a des enfants
-            do{
-                m_enfants.push_back(std::make_unique<Bloc>(ifs, this, child));
-            }while(child != 0);
+                if(mot == "]")
+                    child = false;
+            }
+        }
 
         else if(mot == "]")
-            {
-                child = 0;
-            }
-        else child = 2;
+            child = false;
+
     }
 }
 
@@ -82,8 +94,8 @@ Bloc::Bloc(Bloc* parent,const std::string &id, std::unique_ptr<Geometrie> geomet
 
 void Bloc::initMembers(std::map<std::string,std::string> &infos)
 {
-    std::string geometrie = "rectangle", basepos = "tr" , refpos = "br" , endpos = "br";
-    double width = 50.0, height = 50.0, radius = 50.0 , translation = -1.0 , rotation = -1.0, refposX = 0.0, refposY = 0.0;
+    std::string geometrie = "rectangle", basepos = "tr", refpos = "br", endpos = "br";
+    double width = 50.0, height = 50.0, radius = 50.0, translation = -1.0, rotation = -1.0, refposX = 0.0, refposY = 0.0;
 
     if(infos.find("shape") != infos.end())
         geometrie = infos["shape"];

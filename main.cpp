@@ -17,7 +17,7 @@ int main()
     std::ifstream file_input{"roms/simplebot.rom"};
     if ( !file_input ) throw std::runtime_error( "Can't read/open data.txt" );
 
-    int child = 1;
+    bool child = true;
 
     std::unique_ptr<Bloc> room = std::make_unique<Bloc>(file_input, nullptr,child);
     room->dessiner(svgout);
