@@ -253,16 +253,18 @@ void Bloc::dessiner(Svgfile &svgout)
 
 void Bloc::searchId(std::vector<std::string> id, std::vector<Bloc*> &listCurrent)
 {
-    std::cout << "search id" << std::endl;
+    //std::cout << "search id" << std::endl;
     if(testId(id[0]))
     {
-        listCurrent.push_back(this);
+        if(id.size() == 1)
+            listCurrent.push_back(this);
         id.erase(id.begin());
-        std::cout << m_id << "FOUND" << std::endl;
+        std::cout << m_id << " FOUND" << std::endl;
     }
 
-    for(auto &i: m_enfants)
-        i->searchId(id, listCurrent);
+    if(id.size())
+        for(auto &i: m_enfants)
+            i->searchId(id, listCurrent);
 
 }
 
@@ -282,7 +284,7 @@ bool Bloc::testId(const std::string &id)   /// : range | [ specific ]| % modulo 
         if( blindage && ( cpym_id[i] < 48 || cpym_id[i] > 57))
         {
             numerom_id = std::stoi(&cpym_id[0]+i+1,&sz);
-            std::cout << "numero m_id :" << numerom_id << std::endl;
+            prem_id = cpym_id.substr(0,i+1);
             break;
         }
         else if ( cpym_id[i] < 48 || cpym_id[i] > 57)
@@ -291,12 +293,11 @@ bool Bloc::testId(const std::string &id)   /// : range | [ specific ]| % modulo 
             blindage = true;
     }
 
-    if(numerom_id == -1)
-        std::cout<< "pas de numero dans le m_id!" << std::endl;
-
-
     if(idcpy.find('%') != std::string::npos)
     {
+        if(numerom_id == -1)
+            return false;
+
         std::string nom, smodulo;
         int reste = -1, modulo =-1;
         blindage = false;
@@ -318,22 +319,24 @@ bool Bloc::testId(const std::string &id)   /// : range | [ specific ]| % modulo 
                 blindage = true;
         }
         if(!blindage)
+        {
             std::cout << "erreur de format" << std::endl;
+            return false;
+        }
 
         if( smodulo[0] >= 48 && smodulo[0] <= 57)
             modulo = std::stoi(smodulo,&sz);
-
         else
             std::cout <<"erreur de format" << std::endl;
 
         if(modulo != -1 && reste != -1)
         {
-
+            cpym_id = prem_id + std::to_string(numerom_id%modulo) + "%" + std::to_string(modulo);
+            return (cpym_id == id);
         }
-
+        else
+            return false;
     }
-
-
 
     return false;
 }
