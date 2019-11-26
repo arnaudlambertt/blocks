@@ -6,13 +6,14 @@ InterfaceBloc::InterfaceBloc(const std::string &rom)
     std::ifstream file_input{rom};
     if ( !file_input )
     {
-        throw std::runtime_error( "Can't read/open data.txt" );
+        throw std::runtime_error( "Can't read/open " + rom );
         m_room = nullptr;
     }
     else
     {
         bool useless = true;
         m_room = std::make_unique<Bloc>(file_input, nullptr,useless);
+        m_file = rom;
     }
 
     //ctor
@@ -90,4 +91,14 @@ void InterfaceBloc::userInterface()
     iss.clear();
     }
     while(saisie != "exit");
+}
+
+void InterfaceBloc::sauvegarder()
+{
+    std::ofstream file_output{"roms/save.rom"};
+    if ( !file_output )
+        throw std::runtime_error( "Can't open/create roms/save.rom" );
+    else
+        if (m_room != nullptr)
+            m_room->sauvegarde(file_output,0);
 }
