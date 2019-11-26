@@ -1,4 +1,4 @@
-id=room width=400 height=300 color=azure border=darkgrey	
+id=room width=800 height=400 color=azure border=darkgrey	
 refpos=tl basepos=tl
 [
 	id=ground width=120% height=10% color=darkgrey
@@ -7,13 +7,11 @@ refpos=tl basepos=tl
 		id=box width=30 height=20 color=peru
 		refpos=tc refposx=25% basepos=bc
 
-
 		id=bot width=60 height=110 color=lightseagreen
-		refpos=tc basepos=bc rotate=0
+		refpos=tl basepos=bc endpos=tr translate=0.3
 		[
 			width=8 height=8 color=orange
 			refpos=tr refposx=-15 refposy=15
-
 
 			id=arm width=80 height=20 color=turquoise
 			refpos=br endpos=tr basepos=ml 
@@ -21,19 +19,46 @@ refpos=tl basepos=tl
 				id=finger1 width=10 height=20 color=lightgreen
 				refpos=bc endpos=bl basepos=tr
 
+				id=finger2 width=10 height=20 color=lightgreen
+				refpos=bc endpos=br basepos=tl
+			]
+
+			id=arm2 width=80 height=20 color=turquoise
+			refpos=bl basepos=mr endpos=tl 
+			[
+				id=finger1 width=10 height=20 color=lightgreen
+				refpos=bc endpos=bl basepos=tr
 
 				id=finger2 width=10 height=20 color=lightgreen
 				refpos=bc endpos=br basepos=tl
+			]
+		]
 
+		id=bot5 width=60 height=110 color=lightseagreen
+		refpos=tl basepos=bc endpos=tr translate=0.6
+		[
+			width=8 height=8 color=orange
+			refpos=tr refposx=-15 refposy=15
+
+			id=arm width=80 height=20 color=turquoise
+			refpos=br endpos=tr basepos=ml 
+			[
+				id=finger1 width=10 height=20 color=lightgreen
+				refpos=bc endpos=bl basepos=tr
+
+				id=finger2 width=10 height=20 color=lightgreen
+				refpos=bc endpos=br basepos=tl
 			]
 
-			shape=disk id=lol radius=25 color=blue
-			refpos=tc basepos=bc
+			id=arm2 width=80 height=20 color=turquoise
+			refpos=bl basepos=mr endpos=tl 
 			[
-				shape=losange id=abc
-				basepos=bc refpos=tr
-				
-			]		
+				id=finger1 width=10 height=20 color=lightgreen
+				refpos=bc endpos=bl basepos=tr
+
+				id=finger2 width=10 height=20 color=lightgreen
+				refpos=bc endpos=br basepos=tl
+			]
 		]
 	]
 ]

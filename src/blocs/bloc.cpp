@@ -15,12 +15,13 @@ Bloc::Bloc()
     //ctor
 }
 
-Bloc::Bloc(std::istream& ifs, Bloc* parent)
+Bloc::Bloc(std::istream& ifs, Bloc* parent, bool &child)
 {
     std::string ligne, mot;
     std::istringstream iss;
     std::map<std::string, std::string> infos;
 
+    child = true;
     m_parent = parent;
 
     if(std::getline(ifs, ligne))
@@ -58,17 +59,29 @@ Bloc::Bloc(std::istream& ifs, Bloc* parent)
         iss.clear();
         iss.str(ligne);
         iss >> mot;
-        if(mot == "[")
-            do
-            {
-                m_enfants.push_back(std::make_unique<Bloc>(ifs, this));
 
-                std::getline(ifs, ligne);
+        if(mot == "[") // a des enfants
+        {
+            do
+                m_enfants.push_back(std::make_unique<Bloc>(ifs, this, child));
+            while(child);
+
+            std::getline(ifs, ligne);
+            if(ligne.empty())
+                child = true;
+            else
+            {
                 iss.clear();
                 iss.str(ligne);
                 iss >> mot;
+                if(mot == "]")
+                    child = false;
             }
-            while(mot != "]");
+        }
+
+        else if(mot == "]")
+            child = false;
+
     }
 }
 
