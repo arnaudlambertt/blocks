@@ -7,7 +7,7 @@ refpos=tl basepos=tl
 		id=box width=30 height=20 color=peru
 		refpos=tc refposx=25% basepos=bc
 
-		id=bot width=60 height=110 color=lightseagreen
+		id=bot1 width=60 height=110 color=lightseagreen
 		refpos=tl basepos=bc endpos=tr translate=0.3
 		[
 			width=8 height=8 color=orange
@@ -34,7 +34,7 @@ refpos=tl basepos=tl
 			]
 		]
 
-		id=bot5 width=60 height=110 color=lightseagreen
+		id=bot2 width=60 height=110 color=lightseagreen
 		refpos=tl basepos=bc endpos=tr translate=0.6
 		[
 			width=88 height=8 color=orange

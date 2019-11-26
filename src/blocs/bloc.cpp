@@ -337,6 +337,64 @@ bool Bloc::testId(const std::string &id)   /// : range | [ specific ]| % modulo 
         else
             return false;
     }
+    else if(idcpy.find(':') != std::string::npos)
+    {
+        if(numerom_id == -1)
+            return false;
 
-    return false;
+        std::string nom, sbornesup, pre_id;
+        int borneinf = -1, bornesup = -1;
+        blindage = false;
+
+        idcpy[idcpy.find(':')] = ' ';
+        iss.str(idcpy);
+        iss >> nom >> sbornesup;
+
+        for(size_t i=nom.size()-1; i>=0; --i)
+        {
+            if( blindage && ( nom[i] < 48 || nom[i] > 57))
+            {
+                borneinf = std::stoi(&nom[0]+i+1,&sz);
+                pre_id = idcpy.substr(0,i+1);
+                break;
+            }
+            else if ( nom[i] < 48 || nom[i] > 57)
+                break;
+            else
+                blindage = true;
+        }
+        if(!blindage)
+        {
+            std::cout << "erreur de format" << std::endl;
+            return false;
+        }
+
+        if( sbornesup[0] >= 48 && sbornesup[0] <= 57)
+            bornesup = std::stoi(sbornesup,&sz);
+        else
+            std::cout <<"erreur de format" << std::endl;
+
+        if(borneinf != -1 && borneinf!= -1)
+        {
+            if(borneinf>bornesup)
+            {
+                int temp;
+                temp = borneinf;
+                borneinf = bornesup;
+                bornesup = temp;
+            }
+
+            if(prem_id == pre_id)
+                return (borneinf <= numerom_id && numerom_id<= bornesup);
+            else
+                return false;
+        }
+        else
+            return false;
+
+    }
+    else if(cpym_id.find(id) != std::string::npos)
+        return true;
+    else
+        return false;
 }
