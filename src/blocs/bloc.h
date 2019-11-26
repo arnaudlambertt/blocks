@@ -28,7 +28,7 @@ class Bloc
 
         std::string getId() { return m_id; }
         bool testId(const std::string &id);
-        void searchId(const std::string &id, std::vector<Bloc*> &listCurrent);
+        void searchId(std::vector<std::string> id, std::vector<Bloc*> &listCurrent);
 
         std::string getColor() { return m_color; }
         std::string getBorder() { return m_border; }

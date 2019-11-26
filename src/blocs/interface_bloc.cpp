@@ -10,7 +10,10 @@ InterfaceBloc::InterfaceBloc(const std::string &rom)
         m_room = nullptr;
     }
     else
-        m_room = std::make_unique<Bloc>(file_input, nullptr);
+    {
+        bool useless = true;
+        m_room = std::make_unique<Bloc>(file_input, nullptr,useless);
+    }
 
     //ctor
 }
@@ -53,7 +56,7 @@ void InterfaceBloc::userInterface()
     //std::vector<std::string> tabCibles();
     std::string saisie, cible;
     std::istringstream iss;
-    int modulo = 0;
+    std::vector<std::string> cibTab;
     do
     {
         std::getline(std::cin, saisie);
@@ -65,10 +68,16 @@ void InterfaceBloc::userInterface()
         {
             saisie[saisie.find('@')] = ' ';
 
+        while(saisie.find('.') != std::string::npos)
+            saisie[saisie.find('.')] = ' ';
             iss.str(saisie);
-            iss >> cible;
-            std::cout << cible << std::endl;
-            m_room->searchId(cible, m_listCurrent);
+            while(iss >> cible)
+                cibTab.push_back(cible);
+
+//                for(auto &i : cibTab)
+//                    std::cout << i << std::endl;
+            m_room->searchId(cibTab, m_listCurrent);
+                cibTab.clear();
 
 
             //std::cout << m_current;

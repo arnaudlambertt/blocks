@@ -251,16 +251,15 @@ void Bloc::dessiner(Svgfile &svgout)
         i->dessiner(svgout);
 }
 
-void Bloc::searchId(const std::string &id, std::vector<Bloc*> &listCurrent)
+void Bloc::searchId(std::vector<std::string> id, std::vector<Bloc*> &listCurrent)
 {
-    std::size_t found;
-
-//    found=m_id.find(id);
-//    if (found!=std::string::npos)
-    std::cout << "gg" << std::endl;
-    if(testId(id))
+    std::cout << "search id" << std::endl;
+    if(testId(id[0]))
+    {
         listCurrent.push_back(this);
-    //std::cout << m_id << "FOUND" << std::endl;
+        id.erase(id.begin());
+        std::cout << m_id << "FOUND" << std::endl;
+    }
 
     for(auto &i: m_enfants)
         i->searchId(id, listCurrent);
@@ -269,39 +268,72 @@ void Bloc::searchId(const std::string &id, std::vector<Bloc*> &listCurrent)
 
 bool Bloc::testId(const std::string &id)   /// : range | [ specific ]| % modulo | ? random
 {
+    std::string::size_type sz;
+
     std::istringstream iss;
     std::string idcpy = id;
-    std::size_t temp, test;
-    std::string::size_type sz;
-    int reste,i=0;
 
-//    if(idcpy.find('%') != std::string::npos)
-//    {
-//        idcpy[idcpy.find('%')] = ' ';
-//        iss.str(idcpy);
-//        //iss >> cible >> modulo;
-//    }
+    std::string cpym_id = m_id, prem_id;
+    int numerom_id = -1;
+    bool blindage = false;
 
-    std::cout << idcpy ;
-    for(i=48; i<58 /*&& idcpy.find(i)==std::string::npos */; ++i)
+    for(size_t i= cpym_id.size()-1; i>=0; --i)
     {
-        //continue;
-        test = idcpy.find(i);
-
-        if(test != std::string::npos)
+        if( blindage && ( cpym_id[i] < 48 || cpym_id[i] > 57))
         {
-            temp = test;
-            std::cout << idcpy << idcpy.substr(temp);
-            reste = std::stoi(idcpy.substr(temp),&sz);
-            std::cout << "GG ! " <<reste << std::endl;
+            numerom_id = std::stoi(&cpym_id[0]+i+1,&sz);
+            std::cout << "numero m_id :" << numerom_id << std::endl;
+            break;
         }
+        else if ( cpym_id[i] < 48 || cpym_id[i] > 57)
+            break;
         else
-            std::cout << "fcq";
+            blindage = true;
     }
+
+    if(numerom_id == -1)
+        std::cout<< "pas de numero dans le m_id!" << std::endl;
+
+
+    if(idcpy.find('%') != std::string::npos)
+    {
+        std::string nom, smodulo;
+        int reste = -1, modulo =-1;
+        blindage = false;
+
+        idcpy[idcpy.find('%')] = ' ';
+        iss.str(idcpy);
+        iss >> nom >> smodulo;
+
+        for(size_t i=nom.size()-1; i>=0; --i)
+        {
+            if( blindage && ( nom[i] < 48 || nom[i] > 57))
+            {
+                reste = std::stoi(&nom[0]+i+1,&sz);
+                break;
+            }
+            else if ( nom[i] < 48 || nom[i] > 57)
+                break;
+            else
+                blindage = true;
+        }
+        if(!blindage)
+            std::cout << "erreur de format" << std::endl;
+
+        if( smodulo[0] >= 48 && smodulo[0] <= 57)
+            modulo = std::stoi(smodulo,&sz);
+
+        else
+            std::cout <<"erreur de format" << std::endl;
+
+        if(modulo != -1 && reste != -1)
+        {
+
+        }
+
+    }
+
+
+
     return false;
-
-
-    //if(m_idcpy == id[id.size()])
-    //searchId(id, listCurrent);
-    //  std::cout << "VIVE LA VIE" << std::endl;
 }

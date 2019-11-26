@@ -7,5 +7,5 @@
  catch			Attrapper un objet
  display ids		Afficher les id de tous les objets
  hide ids		Cacher les ids
- display runners		Afficher les axes de translations et rotations
+ display runners	Afficher les axes de translations et rotations
  hide runners		Cacher les axes

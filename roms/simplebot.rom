@@ -40,7 +40,7 @@ refpos=tl basepos=tl
 			width=8 height=8 color=orange
 			refpos=tr refposx=-15 refposy=15
 
-			id=arm width=80 height=20 color=turquoise
+			id=arm3 width=80 height=20 color=turquoise
 			refpos=br endpos=tr basepos=ml 
 			[
 				id=finger1 width=10 height=20 color=lightgreen
@@ -50,7 +50,7 @@ refpos=tl basepos=tl
 				refpos=bc endpos=br basepos=tl
 			]
 
-			id=arm2 width=80 height=20 color=turquoise
+			id=arm4 width=80 height=20 color=turquoise
 			refpos=bl basepos=mr endpos=tl 
 			[
 				id=finger1 width=10 height=20 color=lightgreen
