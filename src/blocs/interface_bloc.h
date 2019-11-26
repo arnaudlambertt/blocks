@@ -20,7 +20,7 @@ class InterfaceBloc
         Bloc* m_current;
         std::unique_ptr<Bloc> m_room;
         std::vector<std::string> m_history;
-        std::vector<Bloc*> m_listCourant;
+        std::vector<Bloc*> m_listCurrent;
 };
 
 #endif // INTERFACEBLOC_H

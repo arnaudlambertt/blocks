@@ -52,32 +52,33 @@ void InterfaceBloc::userInterface()
 {
     //std::vector<std::string> tabCibles();
     std::string saisie, cible;
+    std::istringstream iss;
+    int modulo = 0;
     do
     {
-
-
-        //std::cin.ignore();
         std::getline(std::cin, saisie);
 
+        //std::cout << saisie << std::endl;
 
 
         if(saisie.find('@') != std::string::npos)
         {
             saisie[saisie.find('@')] = ' ';
-            std::istringstream iss(saisie);
+
+            iss.str(saisie);
             iss >> cible;
             std::cout << cible << std::endl;
-            m_current = m_room->searchId(cible);
-            std::cout << m_current;
-            if(saisie.find('%') != std::string::npos)
-                saisie[saisie.find('%')] = ' ';
+            m_room->searchId(cible, m_listCurrent);
 
 
-
-
+            //std::cout << m_current;
         }
 
+/// 48 -> 57
 
+
+
+    iss.clear();
     }
     while(saisie != "exit");
 }

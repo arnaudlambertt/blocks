@@ -14,6 +14,10 @@ int main()
     InterfaceBloc ib("roms/simplebot.rom");
     ib.afficherHelp();
     ib.userInterface();
+//
+///    std::string test = "dzqzq6RG%d",temp;
+///    temp = test.substr(test.find('6'));
+///    std::cout << temp;
 
 
 //    Svgfile::s_verbose = false;

@@ -238,25 +238,57 @@ void Bloc::dessiner(Svgfile &svgout)
         i->dessiner(svgout);
 }
 
-Bloc* Bloc::searchId(std::string id)
+void Bloc::searchId(const std::string &id, std::vector<Bloc*> &listCurrent)
 {
-    Bloc* bloc = nullptr;
-    if(m_id == id)
-    {
-        std::cout << m_id << "FOUND" << std::endl;
-        return this;
-    }
-    else
-        for(size_t i=0; i<m_enfants.size();)
-        {
-            if(m_enfants[i]->searchId(id) != nullptr)
-            {
-                bloc = m_enfants[i].get();
-                break;
-            }
-            ++i;
-            return m_enfants[i]->searchId(id);
-        }
+    std::size_t found;
 
-    return bloc;
+//    found=m_id.find(id);
+//    if (found!=std::string::npos)
+    std::cout << "gg" << std::endl;
+    if(testId(id))
+        listCurrent.push_back(this);
+    //std::cout << m_id << "FOUND" << std::endl;
+
+    for(auto &i: m_enfants)
+        i->searchId(id, listCurrent);
+
+}
+
+bool Bloc::testId(const std::string &id)   /// : range | [ specific ]| % modulo | ? random
+{
+    std::istringstream iss;
+    std::string idcpy = id;
+    std::size_t temp, test;
+    std::string::size_type sz;
+    int reste,i=0;
+
+//    if(idcpy.find('%') != std::string::npos)
+//    {
+//        idcpy[idcpy.find('%')] = ' ';
+//        iss.str(idcpy);
+//        //iss >> cible >> modulo;
+//    }
+
+    std::cout << idcpy ;
+    for(i=48; i<58 /*&& idcpy.find(i)==std::string::npos */; ++i)
+    {
+        //continue;
+        test = idcpy.find(i);
+
+        if(test != std::string::npos)
+        {
+            temp = test;
+            std::cout << idcpy << idcpy.substr(temp);
+            reste = std::stoi(idcpy.substr(temp),&sz);
+            std::cout << "GG ! " <<reste << std::endl;
+        }
+        else
+            std::cout << "fcq";
+    }
+    return false;
+
+
+    //if(m_idcpy == id[id.size()])
+    //searchId(id, listCurrent);
+    //  std::cout << "VIVE LA VIE" << std::endl;
 }
