@@ -45,6 +45,7 @@ class Bloc
         Coords convertRefposEnfant(const Coords &refposEnfant) const;
         Coords getAbsolute(const Coords &localPos) const;
         Coords getAbsolute(const std::string &localPos) const;
+        void sauvegarde(std::ostream& ofs, int tabulation);
 
     protected:
         Bloc* m_parent; //pointeur parent

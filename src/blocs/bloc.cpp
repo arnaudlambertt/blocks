@@ -398,3 +398,27 @@ bool Bloc::testId(const std::string &id)   /// : range | [ specific ]| % modulo 
     else
         return false;
 }
+
+void Bloc::sauvegarde(std::ostream& ofs, int tabulation)
+{
+    size_t rang = 0;
+
+    if(m_parent != nullptr)
+        for(rang = 0; rang < m_parent->m_enfants.size() && m_parent->m_enfants[rang].get() != this ; ++rang)
+            continue;
+
+    if(rang > 0)
+        ofs << "\n";
+
+    ofs << std::string (tabulation, '\t') << "id=" << m_id << "\n\n" ;
+    if (m_enfants.size())
+    {
+        ofs << std::string(tabulation, '\t') << "[\n";
+
+        for(auto &i : m_enfants)
+            i->sauvegarde(ofs, tabulation+1);
+
+        ofs << std::string(tabulation, '\t') << "]\n";
+    }
+}
+
