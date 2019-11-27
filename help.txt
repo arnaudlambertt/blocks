@@ -12,7 +12,3 @@
  move			Deplacer un objet
  rotate			Tourner un objet
  undo / redo		Precedent / Suivant
-
-
-
-
