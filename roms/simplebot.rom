@@ -1,14 +1,17 @@
 id=room57 width=1000 height=400 color=azure border=darkgrey	
-refpos=tl basepos=tl
+refpos=tl basepos=tl rotate=50
 [
 	id=ground width=100% height=10% color=darkgrey
 	refpos=bc basepos=tc
 	[
+		id=bin shape=disk radius=25 color=lightblue
+		refpos=tr refposx=-25% basepos=bc rotate=33
+		
 		id=box1 width=30 height=20 color=peru
 		refpos=tc refposx=25% basepos=bc
 
 		id=bot1 width=60 height=110 color=lightseagreen
-		refpos=tl basepos=bc endpos=tr translate=0.3
+		refpos=tl endpos=tr basepos=bc translate=0.6
 		[
 			width=8 height=8 color=orange
 			refpos=tr refposx=-15 refposy=15
@@ -27,7 +30,7 @@ refpos=tl basepos=tl
 			]
 
 			id=arm21 width=80 height=20 color=turquoise
-			refpos=bl basepos=mr endpos=tl 
+			refpos=bl endpos=tl basepos=mr
 			[
 				id=finger1 width=10 height=20 color=lightgreen
 				refpos=bc endpos=bl basepos=tr
@@ -38,7 +41,7 @@ refpos=tl basepos=tl
 		]
 
 		id=bot2 width=60 height=110 color=lightseagreen
-		refpos=tl basepos=bc endpos=tr translate=0.6
+		refpos=tl endpos=tr basepos=bc translate=0.6
 		[
 			width=8 height=8 color=turquoise
 			refpos=tr refposx=-15 refposy=15
@@ -57,7 +60,7 @@ refpos=tl basepos=tl
 			]
 
 			id=arm4 width=80 height=20 color=turquoise
-			refpos=bl basepos=mr endpos=tl 
+			refpos=bl endpos=tl basepos=mr
 			[
 				id=finger1 width=10 height=20 color=lightgreen
 				refpos=bc endpos=bl basepos=tr
