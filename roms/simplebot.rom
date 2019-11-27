@@ -17,7 +17,7 @@ refpos=tl basepos=tl
 			refpos=tl refposx=15 refposy=15
 
 			id=arm5 width=80 height=20 color=turquoise
-			refpos=br endpos=tr basepos=ml 
+			refpos=br endpos=tr basepos=ml
 			[
 				id=finger1 width=10 height=20 color=lightgreen
 				refpos=bc endpos=bl basepos=tr

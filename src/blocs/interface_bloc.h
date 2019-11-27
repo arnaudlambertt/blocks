@@ -17,7 +17,7 @@ class InterfaceBloc
         void appliquerActions(std::string action, std::string valeur, std::vector<Bloc*> &listCurrent);
 
         void translater(std::string valeur, std::vector<Bloc*> &listCurrent);
-
+        void pivoter(std::string valeur, std::vector<Bloc*> &listCurrent);
 
     private:
         Bloc* m_current;

@@ -1,5 +1,6 @@
 #include "interface_bloc.h"
 #include "../geometrie/translatable.h"
+#include "../geometrie/rotatable.h"
 
 InterfaceBloc::InterfaceBloc(const std::string &rom)
     :m_current{nullptr}
@@ -148,7 +149,6 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
 {
     std::string::size_type sz;
     double valtranslation = std::stod(valeur, &sz) *0.01;
-    //valtranslation /=100;
     for(auto &i: listCurrent)
         if(Translatable* t = dynamic_cast<Translatable*>(i->getGeometrie()))
         {
@@ -164,6 +164,17 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
     //std::cout << "test" << std::endl;
 }
 
+void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
+{
+        std::string::size_type sz;
+    double valrotation = std::stod(valeur, &sz);
+     for(auto &i: listCurrent)
+        if(Rotatable* r = dynamic_cast<Rotatable*>(i->getGeometrie()))
+            std::cout << '1' << std::endl;
+        else
+            std::cout << '2' << std::endl;
+}
+
 void InterfaceBloc::appliquerActions(std::string action, std::string valeur, std::vector<Bloc*> &listCurrent)
 {
     if(action == "help")
@@ -177,6 +188,13 @@ void InterfaceBloc::appliquerActions(std::string action, std::string valeur, std
         else
             std::cout << "Erreur de format" << std::endl;
     }
+    else if(action == "rotate")
+    {
+        if((valeur[0] >= 48 && valeur[0] <= 57) ||
+                ((valeur[0] == '+' || valeur[0] == '-') &&
+                 (valeur[1] >= 48 && valeur[1] <= 57)))
+            pivoter(valeur, listCurrent);
+        }
 
 
     else if(action != "exit")
