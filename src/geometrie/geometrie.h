@@ -24,6 +24,7 @@ class Geometrie
         virtual std::vector<double> getDimensions() const = 0;
         Bloc* getBloc() const { return m_bloc; }
         void setBloc(Bloc* bloc) { m_bloc = bloc; }
+        double getVraiRotation() const;
 
         virtual Coords convertRefposEnfant(const Coords &refposEnfant) const = 0;
         virtual Coords getAbsolute(const Coords &localPos) const;

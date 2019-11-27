@@ -30,3 +30,10 @@ Coords Geometrie::getAbsolute(const Coords &localPos) const
     return absolute;
 }
 
+double Geometrie::getVraiRotation() const
+{
+    if(m_bloc->getParent() != nullptr)
+        return getRotation() - m_bloc->getParent()->getGeometrie()->getRotation();
+    else
+        return getRotation();
+}

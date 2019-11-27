@@ -9,11 +9,11 @@
 #include "../geometrie/disk_rotatable.h"
 #include "../geometrie/triangle_rotatable.h"
 
-Bloc::Bloc()
-    : Bloc{nullptr, "emptyId", std::make_unique<RectangleRotatable>(200,100,"tl","mc",0.0,0.0,33), "orange", "black"}
-{
-    //ctor
-}
+//Bloc::Bloc()
+//    : Bloc{nullptr, "emptyId", std::make_unique<RectangleRotatable>(200,100,"tl","mc",0.0,0.0,33), "orange", "black"}
+//{
+//    //ctor
+//}
 
 Bloc::Bloc(std::istream& ifs, Bloc* parent, bool &child)
 {
@@ -86,11 +86,11 @@ Bloc::Bloc(std::istream& ifs, Bloc* parent, bool &child)
 }
 
 
-Bloc::Bloc(Bloc* parent,const std::string &id, std::unique_ptr<Geometrie> geometrie, const std::string &color, const std::string &border)
-    : m_parent{parent}, m_id{id}, m_color{color}, m_border{border}, m_geometrie(std::move(geometrie))
-{
-    m_geometrie->setBloc(this);
-}
+//Bloc::Bloc(Bloc* parent,const std::string &id, std::unique_ptr<Geometrie> geometrie, const std::string &color, const std::string &border)
+//    : m_parent{parent}, m_id{id}, m_color{color}, m_border{border}, m_geometrie(std::move(geometrie))
+//{
+//    m_geometrie->setBloc(this);
+//}
 
 void Bloc::initMembers(std::map<std::string,std::string> &infos)
 {
@@ -226,6 +226,31 @@ void Bloc::initMembers(std::map<std::string,std::string> &infos)
 
     if(m_parent != nullptr)
         m_geometrie->setRotation(m_geometrie->getRotation() + m_parent->getGeometrie()->getRotation());
+
+    if (geometrie == "disk" && infos.find("radius") != infos.end())
+        m_info.dimension1 = infos["radius"];
+
+    else
+    {
+        if(infos.find("width") != infos.end())
+            m_info.dimension1 = infos["width"];
+        if(infos.find("height") != infos.end())
+            m_info.dimension2 = infos["height"];
+    }
+    if(infos.find("refpos") != infos.end())
+        m_info.refpos = infos["refpos"];
+    if(infos.find("refposx") != infos.end())
+        m_info.refposX = infos["refposx"];
+    if(infos.find("refposy") != infos.end())
+        m_info.refposY = infos["refposy"];
+    if(translation != -1.0 && infos.find("endpos") != infos.end())
+        m_info.endpos = infos["endpos"];
+    if(infos.find("basepos") != infos.end())
+        m_info.basepos = infos["basepos"];
+    if(infos.find("translate") != infos.end())
+        m_info.translation = infos["translate"];
+
+
 }
 
 Coords Bloc::convertRefposEnfant(const Coords &refposEnfant) const
@@ -428,17 +453,60 @@ void Bloc::sauvegarde(std::ostream& ofs, int tabulation)
             continue;
 
     if(rang > 0)
-        ofs << "\n";
+        ofs << std::endl;
 
-    ofs << std::string (tabulation, '\t') << "id=" << m_id << "\n\n" ;
+    ofs << std::string (tabulation, '\t');
+    if(m_id != "")
+        ofs << "id=" << m_id << " ";
+
+    if(dynamic_cast<Losange*>(m_geometrie.get()))
+        ofs << "shape=losange width=" << m_info.dimension1 << " height=" << m_info.dimension2;
+    else if(dynamic_cast<Triangle*>(m_geometrie.get()))
+        ofs << "shape=triangle width=" << m_info.dimension1 << " height=" << m_info.dimension2;
+    else if(dynamic_cast<Disk*>(m_geometrie.get()))
+        ofs << "shape=disk radius=" << m_info.dimension1;
+    else
+        ofs << "width=" << m_info.dimension1 << " height=" << m_info.dimension2;
+
+    ofs << " color=" << m_color;
+
+    if(m_border != "black")
+        ofs << " border=" << m_border;
+
+    ofs << std::endl << std::string (tabulation, '\t');
+
+    ofs << "refpos=" << m_info.refpos << " ";
+
+    if(m_info.refposX != "")
+        ofs << "refposx=" << m_info.refposX << " ";
+
+    if(m_info.refposY != "")
+        ofs << "refposy=" << m_info.refposY << " ";
+
+    if(dynamic_cast<Translatable*>(m_geometrie.get()))
+        ofs << "endpos=" << m_info.endpos << " ";
+
+    if(m_info.basepos != "")
+        ofs << "basepos=" << m_info.basepos << " ";
+
+    if(Translatable* tr = dynamic_cast<Translatable*>(m_geometrie.get()))
+            if(m_info.translation != "" || tr->getTranslation() != 0.5)
+                ofs << "translate=" << tr->getTranslation() << " ";
+
+    if(dynamic_cast<Rotatable*>(m_geometrie.get()))
+        ofs << "rotate=" << m_geometrie->getVraiRotation() << " ";
+
+    ofs << std::endl;
+
     if (m_enfants.size())
     {
-        ofs << std::string(tabulation, '\t') << "[\n";
+        ofs << std::string(tabulation, '\t') << "[" << std::endl;
 
         for(auto &i : m_enfants)
             i->sauvegarde(ofs, tabulation+1);
 
-        ofs << std::string(tabulation, '\t') << "]\n";
+        ofs << std::string(tabulation, '\t') << "]";
+        if(m_parent != nullptr)
+            ofs << std::endl;
     }
 }
-

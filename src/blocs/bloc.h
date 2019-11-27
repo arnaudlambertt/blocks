@@ -12,12 +12,26 @@
 #include <memory>
 #include <sstream>
 
+struct Save
+{
+    std::string dimension1 = "50";
+    std::string dimension2 = "50";
+
+    std::string refpos = "br";
+    std::string refposX = "";
+    std::string refposY = "";
+
+    std::string endpos = "br";
+    std::string basepos = "";
+    std::string translation = "";
+};
+
 class Bloc
 {
     public:
-        Bloc();
-        Bloc(Bloc* parent, const std::string &id, std::unique_ptr<Geometrie> geometrie,
-             const std::string &color, const std::string &border);
+//        Bloc();
+//        Bloc(Bloc* parent, const std::string &id, std::unique_ptr<Geometrie> geometrie,
+//             const std::string &color, const std::string &border);
         Bloc(std::istream& ifs, Bloc* parent, bool &child);
         virtual ~Bloc() = default;
 
@@ -58,6 +72,7 @@ class Bloc
         std::string m_border; //couleur bordure
 
         std::unique_ptr<Geometrie> m_geometrie;
+        Save m_info;
 
 };
 
