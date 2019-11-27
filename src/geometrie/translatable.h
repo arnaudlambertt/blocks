@@ -6,11 +6,11 @@
 class Translatable
 {
     public:
-        Translatable(const Coords &startpos, const std::string &endpos, const double &translation);
+        Translatable(Geometrie* geometrie,const Coords &startpos, const std::string &endpos, const double &translation);
         virtual ~Translatable();
 
-        void calcRefpos(Coords &refpos);
-        void translater(const double &translation, Coords &refpos);
+        void calcRefpos();
+        void translater(double &translation);
 
         Coords getEndpos() { return m_endpos; }
         void setEndpos(Coords val) { m_endpos = val; }
@@ -23,6 +23,7 @@ class Translatable
         Coords m_startpos;
         Coords m_endpos;
         double m_translation;
+        Geometrie* m_geometrie;
 };
 
 #endif // TRANSLATABLE_H

@@ -47,10 +47,7 @@ void InterfaceBloc::afficherHelp()const
     std::cout << std::endl;
 }
 
-void InterfaceBloc::translater()
-{
 
-}
 
 void InterfaceBloc::userInterface()
 {
@@ -60,6 +57,12 @@ void InterfaceBloc::userInterface()
     std::vector<std::string> cibTab;
     do
     {
+
+        if(m_current != nullptr)
+            if(m_listCurrent.size() == 1)
+            std::cout << m_current->getId() << "> ";
+        else
+            std::cout << m_current->getName() << "> ";
         std::getline(std::cin, saisie);
 
         //std::cout << saisie << std::endl;
@@ -67,10 +70,11 @@ void InterfaceBloc::userInterface()
 
         if(saisie.find('@') != std::string::npos)
         {
+            m_listCurrent.clear();
             saisie[saisie.find('@')] = ' ';
 
-        while(saisie.find('.') != std::string::npos)
-            saisie[saisie.find('.')] = ' ';
+            while(saisie.find('.') != std::string::npos)
+                saisie[saisie.find('.')] = ' ';
             iss.str(saisie);
             while(iss >> cible)
                 cibTab.push_back(cible);
@@ -78,17 +82,38 @@ void InterfaceBloc::userInterface()
 //                for(auto &i : cibTab)
 //                    std::cout << i << std::endl;
             m_room->searchId(cibTab, m_listCurrent);
-                cibTab.clear();
+            cibTab.clear();
 
+            if(m_listCurrent.size()==1)
+                m_current = m_listCurrent[0];
+            else if(m_listCurrent.size() > 1)
+            {
+                bool blindage = true;
+                for (auto i : m_listCurrent)
+                {
+                //std::cout << "courant: "<< i->getId() << std::endl;
+                    if (i->getName() != m_listCurrent[0]->getName())
+                    {
+                        blindage = false;
+                        //std::cout << i->getName() << " | " << m_listCurrent[0]->getName() << std::endl;
+                    }
+                }
+                if (blindage)
+                    m_current = m_listCurrent[0];
+                else
+                    m_current = nullptr;
 
-            //std::cout << m_current;
-        }
+            }
+            else
+                m_current = nullptr;
+
+            }
 
 /// 48 -> 57
 
 
 
-    iss.clear();
+        iss.clear();
     }
     while(saisie != "exit");
 }
@@ -98,7 +123,11 @@ void InterfaceBloc::sauvegarder()
     std::ofstream file_output{"roms/save.rom"};
     if ( !file_output )
         throw std::runtime_error( "Can't open/create roms/save.rom" );
-    else
-        if (m_room != nullptr)
-            m_room->sauvegarde(file_output,0);
+    else if (m_room != nullptr)
+        m_room->sauvegarde(file_output,0);
+}
+
+void InterfaceBloc::translater()
+{
+
 }

@@ -4,7 +4,7 @@ id=room57
 	id=ground
 
 	[
-		id=box
+		id=box1
 
 
 		id=bot1
@@ -13,7 +13,10 @@ id=room57
 			id=
 
 
-			id=arm
+			id=
+
+
+			id=arm5
 
 			[
 				id=finger1
@@ -37,6 +40,9 @@ id=room57
 		id=bot2
 
 		[
+			id=
+
+
 			id=
 
 

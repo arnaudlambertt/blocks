@@ -251,6 +251,26 @@ void Bloc::dessiner(Svgfile &svgout)
         i->dessiner(svgout);
 }
 
+std::string Bloc::getName()
+{
+    bool blindage = false;
+    std::string name;
+
+    for(size_t i= m_id.size()-1; i>=0; --i)
+    {
+        if( blindage && ( m_id[i] < 48 || m_id[i] > 57))
+        {
+            name = m_id.substr(0,i+1);
+            break;
+        }
+        else if ( m_id[i] < 48 || m_id[i] > 57)
+            break;
+        else
+            blindage = true;
+    }
+    return name;
+}
+
 void Bloc::searchId(std::vector<std::string> id, std::vector<Bloc*> &listCurrent)
 {
     //std::cout << "search id" << std::endl;
@@ -393,7 +413,7 @@ bool Bloc::testId(const std::string &id)   /// : range | [ specific ]| % modulo 
             return false;
 
     }
-    else if(cpym_id.find(id) != std::string::npos)
+    else if(cpym_id.find(id) == 0)
         return true;
     else
         return false;

@@ -9,7 +9,7 @@ class TriangleTranslatable : public Triangle, public Translatable
     public:
         TriangleTranslatable(const double &width, const double &height,const std::string &basepos,
                             const std::string &refpos, const double &refposX, const double &refposY,
-                            const std::string &endpos, const double &translation);
+                            const std::string &endpos, double &translation);
 
         virtual ~TriangleTranslatable();
 

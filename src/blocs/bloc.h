@@ -27,6 +27,7 @@ class Bloc
         void setParent(Bloc* val) { m_parent = val; }
 
         std::string getId() { return m_id; }
+        std::string getName();
         bool testId(const std::string &id);
         void searchId(std::vector<std::string> id, std::vector<Bloc*> &listCurrent);
 

@@ -5,10 +5,10 @@
 RectangleTranslatable::RectangleTranslatable(const double &width, const double &height,
 const std::string &basepos,
 const std::string &refpos, const double &refposX, const double &refposY,
-const std::string &endpos, const double &translation)
-:   Rectangle{width,height,basepos,refpos,refposX,refposY},Translatable{Rectangle::m_refpos,endpos,translation}
+const std::string &endpos, double &translation)
+:   Rectangle{width,height,basepos,refpos,refposX,refposY},Translatable{this,m_refpos,endpos,translation}
 {
-    translater(translation,m_refpos);
+    translater(translation);
 }
 
 RectangleTranslatable::~RectangleTranslatable()
@@ -21,3 +21,4 @@ void RectangleTranslatable::dessiner(Svgfile& svgout)
     dessinerAxe(m_bloc->getParent(), svgout);
     Rectangle::dessiner(svgout);
 }
+

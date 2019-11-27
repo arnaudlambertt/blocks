@@ -9,7 +9,7 @@ class DiskTranslatable : public Disk, public Translatable
     public:
         DiskTranslatable(const double &radius,const std::string &basepos,
                             const std::string &refpos, const double &refposX, const double &refposY,
-                            const std::string &endpos, const double &translation);
+                            const std::string &endpos, double &translation);
 
         virtual ~DiskTranslatable();
 

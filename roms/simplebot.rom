@@ -4,7 +4,7 @@ refpos=tl basepos=tl
 	id=ground width=120% height=10% color=darkgrey
 	refpos=bc basepos=tc
 	[
-		id=box width=30 height=20 color=peru
+		id=box1 width=30 height=20 color=peru
 		refpos=tc refposx=25% basepos=bc
 
 		id=bot1 width=60 height=110 color=lightseagreen
@@ -13,7 +13,10 @@ refpos=tl basepos=tl
 			width=8 height=8 color=orange
 			refpos=tr refposx=-15 refposy=15
 
-			id=arm width=80 height=20 color=turquoise
+			width=8 height=8 color=orange
+			refpos=tl refposx=15 refposy=15
+
+			id=arm5 width=80 height=20 color=turquoise
 			refpos=br endpos=tr basepos=ml 
 			[
 				id=finger1 width=10 height=20 color=lightgreen
@@ -37,8 +40,11 @@ refpos=tl basepos=tl
 		id=bot2 width=60 height=110 color=lightseagreen
 		refpos=tl basepos=bc endpos=tr translate=0.6
 		[
-			width=88 height=8 color=orange
+			width=8 height=8 color=turquoise
 			refpos=tr refposx=-15 refposy=15
+
+			width=8 height=8 color=red
+			refpos=tl refposx=15 refposy=15
 
 			id=arm345 width=80 height=20 color=turquoise
 			refpos=br endpos=tr basepos=ml 

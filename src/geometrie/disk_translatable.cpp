@@ -4,10 +4,10 @@
 DiskTranslatable::DiskTranslatable(const double &radius,
                                    const std::string &basepos,
                                    const std::string &refpos, const double &refposX, const double &refposY,
-                                   const std::string &endpos, const double &translation)
-    :   Disk{radius,basepos,refpos,refposX,refposY},Translatable{m_refpos,endpos,translation}
+                                   const std::string &endpos, double &translation)
+    :   Disk{radius,basepos,refpos,refposX,refposY},Translatable{this,m_refpos,endpos,translation}
 {
-    translater(translation,m_refpos);
+    translater(translation);
 }
 
 DiskTranslatable::~DiskTranslatable()
