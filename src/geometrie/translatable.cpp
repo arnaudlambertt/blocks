@@ -24,8 +24,9 @@ void Translatable::dessinerAxe(const Bloc* parent, Svgfile &svgout)
                         parent->getAbsolute(m_endpos).getX(),parent->getAbsolute(m_endpos).getY(), "red");
 }
 
-void Translatable::translater(double &translation)
+void Translatable::translater(double translation)
 {
+    std::cout << translation << std::endl;
     translation = std::max(0.0,std::min(translation,1.0));
     m_translation = translation;
     calcRefpos();

@@ -68,63 +68,66 @@ void InterfaceBloc::userInterface()
         }
 
         std::getline(std::cin, saisie);
-        iss.str(saisie);
-        //std::cout << saisie << std::endl;
-
-
-        if(saisie.find('@') != std::string::npos)
+        if(saisie == "@")
+            std::cout << "erreur de format" << std::endl;
+        else
         {
-            iss >> cibleTemp;
-            m_listCurrent.clear();
-            cibleTemp[cibleTemp.find('@')] = ' ';
+            iss.str(saisie);
 
-            while(cibleTemp.find('.') != std::string::npos)
-                cibleTemp[cibleTemp.find('.')] = ' ';
-            iss2.str(cibleTemp);
-            while(iss2 >> cible)
-                cibTab.push_back(cible);
-            iss2.clear();
 
-//                for(auto &i : cibTab)
-//                    std::cout << i << std::endl;
-            m_room->searchId(cibTab, m_listCurrent);
-            cibTab.clear();
 
-            if(m_listCurrent.size()==1)
-                m_current = m_listCurrent[0];
-            else if(m_listCurrent.size() > 1)
+            if(saisie.find('@') != std::string::npos)
             {
-                bool blindage = true;
-                for (auto i : m_listCurrent)
-                {
-                    //std::cout << "courant: "<< i->getId() << std::endl;
-                    if (i->getName() != m_listCurrent[0]->getName())
-                    {
-                        blindage = false;
-                        //std::cout << i->getName() << " | " << m_listCurrent[0]->getName() << std::endl;
-                    }
-                }
-                if (blindage)
+                iss >> cibleTemp;
+                m_listCurrent.clear();
+                cibleTemp[cibleTemp.find('@')] = ' ';
+
+                while(cibleTemp.find('.') != std::string::npos)
+                    cibleTemp[cibleTemp.find('.')] = ' ';
+                iss2.str(cibleTemp);
+                while(iss2 >> cible)
+                    cibTab.push_back(cible);
+                iss2.clear();
+
+
+                m_room->searchId(cibTab, m_listCurrent);
+                cibTab.clear();
+
+                if(m_listCurrent.size()==1)
                     m_current = m_listCurrent[0];
+                else if(m_listCurrent.size() > 1)
+                {
+                    bool blindage = true;
+                    for (auto i : m_listCurrent)
+                    {
+                        //std::cout << "courant: "<< i->getId() << std::endl;
+                        if (i->getName() != m_listCurrent[0]->getName())
+                        {
+                            blindage = false;
+                            //std::cout << i->getName() << " | " << m_listCurrent[0]->getName() << std::endl;
+                        }
+                    }
+                    if (blindage)
+                        m_current = m_listCurrent[0];
+                    else
+                        m_current = nullptr;
+
+                }
                 else
                     m_current = nullptr;
 
             }
+            if(iss)
+                iss >> action;
+            if(iss)
+                iss >> valeur;
+
+            //std::cout << action << " | " << valeur << std::endl;
+            if(action != "")
+                appliquerActions(action, valeur, m_listCurrent);
             else
-                m_current = nullptr;
-
+                std::cout << "Aucune fonction saisie" << std::endl;
         }
-        if(iss)
-            iss >> action;
-        if(iss)
-            iss >> valeur;
-
-        //std::cout << action << " | " << valeur << std::endl;
-        if(action != "")
-            appliquerActions(action, valeur, m_listCurrent);
-        else
-            std::cout << "Aucune fonction saisie" << std::endl;
-
         iss.clear();
         valeur.clear();
         action.clear();
@@ -151,13 +154,12 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
         {
             if (valeur[0] == '+' || valeur[0] == '-')
             {
-                valtranslation += t->getTranslation();
-                t->translater(valtranslation );
+                t->translater(valtranslation + t->getTranslation());
             }
             else
-                std::cout << valeur << std::endl;
-            t->translater(valtranslation);
-            std::cout << "test" << std::endl;
+            {
+                t->translater(valtranslation);
+            }
         }
     //std::cout << "test" << std::endl;
 }
@@ -167,10 +169,14 @@ void InterfaceBloc::appliquerActions(std::string action, std::string valeur, std
     if(action == "help")
         afficherHelp();
     else if(action == "move")
-        if((valeur[0] >= 48 && valeur[0] <= 57) || valeur[0] == '+' || valeur[0] == '-')
+    {
+        if((valeur[0] >= 48 && valeur[0] <= 57) ||
+                ((valeur[0] == '+' || valeur[0] == '-') &&
+                 (valeur[1] >= 48 && valeur[1] <= 57)))
             translater(valeur, listCurrent);
         else
             std::cout << "Erreur de format" << std::endl;
+    }
 
 
     else if(action != "exit")

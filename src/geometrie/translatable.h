@@ -10,7 +10,7 @@ class Translatable
         virtual ~Translatable();
 
         void calcRefpos();
-        void translater(double &translation);
+        void translater(double translation);
 
         Coords getEndpos() { return m_endpos; }
         void setEndpos(Coords val) { m_endpos = val; }
