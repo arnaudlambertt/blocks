@@ -14,7 +14,9 @@ class InterfaceBloc
         void afficherHelp()const;
         void sauvegarder();
 
-        void translater();
+        void appliquerActions(std::string action, std::string valeur, std::vector<Bloc*> &listCurrent);
+
+        void translater(std::string valeur, std::vector<Bloc*> &listCurrent);
 
 
     private:
