@@ -428,17 +428,34 @@ void Bloc::sauvegarde(std::ostream& ofs, int tabulation)
             continue;
 
     if(rang > 0)
-        ofs << "\n";
+        ofs << std::endl;
 
-    ofs << std::string (tabulation, '\t') << "id=" << m_id << "\n\n" ;
+    ofs << std::string (tabulation, '\t');
+    if(m_id != "")
+        ofs << "id=" << m_id << " ";
+
+    if(dynamic_cast<Losange*>(m_geometrie.get()))
+        ofs << "shape=losange width=" << getDimensions()[0] << " height=" << getDimensions()[1];
+    else if(dynamic_cast<Triangle*>(m_geometrie.get()))
+        ofs << "shape=triangle width=" << getDimensions()[0] << " height=" << getDimensions()[1];
+    else if(dynamic_cast<Disk*>(m_geometrie.get()))
+        ofs << "shape=disk radius=" << getDimensions()[0]*0.5;
+    else
+        ofs << "width=" << getDimensions()[0] << " height=" << getDimensions()[1];
+
+    ofs << std::endl;
+
+    ofs << std::string (tabulation, '\t');
+
+    ofs << std::endl;
+
     if (m_enfants.size())
     {
-        ofs << std::string(tabulation, '\t') << "[\n";
+        ofs << std::string(tabulation, '\t') << "[" << std::endl;
 
         for(auto &i : m_enfants)
             i->sauvegarde(ofs, tabulation+1);
 
-        ofs << std::string(tabulation, '\t') << "]\n";
+        ofs << std::string(tabulation, '\t') << "]" << std::endl;
     }
 }
-
