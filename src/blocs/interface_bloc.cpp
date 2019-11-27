@@ -1,4 +1,5 @@
 #include "interface_bloc.h"
+#include "../geometrie/translatable.h"
 
 InterfaceBloc::InterfaceBloc(const std::string &rom)
     :m_current{nullptr}
@@ -57,7 +58,7 @@ void InterfaceBloc::userInterface()
     std::vector<std::string> cibTab;
     do
     {
-
+        dessiner();
         if(m_current != nullptr)
         {
             if(m_listCurrent.size() == 1)
@@ -120,7 +121,7 @@ void InterfaceBloc::userInterface()
 
         //std::cout << action << " | " << valeur << std::endl;
         if(action != "")
-        appliquerActions(action, valeur, m_listCurrent);
+            appliquerActions(action, valeur, m_listCurrent);
         else
             std::cout << "Aucune fonction saisie" << std::endl;
 
@@ -142,18 +143,36 @@ void InterfaceBloc::sauvegarder()
 
 void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurrent)
 {
-        for(auto i: listCurrent)
-            std::cout << i->getId();
+    std::string::size_type sz;
+    double valtranslation = std::stod(valeur, &sz) *0.01;
+    //valtranslation /=100;
+    for(auto &i: listCurrent)
+        if(Translatable* t = dynamic_cast<Translatable*>(i->getGeometrie()))
+        {
+            if (valeur[0] == '+' || valeur[0] == '-')
+            {
+                valtranslation += t->getTranslation();
+                t->translater(valtranslation );
+            }
+            else
+                std::cout << valeur << std::endl;
+            t->translater(valtranslation);
+            std::cout << "test" << std::endl;
+        }
+    //std::cout << "test" << std::endl;
 }
 
 void InterfaceBloc::appliquerActions(std::string action, std::string valeur, std::vector<Bloc*> &listCurrent)
 {
-        if(action == "help")
-            afficherHelp();
-        else if(action == "move")
+    if(action == "help")
+        afficherHelp();
+    else if(action == "move")
+        if((valeur[0] >= 48 && valeur[0] <= 57) || valeur[0] == '+' || valeur[0] == '-')
             translater(valeur, listCurrent);
-
-
         else
-            std::cout << "Fonction inconnue" << std::endl;
+            std::cout << "Erreur de format" << std::endl;
+
+
+    else if(action != "exit")
+        std::cout << "Fonction inconnue" << std::endl;
 }
