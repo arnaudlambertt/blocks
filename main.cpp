@@ -14,7 +14,6 @@ int main()
     InterfaceBloc ib("roms/simplebot.rom");
     ib.afficherHelp();
     ib.userInterface();
-    ib.sauvegarder();
 //
 ///    std::string test = "dzqzq6RG%d",temp;
 ///    temp = test.substr(test.find('6'));
