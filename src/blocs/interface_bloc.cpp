@@ -122,12 +122,15 @@ void InterfaceBloc::userInterface()
                 iss >> action;
             if(iss)
                 iss >> valeur;
-
-            //std::cout << action << " | " << valeur << std::endl;
-            if(action != "")
-                appliquerActions(action, valeur, m_listCurrent);
+            if(m_current != nullptr)
+            {
+                if(action != "")
+                    appliquerActions(action, valeur, m_listCurrent);
+                else
+                    std::cout << "Aucune fonction saisie" << std::endl;
+            }
             else
-                std::cout << "Aucune fonction saisie" << std::endl;
+                std::cout << "Aucune cible selectionnee" << std::endl;
         }
         iss.clear();
         valeur.clear();
@@ -155,13 +158,9 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
         if(Translatable* t = dynamic_cast<Translatable*>(i->getGeometrie()))
         {
             if (valeur[0] == '+' || valeur[0] == '-')
-            {
                 t->translater(valtranslation + t->getTranslation());
-            }
             else
-            {
                 t->translater(valtranslation);
-            }
         }
         else
             std::cout << "La cible " << i->getId() << " n'est pas translatable" << std::endl;
@@ -172,10 +171,8 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
 {
     std::string::size_type sz;
     double valrotation = std::stod(valeur, &sz);
-    std::cout << valrotation << std::endl;
     for(auto &i: listCurrent)
     {
-
         if(dynamic_cast<Rotatable*>(i->getGeometrie()))
         {
             if (valeur[0] == '+' || valeur[0] == '-')
@@ -185,7 +182,6 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
         }
         else
             std::cout << "La cible " << i->getId() << " n'est pas pivotable" << std::endl;
-
     }
 }
 
