@@ -40,13 +40,13 @@ double Geometrie::getVraiRotation() const
 
 void Geometrie::setNewRotation(const double &rotation)
 {
-    std::cout << rotation ;
+    double nouv, ancien = m_rotation;
     if(m_bloc->getParent() != nullptr)
-        setRotation(rotation + m_bloc->getParent()->getGeometrie()->getVraiRotation());
+        setRotation(nouv = rotation + m_bloc->getParent()->getGeometrie()->getRotation());
     else
-        setRotation(rotation);
+        setRotation(nouv = rotation);
     std::cout << m_rotation << " | " << m_bloc->getId() << std::endl;
     for(auto &i : m_bloc->getEnfants())
-        i->getGeometrie()->setNewRotation(i->getGeometrie()->getRotation());
+        i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation()+nouv-ancien);
 
 }
