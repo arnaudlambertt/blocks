@@ -15,7 +15,7 @@ int main()
     ib.afficherHelp();
     ib.userInterface();
     ib.dessiner();
-    ib.sauvegarder();
+//  ib.sauvegarder();
 //
 ///    std::string test = "dzqzq6RG%d",temp;
 ///    temp = test.substr(test.find('6'));
