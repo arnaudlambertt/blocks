@@ -15,10 +15,7 @@ InterfaceBloc::InterfaceBloc(const std::string &rom)
     {
         bool useless = true;
         m_room = std::make_unique<Bloc>(file_input, nullptr,useless);
-        m_file = rom;
     }
-
-    //ctor
 }
 
 InterfaceBloc::~InterfaceBloc()
@@ -146,13 +143,38 @@ void InterfaceBloc::userInterface()
     while(saisie != "exit");
 }
 
-void InterfaceBloc::sauvegarder()
+void InterfaceBloc::sauvegarder(std::string &saveFile)
 {
-    std::ofstream file_output{"roms/save.rom"};
-    if ( !file_output )
-        throw std::runtime_error( "Can't open/create roms/save.rom" );
-    else if (m_room != nullptr)
+    std::ofstream file_output;
+
+    if(saveFile.find(".rom") != saveFile.size()-4)
+        saveFile += ".rom";
+
+    std::string ecraser;
+
+    while( std::ifstream {"roms/" + saveFile} && ecraser != "oui")
+    {
+            std::cout << "Le fichier " << saveFile << " existe deja, voulez-vous l'ecraser? " << std::endl << "oui - non" ;
+            do
+                std::cin >> ecraser;
+            while(ecraser != "oui" && ecraser != "non");
+
+            if(ecraser == "non")
+            {
+                std::cout << "Saisir le nom du nouveau fichier de sauvegarde" << std::endl;
+                std::cin >> saveFile;
+
+                if(saveFile.find(".rom") != saveFile.size()-4)
+                    saveFile += ".rom";
+            }
+    }
+
+    if (m_room != nullptr)
+    {
+        file_output = std::ofstream {saveFile};
         m_room->sauvegarde(file_output,0);
+    }
+
 }
 
 void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurrent)

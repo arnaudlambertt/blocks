@@ -12,7 +12,7 @@ class InterfaceBloc
 
         void dessiner(bool &id, bool &ruler, std::vector<Bloc*> &listCurrent);
         void afficherHelp()const;
-        void sauvegarder();
+        void sauvegarder(std::string &saveFile);
 
         void store();
 
@@ -23,9 +23,7 @@ class InterfaceBloc
 
     private:
         Bloc* m_current;
-        std::string m_file;
         std::unique_ptr<Bloc> m_room;
-        std::vector<std::string> m_history;
         std::vector<Bloc*> m_listCurrent;
         std::string m_store;
 };
