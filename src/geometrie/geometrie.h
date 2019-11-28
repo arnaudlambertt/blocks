@@ -25,6 +25,7 @@ class Geometrie
         Bloc* getBloc() const { return m_bloc; }
         void setBloc(Bloc* bloc) { m_bloc = bloc; }
         double getVraiRotation() const;
+        void setNewRotation(const double &rotation);
 
         virtual Coords convertRefposEnfant(const Coords &refposEnfant) const = 0;
         virtual Coords getAbsolute(const Coords &localPos) const;

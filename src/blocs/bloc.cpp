@@ -510,3 +510,11 @@ void Bloc::sauvegarde(std::ostream& ofs, int tabulation)
             ofs << std::endl;
     }
 }
+
+std::vector<Bloc*> Bloc::getEnfants()
+{
+    std::vector<Bloc*> enfants;
+    for(auto &i : m_enfants)
+        enfants.push_back(i.get());
+    return enfants;
+}

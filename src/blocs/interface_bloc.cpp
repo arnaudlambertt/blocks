@@ -57,9 +57,9 @@ void InterfaceBloc::userInterface()
     std::string saisie, cible, cibleTemp, action = "", valeur = "";
     std::istringstream iss, iss2;
     std::vector<std::string> cibTab;
+    dessiner();
     do
     {
-        dessiner();
         if(m_current != nullptr)
         {
             if(m_listCurrent.size() == 1)
@@ -132,6 +132,7 @@ void InterfaceBloc::userInterface()
         iss.clear();
         valeur.clear();
         action.clear();
+        dessiner();
     }
     while(saisie != "exit");
 }
@@ -150,6 +151,7 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
     std::string::size_type sz;
     double valtranslation = std::stod(valeur, &sz) *0.01;
     for(auto &i: listCurrent)
+    {
         if(Translatable* t = dynamic_cast<Translatable*>(i->getGeometrie()))
         {
             if (valeur[0] == '+' || valeur[0] == '-')
@@ -161,18 +163,30 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
                 t->translater(valtranslation);
             }
         }
-    //std::cout << "test" << std::endl;
+        else
+            std::cout << "La cible " << i->getId() << " n'est pas translatable" << std::endl;
+    }
 }
 
 void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
 {
-        std::string::size_type sz;
+    std::string::size_type sz;
     double valrotation = std::stod(valeur, &sz);
-     for(auto &i: listCurrent)
-        if(Rotatable* r = dynamic_cast<Rotatable*>(i->getGeometrie()))
-            std::cout << '1' << std::endl;
+    std::cout << valrotation << std::endl;
+    for(auto &i: listCurrent)
+    {
+
+        if(dynamic_cast<Rotatable*>(i->getGeometrie()))
+        {
+            if (valeur[0] == '+' || valeur[0] == '-')
+                i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() + valrotation);
+            else
+                i->getGeometrie()->setNewRotation(valrotation);
+        }
         else
-            std::cout << '2' << std::endl;
+            std::cout << "La cible " << i->getId() << " n'est pas pivotable" << std::endl;
+
+    }
 }
 
 void InterfaceBloc::appliquerActions(std::string action, std::string valeur, std::vector<Bloc*> &listCurrent)
@@ -194,7 +208,7 @@ void InterfaceBloc::appliquerActions(std::string action, std::string valeur, std
                 ((valeur[0] == '+' || valeur[0] == '-') &&
                  (valeur[1] >= 48 && valeur[1] <= 57)))
             pivoter(valeur, listCurrent);
-        }
+    }
 
 
     else if(action != "exit")

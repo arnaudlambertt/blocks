@@ -40,6 +40,8 @@ class Bloc
         Bloc* getParent() const { return m_parent; }
         void setParent(Bloc* val) { m_parent = val; }
 
+        std::vector<Bloc*> getEnfants();
+
         std::string getId() { return m_id; }
         std::string getName();
         bool testId(const std::string &id);
