@@ -14,6 +14,8 @@ class InterfaceBloc
         void afficherHelp()const;
         void sauvegarder();
 
+        void store();
+
         void appliquerActions(std::string action, std::string valeur, std::vector<Bloc*> &listCurrent, bool &id, bool &ruler);
 
         void translater(std::string valeur, std::vector<Bloc*> &listCurrent);
@@ -25,6 +27,7 @@ class InterfaceBloc
         std::unique_ptr<Bloc> m_room;
         std::vector<std::string> m_history;
         std::vector<Bloc*> m_listCurrent;
+        std::string m_store;
 };
 
 #endif // INTERFACEBLOC_H

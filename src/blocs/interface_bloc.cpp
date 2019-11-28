@@ -34,9 +34,9 @@ void InterfaceBloc::dessiner(bool &id, bool &ruler, std::vector<Bloc*> &listCurr
     m_room->dessiner(svgout);
     //std::cout << id << " | " << ruler << std::endl;
     if (id)
-        m_room->displayId(listCurrent,svgout);
+        m_room->displayId(svgout);
     if(ruler)
-        m_room->displayRuler(listCurrent,svgout);
+        m_room->displayRuler(svgout);
 }
 
 void InterfaceBloc::afficherHelp()const
@@ -136,7 +136,7 @@ void InterfaceBloc::userInterface()
                     std::cout << "Aucune fonction saisie" << std::endl;
             }
             else
-                std::cout << "Aucune cible selectionnee" << std::endl;
+                appliquerActions(action, valeur, m_listCurrent, id, ruler);
         }
         iss.clear();
         valeur.clear();
@@ -189,6 +189,12 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
         else
             std::cout << "La cible " << i->getId() << " n'est pas pivotable" << std::endl;
     }
+}
+
+void InterfaceBloc::store()
+{
+    std::ostringstream os (m_store);
+    m_room->sauvegarde(os,0);
 }
 
 void InterfaceBloc::appliquerActions(std::string action, std::string valeur, std::vector<Bloc*> &listCurrent, bool &id, bool &ruler)

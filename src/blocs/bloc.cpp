@@ -519,31 +519,33 @@ std::vector<Bloc*> Bloc::getEnfants()
     return enfants;
 }
 
-void Bloc::displayId(std::vector<Bloc*> &listCurrent, Svgfile &svgout)
+void Bloc::displayId(Svgfile &svgout)
 {
-    for(auto &i: listCurrent)
+    dessinerId(svgout);
+    for(auto &i: m_enfants)
     {
-       i->dessinerId(i->m_parent, svgout);
-
+       i->displayId(svgout);
     }
 }
 
-void Bloc::displayRuler(std::vector<Bloc*> &listCurrent, Svgfile &svgout)
+void Bloc::displayRuler(Svgfile &svgout)
 {
-    for(auto &i: listCurrent)
+    if(Translatable* t = dynamic_cast<Translatable*>(getGeometrie()))
+            t->dessinerAxe(m_parent, svgout);
+        else if(Rotatable* r = dynamic_cast<Rotatable*>(getGeometrie()))
+            r->dessinerAxe(this, svgout);
+
+    for(auto &i: m_enfants)
     {
-        if(Translatable* t = dynamic_cast<Translatable*>(i->getGeometrie()))
-            t->dessinerAxe(i->m_parent, svgout);
-        else if(Rotatable* r = dynamic_cast<Rotatable*>(i->getGeometrie()))
-            r->dessinerAxe(i->m_parent, svgout);
+        i->displayRuler(svgout);
     }
 }
 
-void Bloc::dessinerId(const Bloc* parent, Svgfile &svgout)
+void Bloc::dessinerId(Svgfile &svgout)
 {
-        svgout.addRectangle(getAbsolute("ml").getX(),getAbsolute("ml").getY(),
-                            getAbsolute("ml").getX()+35,getAbsolute("ml").getY(),
-                            getAbsolute("ml").getX()+35,getAbsolute("ml").getY()-15,
+        svgout.addRectangle(getAbsolute("ml").getX(),getAbsolute("ml").getY()+5,
+                            getAbsolute("ml").getX()+8*getId().size(),getAbsolute("ml").getY()+5,
+                            getAbsolute("ml").getX()+8*getId().size(),getAbsolute("ml").getY()-15,
                             getAbsolute("ml").getX(),getAbsolute("ml").getY()-15,
                              "yellow",0,"");
 

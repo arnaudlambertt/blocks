@@ -1,14 +1,13 @@
- @ 			Selectionner un id
- . 			Selectionner un enfant
- % 			Selectionner selon un modulo
- :			Selectionner selon un intervalle
- catch			Attrapper un objet
- display ids		Afficher les id de tous les objets
- display rulers		Afficher les axes de translations et rotations
+ @ 			Selectionner un id (@cible action valeur), et le conserve selectionne (@cible> saisie) tant qu'on n'en selectionne pas un nouveau
+ . 			Selectionner un enfant (@cible.enfant action valeur)
+ % 			Selectionner selon un modulo (@cible1%cible2 action valeur)
+ :			Selectionner selon un intervalle (@cible1:cible2 action valeur)
+ display ids		Afficher les id de tous les objets (pas besoin de cible)
+ display rulers		Afficher les axes de translations et rotations (pas besoin de cible)
  exit 			Quitter l'application
  help			Afficher l'aide de commandes
- hide ids		Cacher les ids
- hide rulers		Cacher les axes
- move			Deplacer un objet
- rotate			Tourner un objet
+ hide ids		Cacher les ids (pas besoin de cible)
+ hide rulers		Cacher les axes (idem)
+ move			Deplacer un objet (@cible move valeur -> deplace à la valeur souhaitee | @cible move +/- valeur -> deplace de +/- la valeur)
+ rotate			Tourner un objet (@cible move valeur -> pivote à la valeur souhaitee | @cible move +/- valeur -> pivote de +/- la valeur)
  undo / redo		Precedent / Suivant

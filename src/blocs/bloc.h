@@ -47,8 +47,8 @@ class Bloc
         bool testId(const std::string &id);
         void searchId(std::vector<std::string> id, std::vector<Bloc*> &listCurrent);
 
-        void displayId(std::vector<Bloc*> &listCurrent, Svgfile &svgout);
-        void displayRuler(std::vector<Bloc*> &listCurrent, Svgfile &svgout);
+        void displayId(Svgfile &svgout);
+        void displayRuler(Svgfile &svgout);
 
         std::string getColor() { return m_color; }
         std::string getBorder() { return m_border; }
@@ -61,7 +61,7 @@ class Bloc
         Geometrie* getGeometrie() const { return m_geometrie.get(); }
 
         virtual void dessiner(Svgfile &svgout);
-        void dessinerId(const Bloc* parent,Svgfile &svgout);
+        void dessinerId(Svgfile &svgout);
 
         Coords convertRefposEnfant(const Coords &refposEnfant) const;
         Coords getAbsolute(const Coords &localPos) const;
