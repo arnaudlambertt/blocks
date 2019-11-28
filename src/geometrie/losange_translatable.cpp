@@ -15,8 +15,8 @@ LosangeTranslatable::~LosangeTranslatable()
     //dtor
 }
 
-void LosangeTranslatable::dessiner(Svgfile& svgout)
-{
-    dessinerAxe(m_bloc->getParent(), svgout);
-    Losange::dessiner(svgout);
-}
+//void LosangeTranslatable::dessiner(Svgfile& svgout)
+//{
+//    dessinerAxe(m_bloc->getParent(), svgout);
+//    Losange::dessiner(svgout);
+//}

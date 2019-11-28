@@ -16,6 +16,7 @@ class Geometrie
         virtual ~Geometrie() = default;
 
         virtual void dessiner(Svgfile &svgout) = 0;
+
         Coords getBasepos() const { return m_basepos; }
         Coords getRefpos() const { return m_refpos; }
         void setRefpos(const Coords &val) { m_refpos = val; }

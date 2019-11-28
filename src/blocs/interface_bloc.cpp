@@ -26,12 +26,17 @@ InterfaceBloc::~InterfaceBloc()
     //dtor
 }
 
-void InterfaceBloc::dessiner()
+void InterfaceBloc::dessiner(bool &id, bool &ruler, std::vector<Bloc*> &listCurrent)
 
 {
     Svgfile::s_verbose = false;
     Svgfile svgout;
     m_room->dessiner(svgout);
+    //std::cout << id << " | " << ruler << std::endl;
+    if (id)
+        m_room->displayId(listCurrent,svgout);
+    if(ruler)
+        m_room->displayRuler(listCurrent,svgout);
 }
 
 void InterfaceBloc::afficherHelp()const
@@ -57,7 +62,8 @@ void InterfaceBloc::userInterface()
     std::string saisie, cible, cibleTemp, action = "", valeur = "";
     std::istringstream iss, iss2;
     std::vector<std::string> cibTab;
-    dessiner();
+    bool id = false, ruler = false;
+    dessiner(id, ruler, m_listCurrent);
     do
     {
         if(m_current != nullptr)
@@ -125,7 +131,7 @@ void InterfaceBloc::userInterface()
             if(m_current != nullptr)
             {
                 if(action != "")
-                    appliquerActions(action, valeur, m_listCurrent);
+                    appliquerActions(action, valeur, m_listCurrent, id, ruler);
                 else
                     std::cout << "Aucune fonction saisie" << std::endl;
             }
@@ -135,7 +141,7 @@ void InterfaceBloc::userInterface()
         iss.clear();
         valeur.clear();
         action.clear();
-        dessiner();
+        dessiner(id,ruler, m_listCurrent);
     }
     while(saisie != "exit");
 }
@@ -185,7 +191,7 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
     }
 }
 
-void InterfaceBloc::appliquerActions(std::string action, std::string valeur, std::vector<Bloc*> &listCurrent)
+void InterfaceBloc::appliquerActions(std::string action, std::string valeur, std::vector<Bloc*> &listCurrent, bool &id, bool &ruler)
 {
     if(action == "help")
         afficherHelp();
@@ -204,6 +210,32 @@ void InterfaceBloc::appliquerActions(std::string action, std::string valeur, std
                 ((valeur[0] == '+' || valeur[0] == '-') &&
                  (valeur[1] >= 48 && valeur[1] <= 57)))
             pivoter(valeur, listCurrent);
+    }
+    else if(action == "display")
+    {
+        if(valeur == "ids" && id == false)
+        {
+            id = true;
+        }
+        else if(valeur == "rulers" && ruler == false)
+        {
+            ruler = true;
+        }
+        else
+            std::cout << "Fonction inconnue" << std::endl;
+    }
+    else if(action == "hide")
+    {
+        if(valeur == "ids" && id)
+        {
+            id = false;
+        }
+        else if(valeur == "rulers" && ruler)
+        {
+            ruler = false;
+        }
+        else
+            std::cout << "Fonction inconnue" << std::endl;
     }
 
 

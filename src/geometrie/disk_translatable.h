@@ -13,7 +13,7 @@ class DiskTranslatable : public Disk, public Translatable
 
         virtual ~DiskTranslatable();
 
-        void dessiner(Svgfile &svgout);
+        //void dessiner(Svgfile &svgout);
 };
 
 #endif // DISK_TRANSLATABLE_H

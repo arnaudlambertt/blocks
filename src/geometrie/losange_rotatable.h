@@ -13,7 +13,7 @@ public:
 
     virtual ~LosangeRotatable();
 
-    void dessiner(Svgfile &svgout);
+    //void dessiner(Svgfile &svgout);
 };
 
 #endif // LOSANGE_ROTATABLE_H

@@ -50,3 +50,6 @@ void Geometrie::setNewRotation(const double &rotation)
         i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation()+nouv-ancien);
 
 }
+
+
+

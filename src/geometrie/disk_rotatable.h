@@ -13,7 +13,7 @@ public:
 
     virtual ~DiskRotatable();
 
-    void dessiner(Svgfile &svgout);
+    //void dessiner(Svgfile &svgout);
 };
 
 #endif // DISK_ROTATABLE_H

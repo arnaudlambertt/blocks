@@ -15,8 +15,8 @@ TriangleTranslatable::~TriangleTranslatable()
     //dtor
 }
 
-void TriangleTranslatable::dessiner(Svgfile& svgout)
-{
-    dessinerAxe(m_bloc->getParent(), svgout);
-    Triangle::dessiner(svgout);
-}
+//void TriangleTranslatable::dessiner(Svgfile& svgout)
+//{
+//    dessinerAxe(m_bloc->getParent(), svgout);
+//    Triangle::dessiner(svgout);
+//}

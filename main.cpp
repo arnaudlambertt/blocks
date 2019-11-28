@@ -14,7 +14,6 @@ int main()
     InterfaceBloc ib("roms/simplebot.rom");
     ib.afficherHelp();
     ib.userInterface();
-    ib.dessiner();
     ib.sauvegarder();
 //
 ///    std::string test = "dzqzq6RG%d",temp;

@@ -4,11 +4,11 @@
  :			Selectionner selon un intervalle
  catch			Attrapper un objet
  display ids		Afficher les id de tous les objets
- display runners	Afficher les axes de translations et rotations
+ display rulers		Afficher les axes de translations et rotations
  exit 			Quitter l'application
  help			Afficher l'aide de commandes
  hide ids		Cacher les ids
- hide runners		Cacher les axes
+ hide rulers		Cacher les axes
  move			Deplacer un objet
  rotate			Tourner un objet
  undo / redo		Precedent / Suivant

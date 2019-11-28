@@ -2,7 +2,7 @@ id=room57 width=1000 height=400 color=azure border=darkgrey
 refpos=tl basepos=tl 
 [
 	id=ground width=100% height=10% color=darkgrey
-	refpos=bc basepos=tc rotate=10 
+	refpos=bc basepos=tc 
 	[
 		id=bin shape=disk radius=25 color=lightblue
 		refpos=tr refposx=-25% basepos=bc rotate=90 

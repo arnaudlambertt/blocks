@@ -490,8 +490,8 @@ void Bloc::sauvegarde(std::ostream& ofs, int tabulation)
         ofs << "basepos=" << m_info.basepos << " ";
 
     if(Translatable* tr = dynamic_cast<Translatable*>(m_geometrie.get()))
-            if(m_info.translation != "" || tr->getTranslation() != 0.5)
-                ofs << "translate=" << tr->getTranslation() << " ";
+        if(m_info.translation != "" || tr->getTranslation() != 0.5)
+            ofs << "translate=" << tr->getTranslation() << " ";
 
     if(dynamic_cast<Rotatable*>(m_geometrie.get()))
         ofs << "rotate=" << m_geometrie->getVraiRotation() << " ";
@@ -518,3 +518,38 @@ std::vector<Bloc*> Bloc::getEnfants()
         enfants.push_back(i.get());
     return enfants;
 }
+
+void Bloc::displayId(std::vector<Bloc*> &listCurrent, Svgfile &svgout)
+{
+    for(auto &i: listCurrent)
+    {
+       i->dessinerId(i->m_parent, svgout);
+
+    }
+}
+
+void Bloc::displayRuler(std::vector<Bloc*> &listCurrent, Svgfile &svgout)
+{
+    for(auto &i: listCurrent)
+    {
+        if(Translatable* t = dynamic_cast<Translatable*>(i->getGeometrie()))
+            t->dessinerAxe(i->m_parent, svgout);
+        else if(Rotatable* r = dynamic_cast<Rotatable*>(i->getGeometrie()))
+            r->dessinerAxe(i->m_parent, svgout);
+    }
+}
+
+void Bloc::dessinerId(const Bloc* parent, Svgfile &svgout)
+{
+        svgout.addRectangle(getAbsolute("ml").getX(),getAbsolute("ml").getY(),
+                            getAbsolute("ml").getX()+35,getAbsolute("ml").getY(),
+                            getAbsolute("ml").getX()+35,getAbsolute("ml").getY()-15,
+                            getAbsolute("ml").getX(),getAbsolute("ml").getY()-15,
+                             "yellow",0,"");
+
+        svgout.addText(getAbsolute("ml").getX(),getAbsolute("ml").getY(), m_id, "black");
+
+}
+
+
+

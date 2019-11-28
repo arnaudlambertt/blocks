@@ -13,7 +13,7 @@ class RectangleTranslatable : public Rectangle, public Translatable
 
         virtual ~RectangleTranslatable();
 
-        void dessiner(Svgfile &svgout);
+        //void dessiner(Svgfile &svgout);
 
 };
 

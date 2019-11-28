@@ -13,7 +13,7 @@ class TriangleTranslatable : public Triangle, public Translatable
 
         virtual ~TriangleTranslatable();
 
-        void dessiner(Svgfile &svgout);
+        //void dessiner(Svgfile &svgout);
 };
 
 #endif // TRIANGLE_TRANSLATABLE_H

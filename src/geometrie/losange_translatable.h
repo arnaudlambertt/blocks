@@ -13,7 +13,7 @@ class LosangeTranslatable : public Losange, public Translatable
 
         virtual ~LosangeTranslatable();
 
-        void dessiner(Svgfile &svgout);
+        //void dessiner(Svgfile &svgout);
 };
 
 #endif // LOSANGE_TRANSLATABLE_H

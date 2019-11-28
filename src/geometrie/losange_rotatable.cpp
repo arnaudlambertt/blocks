@@ -15,8 +15,8 @@ LosangeRotatable::~LosangeRotatable()
     //dtor
 }
 
-void LosangeRotatable::dessiner(Svgfile& svgout)
-{
-    Losange::dessiner(svgout);
-    dessinerAxe(m_bloc, svgout);
-}
+//void LosangeRotatable::dessiner(Svgfile& svgout)
+//{
+//    Losange::dessiner(svgout);
+//    dessinerAxe(m_bloc, svgout);
+//}
