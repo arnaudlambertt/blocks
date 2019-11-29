@@ -6,8 +6,8 @@
  display rulers		Afficher les axes de translations et rotations (pas besoin de cible)
  exit 			Quitter l'application
  help			Afficher l'aide de commandes
- hide ids		Cacher les ids (pas besoin de cible)
- hide rulers		Cacher les axes (idem)
- move			Deplacer un objet (@cible move valeur -> deplace à la valeur souhaitee | @cible move +/- valeur -> deplace de +/- la valeur)
- rotate			Tourner un objet (@cible move valeur -> pivote à la valeur souhaitee | @cible move +/- valeur -> pivote de +/- la valeur)
+ show ids / rulers	Montrer les ids / axes	
+ hide ids / rulers	Cacher les ids / axes
+ move			Deplacer un objet (@cible move valeur -> deplace a la valeur souhaitee | @cible move +/- valeur -> deplace de +/- la valeur)
+ rotate			Tourner un objet (@cible move valeur -> pivote a la valeur souhaitee | @cible move +/- valeur -> pivote de +/- la valeur)
  undo / redo		Precedent / Suivant

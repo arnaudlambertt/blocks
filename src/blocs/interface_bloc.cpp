@@ -23,16 +23,15 @@ InterfaceBloc::~InterfaceBloc()
     //dtor
 }
 
-void InterfaceBloc::dessiner(bool &id, bool &ruler, std::vector<Bloc*> &listCurrent)
-
+void InterfaceBloc::dessiner()
 {
     Svgfile::s_verbose = false;
     Svgfile svgout;
     m_room->dessiner(svgout);
     //std::cout << id << " | " << ruler << std::endl;
-    if (id)
+    if (m_showId)
         m_room->displayId(svgout);
-    if(ruler)
+    if(m_showRuler)
         m_room->displayRuler(svgout);
 }
 
@@ -59,8 +58,7 @@ void InterfaceBloc::userInterface()
     std::string saisie, cible, cibleTemp, action = "", valeur = "";
     std::istringstream iss, iss2;
     std::vector<std::string> cibTab;
-    bool id = false, ruler = false;
-    dessiner(id, ruler, m_listCurrent);
+    dessiner();
     do
     {
         if(m_current != nullptr)
@@ -77,8 +75,6 @@ void InterfaceBloc::userInterface()
         else
         {
             iss.str(saisie);
-
-
 
             if(saisie.find('@') != std::string::npos)
             {
@@ -128,17 +124,17 @@ void InterfaceBloc::userInterface()
             if(m_current != nullptr)
             {
                 if(action != "")
-                    appliquerActions(action, valeur, m_listCurrent, id, ruler);
+                    appliquerActions(action, valeur, m_listCurrent);
                 else
                     std::cout << "Aucune fonction saisie" << std::endl;
             }
             else
-                appliquerActions(action, valeur, m_listCurrent, id, ruler);
+                appliquerActions(action, valeur, m_listCurrent);
         }
+        dessiner();
         iss.clear();
         valeur.clear();
         action.clear();
-        dessiner(id,ruler, m_listCurrent);
     }
     while(saisie != "exit");
 }
@@ -150,15 +146,16 @@ void InterfaceBloc::sauvegarder(std::string &saveFile)
     if(saveFile.find(".rom") != saveFile.size()-4)
         saveFile += ".rom";
 
-    std::string ecraser;
+    std::string ecraser, null;
+
 
     while( std::ifstream {"roms/" + saveFile} && ecraser != "oui")
     {
-            std::cout << "Le fichier " << saveFile << " existe deja, voulez-vous l'ecraser? " << std::endl << "oui - non" ;
-            do
+            std::cout << "Le fichier " << saveFile << " existe deja, voulez-vous l'ecraser? " << std::endl << "oui / non" << std::endl;
+            do{
                 std::cin >> ecraser;
+            }
             while(ecraser != "oui" && ecraser != "non");
-
             if(ecraser == "non")
             {
                 std::cout << "Saisir le nom du nouveau fichier de sauvegarde" << std::endl;
@@ -167,14 +164,15 @@ void InterfaceBloc::sauvegarder(std::string &saveFile)
                 if(saveFile.find(".rom") != saveFile.size()-4)
                     saveFile += ".rom";
             }
+            std::getline(std::cin, null);
     }
 
     if (m_room != nullptr)
     {
-        file_output = std::ofstream {saveFile};
+        file_output = std::ofstream {"roms/" + saveFile};
         m_room->sauvegarde(file_output,0);
     }
-
+    std::cout << "Save done" << std::endl;
 }
 
 void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurrent)
@@ -219,7 +217,7 @@ void InterfaceBloc::store()
     m_room->sauvegarde(os,0);
 }
 
-void InterfaceBloc::appliquerActions(std::string action, std::string valeur, std::vector<Bloc*> &listCurrent, bool &id, bool &ruler)
+void InterfaceBloc::appliquerActions(std::string &action, std::string &valeur, std::vector<Bloc*> &listCurrent)
 {
     if(action == "help")
         afficherHelp();
@@ -239,34 +237,35 @@ void InterfaceBloc::appliquerActions(std::string action, std::string valeur, std
                  (valeur[1] >= 48 && valeur[1] <= 57)))
             pivoter(valeur, listCurrent);
     }
-    else if(action == "display")
+    else if(action == "show")
     {
-        if(valeur == "ids" && id == false)
-        {
-            id = true;
-        }
-        else if(valeur == "rulers" && ruler == false)
-        {
-            ruler = true;
-        }
+        if(valeur == "ids")
+            m_showId = true;
+
+        else if(valeur == "rulers" )
+            m_showRuler = true;
         else
-            std::cout << "Fonction inconnue" << std::endl;
+            std::cout << "Erreur: mauvais attribut 'show'" << std::endl;
+
     }
     else if(action == "hide")
     {
-        if(valeur == "ids" && id)
-        {
-            id = false;
-        }
-        else if(valeur == "rulers" && ruler)
-        {
-            ruler = false;
-        }
+        if(valeur == "ids")
+            m_showId = false;
+
+        else if(valeur == "rulers")
+            m_showId = false;
         else
-            std::cout << "Fonction inconnue" << std::endl;
+            std::cout << "Erreur: mauvais attribut 'hide' " << std::endl;
+
     }
-
-
+    else if(action == "save")
+    {
+        if(valeur != "" )
+            sauvegarder(valeur);
+        else
+            std::cout << "Erreur: nom du fichier vide" << std::endl;
+    }
     else if(action != "exit")
-        std::cout << "Fonction inconnue" << std::endl;
+        std::cout << "Erreur: fonction inconnue" << std::endl;
 }
