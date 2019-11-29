@@ -365,14 +365,12 @@ bool Bloc::testId(const std::string &id)   /// : range | [ specific ]| % modulo 
         }
         if(!blindage)
         {
-            std::cout << "erreur de format" << std::endl;
             return false;
         }
 
         if( smodulo[0] >= 48 && smodulo[0] <= 57)
             modulo = std::stoi(smodulo,&sz);
-        else
-            std::cout <<"erreur de format" << std::endl;
+
 
         if(modulo != -1 && reste != -1)
         {
@@ -410,14 +408,13 @@ bool Bloc::testId(const std::string &id)   /// : range | [ specific ]| % modulo 
         }
         if(!blindage)
         {
-            std::cout << "erreur de format" << std::endl;
+
             return false;
         }
 
         if( sbornesup[0] >= 48 && sbornesup[0] <= 57)
             bornesup = std::stoi(sbornesup,&sz);
-        else
-            std::cout <<"erreur de format" << std::endl;
+
 
         if(borneinf != -1 && borneinf!= -1)
         {

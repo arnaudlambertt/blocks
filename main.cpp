@@ -12,7 +12,6 @@
 int main()
 {
     InterfaceBloc ib;
-    ib.init();
     ib.userInterface();
     return 0;
 }
