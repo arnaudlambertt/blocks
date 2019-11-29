@@ -2,6 +2,8 @@
 #include <iostream>
 #include <sstream>
 
+
+
 const std::string svgHeader =
     "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
     "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" ";
@@ -149,8 +151,8 @@ void Svgfile::addLosange (double x1, double y1, double x2, double y2,
             << x2 << "," << y2 << " "
             << x3 << "," << y3 << " "
             << x4 << "," << y4
-           // << x1+2*(x2-x1) << "," << y1 << " "
-           // << x2 << "," << y2 + 2*(y1-y2)
+            // << x1+2*(x2-x1) << "," << y1 << " "
+            // << x2 << "," << y2 + 2*(y1-y2)
 
             << "\" style=\"fill:" << colorFill
             << ";stroke:" << colorStroke
@@ -171,7 +173,10 @@ void Svgfile::addLine(double x1, double y1, double x2, double y2, std::string co
 
 void Svgfile::addArrow(double x1, double y1, double x2, double y2, std::string color)
 {
-   m_ostrm << "<polygon points=\" "
+    double angle = acos(abs(x2-x1)/sqrt(pow(x1-x2,2.0)+pow(y1-y2,2.0)));
+    //std::cout << angle << std::endl;
+
+    m_ostrm << "<polygon points=\" "
             << x1 << "," << y1 << " "
             << x2 << "," << y2 << " "
             << x2 << "," << y2 << " "
@@ -179,8 +184,27 @@ void Svgfile::addArrow(double x1, double y1, double x2, double y2, std::string c
 
             << "\" style=\"fill:" << color
             << ";stroke:" << "red"
+            << ";stroke-width:" << 1
+            << "\" />\n";
+
+    m_ostrm << "<polygon points=\" "
+            << x1-1*(x2-x1>=0.0?1:-1)*5*sin(angle) << "," << y1-1*(x2-x1>=0.0?1:-1)*5*(cos(angle)) << " "
+            << x1+1*(x2-x1>=0.0?1:-1)*5*sin(angle) << "," << y1+1*(x2-x1>=0.0?1:-1)*5*(cos(angle)) << " "
+            << x1+1*(x2-x1>=0.0?1:-1)*5*sin(angle) << "," << y1+1*(x2-x1>=0.0?1:-1)*5*(cos(angle)) << " "
+            << x1-1*(x2-x1>=0.0?1:-1)*5*sin(angle) << "," << y1-1*(x2-x1>=0.0?1:-1)*5*(cos(angle))
+            << "\" style=\"fill:" << color
+            << ";stroke:" << "red"
             << ";stroke-width:" << 2.5
             << "\" />\n";
+
+            m_ostrm << "<polygon points=\" "
+            << x2 << "," << y2 << " "
+            << x2-1*(x2-x1>=0.0?1:-1)*5*cos(angle)+5*sin(angle) << "," << y2+1*(x2-x1>=0.0?1:-1)*5*sin(angle)+5*cos(angle) << " "
+            << x2-1*(x2-x1>=0.0?1:-1)*5*cos(angle)-5*sin(angle) << "," << y2+1*(x2-x1>=0.0?1:-1)*5*sin(angle)-5*cos(angle)
+            << "\" style=\"fill:" << color
+            << "\" />\n";
+
+
 }
 
 void Svgfile::addCross(double x, double y, double span, std::string color)
