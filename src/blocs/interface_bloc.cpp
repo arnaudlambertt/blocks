@@ -2,20 +2,10 @@
 #include "../geometrie/translatable.h"
 #include "../geometrie/rotatable.h"
 
-InterfaceBloc::InterfaceBloc(const std::string &rom)
-    :m_current{nullptr}
+InterfaceBloc::InterfaceBloc()
+    :m_current{nullptr}, m_room{nullptr}
 {
-    std::ifstream file_input{rom};
-    if ( !file_input )
-    {
-        throw std::runtime_error( "Can't read/open " + rom );
-        m_room = nullptr;
-    }
-    else
-    {
-        bool useless = true;
-        m_room = std::make_unique<Bloc>(file_input, nullptr,useless);
-    }
+    //ctor
 }
 
 InterfaceBloc::~InterfaceBloc()
@@ -50,7 +40,26 @@ void InterfaceBloc::afficherHelp()const
     std::cout << std::endl;
 }
 
+void InterfaceBloc::init()
+{
+    std::string command, file, input;
+    std::istringstream iss;
+    std::cout << "Veuillez charger un fichier rom."<< std::endl
+        << "Commande : load [fichier]/[fichier.rom]" << std::endl;
 
+    do{
+        std::getline(std::cin, input);
+        iss.str(input);
+        iss >> command >> file;
+        if(command == "load" && file != "")
+            load(file);
+        else
+            std::cout << "Erreur : mauvaise commande" << std::endl
+            << "utilisation : load [fichier]/[fichier.rom]" << std::endl;
+            iss.clear();
+
+    }while(m_room == nullptr);
+}
 
 void InterfaceBloc::userInterface()
 {
@@ -58,7 +67,6 @@ void InterfaceBloc::userInterface()
     std::string saisie, cible, cibleTemp, action = "", valeur = "";
     std::istringstream iss, iss2;
     std::vector<std::string> cibTab;
-    dessiner();
     do
     {
         if(m_current != nullptr)
@@ -211,6 +219,31 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
     }
 }
 
+void InterfaceBloc::load(std::string &rom)
+{
+    if(rom.size() < 4 || rom.find(".rom") != rom.size()-4)
+                    rom += ".rom";
+    rom = "roms/" + rom;
+
+    std::ifstream file_input{rom};
+    if ( !file_input )
+    {
+        std::cout << "Error: Can't load file " << rom << std::endl;
+    }
+    else
+    {
+        bool useless = true;
+        m_room = std::make_unique<Bloc>(file_input, nullptr,useless);
+        if(m_room != nullptr)
+            {
+                std::cout << "Chargement reussi" << std::endl;
+                dessiner();
+            }
+        else
+            std::cout << "Fichier " << rom << " corrompu" << std::endl;
+    }
+}
+
 void InterfaceBloc::store()
 {
     std::ostringstream os (m_store);
@@ -265,6 +298,15 @@ void InterfaceBloc::appliquerActions(std::string &action, std::string &valeur, s
             sauvegarder(valeur);
         else
             std::cout << "Erreur: nom du fichier vide" << std::endl;
+    }
+    else if (action == "load")
+    {
+        if(valeur != "")
+            load(valeur);
+        else
+            std::cout << "Erreur : mauvaise commande" << std::endl
+            << "utilisation : load [fichier]/[fichier.rom]" << std::endl;
+
     }
     else if(action != "exit")
         std::cout << "Erreur: fonction inconnue" << std::endl;

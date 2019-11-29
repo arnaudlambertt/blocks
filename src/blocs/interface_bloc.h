@@ -5,14 +5,17 @@
 class InterfaceBloc
 {
     public:
-        InterfaceBloc(const std::string &rom);
+        InterfaceBloc();
         ~InterfaceBloc();
 
         void userInterface();
 
         void dessiner();
         void afficherHelp()const;
+        void init();
+        void load(std::string &rom);
         void sauvegarder(std::string &saveFile);
+
 
         void store();
 

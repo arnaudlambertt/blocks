@@ -1,13 +1,16 @@
- @ 			Selectionner un id (@cible action valeur), et le conserve selectionne (@cible> saisie) tant qu'on n'en selectionne pas un nouveau
- . 			Selectionner un enfant (@cible.enfant action valeur)
- % 			Selectionner selon un modulo (@cible1%cible2 action valeur)
- :			Selectionner selon un intervalle (@cible1:cible2 action valeur)
- display ids		Afficher les id de tous les objets (pas besoin de cible)
- display rulers		Afficher les axes de translations et rotations (pas besoin de cible)
- exit 			Quitter l'application
- help			Afficher l'aide de commandes
- show ids / rulers	Montrer les ids / axes	
- hide ids / rulers	Cacher les ids / axes
- move			Deplacer un objet (@cible move valeur -> deplace a la valeur souhaitee | @cible move +/- valeur -> deplace de +/- la valeur)
- rotate			Tourner un objet (@cible move valeur -> pivote a la valeur souhaitee | @cible move +/- valeur -> pivote de +/- la valeur)
- undo / redo		Precedent / Suivant
+	help			Afficher l'aide de commandes
+	exit 			Quitter l'application
+	load			Charger un fichier
+
+	@ 			Selectionner un id (@cible [action] [valeur]), une seule 
+	. 			Selectionner un enfant (@cible.enfant [action] [valeur])
+	% 			Selectionner selon un modulo (@cible1%cible2 [action] [valeur])
+	:			Selectionner selon un intervalle (@cible1:cible2 [action] [valeur])
+
+	hide ids / rulers	Cacher les ids / axes
+	show ids / rulers	Montrer les ids / axes	
+
+	move			Deplacer un objet (@cible move [valeur] -> deplace a la valeur souhaitee | @cible move [+/-valeur] -> deplace de +/- la valeur)
+	rotate			Tourner un objet (@cible move [valeur] -> pivote a la valeur d'angle souhaitee | @cible move [+/-valeur] -> pivote de +/- la valeur)
+	
+	undo / redo		Precedent / Suivant

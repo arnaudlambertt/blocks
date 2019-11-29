@@ -1,4 +1,4 @@
-id=room57 width=1000 height=400 color=azure border=darkgrey
+id=room57 shape=losange width=1000 height=400 color=azure border=lightgrey
 refpos=tl basepos=tl 
 [
 	id=ground width=100% height=10% color=darkgrey
