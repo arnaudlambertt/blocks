@@ -26,9 +26,11 @@ class InterfaceBloc
 
     private:
         Bloc* m_current;
+        std::string m_rom;
         std::unique_ptr<Bloc> m_room;
         std::vector<Bloc*> m_listCurrent;
         std::string m_store;
+        std::vector<std::string> m_undo;
         bool m_showId = false;
         bool m_showRuler = false;
 };

@@ -151,7 +151,7 @@ void InterfaceBloc::sauvegarder(std::string &saveFile)
 {
     std::ofstream file_output;
 
-    if(saveFile.find(".rom") != saveFile.size()-4)
+    if(saveFile.size() <4 || saveFile.find(".rom") != saveFile.size()-4)
         saveFile += ".rom";
 
     std::string ecraser, null;
@@ -169,7 +169,7 @@ void InterfaceBloc::sauvegarder(std::string &saveFile)
                 std::cout << "Saisir le nom du nouveau fichier de sauvegarde" << std::endl;
                 std::cin >> saveFile;
 
-                if(saveFile.find(".rom") != saveFile.size()-4)
+                if(saveFile.size() <4 || saveFile.find(".rom") != saveFile.size()-4)
                     saveFile += ".rom";
             }
             std::getline(std::cin, null);
@@ -223,9 +223,8 @@ void InterfaceBloc::load(std::string &rom)
 {
     if(rom.size() < 4 || rom.find(".rom") != rom.size()-4)
                     rom += ".rom";
-    rom = "roms/" + rom;
 
-    std::ifstream file_input{rom};
+    std::ifstream file_input{"roms/" + rom};
     if ( !file_input )
     {
         std::cout << "Error: Can't load file " << rom << std::endl;
@@ -237,10 +236,11 @@ void InterfaceBloc::load(std::string &rom)
         if(m_room != nullptr)
             {
                 std::cout << "Chargement reussi" << std::endl;
+                m_rom = rom;
                 dessiner();
             }
         else
-            std::cout << "Fichier " << rom << " corrompu" << std::endl;
+            std::cout << "Fichier roms/" << rom << " corrompu" << std::endl;
     }
 }
 
@@ -308,6 +308,8 @@ void InterfaceBloc::appliquerActions(std::string &action, std::string &valeur, s
             << "utilisation : load [fichier]/[fichier.rom]" << std::endl;
 
     }
+    else if (action == "reload")
+        load(m_rom);
     else if(action != "exit")
         std::cout << "Erreur: fonction inconnue" << std::endl;
 }
