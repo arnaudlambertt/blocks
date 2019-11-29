@@ -172,7 +172,7 @@ void InterfaceBloc::sauvegarder(std::string &saveFile)
         file_output = std::ofstream {"roms/" + saveFile};
         m_room->sauvegarde(file_output,0);
     }
-    std::cout << "Save done" << std::endl;
+    std::cout << "Save done : roms/"<< saveFile << std::endl << std::endl;
 }
 
 void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurrent)
