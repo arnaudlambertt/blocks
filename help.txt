@@ -12,8 +12,8 @@
 	hide ids / rulers	Cacher les ids / axes
 	show ids / rulers	Montrer les ids / axes	
 
-	move			Deplacer des cibles (move [position 0:100]/[+/-incrementation]
-	rotate			Faire pivoter des cibles (rotate [angle 0:359]/[+/-incrementation] 
+	move			Deplacer des cibles (move [position 0:100]/[+/-incrementation])
+	rotate			Faire pivoter des cibles (rotate [angle 0:359]/[+/-incrementation] | rotate (utiliser les fleches du clavier))
 	
 	store			Creer un point de sauvegarde
 	restore			Restorer le point de sauvegarde

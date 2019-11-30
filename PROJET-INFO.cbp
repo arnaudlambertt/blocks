@@ -85,6 +85,7 @@
 		<Unit filename="src/graphisme/couleur.h" />
 		<Unit filename="src/svg/svgfile.cpp" />
 		<Unit filename="src/svg/svgfile.h" />
+		<Unit filename="src/util/check_arrow_key.cpp" />
 		<Unit filename="src/util/util.cpp" />
 		<Unit filename="src/util/util.h" />
 		<Extensions>

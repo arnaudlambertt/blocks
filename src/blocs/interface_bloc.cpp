@@ -2,6 +2,7 @@
 #include "../geometrie/translatable.h"
 #include "../geometrie/rotatable.h"
 #include <dirent.h>
+#include "../util/check_arrow_key.h"
 
 InterfaceBloc::InterfaceBloc()
     :m_current{nullptr}, m_room{nullptr}
@@ -109,10 +110,10 @@ void InterfaceBloc::userInterface()
             if(m_script.is_open())
             {
                 if(!m_script.eof())
-                    {
-                        std::getline(m_script, saisie);
-                        std::cout << saisie << std::endl;
-                    }
+                {
+                    std::getline(m_script, saisie);
+                    std::cout << saisie << std::endl;
+                }
                 else
                 {
                     m_script.close();
@@ -254,14 +255,35 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
 void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
 {
     std::string::size_type sz;
-    double valrotation = std::stod(valeur, &sz);
+    double valrotation;
+    if(valeur != "")
+    valrotation = std::stod(valeur, &sz);
     bool change = false;
 
     for(auto &i: listCurrent)
     {
         if(dynamic_cast<Rotatable*>(i->getGeometrie()))
         {
-            if (valeur[0] == '+' || valeur[0] == '-')
+            if(valeur == "" )
+            {
+                int val = 0;
+                std::cout << "Utilisez les fleches gauche et droite pour tourner" << std::endl;
+                do
+                {
+                    CheckArrowKey(val);     // Lecture des touches clavier
+                    if (val == 2)   // Si fleche droite
+                    {
+                        i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() + 2);    // Rotation
+                    }
+                            if (val == 3)   // Si fleche droite
+                    {
+                        i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() - 2);    // Rotation
+                    }
+                dessiner();
+                }
+                while(val == 2 || val == 3 );
+            }
+            else if (valeur[0] == '+' || valeur[0] == '-')
                 i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() + valrotation);
             else
                 i->getGeometrie()->setNewRotation(valrotation);
@@ -353,7 +375,7 @@ void InterfaceBloc::restore(const std::string &store)
 
 void InterfaceBloc::script(std::string &script)
 {
-        if(script.size() < 7 || script.find(".script") != script.size()-7)
+    if(script.size() < 7 || script.find(".script") != script.size()-7)
         script += ".script";
 
 
@@ -392,6 +414,8 @@ void InterfaceBloc::appliquerActions(std::string &action, std::string &valeur, s
         if((valeur[0] >= 48 && valeur[0] <= 57) ||
                 ((valeur[0] == '+' || valeur[0] == '-') &&
                  (valeur[1] >= 48 && valeur[1] <= 57)))
+            pivoter(valeur, listCurrent);
+        else if(valeur == "")
             pivoter(valeur, listCurrent);
 
         else
@@ -438,10 +462,10 @@ void InterfaceBloc::appliquerActions(std::string &action, std::string &valeur, s
     else if (action == "store")
         store();
     else if (action == "restore")
-        {
-            restore(m_store);
-            saveState();
-        }
+    {
+        restore(m_store);
+        saveState();
+    }
     else if (action == "reload")
         load(m_rom);
     else if (action == "undo")
