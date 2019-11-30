@@ -111,6 +111,7 @@ void InterfaceBloc::userInterface()
             {
                 if(!m_script.eof())
                 {
+                    Sleep(500);
                     std::getline(m_script, saisie);
                     std::cout << saisie << std::endl;
                 }
@@ -250,7 +251,10 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
                 {
                     t->translater((1-j)*initiale + j*valtranslation);
                 }
+                //Sleep(50);
+                //dessiner();
             }
+            i->collision();
 
             change = true;
         }
@@ -278,8 +282,11 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
                     i->getGeometrie()->setNewRotation(initiale + (j-0.01)*valrotation);
                 else
                     i->getGeometrie()->setNewRotation((1-j)*initiale + j*valrotation);
+                //Sleep(50);
+                //dessiner();
             }
             change = true;
+             i->collision();
         }
         else
             std::cout << "Erreur: La cible " << i->getId() << " n'est pas pivotable" << std::endl;

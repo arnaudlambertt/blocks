@@ -1,6 +1,5 @@
 #ifndef BLOC_H
 #define BLOC_H
-#include <vector>
 
 #include "geometrie.h"
 
@@ -9,6 +8,7 @@
 #include <map>
 #include <string>
 #include <vector>
+#include <list>
 #include <memory>
 #include <sstream>
 
@@ -67,6 +67,11 @@ class Bloc
         Coords getAbsolute(const Coords &localPos) const;
         Coords getAbsolute(const std::string &localPos) const;
         void sauvegarde(std::ostream& ofs, int tabulation);
+
+        Bloc * getHighestParent();
+        Bloc * getFirstMovableParent();
+        std::list<Bloc*> getTousEnfants();
+        bool collision();
 
     private:
         Bloc* m_parent; //pointeur parent

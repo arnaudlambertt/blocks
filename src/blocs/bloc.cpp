@@ -544,5 +544,57 @@ void Bloc::dessinerId(Svgfile &svgout)
     svgout.addText(getAbsolute("ml").getX(),getAbsolute("ml").getY(), m_id, "black");
 }
 
+Bloc * Bloc::getFirstMovableParent()
+{
+    if(dynamic_cast<Translatable*>(m_geometrie.get()) || dynamic_cast<Rotatable*>(m_geometrie.get()))
+    {
+        if(m_parent != nullptr && m_parent->getFirstMovableParent() != nullptr)
+            return m_parent->getFirstMovableParent();
+        else
+            return this;
+    }
+    else if(m_parent != nullptr)
+        return m_parent->getFirstMovableParent();
+    else
+        return nullptr;
+}
+
+Bloc * Bloc::getHighestParent()
+{
+    if(m_parent != nullptr)
+        return m_parent->getHighestParent();
+    else
+        return this;
+}
+
+std::list<Bloc*> Bloc::getTousEnfants()
+{
+    std::list<Bloc*> mesEnfants;
+
+    for(auto &i : getEnfants())
+    {
+        mesEnfants.push_back(i);
+        for(auto &j : i->getTousEnfants())
+            mesEnfants.push_back(j);
+    }
+
+    return mesEnfants;
+}
+
+bool Bloc::collision()
+{
+    Bloc* firstMovableParent = getFirstMovableParent();
+
+    for(auto &i : getHighestParent()->getTousEnfants())
+    {
+        if(i->getFirstMovableParent() == nullptr || firstMovableParent != i->getFirstMovableParent()) // pas de parent movable commun
+            std::cout << i->getId() << std::endl;
+    }
+
+    //for (auto &i : m_enfants)
+      //  i->collision();
+
+    return false;
+}
 
 
