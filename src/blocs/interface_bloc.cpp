@@ -234,13 +234,35 @@ void InterfaceBloc::sauvegarder(std::string &saveFile)
 void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurrent)
 {
     std::string::size_type sz;
-    double valtranslation = std::stod(valeur, &sz) *0.01;
+    double valtranslation;
+    if(valeur != "")
+        valtranslation = std::stod(valeur, &sz) *0.01;
     bool change = false;
 
     for(auto &i: listCurrent)
     {
         if(Translatable* t = dynamic_cast<Translatable*>(i->getGeometrie()))
         {
+            if(valeur == "" )
+            {
+                int val = 0;
+                std::cout << "Utilisez les fleches gauche et droite pour translater, une autre touche pour quitter" << std::endl;
+                do
+                {
+                    CheckArrowKey(val);     // Lecture des touches clavier
+                    if (val == 2)   // Si fleche droite
+                    {
+                        t->translater(-0.01 + t->getTranslation());    // Translation
+                    }
+                            if (val == 3)   // Si fleche droite
+                    {
+                        t->translater(+0.01 + t->getTranslation());    // Translation
+                    }
+                dessiner();
+                }
+                while(val == 2 || val == 3 );
+                saveState();
+            }
             double initiale = t->getTranslation();
             for(double j = 0.01; j<= 1.01; j+=0.01)
             {
@@ -420,6 +442,8 @@ void InterfaceBloc::appliquerActions(std::string &action, std::string &valeur, s
         if((valeur[0] >= 48 && valeur[0] <= 57) ||
                 ((valeur[0] == '+' || valeur[0] == '-') &&
                  (valeur[1] >= 48 && valeur[1] <= 57)))
+            translater(valeur, listCurrent);
+        else if(valeur == "")
             translater(valeur, listCurrent);
 
         else
