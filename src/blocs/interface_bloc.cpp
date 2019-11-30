@@ -414,7 +414,7 @@ void InterfaceBloc::appliquerActions(std::string &action, std::string &valeur, s
             m_showId = false;
 
         else if(valeur == "rulers")
-            m_showId = false;
+            m_showRuler = false;
         else
             std::cout << "Erreur: mauvais attribut 'hide' " << std::endl;
 
