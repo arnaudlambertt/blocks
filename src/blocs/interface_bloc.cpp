@@ -106,8 +106,22 @@ void InterfaceBloc::userInterface()
                 else
                     std::cout << cible << "> ";
             }
-
-            std::getline(std::cin, saisie);
+            if(m_script.is_open())
+            {
+                if(!m_script.eof())
+                    {
+                        std::getline(m_script, saisie);
+                        std::cout << saisie << std::endl;
+                    }
+                else
+                {
+                    m_script.close();
+                    std::cout << "Fin du script" << std::endl;
+                    std::getline(std::cin, saisie);
+                }
+            }
+            else
+                std::getline(std::cin, saisie);
             if(saisie == "@")
                 std::cout << "erreur de format" << std::endl;
             else
@@ -231,7 +245,7 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
             change = true;
         }
         else
-            std::cout << "La cible " << i->getId() << " n'est pas translatable" << std::endl;
+            std::cout << "Erreur: La cible " << i->getId() << " n'est pas translatable" << std::endl;
     }
     if (change)
         saveState();
@@ -268,7 +282,7 @@ void InterfaceBloc::load(std::string &rom)
     std::ifstream file_input{"roms/" + rom};
     if ( !file_input )
     {
-        std::cout << "Erreur: chargement impossible du fichier " << rom << std::endl;
+        std::cout << "Erreur: chargement impossible du fichier roms/" << rom << std::endl;
     }
     else
     {
@@ -335,6 +349,28 @@ void InterfaceBloc::restore(const std::string &store)
     m_room = std::make_unique<Bloc>(iss, nullptr,useless);
     if(m_room != nullptr)
         std::cout << "Success" << std::endl;
+}
+
+void InterfaceBloc::script(std::string &script)
+{
+        if(script.size() < 7 || script.find(".script") != script.size()-7)
+        script += ".script";
+
+
+    if ( !std::ifstream{"scripts/" + script} )
+    {
+        std::cout << "Erreur: chargement impossible du fichier scripts/" << script << std::endl;
+    }
+    else
+    {
+        m_script.open("scripts/" + script);
+        if(m_script.is_open())
+        {
+            std::cout << "Demarrage du script " << script << std::endl;
+        }
+        else
+            std::cout << "Erreur fatale: Fichier scripts/" << script << " corrompu" << std::endl;
+    }
 }
 
 void InterfaceBloc::appliquerActions(std::string &action, std::string &valeur, std::vector<Bloc*> &listCurrent)
@@ -412,6 +448,15 @@ void InterfaceBloc::appliquerActions(std::string &action, std::string &valeur, s
         undo();
     else if (action == "redo")
         redo();
+    else if (action == "script")
+    {
+        if(valeur != "")
+            script(valeur);
+        else
+            std::cout << "Erreur : mauvaise commande" << std::endl
+                      << "Utilisation : script [fichier]/[fichier.script]" << std::endl;
+
+    }
     else if(action != "exit")
         std::cout << "Erreur: fonction inconnue" << std::endl;
 }

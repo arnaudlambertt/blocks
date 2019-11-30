@@ -20,15 +20,6 @@ Coords Rotatable::convertPosRot(const Coords &basepos, const Coords &localpos, c
     return resultat;
 }
 
-//Coords Rotatable::convertPosRot(const Coords &basepos, const Coords &localpos) const
-//{
-//    Coords resultat = localpos;
-//    Transformation transfo { Rotation{basepos, m_rotation }};
-//    transfo.appliquer(resultat);
-//
-//    return resultat;
-//}
-
 void Rotatable::dessinerAxe(const Bloc* rot, Svgfile &svgout)
 {
     if(rot->getParent() != nullptr)

@@ -1,0 +1,3 @@
+@bot move 25
+@finger move +5
+@bot.arm move +30

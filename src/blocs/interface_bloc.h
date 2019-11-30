@@ -8,11 +8,11 @@ class InterfaceBloc
         InterfaceBloc();
         ~InterfaceBloc();
 
+        bool init();
         void userInterface();
 
         void dessiner();
         void afficherHelp()const;
-        bool init();
 
         void load(std::string &rom);
         void sauvegarder(std::string &saveFile);
@@ -22,13 +22,17 @@ class InterfaceBloc
 
         void saveState();
 
+        void undo();
+        void redo();
+
+        void script(std::string &script);
+
         void appliquerActions(std::string &action, std::string &valeur, std::vector<Bloc*> &listCurrent);
 
         void translater(std::string valeur, std::vector<Bloc*> &listCurrent);
         void pivoter(std::string valeur, std::vector<Bloc*> &listCurrent);
 
-        void undo();
-        void redo();
+
 
     private:
         Bloc* m_current;
@@ -37,6 +41,7 @@ class InterfaceBloc
         std::vector<Bloc*> m_listCurrent;
         std::string m_store;
         std::vector<std::string> m_actions;
+        std::ifstream m_script;
         size_t m_nAction = 0;
         bool m_showId = false;
         bool m_showRuler = false;

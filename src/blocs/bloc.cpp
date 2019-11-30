@@ -9,12 +9,6 @@
 #include "../geometrie/disk_rotatable.h"
 #include "../geometrie/triangle_rotatable.h"
 
-//Bloc::Bloc()
-//    : Bloc{nullptr, "emptyId", std::make_unique<RectangleRotatable>(200,100,"tl","mc",0.0,0.0,33), "orange", "black"}
-//{
-//    //ctor
-//}
-
 Bloc::Bloc(std::istream& ifs, Bloc* parent, bool &child)
 {
     std::string ligne, mot;
@@ -84,13 +78,6 @@ Bloc::Bloc(std::istream& ifs, Bloc* parent, bool &child)
 
     }
 }
-
-
-//Bloc::Bloc(Bloc* parent,const std::string &id, std::unique_ptr<Geometrie> geometrie, const std::string &color, const std::string &border)
-//    : m_parent{parent}, m_id{id}, m_color{color}, m_border{border}, m_geometrie(std::move(geometrie))
-//{
-//    m_geometrie->setBloc(this);
-//}
 
 void Bloc::initMembers(std::map<std::string,std::string> &infos)
 {
@@ -249,8 +236,6 @@ void Bloc::initMembers(std::map<std::string,std::string> &infos)
         m_info.basepos = infos["basepos"];
     if(infos.find("translate") != infos.end())
         m_info.translation = infos["translate"];
-
-
 }
 
 Coords Bloc::convertRefposEnfant(const Coords &refposEnfant) const
@@ -298,7 +283,6 @@ std::string Bloc::getName()
 
 void Bloc::searchId(std::vector<std::string> id, std::vector<Bloc*> &listCurrent)
 {
-    //std::cout << "search id" << std::endl;
     if(testId(id[0]))
     {
         if(id.size() == 1)
@@ -313,7 +297,7 @@ void Bloc::searchId(std::vector<std::string> id, std::vector<Bloc*> &listCurrent
 
 }
 
-bool Bloc::testId(const std::string &id)   /// : range | [ specific ]| % modulo | ? random
+bool Bloc::testId(const std::string &id)
 {
     std::string::size_type sz;
 
@@ -371,7 +355,6 @@ bool Bloc::testId(const std::string &id)   /// : range | [ specific ]| % modulo 
         if( smodulo[0] >= 48 && smodulo[0] <= 57)
             modulo = std::stoi(smodulo,&sz);
 
-
         if(modulo != -1 && reste != -1)
         {
             cpym_id = prem_id + std::to_string(numerom_id%modulo) + "%" + std::to_string(modulo);
@@ -408,13 +391,11 @@ bool Bloc::testId(const std::string &id)   /// : range | [ specific ]| % modulo 
         }
         if(!blindage)
         {
-
             return false;
         }
 
         if( sbornesup[0] >= 48 && sbornesup[0] <= 57)
             bornesup = std::stoi(sbornesup,&sz);
-
 
         if(borneinf != -1 && borneinf!= -1)
         {
