@@ -2,6 +2,7 @@
 #include "../geometrie/translatable.h"
 #include "../geometrie/rotatable.h"
 #include <dirent.h>
+#include <windows.h>
 
 InterfaceBloc::InterfaceBloc()
     :m_current{nullptr}, m_room{nullptr}
@@ -109,10 +110,10 @@ void InterfaceBloc::userInterface()
             if(m_script.is_open())
             {
                 if(!m_script.eof())
-                    {
-                        std::getline(m_script, saisie);
-                        std::cout << saisie << std::endl;
-                    }
+                {
+                    std::getline(m_script, saisie);
+                    std::cout << saisie << std::endl;
+                }
                 else
                 {
                     m_script.close();
@@ -238,10 +239,19 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
     {
         if(Translatable* t = dynamic_cast<Translatable*>(i->getGeometrie()))
         {
-            if (valeur[0] == '+' || valeur[0] == '-')
-                t->translater(valtranslation + t->getTranslation());
-            else
-                t->translater(valtranslation);
+            double initiale = t->getTranslation();
+            for(double j = 0.01; j<= 1.01; j+=0.01)
+            {
+                if (valeur[0] == '+' || valeur[0] == '-')
+                {
+                    t->translater(initiale + (j-0.01)*valtranslation);
+                }
+                else
+                {
+                    t->translater((1-j)*initiale + j*valtranslation);
+                }
+            }
+
             change = true;
         }
         else
@@ -261,10 +271,14 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
     {
         if(dynamic_cast<Rotatable*>(i->getGeometrie()))
         {
-            if (valeur[0] == '+' || valeur[0] == '-')
-                i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() + valrotation);
-            else
-                i->getGeometrie()->setNewRotation(valrotation);
+            double initiale = i->getGeometrie()->getVraiRotation() ;
+            for(double j = 0.01; j<= 1.01; j+=0.01)
+            {
+                if (valeur[0] == '+' || valeur[0] == '-')
+                    i->getGeometrie()->setNewRotation(initiale + (j-0.01)*valrotation);
+                else
+                    i->getGeometrie()->setNewRotation((1-j)*initiale + j*valrotation);
+            }
             change = true;
         }
         else
@@ -353,7 +367,7 @@ void InterfaceBloc::restore(const std::string &store)
 
 void InterfaceBloc::script(std::string &script)
 {
-        if(script.size() < 7 || script.find(".script") != script.size()-7)
+    if(script.size() < 7 || script.find(".script") != script.size()-7)
         script += ".script";
 
 
@@ -438,10 +452,10 @@ void InterfaceBloc::appliquerActions(std::string &action, std::string &valeur, s
     else if (action == "store")
         store();
     else if (action == "restore")
-        {
-            restore(m_store);
-            saveState();
-        }
+    {
+        restore(m_store);
+        saveState();
+    }
     else if (action == "reload")
         load(m_rom);
     else if (action == "undo")

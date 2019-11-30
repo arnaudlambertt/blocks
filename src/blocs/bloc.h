@@ -68,7 +68,7 @@ class Bloc
         Coords getAbsolute(const std::string &localPos) const;
         void sauvegarde(std::ostream& ofs, int tabulation);
 
-    protected:
+    private:
         Bloc* m_parent; //pointeur parent
         std::vector <std::unique_ptr<Bloc>> m_enfants; //vecteur pointeurs enfants
 
@@ -78,7 +78,9 @@ class Bloc
         std::string m_border; //couleur bordure
 
         std::unique_ptr<Geometrie> m_geometrie;
+        bool m_isObject = false;
         Save m_info;
+
 
 };
 

@@ -3,9 +3,9 @@
 
 <polygon points=" 150,75 1150,75 1150,475 150,475" style="fill:azure;stroke:lightgrey;stroke-width:1.25" />
 <polygon points=" 150,475 1150,475 1150,515 150,515" style="fill:darkgrey;stroke:black;stroke-width:1.25" />
-<circle cx="875" cy="475" r="25" fill="lightblue" />
-<circle cx="875" cy="475" r="25" fill="none" stroke="black" stroke-width="1.25" />
-<polygon points=" 835,485 820,475 835,465 850,475" style="fill:purple;stroke:black;stroke-width:1" />
+<circle cx="900.785" cy="499.988" r="25" fill="lightblue" />
+<circle cx="900.785" cy="499.988" r="25" fill="none" stroke="black" stroke-width="1.25" />
+<polygon points=" 912.037,539.654 902.513,554.961 892.047,540.282 901.571,524.975" style="fill:purple;stroke:black;stroke-width:1" />
 <polygon points=" 885,455 915,455 915,475 885,475" style="fill:peru;stroke:black;stroke-width:1.25" />
 <polygon points=" 320,365 380,365 380,475 320,475" style="fill:lightseagreen;stroke:black;stroke-width:1.25" />
 <polygon points=" 357,380 365,380 365,388 357,388" style="fill:orange;stroke:black;stroke-width:1.25" />

@@ -121,10 +121,19 @@ void Bloc::initMembers(std::map<std::string,std::string> &infos)
     if(infos.find("rotate") != infos.end())
         rotation = std::stod(infos["rotate"]);
 
+    if(m_isObject)
+    {
+        translation = -0.1;
+        rotation = -0.1;
+    }
+
     if(infos.find("refposx") != infos.end())
     {
         if(infos["refposx"].find('%') != std::string::npos)
+        {
             refposX = std::stod(infos["refposx"])* 0.01;
+            m_isObject = false;
+        }
         else
             refposX = std::stod(infos["refposx"])/m_parent->getDimensions()[0];
     }
@@ -132,7 +141,10 @@ void Bloc::initMembers(std::map<std::string,std::string> &infos)
     if(infos.find("refposy") != infos.end())
     {
         if(infos["refposy"].find('%') != std::string::npos)
+        {
             refposY = std::stod(infos["refposy"])* 0.01;
+            m_isObject = true;
+        }
         else
             refposY = std::stod(infos["refposy"])/m_parent->getDimensions()[1];
     }
@@ -234,7 +246,7 @@ void Bloc::initMembers(std::map<std::string,std::string> &infos)
         m_info.endpos = infos["endpos"];
     if(infos.find("basepos") != infos.end())
         m_info.basepos = infos["basepos"];
-    if(infos.find("translate") != infos.end())
+    if(translation != -1.0 && infos.find("translate") != infos.end())
         m_info.translation = infos["translate"];
 }
 
