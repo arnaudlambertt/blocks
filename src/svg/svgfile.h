@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include <set>
+#include <math.h>
 
 constexpr char defcol[] = "black";
 
@@ -47,6 +48,8 @@ public:
     void addGrid(double span=100.0, bool numbering=true, std::string color="lightgrey");
 
     static std::string makeRGB(int r, int g, int b);
+
+    double abs(double a) {return (sqrt(a*a));}
 
     /// Type non copiable
     Svgfile(const Svgfile&) = delete;

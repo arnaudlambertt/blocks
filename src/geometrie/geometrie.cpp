@@ -45,10 +45,6 @@ void Geometrie::setNewRotation(const double &rotation)
         setRotation(nouv = rotation + m_bloc->getParent()->getGeometrie()->getRotation());
     else
         setRotation(nouv = rotation);
-
     for(auto &i : m_bloc->getEnfants())
         i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation()+nouv-ancien);
 }
-
-
-

@@ -502,16 +502,16 @@ void Bloc::displayId(Svgfile &svgout)
     dessinerId(svgout);
     for(auto &i: m_enfants)
     {
-       i->displayId(svgout);
+        i->displayId(svgout);
     }
 }
 
 void Bloc::displayRuler(Svgfile &svgout)
 {
     if(Translatable* t = dynamic_cast<Translatable*>(getGeometrie()))
-            t->dessinerAxe(m_parent, svgout);
-        else if(Rotatable* r = dynamic_cast<Rotatable*>(getGeometrie()))
-            r->dessinerAxe(this, svgout);
+        t->dessinerAxe(m_parent, svgout);
+    else if(Rotatable* r = dynamic_cast<Rotatable*>(getGeometrie()))
+        r->dessinerAxe(this, svgout);
 
     for(auto &i: m_enfants)
     {
@@ -521,14 +521,15 @@ void Bloc::displayRuler(Svgfile &svgout)
 
 void Bloc::dessinerId(Svgfile &svgout)
 {
-        svgout.addRectangle(getAbsolute("ml").getX(),getAbsolute("ml").getY()+5,
-                            getAbsolute("ml").getX()+8*getId().size(),getAbsolute("ml").getY()+5,
-                            getAbsolute("ml").getX()+8*getId().size(),getAbsolute("ml").getY()-15,
-                            getAbsolute("ml").getX(),getAbsolute("ml").getY()-15,
-                             "yellow",0,"");
-
-        svgout.addText(getAbsolute("ml").getX(),getAbsolute("ml").getY(), m_id, "black");
-
+    svgout.addText(getAbsolute("ml").getX()-1, getAbsolute("ml").getY()-1, m_id, "yellow");
+    svgout.addText(getAbsolute("ml").getX()-1, getAbsolute("ml").getY(), m_id, "yellow");
+    svgout.addText(getAbsolute("ml").getX()-1, getAbsolute("ml").getY()+1, m_id, "yellow");
+    svgout.addText(getAbsolute("ml").getX(), getAbsolute("ml").getY()-1, m_id, "yellow");
+    svgout.addText(getAbsolute("ml").getX(), getAbsolute("ml").getY()+1, m_id, "yellow");
+    svgout.addText(getAbsolute("ml").getX()+1, getAbsolute("ml").getY()-1, m_id, "yellow");
+    svgout.addText(getAbsolute("ml").getX()+1, getAbsolute("ml").getY(), m_id, "yellow");
+    svgout.addText(getAbsolute("ml").getX()+1, getAbsolute("ml").getY()+1, m_id, "yellow");
+    svgout.addText(getAbsolute("ml").getX(),getAbsolute("ml").getY(), m_id, "black");
 }
 
 
