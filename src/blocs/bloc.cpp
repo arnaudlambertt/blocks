@@ -121,10 +121,19 @@ void Bloc::initMembers(std::map<std::string,std::string> &infos)
     if(infos.find("rotate") != infos.end())
         rotation = std::stod(infos["rotate"]);
 
+    if(m_isObject)
+    {
+        translation = -0.1;
+        rotation = -0.1;
+    }
+
     if(infos.find("refposx") != infos.end())
     {
         if(infos["refposx"].find('%') != std::string::npos)
+        {
             refposX = std::stod(infos["refposx"])* 0.01;
+            m_isObject = false;
+        }
         else
             refposX = std::stod(infos["refposx"])/m_parent->getDimensions()[0];
     }
@@ -132,7 +141,10 @@ void Bloc::initMembers(std::map<std::string,std::string> &infos)
     if(infos.find("refposy") != infos.end())
     {
         if(infos["refposy"].find('%') != std::string::npos)
+        {
             refposY = std::stod(infos["refposy"])* 0.01;
+            m_isObject = true;
+        }
         else
             refposY = std::stod(infos["refposy"])/m_parent->getDimensions()[1];
     }
@@ -234,7 +246,7 @@ void Bloc::initMembers(std::map<std::string,std::string> &infos)
         m_info.endpos = infos["endpos"];
     if(infos.find("basepos") != infos.end())
         m_info.basepos = infos["basepos"];
-    if(infos.find("translate") != infos.end())
+    if(translation != -1.0 && infos.find("translate") != infos.end())
         m_info.translation = infos["translate"];
 }
 
@@ -532,5 +544,57 @@ void Bloc::dessinerId(Svgfile &svgout)
     svgout.addText(getAbsolute("ml").getX(),getAbsolute("ml").getY(), m_id, "black");
 }
 
+Bloc * Bloc::getFirstMovableParent()
+{
+    if(dynamic_cast<Translatable*>(m_geometrie.get()) || dynamic_cast<Rotatable*>(m_geometrie.get()))
+    {
+        if(m_parent != nullptr && m_parent->getFirstMovableParent() != nullptr)
+            return m_parent->getFirstMovableParent();
+        else
+            return this;
+    }
+    else if(m_parent != nullptr)
+        return m_parent->getFirstMovableParent();
+    else
+        return nullptr;
+}
+
+Bloc * Bloc::getHighestParent()
+{
+    if(m_parent != nullptr)
+        return m_parent->getHighestParent();
+    else
+        return this;
+}
+
+std::list<Bloc*> Bloc::getTousEnfants()
+{
+    std::list<Bloc*> mesEnfants;
+
+    for(auto &i : getEnfants())
+    {
+        mesEnfants.push_back(i);
+        for(auto &j : i->getTousEnfants())
+            mesEnfants.push_back(j);
+    }
+
+    return mesEnfants;
+}
+
+bool Bloc::collision()
+{
+    Bloc* firstMovableParent = getFirstMovableParent();
+
+    for(auto &i : getHighestParent()->getTousEnfants())
+    {
+        if(i->getFirstMovableParent() == nullptr || firstMovableParent != i->getFirstMovableParent()) // pas de parent movable commun
+            std::cout << i->getId() << std::endl;
+    }
+
+    //for (auto &i : m_enfants)
+      //  i->collision();
+
+    return false;
+}
 
 

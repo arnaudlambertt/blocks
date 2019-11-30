@@ -3,6 +3,7 @@
 #include "../geometrie/rotatable.h"
 #include <dirent.h>
 #include "../util/check_arrow_key.h"
+#include <windows.h>
 
 InterfaceBloc::InterfaceBloc()
     :m_current{nullptr}, m_room{nullptr}
@@ -111,6 +112,7 @@ void InterfaceBloc::userInterface()
             {
                 if(!m_script.eof())
                 {
+                    Sleep(500);
                     std::getline(m_script, saisie);
                     std::cout << saisie << std::endl;
                 }
@@ -239,10 +241,22 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
     {
         if(Translatable* t = dynamic_cast<Translatable*>(i->getGeometrie()))
         {
-            if (valeur[0] == '+' || valeur[0] == '-')
-                t->translater(valtranslation + t->getTranslation());
-            else
-                t->translater(valtranslation);
+            double initiale = t->getTranslation();
+            for(double j = 0.01; j<= 1.01; j+=0.01)
+            {
+                if (valeur[0] == '+' || valeur[0] == '-')
+                {
+                    t->translater(initiale + (j-0.01)*valtranslation);
+                }
+                else
+                {
+                    t->translater((1-j)*initiale + j*valtranslation);
+                }
+                //Sleep(50);
+                //dessiner();
+            }
+            i->collision();
+
             change = true;
         }
         else
@@ -289,6 +303,7 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
             else
                 i->getGeometrie()->setNewRotation(valrotation);
             change = true;
+             i->collision();
         }
         else
             std::cout << "Erreur: La cible " << i->getId() << " n'est pas pivotable" << std::endl;
