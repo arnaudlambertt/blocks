@@ -175,9 +175,6 @@ void Svgfile::addArrow(double x1, double y1, double x2, double y2, std::string c
 {
     double angle = acos(abs(x2-x1)/sqrt(pow(x1-x2,2.0)+pow(y1-y2,2.0)));
 
-    //std::cout << angle << std::endl;
-
-
     m_ostrm << "<polygon points=\" "
             << x1 << "," << y1 << " "
             << x2 << "," << y2 << " "
