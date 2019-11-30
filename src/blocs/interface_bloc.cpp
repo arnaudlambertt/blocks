@@ -267,7 +267,7 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
             if(valeur == "" )
             {
                 int val = 0;
-                std::cout << "Utilisez les fleches gauche et droite pour tourner" << std::endl;
+                std::cout << "Utilisez les fleches gauche et droite pour tourner, une autre touche pour quitter" << std::endl;
                 do
                 {
                     CheckArrowKey(val);     // Lecture des touches clavier
@@ -282,6 +282,7 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
                 dessiner();
                 }
                 while(val == 2 || val == 3 );
+                saveState();
             }
             else if (valeur[0] == '+' || valeur[0] == '-')
                 i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() + valrotation);
