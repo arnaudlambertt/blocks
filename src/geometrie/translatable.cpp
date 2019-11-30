@@ -2,9 +2,9 @@
 #include "../blocs/bloc.h"
 
 Translatable::Translatable(Geometrie* geometrie,const Coords &refpos, const std::string &endpos, const double &translation)
-: m_startpos{refpos}, m_translation{translation}, m_geometrie{geometrie}
+    : m_startpos{refpos}, m_translation{translation}, m_geometrie{geometrie}
 {
-    m_endpos = Coords { Geometrie::pos()[endpos[1]] , Geometrie::pos()[endpos[0]] };
+    m_endpos = Coords { Geometrie::pos()[endpos[1]], Geometrie::pos()[endpos[0]] };
 }
 
 Translatable::~Translatable()
@@ -19,7 +19,7 @@ void Translatable::calcRefpos()
 
 void Translatable::dessinerAxe(const Bloc* parent, Svgfile &svgout)
 {
-    if(parent != nullptr)
+        if(parent != nullptr)
         svgout.addArrow(parent->getAbsolute(m_startpos).getX(),parent->getAbsolute(m_startpos).getY(),
                         parent->getAbsolute(m_endpos).getX(),parent->getAbsolute(m_endpos).getY(), "red");
 }

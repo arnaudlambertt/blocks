@@ -174,7 +174,6 @@ void Svgfile::addLine(double x1, double y1, double x2, double y2, std::string co
 void Svgfile::addArrow(double x1, double y1, double x2, double y2, std::string color)
 {
     double angle = acos(abs(x2-x1)/sqrt(pow(x1-x2,2.0)+pow(y1-y2,2.0)));
-    //std::cout << angle << std::endl;
 
     m_ostrm << "<polygon points=\" "
             << x1 << "," << y1 << " "
@@ -187,11 +186,13 @@ void Svgfile::addArrow(double x1, double y1, double x2, double y2, std::string c
             << ";stroke-width:" << 1
             << "\" />\n";
 
+            if(x2-x1>0 && y2-y1<0)
+            {
     m_ostrm << "<polygon points=\" "
-            << x1-1*(x2-x1>=0.0?1:-1)*5*sin(angle) << "," << y1-1*(x2-x1>=0.0?1:-1)*5*(cos(angle)) << " "
-            << x1+1*(x2-x1>=0.0?1:-1)*5*sin(angle) << "," << y1+1*(x2-x1>=0.0?1:-1)*5*(cos(angle)) << " "
-            << x1+1*(x2-x1>=0.0?1:-1)*5*sin(angle) << "," << y1+1*(x2-x1>=0.0?1:-1)*5*(cos(angle)) << " "
-            << x1-1*(x2-x1>=0.0?1:-1)*5*sin(angle) << "," << y1-1*(x2-x1>=0.0?1:-1)*5*(cos(angle))
+            << x1-1*5*sin(angle) << "," << y1-1*5*(cos(angle)) << " "
+            << x1+1*5*sin(angle) << "," << y1+1*5*(cos(angle)) << " "
+            << x1+1*5*sin(angle) << "," << y1+1*5*(cos(angle)) << " "
+            << x1-1*5*sin(angle) << "," << y1-1*5*(cos(angle))
             << "\" style=\"fill:" << color
             << ";stroke:" << "red"
             << ";stroke-width:" << 2.5
@@ -199,11 +200,71 @@ void Svgfile::addArrow(double x1, double y1, double x2, double y2, std::string c
 
             m_ostrm << "<polygon points=\" "
             << x2 << "," << y2 << " "
-            << x2-1*(x2-x1>=0.0?1:-1)*5*cos(angle)+5*sin(angle) << "," << y2+1*(x2-x1>=0.0?1:-1)*5*sin(angle)+5*cos(angle) << " "
-            << x2-1*(x2-x1>=0.0?1:-1)*5*cos(angle)-5*sin(angle) << "," << y2+1*(x2-x1>=0.0?1:-1)*5*sin(angle)-5*cos(angle)
+            << x2-1*5*cos(angle)-5*sin(angle) << "," << y2+1*5*sin(angle)-5*cos(angle) << " "
+            << x2-1*5*cos(angle)+5*sin(angle) << "," << y2+1*5*sin(angle)+5*cos(angle)
             << "\" style=\"fill:" << color
             << "\" />\n";
+            }
 
+           else if(x2-x1<=0 && y2-y1<=0)
+            {
+    m_ostrm << "<polygon points=\" "
+            << x1-1*5*sin(angle) << "," << y1+1*5*(cos(angle)) << " "
+            << x1+1*5*sin(angle) << "," << y1-1*5*(cos(angle)) << " "
+            << x1+1*5*sin(angle) << "," << y1-1*5*(cos(angle)) << " "
+            << x1+1*5*sin(angle) << "," << y1-1*5*(cos(angle))
+            << "\" style=\"fill:" << color
+            << ";stroke:" << "red"
+            << ";stroke-width:" << 2.5
+            << "\" />\n";
+
+            m_ostrm << "<polygon points=\" "
+            << x2 << "," << y2 << " "
+            << x2+1*5*sin(angle)+5*cos(angle) << "," << y2-1*5*cos(angle)+5*sin(angle) << " "
+            << x2-1*5*sin(angle)+5*cos(angle) << "," << y2+1*5*cos(angle)+5*sin(angle)
+            << "\" style=\"fill:" << color
+            << "\" />\n";
+            }
+
+            else if(x2-x1<0 && y2-y1>0)
+            {
+    m_ostrm << "<polygon points=\" "
+            << x1+1*5*sin(angle) << "," << y1+1*5*(cos(angle)) << " "
+            << x1-1*5*sin(angle) << "," << y1-1*5*(cos(angle)) << " "
+            << x1-1*5*sin(angle) << "," << y1-1*5*(cos(angle)) << " "
+            << x1+1*5*sin(angle) << "," << y1+1*5*(cos(angle))
+            << "\" style=\"fill:" << color
+            << ";stroke:" << "red"
+            << ";stroke-width:" << 2.5
+            << "\" />\n";
+
+            m_ostrm << "<polygon points=\" "
+            << x2 << "," << y2 << " "
+            << x2+1*5*cos(angle)+5*sin(angle) << "," << y2-1*5*sin(angle)+5*cos(angle) << " "
+            << x2+1*5*cos(angle)-5*sin(angle) << "," << y2-1*5*sin(angle)-5*cos(angle)
+            << "\" style=\"fill:" << color
+            << "\" />\n";
+            }
+
+            else if(x2-x1>=0 && y2-y1>=0)
+            {
+    m_ostrm << "<polygon points=\" "
+            << x1+1*5*sin(angle) << "," << y1-1*5*(cos(angle)) << " "
+            << x1-1*5*sin(angle) << "," << y1+1*5*(cos(angle)) << " "
+            << x1-1*5*sin(angle) << "," << y1+1*5*(cos(angle)) << " "
+            << x1-1*5*sin(angle) << "," << y1+1*5*(cos(angle))
+            << "\" style=\"fill:" << color
+            << ";stroke:" << "red"
+            << ";stroke-width:" << 2.5
+            << "\" />\n";
+
+            m_ostrm << "<polygon points=\" "
+            << x2 << "," << y2 << " "
+            << x2-1*5*sin(angle)-5*cos(angle) << "," << y2+1*5*cos(angle)-5*sin(angle) << " "
+            << x2+1*5*sin(angle)-5*cos(angle) << "," << y2-1*5*cos(angle)-5*sin(angle)
+            << "\" style=\"fill:" << color
+            << "\" />\n";
+            }
 
 }
 
