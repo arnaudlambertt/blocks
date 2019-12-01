@@ -1,0 +1,7 @@
+<map id="Rotatable" name="Rotatable">
+<area shape="rect" id="node1" title=" " alt="" coords="234,5,311,32"/>
+<area shape="rect" id="node2" href="$class_disk_rotatable.html" title=" " alt="" coords="5,80,108,107"/>
+<area shape="rect" id="node3" href="$class_losange_rotatable.html" title=" " alt="" coords="132,80,259,107"/>
+<area shape="rect" id="node4" href="$class_rectangle_rotatable.html" title=" " alt="" coords="283,80,417,107"/>
+<area shape="rect" id="node5" href="$class_triangle_rotatable.html" title=" " alt="" coords="442,80,565,107"/>
+</map>

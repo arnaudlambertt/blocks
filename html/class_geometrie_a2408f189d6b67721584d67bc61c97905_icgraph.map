@@ -1,0 +1,16 @@
+<map id="Geometrie::pos" name="Geometrie::pos">
+<area shape="rect" id="node1" title=" " alt="" coords="396,132,507,159"/>
+<area shape="rect" id="node2" href="$class_geometrie.html#affa005c1d65d56b3bcd848baeafd8b08" title=" " alt="" coords="194,19,345,45"/>
+<area shape="rect" id="node3" href="$class_rectangle.html#aadd10dfc0ded0307c726b1d3fdc4a583" title=" " alt="" coords="191,69,348,96"/>
+<area shape="rect" id="node6" href="$class_triangle.html#a166d4274edcec38930812f1d9e4a6529" title=" " alt="" coords="197,132,341,159"/>
+<area shape="rect" id="node9" href="$class_losange.html#aa9dda7c473bc24a03cdc680636531eb6" title=" " alt="" coords="195,208,343,235"/>
+<area shape="rect" id="node12" href="$class_disk.html#aaae6c1b425cc082d8b58a7d6b83400be" title=" " alt="" coords="207,309,332,336"/>
+<area shape="rect" id="node4" href="$class_rectangle.html#ad230dbeed977f2645a83e79341fd0eea" title=" " alt="" coords="5,5,143,32"/>
+<area shape="rect" id="node5" href="$class_rectangle.html#a94ad115126084c6b66031e40b6a14297" title=" " alt="" coords="20,56,128,83"/>
+<area shape="rect" id="node7" href="$class_triangle.html#ada7606e2c82f02a7d15651a7fa4e460a" title=" " alt="" coords="12,107,136,133"/>
+<area shape="rect" id="node8" href="$class_triangle.html#adbb4b45251248f128c602cbcdbd4f66a" title=" " alt="" coords="27,157,121,184"/>
+<area shape="rect" id="node10" href="$class_losange.html#abc8631ac6b5310c57a8fd94dfe379d95" title=" " alt="" coords="10,208,138,235"/>
+<area shape="rect" id="node11" href="$class_losange.html#a7e37a8d7182342441ec35dfcef748ca0" title=" " alt="" coords="25,259,123,285"/>
+<area shape="rect" id="node13" href="$class_disk.html#aa4720fe32dbd96c34b145663fee42739" title=" " alt="" coords="21,309,127,336"/>
+<area shape="rect" id="node14" href="$class_disk.html#aabf9b6e8917b693763f6a8d83f29641f" title=" " alt="" coords="36,360,112,387"/>
+</map>

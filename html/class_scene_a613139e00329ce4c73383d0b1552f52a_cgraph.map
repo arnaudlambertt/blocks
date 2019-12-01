@@ -1,0 +1,18 @@
+<map id="Scene::appliquerActions" name="Scene::appliquerActions">
+<area shape="rect" id="node1" title=" " alt="" coords="5,284,168,311"/>
+<area shape="rect" id="node2" href="$class_scene.html#a18a6775c37b74c5cf3b7ae1a9acf65b9" title=" " alt="" coords="217,5,351,32"/>
+<area shape="rect" id="node3" href="$class_scene.html#a7c9009858012c2d274e9b7fd2beb29c8" title=" " alt="" coords="572,208,688,235"/>
+<area shape="rect" id="node6" href="$class_scene.html#ae06bd15b0029a1b7dacfa06d84e9e0ea" title=" " alt="" coords="239,107,329,133"/>
+<area shape="rect" id="node7" href="$class_scene.html#a5bccebeee3032e824f5894432439faf1" title=" " alt="" coords="400,157,524,184"/>
+<area shape="rect" id="node8" href="$class_scene.html#aa81950e41ecacfd5a33768fb3cc4e7e6" title=" " alt="" coords="232,208,336,235"/>
+<area shape="rect" id="node10" href="$class_scene.html#ac58b21204c275d87ba06fdc8e0d12e7f" title=" " alt="" coords="238,360,330,387"/>
+<area shape="rect" id="node11" href="$class_scene.html#a8626f25b1bc364d4f514cab3265c1b21" title=" " alt="" coords="409,360,515,387"/>
+<area shape="rect" id="node12" href="$class_scene.html#a0ecd51d35c0f5eaa158ad0770c8dd971" title=" " alt="" coords="582,411,678,437"/>
+<area shape="rect" id="node13" href="$class_scene.html#ae5cd79b915091f6f22f95bd86aceea2b" title=" " alt="" coords="216,512,352,539"/>
+<area shape="rect" id="node14" href="$class_scene.html#a4fa72a7b94aac3256d70d69c80a6e782" title=" " alt="" coords="235,563,333,589"/>
+<area shape="rect" id="node15" href="$class_scene.html#ab5fc3d7115930217ffa7fd421c18e896" title=" " alt="" coords="223,259,345,285"/>
+<area shape="rect" id="node16" href="$class_scene.html#a17701deb4fc897ba5ae4dabac0b0b2a9" title=" " alt="" coords="237,411,331,437"/>
+<area shape="rect" id="node4" href="$class_svgfile.html#a3d1bff53d9ce225ebf5b6daa5423e2da" title=" " alt="" coords="736,208,857,235"/>
+<area shape="rect" id="node5" href="$svgfile_8cpp.html#aac4facfedc971ca1ada3bec9ab5b9028" title=" " alt="" coords="905,208,956,235"/>
+<area shape="rect" id="node9" href="$check__arrow__key_8cpp.html#a7fc1b448e53cce17842b5edb7b4d69e3" title="renvoie un nombre par paramètre en fonction de la touche appuyée" alt="" coords="405,259,519,285"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="operator*" name="operator*">
+<area shape="rect" id="node1" title="Produit matrice matrice : composition (au sens maths)" alt="" coords="5,5,80,32"/>
+<area shape="rect" id="node2" href="$class_matrice.html#ab326ab33882ec59b643fce1c2018e1fc" title="Fabrique de matrice transposée" alt="" coords="128,5,259,32"/>
+</map>

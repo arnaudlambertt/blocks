@@ -1,0 +1,6 @@
+<map id="Disk" name="Disk">
+<area shape="rect" id="node1" title=" " alt="" coords="99,80,147,107"/>
+<area shape="rect" id="node3" href="$class_disk_rotatable.html" title=" " alt="" coords="5,155,108,181"/>
+<area shape="rect" id="node4" href="$class_disk_translatable.html" title=" " alt="" coords="132,155,251,181"/>
+<area shape="rect" id="node2" href="$class_geometrie.html" title=" " alt="" coords="82,5,165,32"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="TriangleTranslatable" name="TriangleTranslatable">
+<area shape="rect" id="node1" title=" " alt="" coords="47,277,184,304"/>
+<area shape="rect" id="node2" href="$class_triangle.html" title=" " alt="" coords="126,201,193,228"/>
+<area shape="rect" id="node3" href="$class_geometrie.html" title=" " alt="" coords="113,111,195,137"/>
+<area shape="rect" id="node6" href="$class_translatable.html" title=" " alt="" coords="9,201,101,228"/>
+<area shape="rect" id="node4" href="$class_coords.html" title=" " alt="" coords="5,5,68,32"/>
+<area shape="rect" id="node5" href="$class_bloc.html" title=" " alt="" coords="138,5,186,32"/>
+</map>

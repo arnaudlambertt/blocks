@@ -1,0 +1,13 @@
+<map id="Triangle::dessiner" name="Triangle::dessiner">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,129,108"/>
+<area shape="rect" id="node2" href="$class_svgfile.html#a2c31f32cfbb99562691ef73f97a08581" title="&lt;polygon points=&quot;200,10 250,190 160,210&quot; style=&quot;fill:lime;stroke:purple;stroke&#45;width:1&quot;&gt;" alt="" coords="183,5,316,32"/>
+<area shape="rect" id="node3" href="$class_triangle.html#a166d4274edcec38930812f1d9e4a6529" title=" " alt="" coords="177,56,321,83"/>
+<area shape="rect" id="node10" href="$class_bloc.html#a32e850e01c26aebc2fca68b74d5c21b5" title=" " alt="" coords="193,107,305,133"/>
+<area shape="rect" id="node11" href="$class_bloc.html#a62459d6bde253a20036f02d805c6555e" title=" " alt="" coords="197,157,301,184"/>
+<area shape="rect" id="node4" href="$class_geometrie.html#a2408f189d6b67721584d67bc61c97905" title=" " alt="" coords="421,31,532,57"/>
+<area shape="rect" id="node5" href="$class_triangle.html#a0be83602e9746585bf801efd79a03d3c" title=" " alt="" coords="369,81,584,108"/>
+<area shape="rect" id="node6" href="$class_coords.html#a1d8f1fc245cfe9666ea16ddb6d300c78" title=" " alt="" coords="633,5,729,32"/>
+<area shape="rect" id="node7" href="$class_coords.html#aaef474f2b9011915ab3cda9524f0831e" title=" " alt="" coords="632,56,731,83"/>
+<area shape="rect" id="node8" href="$class_coords.html#a506679294ba7b8867020ee51e01a2c6d" title=" " alt="" coords="633,107,729,133"/>
+<area shape="rect" id="node9" href="$class_coords.html#a2102f1f7ce306997226fa98cfc029971" title=" " alt="" coords="632,157,731,184"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Losange" name="Losange">
+<area shape="rect" id="node1" title=" " alt="" coords="112,80,183,107"/>
+<area shape="rect" id="node3" href="$class_losange_rotatable.html" title=" " alt="" coords="5,155,132,181"/>
+<area shape="rect" id="node4" href="$class_losange_translatable.html" title=" " alt="" coords="157,155,298,181"/>
+<area shape="rect" id="node2" href="$class_geometrie.html" title=" " alt="" coords="106,5,189,32"/>
+</map>

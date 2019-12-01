@@ -1,0 +1,13 @@
+<map id="Losange::dessiner" name="Losange::dessiner">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,133,108"/>
+<area shape="rect" id="node2" href="$class_svgfile.html#a0eb02c69338ae328759b13c0f76808df" title=" " alt="" coords="187,5,324,32"/>
+<area shape="rect" id="node3" href="$class_losange.html#aa9dda7c473bc24a03cdc680636531eb6" title=" " alt="" coords="181,56,329,83"/>
+<area shape="rect" id="node10" href="$class_bloc.html#a32e850e01c26aebc2fca68b74d5c21b5" title=" " alt="" coords="199,107,311,133"/>
+<area shape="rect" id="node11" href="$class_bloc.html#a62459d6bde253a20036f02d805c6555e" title=" " alt="" coords="203,157,307,184"/>
+<area shape="rect" id="node4" href="$class_geometrie.html#a2408f189d6b67721584d67bc61c97905" title=" " alt="" coords="433,31,544,57"/>
+<area shape="rect" id="node5" href="$class_losange.html#a5666531daf289e670ca5c169e15f3272" title=" " alt="" coords="377,81,600,108"/>
+<area shape="rect" id="node6" href="$class_coords.html#a1d8f1fc245cfe9666ea16ddb6d300c78" title=" " alt="" coords="649,5,745,32"/>
+<area shape="rect" id="node7" href="$class_coords.html#aaef474f2b9011915ab3cda9524f0831e" title=" " alt="" coords="648,56,747,83"/>
+<area shape="rect" id="node8" href="$class_coords.html#a506679294ba7b8867020ee51e01a2c6d" title=" " alt="" coords="649,107,745,133"/>
+<area shape="rect" id="node9" href="$class_coords.html#a2102f1f7ce306997226fa98cfc029971" title=" " alt="" coords="648,157,747,184"/>
+</map>

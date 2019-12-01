@@ -1,0 +1,15 @@
+<map id="Geometrie" name="Geometrie">
+<area shape="rect" id="node1" title=" " alt="" coords="5,183,88,209"/>
+<area shape="rect" id="node2" href="$class_disk.html" title=" " alt="" coords="152,56,200,83"/>
+<area shape="rect" id="node5" href="$class_losange.html" title=" " alt="" coords="141,157,211,184"/>
+<area shape="rect" id="node8" href="$class_rectangle.html" title=" " alt="" coords="136,208,216,235"/>
+<area shape="rect" id="node11" href="$class_triangle.html" title=" " alt="" coords="143,309,209,336"/>
+<area shape="rect" id="node3" href="$class_disk_rotatable.html" title=" " alt="" coords="288,5,391,32"/>
+<area shape="rect" id="node4" href="$class_disk_translatable.html" title=" " alt="" coords="280,56,399,83"/>
+<area shape="rect" id="node6" href="$class_losange_rotatable.html" title=" " alt="" coords="276,107,403,133"/>
+<area shape="rect" id="node7" href="$class_losange_translatable.html" title=" " alt="" coords="269,157,410,184"/>
+<area shape="rect" id="node9" href="$class_rectangle_rotatable.html" title=" " alt="" coords="272,208,407,235"/>
+<area shape="rect" id="node10" href="$class_rectangle_translatable.html" title=" " alt="" coords="264,259,415,285"/>
+<area shape="rect" id="node12" href="$class_triangle_rotatable.html" title=" " alt="" coords="278,309,401,336"/>
+<area shape="rect" id="node13" href="$class_triangle_translatable.html" title=" " alt="" coords="271,360,408,387"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Translatable" name="Translatable">
+<area shape="rect" id="node1" title=" " alt="" coords="259,5,351,32"/>
+<area shape="rect" id="node2" href="$class_disk_translatable.html" title=" " alt="" coords="5,80,124,107"/>
+<area shape="rect" id="node3" href="$class_losange_translatable.html" title=" " alt="" coords="149,80,290,107"/>
+<area shape="rect" id="node4" href="$class_rectangle_translatable.html" title=" " alt="" coords="315,80,465,107"/>
+<area shape="rect" id="node5" href="$class_triangle_translatable.html" title=" " alt="" coords="489,80,627,107"/>
+</map>
