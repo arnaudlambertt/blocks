@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="2000" height="2000">
+
+<polygon points=" -100,175 400,-25 900,175 400,375" style="fill:azure;stroke:lightgrey;stroke-width:1" />
+<polygon points=" -100,375 900,375 900,415 -100,415" style="fill:darkgrey;stroke:black;stroke-width:1.25" />
+<circle cx="625" cy="375" r="25" fill="lightblue" />
+<circle cx="625" cy="375" r="25" fill="none" stroke="black" stroke-width="1.25" />
+<polygon points=" 585,385 570,375 585,365 600,375" style="fill:purple;stroke:black;stroke-width:1" />
+<polygon points=" 635,355 665,355 665,375 635,375" style="fill:peru;stroke:black;stroke-width:1.25" />
+<polygon points=" 470,265 530,265 530,375 470,375" style="fill:lightseagreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 507,280 515,280 515,288 507,288" style="fill:orange;stroke:black;stroke-width:1.25" />
+<polygon points=" 477,280 485,280 485,288 477,288" style="fill:orange;stroke:black;stroke-width:1.25" />
+<polygon points=" 530,310 610,310 610,330 530,330" style="fill:turquoise;stroke:black;stroke-width:1.25" />
+<polygon points=" 540,330 550,330 550,350 540,350" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 590,330 600,330 600,350 590,350" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 390,310 470,310 470,330 390,330" style="fill:turquoise;stroke:black;stroke-width:1.25" />
+<polygon points=" 400,330 410,330 410,350 400,350" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 450,330 460,330 460,350 450,350" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 470,265 530,265 530,375 470,375" style="fill:lightseagreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 507,280 515,280 515,288 507,288" style="fill:turquoise;stroke:black;stroke-width:1.25" />
+<polygon points=" 477,280 485,280 485,288 477,288" style="fill:red;stroke:black;stroke-width:1.25" />
+<polygon points=" 530,310 610,310 610,330 530,330" style="fill:turquoise;stroke:black;stroke-width:1.25" />
+<polygon points=" 540,330 550,330 550,350 540,350" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 590,330 600,330 600,350 590,350" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 390,310 470,310 470,330 390,330" style="fill:turquoise;stroke:black;stroke-width:1.25" />
+<polygon points=" 400,330 410,330 410,350 400,350" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 450,330 460,330 460,350 450,350" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
+
+
+</svg>
