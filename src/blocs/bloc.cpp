@@ -559,14 +559,6 @@ Bloc * Bloc::getFirstMovableParent()
         return nullptr;
 }
 
-Bloc * Bloc::getHighestParent()
-{
-    if(m_parent != nullptr)
-        return m_parent->getHighestParent();
-    else
-        return this;
-}
-
 std::list<Bloc*> Bloc::getTousEnfants()
 {
     std::list<Bloc*> mesEnfants;
@@ -581,20 +573,48 @@ std::list<Bloc*> Bloc::getTousEnfants()
     return mesEnfants;
 }
 
-bool Bloc::collision()
+bool Bloc::collision(std::list<Bloc*> tousEnfants)
 {
     Bloc* firstMovableParent = getFirstMovableParent();
+    bool test = false;
+    std::vector<Coords> colltab;
 
-    for(auto &i : getHighestParent()->getTousEnfants())
+    for(auto &i : tousEnfants)
     {
         if(i->getFirstMovableParent() == nullptr || firstMovableParent != i->getFirstMovableParent()) // pas de parent movable commun
-            std::cout << i->getId() << std::endl;
+        {
+            for(double j = -0.5; j <= 0.5 ; j+=0.5)//LATANCE IMPORTANTE
+            {
+                for(double k = -0.5; k <= 0.5 ; k+=0.5)//LATENCE IMPORTANTE
+                    if(k == 0 && j ==0)
+                        continue;
+                    else if( i->getGeometrie()->isIn( getAbsolute(Coords{j,k}) ) )
+                    {
+                        std::cout << m_id << "collision avec" << i->getId() << std::endl;
+                        test = true;
+                        //Coords{j,k} .afficher();
+                        //colltab.push_back(getAbsolute(Coords{j,k}));
+
+                        //if(getAbsolute("mc").getX() > i->getAbsolute("mc").getX());
+                            //std::cout << "poussee vers la gauche" << std::endl;
+                        //return poussee (possible/impossible)
+                        break;
+                        break;
+                            //std::cout << "pousee vers la droite" << std::endl;
+                        //return poussee (possible/impossible)
+                    }
+            }
+            if (test)
+                return true;
+        }
     }
 
-    //for (auto &i : m_enfants)
-      //  i->collision();
-
-    return false;
+    for (auto &i : m_enfants)
+    {
+        if(i->collision(tousEnfants))
+            return true;
+    }
+    return test;
 }
 
 

@@ -62,3 +62,10 @@ Coords Disk::squareposToDiskpos(const Coords &a)
         };
 
 }
+
+bool Disk::isIn(const Coords &point) const
+{
+    Coords o = getAbsolute("mc");
+
+    return (m_radius > sqrt( pow(point.getX()-o.getX(),2) + pow(point.getY()-o.getY(),2)));
+}

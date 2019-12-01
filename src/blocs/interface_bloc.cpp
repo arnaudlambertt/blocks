@@ -49,7 +49,8 @@ bool InterfaceBloc::init()
     int ignore = 0;
     std::istringstream iss;
     std::cout << "Veuillez charger un fichier rom."<< std::endl
-              << "Commande : load [fichier]/[fichier.rom]" << std::endl;
+              << "Commande : load [fichier]/[fichier.rom]" << std::endl
+              << "Liste des fichiers presents dans le dossier roms/ :" << std::endl << std::endl;
 
     DIR *dir;
     struct dirent *ent;
@@ -59,10 +60,11 @@ bool InterfaceBloc::init()
         while ((ent = readdir (dir)) != NULL)
         {
             if(ignore >= 2)
-                printf ("%s\n", ent->d_name);
+                std::cout << " - " << ent->d_name << std::endl;
             ++ignore;
         }
         closedir (dir);
+        std::cout << std::endl;
     }
     else
         std::cout << "Erreur : ouverture du dossier roms/ impossible" << std::endl;
@@ -108,6 +110,7 @@ void InterfaceBloc::userInterface()
                 else
                     std::cout << cible << "> ";
             }
+
             if(m_script.is_open())
             {
                 if(!m_script.eof())
@@ -125,6 +128,7 @@ void InterfaceBloc::userInterface()
             }
             else
                 std::getline(std::cin, saisie);
+
             if(saisie == "@")
                 std::cout << "erreur de format" << std::endl;
             else
@@ -155,11 +159,9 @@ void InterfaceBloc::userInterface()
                         bool blindage = true;
                         for (auto i : m_listCurrent)
                         {
-                            //std::cout << "courant: "<< i->getId() << std::endl;
                             if (i->getName() != m_listCurrent[0]->getName())
                             {
                                 blindage = false;
-                                //std::cout << i->getName() << " | " << m_listCurrent[0]->getName() << std::endl;
                             }
                         }
                         if (blindage)
@@ -234,9 +236,7 @@ void InterfaceBloc::sauvegarder(std::string &saveFile)
 void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurrent)
 {
     std::string::size_type sz;
-    double valtranslation;
-    if(valeur != "")
-        valtranslation = std::stod(valeur, &sz) *0.01;
+    double valtranslation = std::stoi(valeur, &sz) *0.01;
     bool change = false;
 
     for(auto &i: listCurrent)
@@ -264,22 +264,66 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
                 saveState();
             }
             double initiale = t->getTranslation();
-            for(double j = 0.01; j<= 1.01; j+=0.01)
+            if (valeur[0] == '+' || valeur[0] == '-')
             {
-                if (valeur[0] == '+' || valeur[0] == '-')
-                {
-                    t->translater(initiale + (j-0.01)*valtranslation);
-                }
-                else
-                {
-                    t->translater((1-j)*initiale + j*valtranslation);
-                }
-                //Sleep(50);
-                //dessiner();
-            }
-            i->collision();
+                if(valtranslation > 0)
+                    for(double j = 0.01; j<= valtranslation; j+=0.01)
+                    {
+                        t->translater(initiale + j);
 
-            change = true;
+                        if(i->collision(m_room->getTousEnfants()))
+                        {
+                            t->translater(initiale + j-0.01);
+                            break;
+                        }
+                        else
+                            change = true;
+                    }
+                else if(valtranslation < 0)
+                    for(double j = -0.01; j>= valtranslation; j-=0.01)
+                    {
+                        t->translater(initiale + j);
+
+                        if(i->collision(m_room->getTousEnfants()))
+                        {
+                            t->translater(initiale + j+0.01);
+                            break;
+                        }
+                        else
+                            change = true;
+                    }
+            }
+            else
+            {
+                if(valtranslation > initiale)
+                    for(double j = initiale+0.01; j<= valtranslation; j+=0.01)
+                    {
+                        saveState();
+                        t->translater(j);
+
+                        if(i->collision(m_room->getTousEnfants()))
+                        {
+                            t->translater(j-0.01);
+                            break;
+                        }
+                        else
+                            change = true;
+                    }
+                else if(valtranslation < initiale)
+                    for(double j = initiale-0.01; j>= valtranslation-0.01; j-=0.01)
+                    {
+                        saveState();
+                        t->translater(j);
+
+                        if(i->collision(m_room->getTousEnfants()))
+                        {
+                            t->translater(j+0.01);
+                            break;
+                        }
+                        else
+                            change = true;
+                    }
+            }
         }
         else
             std::cout << "Erreur: La cible " << i->getId() << " n'est pas translatable" << std::endl;
@@ -293,7 +337,7 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
     std::string::size_type sz;
     double valrotation;
     if(valeur != "")
-    valrotation = std::stod(valeur, &sz);
+        valrotation = std::stod(valeur, &sz);
     bool change = false;
 
     for(auto &i: listCurrent)
@@ -310,32 +354,109 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
                     if (val == 2)   // Si fleche droite
                     {
                         i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() + 2);    // Rotation
+                        if(i->collision(m_room->getTousEnfants()))
+                        {
+                            i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() - 2);
+                            break;
+                        }
+
+                        else
+                            change = true;
                     }
-                            if (val == 3)   // Si fleche droite
+                    if (val == 3)   // Si fleche droite
                     {
                         i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() - 2);    // Rotation
+                        if(i->collision(m_room->getTousEnfants()))
+                        {
+                            i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() + 2);
+                            break;
+                        }
+                        else
+                            change = true;
                     }
-                dessiner();
+                    dessiner();
                 }
                 while(val == 2 || val == 3 );
-                saveState();
             }
-            else if (valeur[0] == '+' || valeur[0] == '-')
-                i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() + valrotation);
             else
-                i->getGeometrie()->setNewRotation(valrotation);
-            change = true;
-             i->collision();
+
+            {
+                double initiale = i->getGeometrie()->getVraiRotation();
+                if (valeur[0] == '+' || valeur[0] == '-')
+                {
+                    if(valrotation > 0)
+                        for(double j = 1; j<= valrotation; j+=1)
+                        {
+                            i->getGeometrie()->setNewRotation(initiale + j);
+
+                            if(i->collision(m_room->getTousEnfants()))
+                            {
+                                i->getGeometrie()->setNewRotation(initiale + j-1);
+                                break;
+                            }
+                            else
+                                change = true;
+                        }
+                    else if(valrotation < 0)
+                        for(double j = -1; j>= valrotation; j-=1)
+                        {
+                            i->getGeometrie()->setNewRotation(initiale + j);
+
+                            if(i->collision(m_room->getTousEnfants()))
+                            {
+                                i->getGeometrie()->setNewRotation(initiale + j+1);
+                                break;
+                            }
+                            else
+                                change = true;
+                        }
+                }
+                else
+                {
+                    if(valrotation > initiale)
+                        for(double j = initiale+1; j<= valrotation; j+=1)
+                        {
+                            saveState();
+                            i->getGeometrie()->setNewRotation(j);
+
+                            if(i->collision(m_room->getTousEnfants()))
+                            {
+                                i->getGeometrie()->setNewRotation(j-1);
+                                break;
+                            }
+                            else
+                                change = true;
+                        }
+                    else if(valrotation < initiale)
+                        for(double j = initiale-1; j>= valrotation-1; j-=1)
+                        {
+                            saveState();
+                            i->getGeometrie()->setNewRotation(j);
+
+                            if(i->collision(m_room->getTousEnfants()))
+                            {
+                                i->getGeometrie()->setNewRotation(j+1);
+                                break;
+                            }
+                            else
+                                change = true;
+                        }
+                }
+            }
         }
         else
             std::cout << "Erreur: La cible " << i->getId() << " n'est pas pivotable" << std::endl;
     }
+
     if(change)
         saveState();
 }
 
 void InterfaceBloc::load(std::string &rom)
 {
+    m_listCurrent.clear();
+    m_current = nullptr;
+
     if(rom.size() < 4 || rom.find(".rom") != rom.size()-4)
         rom += ".rom";
 
@@ -404,6 +525,8 @@ void InterfaceBloc::redo()
 
 void InterfaceBloc::restore(const std::string &store)
 {
+    m_listCurrent.clear();
+    m_current = nullptr;
     std::istringstream iss{store};
     bool useless = true;
     m_room = std::make_unique<Bloc>(iss, nullptr,useless);
@@ -439,27 +562,35 @@ void InterfaceBloc::appliquerActions(std::string &action, std::string &valeur, s
         afficherHelp();
     else if(action == "move")
     {
-        if((valeur[0] >= 48 && valeur[0] <= 57) ||
-                ((valeur[0] == '+' || valeur[0] == '-') &&
-                 (valeur[1] >= 48 && valeur[1] <= 57)))
-            translater(valeur, listCurrent);
-        else if(valeur == "")
-            translater(valeur, listCurrent);
+        if(m_current != nullptr)
+        {
+            if((valeur[0] >= 48 && valeur[0] <= 57) ||
+                    ((valeur[0] == '+' || valeur[0] == '-') &&
+                     (valeur[1] >= 48 && valeur[1] <= 57)))
+                translater(valeur, listCurrent);
 
+            else
+                std::cout << "Erreur de format" << std::endl;
+        }
         else
-            std::cout << "Erreur de format" << std::endl;
+            std::cout << "Pas de cible" << std::endl;
     }
     else if(action == "rotate")
     {
-        if((valeur[0] >= 48 && valeur[0] <= 57) ||
-                ((valeur[0] == '+' || valeur[0] == '-') &&
-                 (valeur[1] >= 48 && valeur[1] <= 57)))
-            pivoter(valeur, listCurrent);
-        else if(valeur == "")
-            pivoter(valeur, listCurrent);
+        if(m_current != nullptr)
+        {
+            if((valeur[0] >= 48 && valeur[0] <= 57) ||
+                    ((valeur[0] == '+' || valeur[0] == '-') &&
+                     (valeur[1] >= 48 && valeur[1] <= 57)))
+                pivoter(valeur, listCurrent);
+            else if(valeur == "")
+                pivoter(valeur, listCurrent);
 
+            else
+                std::cout << "Erreur de format" << std::endl;
+        }
         else
-            std::cout << "Erreur de format" << std::endl;
+            std::cout << "Pas de cible" << std::endl;
     }
     else if(action == "show")
     {

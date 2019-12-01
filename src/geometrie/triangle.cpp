@@ -71,4 +71,15 @@ Coords Triangle::squareposToTrianglepos(const Coords &a)
     return resultat;
 }
 
+//SOURCE : https://stackoverflow.com/questions/2049582/how-to-determine-if-a-point-is-in-a-2d-triangle
+bool Triangle::isIn(const Coords &point) const
+{
+    double area, s, t;
+    Coords p2 = getAbsolute("bl"), p0 = getAbsolute("br"), p1 = getAbsolute("tc");
 
+    area = 0.5 *(-p1.getY()*p2.getX() + p0.getY()*(-p1.getX() + p2.getX()) + p0.getX()*(p1.getY() - p2.getY()) + p1.getX()*p2.getY());
+    s = 1/(2*area)*(p0.getY()*p2.getX() - p0.getX()*p2.getY() + (p2.getY() - p0.getY())*point.getX() + (p0.getX() - p2.getX())*point.getY());
+    t = 1/(2*area)*(p0.getX()*p1.getY() - p0.getY()*p1.getX() + (p0.getY() - p1.getY())*point.getX() + (p1.getX() - p0.getX())*point.getY());
+
+    return (s>0 && t>0 && 1-s-t>0);
+}
