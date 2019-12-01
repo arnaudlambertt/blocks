@@ -70,7 +70,7 @@ class Bloc
 
         Bloc * getFirstMovableParent();
         std::list<Bloc*> getTousEnfants();
-        bool collision(std::list<Bloc*> tousEnfants);
+        bool collision(std::list<Bloc*> tousEnfants, std::vector<std::pair<Bloc*,Coords>> &colltab);
 
     private:
         Bloc* m_parent; //pointeur parent
@@ -82,10 +82,7 @@ class Bloc
         std::string m_border; //couleur bordure
 
         std::unique_ptr<Geometrie> m_geometrie;
-        bool m_isObject = false;
         Save m_info;
-
-
 };
 
 #endif // BLOC_H

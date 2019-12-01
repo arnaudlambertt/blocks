@@ -1,24 +1,25 @@
-	//////////////////////////////////////LISTE DES COMMANDES/////////////////////////////////////
+/////////////////////////////////////////////LISTE DES COMMANDES////////////////////////////////////////////////
 	
-	help			Afficher l'aide de commmandes (cette liste)
-	exit 			Quitter l'application
-	load			Charger un fichier (load [fichier]/[fichier.script])
+help			Afficher l'aide de commmandes (cette liste)
+exit 			Quitter l'application
+load			Charger un fichier :                load [fichier]/[fichier.rom]
+reload			Recharge le fichier (reset) :       reload
 
-	@ 			Selectionner des cibles (@cible [action] [valeur])
-	. 			Selectionner des enfants (@cible.enfant [action] [valeur])
-	% 			Selectionner selon un modulo (@cible1%cible2 [action] [valeur])
-	:			Selectionner selon un intervalle (@cible1:cible2 [action] [valeur])
+@ 			Selectionner des cibles:            @cible [action] [valeur]
+. 			Selectionner des enfants :          @cible.enfant [action] [valeur]
+% 			Selectionner selon un modulo :      @cible1%cible2 [action] [valeur]
+:			Selectionner selon un intervalle :  @cible1:cible2 [action] [valeur]
 
-	hide ids / rulers	Cacher les ids / axes
-	show ids / rulers	Montrer les ids / axes	
+hide ids / rulers	Cacher les ids / axes
+show ids / rulers	Montrer les ids / axes	
 
-	move			Deplacer des cibles (move [position 0:100]/[+/-incrementation] | move puis utiliser les fleches du clavier))
-	rotate			Faire pivoter des cibles (rotate [angle 0:359]/[+/-incrementation] | rotate puis utiliser les fleches du clavier))
+move			Deplacer des cibles :               move (fleches)/[position 0:100]/[+/-incrementation] 
+rotate			Faire pivoter des cibles :          rotate (fleche)/[angle 0:359]/[+/-incrementation] 
 	
-	store			Creer un point de sauvegarde
-	restore			Restorer le point de sauvegarde
+store			Creer un point de sauvegarde
+restore			Restorer le point de sauvegarde
 
-	undo			Precedent
-	redo 			Suivant
+undo			Precedent
+redo 			Suivant
 
-	script                  Executer un script (script [fichier]/[fichier.rom])
+script                  Executer un script :                script [fichier]/[fichier.script]

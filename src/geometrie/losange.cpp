@@ -91,6 +91,7 @@ Coords Losange::squareposToLosangepos(const Coords &a)
     return resultat;
 }
 
+//SOURCE : https://stackoverflow.com/questions/2049582/how-to-determine-if-a-point-is-in-a-2d-triangle
 bool Losange::isIn(const Coords &point) const
 {
     double area, s, t;

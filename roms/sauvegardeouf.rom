@@ -15,7 +15,7 @@ refpos=tl basepos=tl
 		refpos=tc refposx=35% basepos=bc 
 
 		id=bot1 width=60 height=110 color=lightseagreen
-		refpos=tl endpos=tr basepos=bc translate=0 
+		refpos=tl endpos=tr basepos=bc translate=0.035 
 		[
 			width=8 height=8 color=orange
 			refpos=tr refposx=-15 refposy=15 
@@ -27,25 +27,25 @@ refpos=tl basepos=tl
 			refpos=br endpos=tr basepos=ml 
 			[
 				id=finger1 width=10 height=20 color=lightgreen
-				refpos=bc endpos=bl basepos=tr 
+				refpos=bc endpos=bl basepos=tr translate=1 
 
 				id=finger2 width=10 height=20 color=lightgreen
-				refpos=bc endpos=br basepos=tl 
+				refpos=bc endpos=br basepos=tl translate=1 
 			]
 
 			id=arm21 width=80 height=20 color=turquoise
 			refpos=bl endpos=tl basepos=mr 
 			[
 				id=finger1 width=10 height=20 color=lightgreen
-				refpos=bc endpos=bl basepos=tr 
+				refpos=bc endpos=bl basepos=tr translate=1 
 
 				id=finger2 width=10 height=20 color=lightgreen
-				refpos=bc endpos=br basepos=tl 
+				refpos=bc endpos=br basepos=tl translate=1 
 			]
 		]
 
 		id=bot2 width=60 height=110 color=lightseagreen
-		refpos=tl endpos=tr basepos=bc translate=0.62 
+		refpos=tl endpos=tr basepos=bc translate=0.5 
 		[
 			width=8 height=8 color=turquoise
 			refpos=tr refposx=-15 refposy=15 

@@ -43,6 +43,7 @@ void Rectangle::dessiner(Svgfile &svgout)
                         m_bloc->getColor(),1.25,m_bloc->getBorder());
 }
 
+//source : https://math.stackexchange.com/questions/190111/how-to-check-if-a-point-is-inside-a-rectangle
 bool Rectangle::isIn(const Coords &point) const
 {
     Coords a = getAbsolute("tl"), b = getAbsolute("tr"), d = getAbsolute("bl");

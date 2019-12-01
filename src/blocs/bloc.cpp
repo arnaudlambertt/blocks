@@ -121,19 +121,11 @@ void Bloc::initMembers(std::map<std::string,std::string> &infos)
     if(infos.find("rotate") != infos.end())
         rotation = std::stod(infos["rotate"]);
 
-    if(m_isObject)
-    {
-        translation = -0.1;
-        rotation = -0.1;
-    }
-
     if(infos.find("refposx") != infos.end())
     {
         if(infos["refposx"].find('%') != std::string::npos)
-        {
             refposX = std::stod(infos["refposx"])* 0.01;
-            m_isObject = false;
-        }
+
         else
             refposX = std::stod(infos["refposx"])/m_parent->getDimensions()[0];
     }
@@ -141,10 +133,7 @@ void Bloc::initMembers(std::map<std::string,std::string> &infos)
     if(infos.find("refposy") != infos.end())
     {
         if(infos["refposy"].find('%') != std::string::npos)
-        {
             refposY = std::stod(infos["refposy"])* 0.01;
-            m_isObject = true;
-        }
         else
             refposY = std::stod(infos["refposy"])/m_parent->getDimensions()[1];
     }
@@ -573,11 +562,10 @@ std::list<Bloc*> Bloc::getTousEnfants()
     return mesEnfants;
 }
 
-bool Bloc::collision(std::list<Bloc*> tousEnfants)
+bool Bloc::collision(std::list<Bloc*> tousEnfants, std::vector<std::pair<Bloc*,Coords>> &colltab)
 {
     Bloc* firstMovableParent = getFirstMovableParent();
     bool test = false;
-    std::vector<Coords> colltab;
 
     for(auto &i : tousEnfants)
     {
@@ -588,18 +576,10 @@ bool Bloc::collision(std::list<Bloc*> tousEnfants)
                 for(double k = -0.5; k <= 0.5 ; k+=0.5)//LATENCE IMPORTANTE
                     if(k == 0 && j ==0)
                         continue;
-                    else if( i->getGeometrie()->isIn( getAbsolute(Coords{j,k}) ) )
+                    else if( i->getGeometrie()->isIn( getAbsolute(convertRefposEnfant(Coords{j,k})) ) )
                     {
-                        std::cout << m_id << " collision avec " << i->getId() << std::endl;
                         test = true;
-                        colltab.push_back(getAbsolute(Coords{j,k}));
-
-                        //if(getAbsolute("mc").getX() > i->getAbsolute("mc").getX());
-                            //std::cout << "poussee vers la gauche" << std::endl;
-                        //return poussee (possible/impossible)
-
-                            //std::cout << "pousee vers la droite" << std::endl;
-                        //return poussee (possible/impossible)
+                        colltab.push_back({this,Coords{j,k}});
                     }
             }
             if (test)
@@ -609,7 +589,7 @@ bool Bloc::collision(std::list<Bloc*> tousEnfants)
 
     for (auto &i : m_enfants)
     {
-        if(i->collision(tousEnfants))
+        if(i->collision((tousEnfants),colltab))
             return true;
     }
     return test;

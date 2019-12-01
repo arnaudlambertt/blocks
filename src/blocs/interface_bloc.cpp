@@ -20,12 +20,19 @@ void InterfaceBloc::dessiner()
 {
     Svgfile::s_verbose = false;
     Svgfile svgout;
-    m_room->dessiner(svgout);
-    //std::cout << id << " | " << ruler << std::endl;
+    if(m_room != nullptr)
+        m_room->dessiner(svgout);
     if (m_showId)
         m_room->displayId(svgout);
     if(m_showRuler)
         m_room->displayRuler(svgout);
+    while(m_collisions.size())
+    {
+        svgout.addCircle(m_collisions[0].first->getAbsolute(m_collisions[0].first->getGeometrie()->convertRefposEnfant(m_collisions[0].second)).getX()
+                         ,m_collisions[0].first->getAbsolute(m_collisions[0].first->getGeometrie()->convertRefposEnfant(m_collisions[0].second)).getY()
+                         ,7.5,2,Couleur{255,79,0});
+        m_collisions.erase(m_collisions.begin());
+    }
 }
 
 void InterfaceBloc::afficherHelp()const
@@ -188,7 +195,6 @@ void InterfaceBloc::userInterface()
                 else
                     appliquerActions(action, valeur, m_listCurrent);
             }
-            dessiner();
             iss.clear();
             valeur.clear();
             action.clear();
@@ -254,19 +260,24 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
                     CheckArrowKey(val);     // Lecture des touches clavier
                     if (val == 2)   // Si fleche droite
                     {
-                        t->translater(-0.01 + t->getTranslation());    // Translation
-                        if(i->collision(m_room->getTousEnfants()))
-                            t->translater(+0.01 + t->getTranslation());
-                        
+                        t->translater(-0.005 + t->getTranslation());    // Translation
+                        if(i->collision(m_room->getTousEnfants(),m_collisions))
+                            t->translater(0.005 + t->getTranslation());
+                        else
+                            change = true;
+                        dessiner();
+                        Sleep(50);
                     }
                     if (val == 3)   // Si fleche droite
                     {
-                        t->translater(+0.01 + t->getTranslation());
-                        if(i->collision(m_room->getTousEnfants()))
-                            t->translater(-0.01 + t->getTranslation());
-                        
+                        t->translater(+0.005 + t->getTranslation());
+                        if(i->collision(m_room->getTousEnfants(),m_collisions))
+                            t->translater(-0.005 + t->getTranslation());
+                        else
+                            change = true;
+                        dessiner();
+                        Sleep(50);
                     }
-                    dessiner();
                 }
                 while(val == 2 || val == 3 );
             }
@@ -280,9 +291,9 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
                         {
                             t->translater(initiale + j);
 
-                            if(i->collision(m_room->getTousEnfants()))
+                            if(i->collision(m_room->getTousEnfants(),m_collisions))
                             {
-                                t->translater(initiale + j-0.01);
+                                t->translater(t->getTranslation()-0.01);
                                 break;
                             }
                             else
@@ -293,9 +304,9 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
                         {
                             t->translater(initiale + j);
 
-                            if(i->collision(m_room->getTousEnfants()))
+                            if(i->collision(m_room->getTousEnfants(),m_collisions))
                             {
-                                t->translater(initiale + j+0.01);
+                                t->translater(t->getTranslation() + 0.01);
                                 break;
                             }
                             else
@@ -310,9 +321,9 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
                             saveState();
                             t->translater(j);
 
-                            if(i->collision(m_room->getTousEnfants()))
+                            if(i->collision(m_room->getTousEnfants(),m_collisions))
                             {
-                                t->translater(j-0.01);
+                                t->translater(t->getTranslation()-0.01);
                                 break;
                             }
                             else
@@ -324,17 +335,17 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
                             saveState();
                             t->translater(j);
 
-                            if(i->collision(m_room->getTousEnfants()))
+                            if(i->collision(m_room->getTousEnfants(),m_collisions))
                             {
-                                t->translater(j+0.01);
+                                t->translater(t->getTranslation()+0.01);
                                 break;
                             }
                             else
                                 change = true;
                         }
                 }
+                dessiner();
             }
-
         }
         else
             std::cout << "Erreur: La cible " << i->getId() << " n'est pas translatable" << std::endl;
@@ -364,27 +375,27 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
                     if (val == 2)   // Si fleche droite
                     {
                         i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() + 2);    // Rotation
-                        if(i->collision(m_room->getTousEnfants()))
+                        if(i->collision(m_room->getTousEnfants(),m_collisions))
                             i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() - 2);
-         
                         else
                             change = true;
+                        dessiner();
+                        Sleep(50);
                     }
                     if (val == 3)   // Si fleche droite
                     {
                         i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() - 2);    // Rotation
-                        if(i->collision(m_room->getTousEnfants()))
+                        if(i->collision(m_room->getTousEnfants(),m_collisions))
                             i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() + 2);
-           
                         else
                             change = true;
+                        dessiner();
+                        Sleep(50);
                     }
-                    dessiner();
                 }
                 while(val == 2 || val == 3 );
             }
             else
-
             {
                 double initiale = i->getGeometrie()->getVraiRotation();
                 if (valeur[0] == '+' || valeur[0] == '-')
@@ -394,9 +405,9 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
                         {
                             i->getGeometrie()->setNewRotation(initiale + j);
 
-                            if(i->collision(m_room->getTousEnfants()))
+                            if(i->collision(m_room->getTousEnfants(),m_collisions))
                             {
-                                i->getGeometrie()->setNewRotation(initiale + j-1);
+                                i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() - 1);
                                 break;
                             }
                             else
@@ -407,9 +418,9 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
                         {
                             i->getGeometrie()->setNewRotation(initiale + j);
 
-                            if(i->collision(m_room->getTousEnfants()))
+                            if(i->collision(m_room->getTousEnfants(),m_collisions))
                             {
-                                i->getGeometrie()->setNewRotation(initiale + j+1);
+                                i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() + 1);
                                 break;
                             }
                             else
@@ -424,9 +435,9 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
                             saveState();
                             i->getGeometrie()->setNewRotation(j);
 
-                            if(i->collision(m_room->getTousEnfants()))
+                            if(i->collision(m_room->getTousEnfants(),m_collisions))
                             {
-                                i->getGeometrie()->setNewRotation(j-1);
+                                i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation()-1);
                                 break;
                             }
                             else
@@ -438,15 +449,16 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
                             saveState();
                             i->getGeometrie()->setNewRotation(j);
 
-                            if(i->collision(m_room->getTousEnfants()))
+                            if(i->collision(m_room->getTousEnfants(),m_collisions))
                             {
-                                i->getGeometrie()->setNewRotation(j+1);
+                                i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation()+1);
                                 break;
                             }
                             else
                                 change = true;
                         }
                 }
+                dessiner();
             }
         }
         else
@@ -536,7 +548,10 @@ void InterfaceBloc::restore(const std::string &store)
     bool useless = true;
     m_room = std::make_unique<Bloc>(iss, nullptr,useless);
     if(m_room != nullptr)
+    {
         std::cout << "Success" << std::endl;
+        dessiner();
+    }
 }
 
 void InterfaceBloc::script(std::string &script)
@@ -608,6 +623,7 @@ void InterfaceBloc::appliquerActions(std::string &action, std::string &valeur, s
         else
             std::cout << "Erreur: mauvais attribut 'show'" << std::endl;
 
+        dessiner();
     }
     else if(action == "hide")
     {
@@ -619,6 +635,7 @@ void InterfaceBloc::appliquerActions(std::string &action, std::string &valeur, s
         else
             std::cout << "Erreur: mauvais attribut 'hide' " << std::endl;
 
+        dessiner();
     }
     else if(action == "save")
     {

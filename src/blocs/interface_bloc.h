@@ -45,6 +45,7 @@ class InterfaceBloc
         size_t m_nAction = 0;
         bool m_showId = false;
         bool m_showRuler = false;
+        std::vector<std::pair<Bloc*,Coords>> m_collisions;
 };
 
 #endif // INTERFACEBLOC_H
