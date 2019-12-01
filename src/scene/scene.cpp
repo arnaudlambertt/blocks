@@ -341,7 +341,6 @@ void Scene::translater(std::string valeur, std::vector<Bloc*> &listCurrent)
                     if(valtranslation > initiale)
                         for(double j = initiale+0.01; j<= valtranslation; j+=0.01)
                         {
-                            saveState();
                             t->translater(j);
 
                             if(i->collision(m_room->getTousEnfants(),m_collisions))
@@ -355,7 +354,6 @@ void Scene::translater(std::string valeur, std::vector<Bloc*> &listCurrent)
                     else if(valtranslation < initiale)
                         for(double j = initiale-0.01; j>= valtranslation-0.01; j-=0.01)
                         {
-                            saveState();
                             t->translater(j);
 
                             if(i->collision(m_room->getTousEnfants(),m_collisions))
@@ -455,7 +453,6 @@ void Scene::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
                     if(valrotation > initiale)
                         for(double j = initiale+1; j<= valrotation; j+=1)
                         {
-                            saveState();
                             i->getGeometrie()->setNewRotation(j);
 
                             if(i->collision(m_room->getTousEnfants(),m_collisions))
@@ -469,7 +466,6 @@ void Scene::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
                     else if(valrotation < initiale)
                         for(double j = initiale-1; j>= valrotation-1; j-=1)
                         {
-                            saveState();
                             i->getGeometrie()->setNewRotation(j);
 
                             if(i->collision(m_room->getTousEnfants(),m_collisions))

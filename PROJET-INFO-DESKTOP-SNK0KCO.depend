@@ -1,0 +1,225 @@
+# depslib dependency file v1.0
+1575057093 source:c:\users\arnaud\onedrive\codeblocks\projet-info\main.cpp
+	"src/blocs/interface_bloc.h"
+	"../geometrie/rectangle_translatable.h"
+	"../geometrie/losange_translatable.h"
+	"../geometrie/disk_translatable.h"
+	"../geometrie/triangle_translatable.h"
+	"../geometrie/rectangle_rotatable.h"
+	"../geometrie/losange_rotatable.h"
+	"../geometrie/disk_rotatable.h"
+	"../geometrie/triangle_rotatable.h"
+
+1575057093 c:\users\arnaud\onedrive\codeblocks\projet-info\src\blocs\interface_bloc.h
+	"bloc.h"
+
+1574986675 c:\users\arnaud\onedrive\codeblocks\projet-info\src\blocs\bloc.h
+	<vector>
+	"geometrie.h"
+	"../util/util.h"
+	<iostream>
+	<map>
+	<string>
+	<vector>
+	<memory>
+	<sstream>
+
+1574986675 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\geometrie.h
+	"../geometrie/coords.h"
+	"../svg/svgfile.h"
+	"../graphisme/couleur.h"
+	<iostream>
+	<vector>
+	<map>
+
+1574794470 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\coords.h
+
+1574778962 c:\users\arnaud\onedrive\codeblocks\projet-info\src\svg\svgfile.h
+	<string>
+	<fstream>
+	<set>
+
+1574778962 c:\users\arnaud\onedrive\codeblocks\projet-info\src\graphisme\couleur.h
+	<string>
+	<cstdint>
+
+1574778962 c:\users\arnaud\onedrive\codeblocks\projet-info\src\util\util.h
+	<string>
+
+1574986675 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\rectangle_translatable.h
+	"rectangle.h"
+	"translatable.h"
+
+1574794470 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\rectangle.h
+	"geometrie.h"
+
+1574902655 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\translatable.h
+	"geometrie.h"
+
+1574986675 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\losange_translatable.h
+	"losange.h"
+	"translatable.h"
+
+1574794470 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\losange.h
+	"geometrie.h"
+
+1574986675 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\disk_translatable.h
+	"disk.h"
+	"translatable.h"
+
+1574794470 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\disk.h
+	"geometrie.h"
+	"math.h"
+	<cstdlib>
+
+1574986675 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\triangle_translatable.h
+	"triangle.h"
+	"translatable.h"
+
+1574794470 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\triangle.h
+	"geometrie.h"
+
+1574986675 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\rectangle_rotatable.h
+	"rectangle.h"
+	"rotatable.h"
+
+1574778962 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\rotatable.h
+	"geometrie.h"
+	"transformation.h"
+
+1574778962 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\transformation.h
+	"coords.h"
+	"matrice.h"
+
+1574778962 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\matrice.h
+	"coords.h"
+	<array>
+
+1574986675 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\losange_rotatable.h
+	"losange.h"
+	"rotatable.h"
+
+1574986675 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\disk_rotatable.h
+	"disk.h"
+	"rotatable.h"
+
+1574986675 c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\triangle_rotatable.h
+	"triangle.h"
+	"rotatable.h"
+
+1574794470 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\coords.cpp
+	"coords.h"
+	"../util/util.h"
+	<iostream>
+
+1574794470 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\disk.cpp
+	"disk.h"
+	"../blocs/bloc.h"
+
+1574986675 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\disk_rotatable.cpp
+	"disk_rotatable.h"
+
+1574986675 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\disk_translatable.cpp
+	"disk_translatable.h"
+	"../blocs/bloc.h"
+
+1574986675 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\geometrie.cpp
+	"../blocs/bloc.h"
+	"geometrie.h"
+	"rotatable.h"
+
+1574794470 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\losange.cpp
+	"losange.h"
+	<iostream>
+	"../blocs/bloc.h"
+
+1574986675 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\losange_rotatable.cpp
+	"losange_rotatable.h"
+
+1574986675 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\losange_translatable.cpp
+	"losange_translatable.h"
+	"../blocs/bloc.h"
+
+1574778962 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\matrice.cpp
+	"matrice.h"
+	"cmath"
+
+1574794470 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\rectangle.cpp
+	"rectangle.h"
+	"../blocs/bloc.h"
+	"disk.h"
+
+1574986675 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\rectangle_rotatable.cpp
+	"rectangle_rotatable.h"
+
+1574986675 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\rectangle_translatable.cpp
+	"rectangle_translatable.h"
+	"../blocs/bloc.h"
+
+1574794470 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\rotatable.cpp
+	"rotatable.h"
+	"../blocs/bloc.h"
+
+1574778962 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\transformation.cpp
+	"transformation.h"
+	<cmath>
+
+1574902655 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\translatable.cpp
+	"translatable.h"
+	"../blocs/bloc.h"
+
+1574794470 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\triangle.cpp
+	"triangle.h"
+	"../blocs/bloc.h"
+
+1574986675 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\triangle_rotatable.cpp
+	"triangle_rotatable.h"
+
+1574986675 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\geometrie\triangle_translatable.cpp
+	"triangle_translatable.h"
+	"../blocs/bloc.h"
+
+1574778962 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\graphisme\couleur.cpp
+	"couleur.h"
+	"../svg/svgfile.h"
+	"../util/util.h"
+	<iostream>
+
+1574778962 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\svg\svgfile.cpp
+	<iostream>
+	<sstream>
+
+1574778962 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\util\util.cpp
+	"util.h"
+	<random>
+	<ctime>
+	<iostream>
+	<cstdio>
+	<streambuf>
+	<vector>
+	<cstdlib>
+	<cstdio>
+	<algorithm>
+	<cstring>
+	<iostream>
+	<thread>
+	"../util/util.h"
+	<windows.h>
+
+1575057093 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\blocs\bloc.cpp
+	"bloc.h"
+	"../geometrie/rectangle_translatable.h"
+	"../geometrie/losange_translatable.h"
+	"../geometrie/disk_translatable.h"
+	"../geometrie/triangle_translatable.h"
+	"../geometrie/rectangle_rotatable.h"
+	"../geometrie/losange_rotatable.h"
+	"../geometrie/disk_rotatable.h"
+	"../geometrie/triangle_rotatable.h"
+
+1575053863 source:c:\users\arnaud\onedrive\codeblocks\projet-info\src\blocs\interface_bloc.cpp
+	"interface_bloc.h"
+	"../geometrie/translatable.h"
+	"../geometrie/rotatable.h"
+	<dirent.h>
+
