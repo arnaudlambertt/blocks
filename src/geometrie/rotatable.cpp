@@ -1,3 +1,7 @@
+/** \brief classe rotatable
+ *
+ */
+
 #include "rotatable.h"
 #include "../blocs/bloc.h"
 

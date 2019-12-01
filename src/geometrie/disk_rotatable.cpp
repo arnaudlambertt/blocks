@@ -1,3 +1,13 @@
+/** \brief classe disk pivotable héritant de disk et rotatable
+ *
+ * \param rayon
+ * \param position locale où le parent s'attache à son enfant
+ * \param position locale en X où le parent s'attache à son enfant
+ * \param position locale en Y où le parent s'attache à son enfant
+ * \param valeur de la rotation
+ *
+ */
+
 #include "disk_rotatable.h"
 
 

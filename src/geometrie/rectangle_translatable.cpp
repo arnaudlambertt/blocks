@@ -1,3 +1,14 @@
+/** \brief classe rectangle translatable héritant de rectangle et translatable
+ *
+ * \param largeur
+ * \param longueur
+ * \param position locale où le parent s'attache à son enfant
+ * \param position locale en X où le parent s'attache à son enfant
+ * \param position locale en Y où le parent s'attache à son enfant
+ * \param valeur de la translation
+ *
+ */
+
 #include "rectangle_translatable.h"
 #include "../blocs/bloc.h"
 

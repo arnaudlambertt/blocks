@@ -1,3 +1,7 @@
+/** \brief fournie pour diverses fonction supplémentaires
+ *
+ */
+
 /**
     Dans l'urgence de la livraison d'un code opérationnel
     ce fichier source n'a pas été proprement restructuré

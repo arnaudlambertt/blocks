@@ -1,3 +1,8 @@
+/** \brief classe transformations (fournie dans le tp 7)
+ *
+ */
+
+
 #include "transformation.h"
 #include <cmath>
 

@@ -1,3 +1,11 @@
+/** \brief classe bloc
+ *
+ * \param lecture de fichier
+ * \param parent auquel est rattaché le bloc
+ *
+ */
+
+
 #include "bloc.h"
 #include "../geometrie/rectangle_translatable.h"
 #include "../geometrie/losange_translatable.h"

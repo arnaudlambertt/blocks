@@ -1,3 +1,14 @@
+/** \brief classe losange pivotable héritant de losange et rotatable
+ *
+ * \param largeur
+ * \param longueur
+ * \param position locale où le parent s'attache à son enfant
+ * \param position locale en X où le parent s'attache à son enfant
+ * \param position locale en Y où le parent s'attache à son enfant
+ * \param valeur de la rotation
+ *
+ */
+
 #include "losange_rotatable.h"
 
 

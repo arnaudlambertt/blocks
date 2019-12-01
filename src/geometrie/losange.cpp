@@ -1,3 +1,13 @@
+/** \brief classe losange
+ *
+ * \param largeur
+ * \param longueur
+ * \param position locale où le parent s'attache à son enfant
+ * \param position locale en X où le parent s'attache à son enfant
+ * \param position locale en Y où le parent s'attache à son enfant
+ *
+ */
+
 #include "losange.h"
 #include <iostream>
 #include "../blocs/bloc.h"
