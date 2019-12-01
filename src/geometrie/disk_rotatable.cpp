@@ -13,9 +13,3 @@ DiskRotatable::~DiskRotatable()
 {
     //dtor
 }
-
-//void DiskRotatable::dessiner(Svgfile& svgout)
-//{
-//    Disk::dessiner(svgout);
-//    dessinerAxe(m_bloc, svgout);
-//}

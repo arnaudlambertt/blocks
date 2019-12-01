@@ -16,9 +16,3 @@ RectangleTranslatable::~RectangleTranslatable()
     //dtor
 }
 
-//void RectangleTranslatable::dessiner(Svgfile& svgout)
-//{
-//    dessinerAxe(m_bloc->getParent(), svgout);
-//    Rectangle::dessiner(svgout);
-//}
-

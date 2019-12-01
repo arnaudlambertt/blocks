@@ -15,9 +15,4 @@ RectangleRotatable::~RectangleRotatable()
     //dtor
 }
 
-//void RectangleRotatable::dessiner(Svgfile& svgout)
-//{
-//    Rectangle::dessiner(svgout);
-//    dessinerAxe(m_bloc, svgout);
-//}
 

@@ -13,9 +13,3 @@ TriangleRotatable::~TriangleRotatable()
 {
     //dtor
 }
-
-//void TriangleRotatable::dessiner(Svgfile& svgout)
-//{
-//    Triangle::dessiner(svgout);
-//    dessinerAxe(m_bloc, svgout);
-//}

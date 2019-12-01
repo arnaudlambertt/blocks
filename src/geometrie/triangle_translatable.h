@@ -12,8 +12,6 @@ class TriangleTranslatable : public Triangle, public Translatable
                             const std::string &endpos, double &translation);
 
         virtual ~TriangleTranslatable();
-
-        //void dessiner(Svgfile &svgout);
 };
 
 #endif // TRIANGLE_TRANSLATABLE_H
