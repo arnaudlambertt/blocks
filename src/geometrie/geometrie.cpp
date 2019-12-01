@@ -1,3 +1,12 @@
+/** \brief classe geometrie virtuelle pure
+ *
+ * \param position locale où le bloc se fixe à son parent
+ * \param position locale où le parent s'attache à son enfant
+ * \param position locale en X où le parent s'attache à son enfant
+ * \param position locale en Y où le parent s'attache à son enfant
+ */
+
+
 #include "../blocs/bloc.h"
 #include "geometrie.h"
 #include "rotatable.h"

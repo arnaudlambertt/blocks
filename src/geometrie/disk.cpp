@@ -1,3 +1,13 @@
+/** \brief classe disk heritant de geometrie
+ *
+ * \param rayon
+ * \param position locale où le parent s'attache à son enfant
+ * \param position locale en X où le parent s'attache à son enfant
+ * \param position locale en Y où le parent s'attache à son enfant
+ *
+ */
+
+
 #include "disk.h"
 #include "../blocs/bloc.h"
 

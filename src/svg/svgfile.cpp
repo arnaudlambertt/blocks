@@ -1,4 +1,8 @@
-﻿#include "svgfile.h"
+﻿/** \brief classe svg (fournie dans le tp 4)
+ *
+ */
+
+#include "svgfile.h"
 #include <iostream>
 #include <sstream>
 

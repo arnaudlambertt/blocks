@@ -1,3 +1,10 @@
+/** \brief classe coords
+ *
+ * \param position x
+ * \param position y
+ *
+ */
+
 #include "coords.h"
 #include "../util/util.h"
 #include <iostream>

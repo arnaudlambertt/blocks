@@ -1,3 +1,7 @@
+/** \brief classe couleur (fournie dans le tp 7)
+ *
+ */
+
 #include "couleur.h"
 #include "../svg/svgfile.h"
 #include "../util/util.h"

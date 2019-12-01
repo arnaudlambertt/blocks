@@ -1,3 +1,7 @@
+/** \brief classe scene qui gere l'ensemble des blocs d'une même scène
+ *
+ */
+
 #include "scene.h"
 #include "../geometrie/translatable.h"
 #include "../geometrie/rotatable.h"

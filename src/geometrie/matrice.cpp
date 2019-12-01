@@ -1,3 +1,7 @@
+/** \brief classe matrice pour transformations (fournie dans le tp 7)
+ *
+ */
+
 #include "matrice.h"
 #include "cmath"
 

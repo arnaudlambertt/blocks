@@ -1,11 +1,12 @@
-#include "check_arrow_key.h"
-
 /** \brief renvoie un nombre par paramètre en fonction de la touche appuyée
  *
  * \param val int*
  * \return
  *
  */
+
+#include "check_arrow_key.h"
+
 void CheckArrowKey (int &val)
 {
 int key;
