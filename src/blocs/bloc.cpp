@@ -590,16 +590,14 @@ bool Bloc::collision(std::list<Bloc*> tousEnfants)
                         continue;
                     else if( i->getGeometrie()->isIn( getAbsolute(Coords{j,k}) ) )
                     {
-                        std::cout << m_id << "collision avec" << i->getId() << std::endl;
+                        std::cout << m_id << " collision avec " << i->getId() << std::endl;
                         test = true;
-                        //Coords{j,k} .afficher();
-                        //colltab.push_back(getAbsolute(Coords{j,k}));
+                        colltab.push_back(getAbsolute(Coords{j,k}));
 
                         //if(getAbsolute("mc").getX() > i->getAbsolute("mc").getX());
                             //std::cout << "poussee vers la gauche" << std::endl;
                         //return poussee (possible/impossible)
-                        break;
-                        break;
+
                             //std::cout << "pousee vers la droite" << std::endl;
                         //return poussee (possible/impossible)
                     }

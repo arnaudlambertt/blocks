@@ -236,7 +236,9 @@ void InterfaceBloc::sauvegarder(std::string &saveFile)
 void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurrent)
 {
     std::string::size_type sz;
-    double valtranslation = std::stoi(valeur, &sz) *0.01;
+    double valtranslation;
+    if(valeur != "")
+        valtranslation = std::stoi(valeur, &sz) *0.01;
     bool change = false;
 
     for(auto &i: listCurrent)
@@ -253,85 +255,97 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
                     if (val == 2)   // Si fleche droite
                     {
                         t->translater(-0.01 + t->getTranslation());    // Translation
+                        if(i->collision(m_room->getTousEnfants()))
+                        {
+                            break;
+                            t->translater(+0.01 + t->getTranslation());
+                        }
                     }
-                            if (val == 3)   // Si fleche droite
+                    if (val == 3)   // Si fleche droite
                     {
-                        t->translater(+0.01 + t->getTranslation());    // Translation
+                        t->translater(+0.01 + t->getTranslation());
+                        if(i->collision(m_room->getTousEnfants()))
+                        {
+                            break;
+                            t->translater(-0.01 + t->getTranslation());
+                        }
                     }
-                dessiner();
+                    dessiner();
                 }
                 while(val == 2 || val == 3 );
-                saveState();
-            }
-            double initiale = t->getTranslation();
-            if (valeur[0] == '+' || valeur[0] == '-')
-            {
-                if(valtranslation > 0)
-                    for(double j = 0.01; j<= valtranslation; j+=0.01)
-                    {
-                        t->translater(initiale + j);
-
-                        if(i->collision(m_room->getTousEnfants()))
-                        {
-                            t->translater(initiale + j-0.01);
-                            break;
-                        }
-                        else
-                            change = true;
-                    }
-                else if(valtranslation < 0)
-                    for(double j = -0.01; j>= valtranslation; j-=0.01)
-                    {
-                        t->translater(initiale + j);
-
-                        if(i->collision(m_room->getTousEnfants()))
-                        {
-                            t->translater(initiale + j+0.01);
-                            break;
-                        }
-                        else
-                            change = true;
-                    }
             }
             else
             {
-                if(valtranslation > initiale)
-                    for(double j = initiale+0.01; j<= valtranslation; j+=0.01)
-                    {
-                        saveState();
-                        t->translater(j);
-
-                        if(i->collision(m_room->getTousEnfants()))
+                double initiale = t->getTranslation();
+                if (valeur[0] == '+' || valeur[0] == '-')
+                {
+                    if(valtranslation > 0)
+                        for(double j = 0.01; j<= valtranslation; j+=0.01)
                         {
-                            t->translater(j-0.01);
-                            break;
-                        }
-                        else
-                            change = true;
-                    }
-                else if(valtranslation < initiale)
-                    for(double j = initiale-0.01; j>= valtranslation-0.01; j-=0.01)
-                    {
-                        saveState();
-                        t->translater(j);
+                            t->translater(initiale + j);
 
-                        if(i->collision(m_room->getTousEnfants()))
-                        {
-                            t->translater(j+0.01);
-                            break;
+                            if(i->collision(m_room->getTousEnfants()))
+                            {
+                                t->translater(initiale + j-0.01);
+                                break;
+                            }
+                            else
+                                change = true;
                         }
-                        else
-                            change = true;
-                    }
+                    else if(valtranslation < 0)
+                        for(double j = -0.01; j>= valtranslation; j-=0.01)
+                        {
+                            t->translater(initiale + j);
+
+                            if(i->collision(m_room->getTousEnfants()))
+                            {
+                                t->translater(initiale + j+0.01);
+                                break;
+                            }
+                            else
+                                change = true;
+                        }
+                }
+                else
+                {
+                    if(valtranslation > initiale)
+                        for(double j = initiale+0.01; j<= valtranslation; j+=0.01)
+                        {
+                            saveState();
+                            t->translater(j);
+
+                            if(i->collision(m_room->getTousEnfants()))
+                            {
+                                t->translater(j-0.01);
+                                break;
+                            }
+                            else
+                                change = true;
+                        }
+                    else if(valtranslation < initiale)
+                        for(double j = initiale-0.01; j>= valtranslation-0.01; j-=0.01)
+                        {
+                            saveState();
+                            t->translater(j);
+
+                            if(i->collision(m_room->getTousEnfants()))
+                            {
+                                t->translater(j+0.01);
+                                break;
+                            }
+                            else
+                                change = true;
+                        }
+                }
             }
+
         }
         else
             std::cout << "Erreur: La cible " << i->getId() << " n'est pas translatable" << std::endl;
     }
-    if (change)
+    if(change)
         saveState();
 }
-
 void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
 {
     std::string::size_type sz;
@@ -568,7 +582,8 @@ void InterfaceBloc::appliquerActions(std::string &action, std::string &valeur, s
                     ((valeur[0] == '+' || valeur[0] == '-') &&
                      (valeur[1] >= 48 && valeur[1] <= 57)))
                 translater(valeur, listCurrent);
-
+            else if(valeur == "")
+                translater(valeur, listCurrent);
             else
                 std::cout << "Erreur de format" << std::endl;
         }
