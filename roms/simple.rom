@@ -1,32 +1,35 @@
 id=room57 width=1000 height=400 color=azure border=lightgrey
-refpos=tl basepos=tl 
+refpos=tl basepos=tl
 [
 	id=ground width=100% height=10% color=darkgrey
-	refpos=bc basepos=tc 
+	refpos=bc basepos=tc rotate=0
 	[
 		id=bin shape=disk radius=25 color=lightblue
-		refpos=tr refposx=-25% basepos=bc rotate=90 
+		refpos=tr refposx=-25% basepos=bc rotate=0 
 		[
-			id=skuu shape=losange width=20 height=30 color=purple
+			id=a shape=losange width=20 height=30 color=purple
 			refpos=tc basepos=bc rotate=0 
+
+			id=b shape=triangle width=20 height=20 color=tomato
+			refpos=tr basepos=bl translate=0
 		]
 
 		id=box1 width=30 height=20 color=peru
-		refpos=tc refposx=25% basepos=bc 
+		refpos=tc refposx=35% basepos=bc 
 
 		id=bot1 width=60 height=110 color=lightseagreen
 		refpos=tl endpos=tr basepos=bc translate=0.2 
 		[
-			width=8 height=8 color=orange
+			shape=disk radius=8 color=orange
 			refpos=tr refposx=-15 refposy=15 
 
-			width=8 height=8 color=orange
-			refpos=tl refposx=15 refposy=15 
+			shape=losange width=8 height=8 color=orange
+			refpos=tl refposx=15 refposy=15
 
-			id=arm5 width=80 height=20 color=turquoise
-			refpos=br endpos=tr basepos=ml 
+			id=arm5 shape=losange width=80 height=30 color=turquoise
+			refpos=br endpos=tr basepos=ml rotate=40
 			[
-				id=finger1 width=10 height=20 color=lightgreen
+				id=finger1 shape=disk radius=10 color=lightgreen
 				refpos=bc endpos=bl basepos=tr 
 
 				id=finger2 width=10 height=20 color=lightgreen
@@ -44,17 +47,17 @@ refpos=tl basepos=tl
 			]
 		]
 
-		id=bot2 width=60 height=110 color=lightseagreen
+		id=bot2 shape=triangle width=60 height=110 color=lightseagreen
 		refpos=tl endpos=tr basepos=bc translate=0.6 
 		[
-			width=8 height=8 color=turquoise
-			refpos=tr refposx=-15 refposy=15 
+			shape=disk radius=8 color=turquoise
+			refpos=mc  
 
-			width=8 height=8 color=red
-			refpos=tl refposx=15 refposy=15 
+			shape=triangle width=20 height=60 color=red
+			refpos=tc basepos=mc
 
-			id=arm345 width=80 height=20 color=turquoise
-			refpos=br endpos=tr basepos=ml 
+			id=arm345 shape=disk radius=20 color=turquoise
+			refpos=br endpos=tr basepos=ml
 			[
 				id=finger999 width=10 height=20 color=lightgreen
 				refpos=bc endpos=bl basepos=tr 

@@ -3,54 +3,55 @@
 
 <polygon points=" 150,75 1150,75 1150,475 150,475" style="fill:azure;stroke:skyblue;stroke-width:1.25" />
 <polygon points=" 150,475 1150,475 1150,515 150,515" style="fill:darkgrey;stroke:black;stroke-width:1.25" />
-<circle cx="950" cy="445" r="30" fill="snow" />
-<circle cx="950" cy="445" r="30" fill="none" stroke="black" stroke-width="1.25" />
-<circle cx="950" cy="390" r="25" fill="snow" />
-<circle cx="950" cy="390" r="25" fill="none" stroke="black" stroke-width="1.25" />
-<circle cx="950" cy="345" r="20" fill="snow" />
-<circle cx="950" cy="345" r="20" fill="none" stroke="black" stroke-width="1.25" />
-<polygon points=" 956,335 960,335 960,339 956,339" style="fill:lightsteelblue;stroke:black;stroke-width:1.25" />
-<polygon points=" 941,335 945,335 945,339 941,339" style="fill:lightsteelblue;stroke:black;stroke-width:1.25" />
-<polygon points=" 947.5,347.5 950,342.5 952.5,347.5" style="fill:orange;stroke:black;stroke-width:1.25" />
-<polygon points=" 897.322,378.33 925.513,388.59 924.487,391.41 896.296,381.149" style="fill:sienna;stroke:black;stroke-width:1.25" />
-<polygon points=" 974.487,388.59 1002.68,378.33 1003.7,381.149 975.513,391.41" style="fill:sienna;stroke:black;stroke-width:1.25" />
+<circle cx="760" cy="445" r="30" fill="snow" />
+<circle cx="760" cy="445" r="30" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="760" cy="390" r="25" fill="snow" />
+<circle cx="760" cy="390" r="25" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="760" cy="345" r="20" fill="snow" />
+<circle cx="760" cy="345" r="20" fill="none" stroke="black" stroke-width="1.25" />
+<polygon points=" 766,335 770,335 770,339 766,339" style="fill:lightsteelblue;stroke:black;stroke-width:1.25" />
+<polygon points=" 751,335 755,335 755,339 751,339" style="fill:lightsteelblue;stroke:black;stroke-width:1.25" />
+<polygon points=" 757.5,347.5 760,342.5 762.5,347.5" style="fill:orange;stroke:black;stroke-width:1.25" />
+<polygon points=" 707.322,378.33 735.513,388.59 734.487,391.41 706.296,381.149" style="fill:sienna;stroke:black;stroke-width:1.25" />
+<polygon points=" 784.487,388.59 812.678,378.33 813.704,381.149 785.513,391.41" style="fill:sienna;stroke:black;stroke-width:1.25" />
 <polygon points=" 1090,275 1110,275 1110,475 1090,475" style="fill:saddlebrown;stroke:black;stroke-width:1.25" />
 <polygon points=" 1020,415 1095,340 1170,415" style="fill:darkgreen;stroke:black;stroke-width:1.25" />
 <polygon points=" 1035,365 1097.5,302.5 1160,365" style="fill:darkgreen;stroke:black;stroke-width:1.25" />
 <polygon points=" 1050,315 1100,265 1150,315" style="fill:darkgreen;stroke:black;stroke-width:1.25" />
-<circle cx="350" cy="455" r="20" fill="darkolivegreen" />
-<circle cx="350" cy="455" r="20" fill="none" stroke="black" stroke-width="1.25" />
-<circle cx="310" cy="455" r="20" fill="darkolivegreen" />
-<circle cx="310" cy="455" r="20" fill="none" stroke="black" stroke-width="1.25" />
-<circle cx="277.858" cy="440.858" r="18" fill="darkolivegreen" />
-<circle cx="277.858" cy="440.858" r="18" fill="none" stroke="black" stroke-width="1.25" />
-<circle cx="390" cy="455" r="20" fill="darkolivegreen" />
-<circle cx="390" cy="455" r="20" fill="none" stroke="black" stroke-width="1.25" />
-<circle cx="422.142" cy="440.858" r="18" fill="darkolivegreen" />
-<circle cx="422.142" cy="440.858" r="18" fill="none" stroke="black" stroke-width="1.25" />
-<circle cx="350" cy="429" r="6" fill="darkolivegreen" />
-<circle cx="350" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
-<polygon points=" 250,413 450,413 450,423 250,423" style="fill:darkolivegreen;stroke:black;stroke-width:1.25" />
-<polygon points=" 275,388 425,388 425,413 275,413" style="fill:darkolivegreen;stroke:black;stroke-width:1.25" />
-<polygon points=" 350,368 400,368 400,388 350,388" style="fill:darkolivegreen;stroke:black;stroke-width:1.25" />
-<polygon points=" 400,378 470,378 470,383 400,383" style="fill:darkolivegreen;stroke:black;stroke-width:1.25" />
-<circle cx="338" cy="429" r="6" fill="darkolivegreen" />
-<circle cx="338" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
-<circle cx="326" cy="429" r="6" fill="darkolivegreen" />
-<circle cx="326" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
-<circle cx="314" cy="429" r="6" fill="darkolivegreen" />
-<circle cx="314" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
-<circle cx="302" cy="429" r="6" fill="darkolivegreen" />
-<circle cx="302" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
-<circle cx="362" cy="429" r="6" fill="darkolivegreen" />
-<circle cx="362" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
-<circle cx="374" cy="429" r="6" fill="darkolivegreen" />
-<circle cx="374" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
-<circle cx="386" cy="429" r="6" fill="darkolivegreen" />
-<circle cx="386" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
-<circle cx="398" cy="429" r="6" fill="darkolivegreen" />
-<circle cx="398" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="240" cy="455" r="20" fill="darkolivegreen" />
+<circle cx="240" cy="455" r="20" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="200" cy="455" r="20" fill="darkolivegreen" />
+<circle cx="200" cy="455" r="20" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="167.858" cy="440.858" r="18" fill="darkolivegreen" />
+<circle cx="167.858" cy="440.858" r="18" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="280" cy="455" r="20" fill="darkolivegreen" />
+<circle cx="280" cy="455" r="20" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="312.142" cy="440.858" r="18" fill="darkolivegreen" />
+<circle cx="312.142" cy="440.858" r="18" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="240" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="240" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<polygon points=" 140,413 340,413 340,423 140,423" style="fill:darkolivegreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 165,388 315,388 315,413 165,413" style="fill:darkolivegreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 220.681,393.176 207.741,344.88 227.059,339.704 240,388" style="fill:darkolivegreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 217.4,342.292 199.282,274.677 204.112,273.383 222.229,340.998" style="fill:darkolivegreen;stroke:black;stroke-width:1.25" />
+<circle cx="228" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="228" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="216" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="216" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="204" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="204" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="192" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="192" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="252" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="252" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="264" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="264" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="276" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="276" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="288" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="288" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
 <polygon points=" 135,455 165,455 165,475 135,475" style="fill:peru;stroke:black;stroke-width:1.25" />
+<circle cx="167.858" cy="458.858" r="7.5" fill="none" stroke="rgb(255,79,0)" stroke-width="2" />
 
 
 </svg>

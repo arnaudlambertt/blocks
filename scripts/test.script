@@ -1,3 +1,6 @@
-@bot move 25
-@finger move +5
-@bot.arm move +30
+@sherman move 50
+@head rotate +35
+@sherman move+10
+@snowman move 0
+@sherman move 0
+@head move 180
