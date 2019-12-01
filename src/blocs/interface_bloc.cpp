@@ -256,19 +256,15 @@ void InterfaceBloc::translater(std::string valeur, std::vector<Bloc*> &listCurre
                     {
                         t->translater(-0.01 + t->getTranslation());    // Translation
                         if(i->collision(m_room->getTousEnfants()))
-                        {
-                            break;
                             t->translater(+0.01 + t->getTranslation());
-                        }
+                        
                     }
                     if (val == 3)   // Si fleche droite
                     {
                         t->translater(+0.01 + t->getTranslation());
                         if(i->collision(m_room->getTousEnfants()))
-                        {
-                            break;
                             t->translater(-0.01 + t->getTranslation());
-                        }
+                        
                     }
                     dessiner();
                 }
@@ -369,11 +365,8 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
                     {
                         i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() + 2);    // Rotation
                         if(i->collision(m_room->getTousEnfants()))
-                        {
                             i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() - 2);
-                            break;
-                        }
-
+         
                         else
                             change = true;
                     }
@@ -381,10 +374,8 @@ void InterfaceBloc::pivoter(std::string valeur, std::vector<Bloc*> &listCurrent)
                     {
                         i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() - 2);    // Rotation
                         if(i->collision(m_room->getTousEnfants()))
-                        {
                             i->getGeometrie()->setNewRotation(i->getGeometrie()->getVraiRotation() + 2);
-                            break;
-                        }
+           
                         else
                             change = true;
                     }
