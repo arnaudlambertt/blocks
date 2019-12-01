@@ -43,8 +43,6 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/blocs/bloc.cpp" />
 		<Unit filename="src/blocs/bloc.h" />
-		<Unit filename="src/blocs/interface_bloc.cpp" />
-		<Unit filename="src/blocs/interface_bloc.h" />
 		<Unit filename="src/geometrie/coords.cpp" />
 		<Unit filename="src/geometrie/coords.h" />
 		<Unit filename="src/geometrie/disk.cpp" />
@@ -83,6 +81,8 @@
 		<Unit filename="src/geometrie/triangle_translatable.h" />
 		<Unit filename="src/graphisme/couleur.cpp" />
 		<Unit filename="src/graphisme/couleur.h" />
+		<Unit filename="src/scene/scene.cpp" />
+		<Unit filename="src/scene/scene.h" />
 		<Unit filename="src/svg/svgfile.cpp" />
 		<Unit filename="src/svg/svgfile.h" />
 		<Unit filename="src/util/check_arrow_key.cpp" />
