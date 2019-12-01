@@ -1,48 +1,118 @@
-id=room57 width=1000 height=400 color=azure border=lightgrey
+id=room4 width=1000 height=400 color=azure border=lightgrey
 refpos=tl basepos=tl
 [
 	id=ground width=100% height=10% color=darkgrey
 	refpos=bc basepos=tc
 	[
-		id=bin shape=disk radius=25 color=lightblue
-		refpos=tr refposx=-25% basepos=bc rotate=90
+		id=snowman shape=disk radius=30 color=snow
+		refpos=tl endpos=tr basepos=bc translate=0.8
 		[
-			id=skuu shape=losange width=20 height=30 color=purple
-			refpos=tc basepos=bc rotate=0
+			id=chest shape=disk radius=25 color=snow
+			refpos=tc basepos=bc
+			[
+				id=face shape=disk radius=20 color=snow
+				refpos=tc basepos=bc rotate=0
+				[
+					width=4 height=4 color=lightsteelblue
+					refpos=tr refposx=-10 refposy=10
+
+					width=4 height=4 color=lightsteelblue
+					refpos=tl refposx=15 refposy=10
+					
+					id=nose shape=triangle width=5 height=5 color=orange
+					refpos=mc basepos=mc
+				]
+
+				id=arm1 width=30 height=3 color=sienna
+				refpos=ml basepos=mr rotate=-20
+
+				id=arm2 width=30 height=3 color=sienna
+				refpos=mr basepos=ml rotate=20
+			]
 		]
 
-		id=box1 width=30 height=20 color=peru
-		refpos=tc refposx=25% basepos=bc
+		id=tree width=20 height=200 color=saddlebrown
+		refpos=tc refposx=45% basepos=bc
+		[
+			id=leaves1 shape=triangle width=150 height=75 color=darkgreen
+			refpos=tc refposx=50% refposy=40% basebos=br
 
-		id=bot1 width=60 height=110 color=lightseagreen
+			id=leaves2 shape=triangle width=125 height=62.5 color=darkgreen
+			refpos=tc refposx=50% refposy=20% basebos=br
+
+			id=leaves3 shape=triangle width=100 height=50 color=darkgreen
+			refpos=tc refposx=50% refposy=0% basebos=br
+		]
+
+		id=sherman shape=disk radius=20 color=darkolivegreen
 		refpos=tl endpos=tr basepos=bc translate=0.2
 		[
-			width=8 height=8 color=orange
-			refpos=tr refposx=-15 refposy=15
-
-			width=8 height=8 color=orange
-			refpos=tl refposx=15 refposy=15
-
-			id=arm5 width=80 height=20 color=turquoise
-			refpos=br endpos=tr basepos=ml
+			shape=disk radius=20 color=darkolivegreen
+			refpos=ml  basepos=mr
 			[
-				id=finger1 width=10 height=20 color=lightgreen
-				refpos=bc endpos=bl basepos=tr
-
-				id=finger2 width=10 height=20 color=lightgreen
-				refpos=bc endpos=br basepos=tl
+				shape=disk radius=18 color=darkolivegreen
+				refpos=tl basepos=mr
 			]
 
-			id=arm21 width=80 height=20 color=turquoise
-			refpos=bl endpos=tl basepos=mr
+			shape=disk radius=20 color=darkolivegreen
+			refpos=mr  basepos=ml
 			[
-				id=finger1 width=10 height=20 color=lightgreen
-				refpos=bc endpos=bl basepos=tr
+				shape=disk radius=18 color=darkolivegreen
+				refpos=tr basepos=ml
+			]
 
-				id=finger2 width=10 height=20 color=lightgreen
-				refpos=bc endpos=br basepos=tl
+			shape=disk radius=6 color=darkolivegreen
+			refpos=tc basepos=bc
+			[
+				id=armature width=200 height=10 color=darkolivegreen
+				refpos=tc basepos=bc
+				[
+					id=chest width=150 height=25 color=darkolivegreen
+					refpos=tc basepos=bc
+					[
+						id=head width=50 height=20 color=darkolivegreen
+						refpos=tc basepos=bl rotate=0
+						[
+							id=gun width=70 height=5 color=darkolivegreen
+							refpos=mr basepos=tl
+						]
+					]
+				]
+
+				shape=disk radius=6 color=darkolivegreen
+				refpos=ml basepos=mr
+				[
+					shape=disk radius=6 color=darkolivegreen
+					refpos=ml basepos=mr
+					[
+						shape=disk radius=6 color=darkolivegreen
+						refpos=ml basepos=mr
+						[
+							shape=disk radius=6 color=darkolivegreen
+							refpos=ml basepos=mr
+						]
+					]
+				]
+
+				shape=disk radius=6 color=darkolivegreen
+				refpos=mr basepos=ml
+				[
+					shape=disk radius=6 color=darkolivegreen
+					refpos=mr basepos=ml
+					[
+						shape=disk radius=6 color=darkolivegreen
+						refpos=mr basepos=ml
+						[
+							shape=disk radius=6 color=darkolivegreen
+							refpos=mr basepos=ml
+						]
+					]
+				]
 			]
 		]
+
+		id=box width=30 height=20 color=peru
+		refpos=tl refposx=40% basepos=bc
 
 		id=bot2 width=60 height=110 color=lightseagreen
 		refpos=tl endpos=tr basepos=bc translate=0.6

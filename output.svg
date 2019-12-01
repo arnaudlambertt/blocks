@@ -3,28 +3,472 @@
 
 <polygon points=" 150,75 1150,75 1150,475 150,475" style="fill:azure;stroke:lightgrey;stroke-width:1.25" />
 <polygon points=" 150,475 1150,475 1150,515 150,515" style="fill:darkgrey;stroke:black;stroke-width:1.25" />
-<circle cx="900" cy="450" r="25" fill="lightblue" />
-<circle cx="900" cy="450" r="25" fill="none" stroke="black" stroke-width="1.25" />
-<polygon points=" 896.156,442.613 878.42,445.84 882.263,428.226 900,425" style="fill:purple;stroke:black;stroke-width:1" />
-<polygon points=" 985,455 1015,455 1015,475 985,475" style="fill:peru;stroke:black;stroke-width:1.25" />
-<polygon points=" 155,365 215,365 215,475 155,475" style="fill:lightseagreen;stroke:black;stroke-width:1.25" />
-<polygon points=" 192,380 200,380 200,388 192,388" style="fill:orange;stroke:black;stroke-width:1.25" />
-<polygon points=" 162,380 170,380 170,388 162,388" style="fill:orange;stroke:black;stroke-width:1.25" />
-<polygon points=" 215,410 295,410 295,430 215,430" style="fill:turquoise;stroke:black;stroke-width:1.25" />
-<polygon points=" 205,430 215,430 215,450 205,450" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
-<polygon points=" 295,430 305,430 305,450 295,450" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
-<polygon points=" 75,410 155,410 155,430 75,430" style="fill:turquoise;stroke:black;stroke-width:1.25" />
-<polygon points=" 65,430 75,430 75,450 65,450" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
-<polygon points=" 155,430 165,430 165,450 155,450" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
-<polygon points=" 620,365 680,365 680,475 620,475" style="fill:lightseagreen;stroke:black;stroke-width:1.25" />
-<polygon points=" 657,380 665,380 665,388 657,388" style="fill:turquoise;stroke:black;stroke-width:1.25" />
-<polygon points=" 627,380 635,380 635,388 627,388" style="fill:red;stroke:black;stroke-width:1.25" />
-<polygon points=" 680,410 760,410 760,430 680,430" style="fill:turquoise;stroke:black;stroke-width:1.25" />
-<polygon points=" 690,430 700,430 700,450 690,450" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
-<polygon points=" 740,430 750,430 750,450 740,450" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
-<polygon points=" 520,425.5 570,410.5 620,425.5 570,440.5" style="fill:turquoise;stroke:black;stroke-width:1" />
-<polygon points=" 547.5,436.75 557.5,436.75 557.5,456.75 547.5,456.75" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
-<polygon points=" 582.5,436.75 592.5,436.75 592.5,456.75 582.5,456.75" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
+<circle cx="950" cy="445" r="30" fill="snow" />
+<circle cx="950" cy="445" r="30" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="950" cy="390" r="25" fill="snow" />
+<circle cx="950" cy="390" r="25" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="950" cy="345" r="20" fill="snow" />
+<circle cx="950" cy="345" r="20" fill="none" stroke="black" stroke-width="1.25" />
+<polygon points=" 956,335 960,335 960,339 956,339" style="fill:lightsteelblue;stroke:black;stroke-width:1.25" />
+<polygon points=" 941,335 945,335 945,339 941,339" style="fill:lightsteelblue;stroke:black;stroke-width:1.25" />
+<polygon points=" 947.5,347.5 950,342.5 952.5,347.5" style="fill:orange;stroke:black;stroke-width:1.25" />
+<polygon points=" 897.322,378.33 925.513,388.59 924.487,391.41 896.296,381.149" style="fill:sienna;stroke:black;stroke-width:1.25" />
+<polygon points=" 974.487,388.59 1002.68,378.33 1003.7,381.149 975.513,391.41" style="fill:sienna;stroke:black;stroke-width:1.25" />
+<polygon points=" 1090,275 1110,275 1110,475 1090,475" style="fill:saddlebrown;stroke:black;stroke-width:1.25" />
+<polygon points=" 1020,415 1095,340 1170,415" style="fill:darkgreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 1035,365 1097.5,302.5 1160,365" style="fill:darkgreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 1050,315 1100,265 1150,315" style="fill:darkgreen;stroke:black;stroke-width:1.25" />
+<circle cx="350" cy="455" r="20" fill="darkolivegreen" />
+<circle cx="350" cy="455" r="20" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="310" cy="455" r="20" fill="darkolivegreen" />
+<circle cx="310" cy="455" r="20" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="277.858" cy="440.858" r="18" fill="darkolivegreen" />
+<circle cx="277.858" cy="440.858" r="18" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="390" cy="455" r="20" fill="darkolivegreen" />
+<circle cx="390" cy="455" r="20" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="422.142" cy="440.858" r="18" fill="darkolivegreen" />
+<circle cx="422.142" cy="440.858" r="18" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="350" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="350" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<polygon points=" 250,413 450,413 450,423 250,423" style="fill:darkolivegreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 275,388 425,388 425,413 275,413" style="fill:darkolivegreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 350,368 400,368 400,388 350,388" style="fill:darkolivegreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 400,378 470,378 470,383 400,383" style="fill:darkolivegreen;stroke:black;stroke-width:1.25" />
+<circle cx="338" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="338" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="326" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="326" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="314" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="314" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="302" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="302" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="362" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="362" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="374" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="374" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="386" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="386" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<circle cx="398" cy="429" r="6" fill="darkolivegreen" />
+<circle cx="398" cy="429" r="6" fill="none" stroke="black" stroke-width="1.25" />
+<polygon points=" 535,455 565,455 565,475 535,475" style="fill:peru;stroke:black;stroke-width:1.25" />
+<polygon points=" 720,365 780,365 780,475 720,475" style="fill:lightseagreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 757,380 765,380 765,388 757,388" style="fill:turquoise;stroke:black;stroke-width:1.25" />
+<polygon points=" 727,380 735,380 735,388 727,388" style="fill:red;stroke:black;stroke-width:1.25" />
+<polygon points=" 780,410 860,410 860,430 780,430" style="fill:turquoise;stroke:black;stroke-width:1.25" />
+<polygon points=" 790,430 800,430 800,450 790,450" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 840,430 850,430 850,450 840,450" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 640,410 720,410 720,430 640,430" style="fill:turquoise;stroke:black;stroke-width:1.25" />
+<polygon points=" 650,430 660,430 660,450 650,450" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
+<polygon points=" 700,430 710,430 710,450 700,450" style="fill:lightgreen;stroke:black;stroke-width:1.25" />
+<text x="149" y="274" fill="yellow" >room4</text>
+<text x="149" y="275" fill="yellow" >room4</text>
+<text x="149" y="276" fill="yellow" >room4</text>
+<text x="150" y="274" fill="yellow" >room4</text>
+<text x="150" y="276" fill="yellow" >room4</text>
+<text x="151" y="274" fill="yellow" >room4</text>
+<text x="151" y="275" fill="yellow" >room4</text>
+<text x="151" y="276" fill="yellow" >room4</text>
+<text x="150" y="275" fill="black" >room4</text>
+<text x="149" y="494" fill="yellow" >ground</text>
+<text x="149" y="495" fill="yellow" >ground</text>
+<text x="149" y="496" fill="yellow" >ground</text>
+<text x="150" y="494" fill="yellow" >ground</text>
+<text x="150" y="496" fill="yellow" >ground</text>
+<text x="151" y="494" fill="yellow" >ground</text>
+<text x="151" y="495" fill="yellow" >ground</text>
+<text x="151" y="496" fill="yellow" >ground</text>
+<text x="150" y="495" fill="black" >ground</text>
+<text x="919" y="444" fill="yellow" >snowman</text>
+<text x="919" y="445" fill="yellow" >snowman</text>
+<text x="919" y="446" fill="yellow" >snowman</text>
+<text x="920" y="444" fill="yellow" >snowman</text>
+<text x="920" y="446" fill="yellow" >snowman</text>
+<text x="921" y="444" fill="yellow" >snowman</text>
+<text x="921" y="445" fill="yellow" >snowman</text>
+<text x="921" y="446" fill="yellow" >snowman</text>
+<text x="920" y="445" fill="black" >snowman</text>
+<text x="924" y="389" fill="yellow" >chest</text>
+<text x="924" y="390" fill="yellow" >chest</text>
+<text x="924" y="391" fill="yellow" >chest</text>
+<text x="925" y="389" fill="yellow" >chest</text>
+<text x="925" y="391" fill="yellow" >chest</text>
+<text x="926" y="389" fill="yellow" >chest</text>
+<text x="926" y="390" fill="yellow" >chest</text>
+<text x="926" y="391" fill="yellow" >chest</text>
+<text x="925" y="390" fill="black" >chest</text>
+<text x="929" y="344" fill="yellow" >face</text>
+<text x="929" y="345" fill="yellow" >face</text>
+<text x="929" y="346" fill="yellow" >face</text>
+<text x="930" y="344" fill="yellow" >face</text>
+<text x="930" y="346" fill="yellow" >face</text>
+<text x="931" y="344" fill="yellow" >face</text>
+<text x="931" y="345" fill="yellow" >face</text>
+<text x="931" y="346" fill="yellow" >face</text>
+<text x="930" y="345" fill="black" >face</text>
+<text x="955" y="336" fill="yellow" ></text>
+<text x="955" y="337" fill="yellow" ></text>
+<text x="955" y="338" fill="yellow" ></text>
+<text x="956" y="336" fill="yellow" ></text>
+<text x="956" y="338" fill="yellow" ></text>
+<text x="957" y="336" fill="yellow" ></text>
+<text x="957" y="337" fill="yellow" ></text>
+<text x="957" y="338" fill="yellow" ></text>
+<text x="956" y="337" fill="black" ></text>
+<text x="940" y="336" fill="yellow" ></text>
+<text x="940" y="337" fill="yellow" ></text>
+<text x="940" y="338" fill="yellow" ></text>
+<text x="941" y="336" fill="yellow" ></text>
+<text x="941" y="338" fill="yellow" ></text>
+<text x="942" y="336" fill="yellow" ></text>
+<text x="942" y="337" fill="yellow" ></text>
+<text x="942" y="338" fill="yellow" ></text>
+<text x="941" y="337" fill="black" ></text>
+<text x="947.5" y="344.5" fill="yellow" >nose</text>
+<text x="947.5" y="345.5" fill="yellow" >nose</text>
+<text x="947.5" y="346.5" fill="yellow" >nose</text>
+<text x="948.5" y="344.5" fill="yellow" >nose</text>
+<text x="948.5" y="346.5" fill="yellow" >nose</text>
+<text x="949.5" y="344.5" fill="yellow" >nose</text>
+<text x="949.5" y="345.5" fill="yellow" >nose</text>
+<text x="949.5" y="346.5" fill="yellow" >nose</text>
+<text x="948.5" y="345.5" fill="black" >nose</text>
+<text x="895.809" y="378.739" fill="yellow" >arm1</text>
+<text x="895.809" y="379.739" fill="yellow" >arm1</text>
+<text x="895.809" y="380.739" fill="yellow" >arm1</text>
+<text x="896.809" y="378.739" fill="yellow" >arm1</text>
+<text x="896.809" y="380.739" fill="yellow" >arm1</text>
+<text x="897.809" y="378.739" fill="yellow" >arm1</text>
+<text x="897.809" y="379.739" fill="yellow" >arm1</text>
+<text x="897.809" y="380.739" fill="yellow" >arm1</text>
+<text x="896.809" y="379.739" fill="black" >arm1</text>
+<text x="974" y="389" fill="yellow" >arm2</text>
+<text x="974" y="390" fill="yellow" >arm2</text>
+<text x="974" y="391" fill="yellow" >arm2</text>
+<text x="975" y="389" fill="yellow" >arm2</text>
+<text x="975" y="391" fill="yellow" >arm2</text>
+<text x="976" y="389" fill="yellow" >arm2</text>
+<text x="976" y="390" fill="yellow" >arm2</text>
+<text x="976" y="391" fill="yellow" >arm2</text>
+<text x="975" y="390" fill="black" >arm2</text>
+<text x="1089" y="374" fill="yellow" >tree</text>
+<text x="1089" y="375" fill="yellow" >tree</text>
+<text x="1089" y="376" fill="yellow" >tree</text>
+<text x="1090" y="374" fill="yellow" >tree</text>
+<text x="1090" y="376" fill="yellow" >tree</text>
+<text x="1091" y="374" fill="yellow" >tree</text>
+<text x="1091" y="375" fill="yellow" >tree</text>
+<text x="1091" y="376" fill="yellow" >tree</text>
+<text x="1090" y="375" fill="black" >tree</text>
+<text x="1049" y="384" fill="yellow" >leaves1</text>
+<text x="1049" y="385" fill="yellow" >leaves1</text>
+<text x="1049" y="386" fill="yellow" >leaves1</text>
+<text x="1050" y="384" fill="yellow" >leaves1</text>
+<text x="1050" y="386" fill="yellow" >leaves1</text>
+<text x="1051" y="384" fill="yellow" >leaves1</text>
+<text x="1051" y="385" fill="yellow" >leaves1</text>
+<text x="1051" y="386" fill="yellow" >leaves1</text>
+<text x="1050" y="385" fill="black" >leaves1</text>
+<text x="1059" y="339" fill="yellow" >leaves2</text>
+<text x="1059" y="340" fill="yellow" >leaves2</text>
+<text x="1059" y="341" fill="yellow" >leaves2</text>
+<text x="1060" y="339" fill="yellow" >leaves2</text>
+<text x="1060" y="341" fill="yellow" >leaves2</text>
+<text x="1061" y="339" fill="yellow" >leaves2</text>
+<text x="1061" y="340" fill="yellow" >leaves2</text>
+<text x="1061" y="341" fill="yellow" >leaves2</text>
+<text x="1060" y="340" fill="black" >leaves2</text>
+<text x="1069" y="294" fill="yellow" >leaves3</text>
+<text x="1069" y="295" fill="yellow" >leaves3</text>
+<text x="1069" y="296" fill="yellow" >leaves3</text>
+<text x="1070" y="294" fill="yellow" >leaves3</text>
+<text x="1070" y="296" fill="yellow" >leaves3</text>
+<text x="1071" y="294" fill="yellow" >leaves3</text>
+<text x="1071" y="295" fill="yellow" >leaves3</text>
+<text x="1071" y="296" fill="yellow" >leaves3</text>
+<text x="1070" y="295" fill="black" >leaves3</text>
+<text x="329" y="454" fill="yellow" >sherman</text>
+<text x="329" y="455" fill="yellow" >sherman</text>
+<text x="329" y="456" fill="yellow" >sherman</text>
+<text x="330" y="454" fill="yellow" >sherman</text>
+<text x="330" y="456" fill="yellow" >sherman</text>
+<text x="331" y="454" fill="yellow" >sherman</text>
+<text x="331" y="455" fill="yellow" >sherman</text>
+<text x="331" y="456" fill="yellow" >sherman</text>
+<text x="330" y="455" fill="black" >sherman</text>
+<text x="289" y="454" fill="yellow" ></text>
+<text x="289" y="455" fill="yellow" ></text>
+<text x="289" y="456" fill="yellow" ></text>
+<text x="290" y="454" fill="yellow" ></text>
+<text x="290" y="456" fill="yellow" ></text>
+<text x="291" y="454" fill="yellow" ></text>
+<text x="291" y="455" fill="yellow" ></text>
+<text x="291" y="456" fill="yellow" ></text>
+<text x="290" y="455" fill="black" ></text>
+<text x="258.858" y="439.858" fill="yellow" ></text>
+<text x="258.858" y="440.858" fill="yellow" ></text>
+<text x="258.858" y="441.858" fill="yellow" ></text>
+<text x="259.858" y="439.858" fill="yellow" ></text>
+<text x="259.858" y="441.858" fill="yellow" ></text>
+<text x="260.858" y="439.858" fill="yellow" ></text>
+<text x="260.858" y="440.858" fill="yellow" ></text>
+<text x="260.858" y="441.858" fill="yellow" ></text>
+<text x="259.858" y="440.858" fill="black" ></text>
+<text x="369" y="454" fill="yellow" ></text>
+<text x="369" y="455" fill="yellow" ></text>
+<text x="369" y="456" fill="yellow" ></text>
+<text x="370" y="454" fill="yellow" ></text>
+<text x="370" y="456" fill="yellow" ></text>
+<text x="371" y="454" fill="yellow" ></text>
+<text x="371" y="455" fill="yellow" ></text>
+<text x="371" y="456" fill="yellow" ></text>
+<text x="370" y="455" fill="black" ></text>
+<text x="403.142" y="439.858" fill="yellow" ></text>
+<text x="403.142" y="440.858" fill="yellow" ></text>
+<text x="403.142" y="441.858" fill="yellow" ></text>
+<text x="404.142" y="439.858" fill="yellow" ></text>
+<text x="404.142" y="441.858" fill="yellow" ></text>
+<text x="405.142" y="439.858" fill="yellow" ></text>
+<text x="405.142" y="440.858" fill="yellow" ></text>
+<text x="405.142" y="441.858" fill="yellow" ></text>
+<text x="404.142" y="440.858" fill="black" ></text>
+<text x="343" y="428" fill="yellow" ></text>
+<text x="343" y="429" fill="yellow" ></text>
+<text x="343" y="430" fill="yellow" ></text>
+<text x="344" y="428" fill="yellow" ></text>
+<text x="344" y="430" fill="yellow" ></text>
+<text x="345" y="428" fill="yellow" ></text>
+<text x="345" y="429" fill="yellow" ></text>
+<text x="345" y="430" fill="yellow" ></text>
+<text x="344" y="429" fill="black" ></text>
+<text x="249" y="417" fill="yellow" >armature</text>
+<text x="249" y="418" fill="yellow" >armature</text>
+<text x="249" y="419" fill="yellow" >armature</text>
+<text x="250" y="417" fill="yellow" >armature</text>
+<text x="250" y="419" fill="yellow" >armature</text>
+<text x="251" y="417" fill="yellow" >armature</text>
+<text x="251" y="418" fill="yellow" >armature</text>
+<text x="251" y="419" fill="yellow" >armature</text>
+<text x="250" y="418" fill="black" >armature</text>
+<text x="274" y="399.5" fill="yellow" >chest</text>
+<text x="274" y="400.5" fill="yellow" >chest</text>
+<text x="274" y="401.5" fill="yellow" >chest</text>
+<text x="275" y="399.5" fill="yellow" >chest</text>
+<text x="275" y="401.5" fill="yellow" >chest</text>
+<text x="276" y="399.5" fill="yellow" >chest</text>
+<text x="276" y="400.5" fill="yellow" >chest</text>
+<text x="276" y="401.5" fill="yellow" >chest</text>
+<text x="275" y="400.5" fill="black" >chest</text>
+<text x="349" y="377" fill="yellow" >head</text>
+<text x="349" y="378" fill="yellow" >head</text>
+<text x="349" y="379" fill="yellow" >head</text>
+<text x="350" y="377" fill="yellow" >head</text>
+<text x="350" y="379" fill="yellow" >head</text>
+<text x="351" y="377" fill="yellow" >head</text>
+<text x="351" y="378" fill="yellow" >head</text>
+<text x="351" y="379" fill="yellow" >head</text>
+<text x="350" y="378" fill="black" >head</text>
+<text x="399" y="379.5" fill="yellow" >gun</text>
+<text x="399" y="380.5" fill="yellow" >gun</text>
+<text x="399" y="381.5" fill="yellow" >gun</text>
+<text x="400" y="379.5" fill="yellow" >gun</text>
+<text x="400" y="381.5" fill="yellow" >gun</text>
+<text x="401" y="379.5" fill="yellow" >gun</text>
+<text x="401" y="380.5" fill="yellow" >gun</text>
+<text x="401" y="381.5" fill="yellow" >gun</text>
+<text x="400" y="380.5" fill="black" >gun</text>
+<text x="331" y="428" fill="yellow" ></text>
+<text x="331" y="429" fill="yellow" ></text>
+<text x="331" y="430" fill="yellow" ></text>
+<text x="332" y="428" fill="yellow" ></text>
+<text x="332" y="430" fill="yellow" ></text>
+<text x="333" y="428" fill="yellow" ></text>
+<text x="333" y="429" fill="yellow" ></text>
+<text x="333" y="430" fill="yellow" ></text>
+<text x="332" y="429" fill="black" ></text>
+<text x="319" y="428" fill="yellow" ></text>
+<text x="319" y="429" fill="yellow" ></text>
+<text x="319" y="430" fill="yellow" ></text>
+<text x="320" y="428" fill="yellow" ></text>
+<text x="320" y="430" fill="yellow" ></text>
+<text x="321" y="428" fill="yellow" ></text>
+<text x="321" y="429" fill="yellow" ></text>
+<text x="321" y="430" fill="yellow" ></text>
+<text x="320" y="429" fill="black" ></text>
+<text x="307" y="428" fill="yellow" ></text>
+<text x="307" y="429" fill="yellow" ></text>
+<text x="307" y="430" fill="yellow" ></text>
+<text x="308" y="428" fill="yellow" ></text>
+<text x="308" y="430" fill="yellow" ></text>
+<text x="309" y="428" fill="yellow" ></text>
+<text x="309" y="429" fill="yellow" ></text>
+<text x="309" y="430" fill="yellow" ></text>
+<text x="308" y="429" fill="black" ></text>
+<text x="295" y="428" fill="yellow" ></text>
+<text x="295" y="429" fill="yellow" ></text>
+<text x="295" y="430" fill="yellow" ></text>
+<text x="296" y="428" fill="yellow" ></text>
+<text x="296" y="430" fill="yellow" ></text>
+<text x="297" y="428" fill="yellow" ></text>
+<text x="297" y="429" fill="yellow" ></text>
+<text x="297" y="430" fill="yellow" ></text>
+<text x="296" y="429" fill="black" ></text>
+<text x="355" y="428" fill="yellow" ></text>
+<text x="355" y="429" fill="yellow" ></text>
+<text x="355" y="430" fill="yellow" ></text>
+<text x="356" y="428" fill="yellow" ></text>
+<text x="356" y="430" fill="yellow" ></text>
+<text x="357" y="428" fill="yellow" ></text>
+<text x="357" y="429" fill="yellow" ></text>
+<text x="357" y="430" fill="yellow" ></text>
+<text x="356" y="429" fill="black" ></text>
+<text x="367" y="428" fill="yellow" ></text>
+<text x="367" y="429" fill="yellow" ></text>
+<text x="367" y="430" fill="yellow" ></text>
+<text x="368" y="428" fill="yellow" ></text>
+<text x="368" y="430" fill="yellow" ></text>
+<text x="369" y="428" fill="yellow" ></text>
+<text x="369" y="429" fill="yellow" ></text>
+<text x="369" y="430" fill="yellow" ></text>
+<text x="368" y="429" fill="black" ></text>
+<text x="379" y="428" fill="yellow" ></text>
+<text x="379" y="429" fill="yellow" ></text>
+<text x="379" y="430" fill="yellow" ></text>
+<text x="380" y="428" fill="yellow" ></text>
+<text x="380" y="430" fill="yellow" ></text>
+<text x="381" y="428" fill="yellow" ></text>
+<text x="381" y="429" fill="yellow" ></text>
+<text x="381" y="430" fill="yellow" ></text>
+<text x="380" y="429" fill="black" ></text>
+<text x="391" y="428" fill="yellow" ></text>
+<text x="391" y="429" fill="yellow" ></text>
+<text x="391" y="430" fill="yellow" ></text>
+<text x="392" y="428" fill="yellow" ></text>
+<text x="392" y="430" fill="yellow" ></text>
+<text x="393" y="428" fill="yellow" ></text>
+<text x="393" y="429" fill="yellow" ></text>
+<text x="393" y="430" fill="yellow" ></text>
+<text x="392" y="429" fill="black" ></text>
+<text x="534" y="464" fill="yellow" >box</text>
+<text x="534" y="465" fill="yellow" >box</text>
+<text x="534" y="466" fill="yellow" >box</text>
+<text x="535" y="464" fill="yellow" >box</text>
+<text x="535" y="466" fill="yellow" >box</text>
+<text x="536" y="464" fill="yellow" >box</text>
+<text x="536" y="465" fill="yellow" >box</text>
+<text x="536" y="466" fill="yellow" >box</text>
+<text x="535" y="465" fill="black" >box</text>
+<text x="719" y="419" fill="yellow" >bot2</text>
+<text x="719" y="420" fill="yellow" >bot2</text>
+<text x="719" y="421" fill="yellow" >bot2</text>
+<text x="720" y="419" fill="yellow" >bot2</text>
+<text x="720" y="421" fill="yellow" >bot2</text>
+<text x="721" y="419" fill="yellow" >bot2</text>
+<text x="721" y="420" fill="yellow" >bot2</text>
+<text x="721" y="421" fill="yellow" >bot2</text>
+<text x="720" y="420" fill="black" >bot2</text>
+<text x="756" y="383" fill="yellow" ></text>
+<text x="756" y="384" fill="yellow" ></text>
+<text x="756" y="385" fill="yellow" ></text>
+<text x="757" y="383" fill="yellow" ></text>
+<text x="757" y="385" fill="yellow" ></text>
+<text x="758" y="383" fill="yellow" ></text>
+<text x="758" y="384" fill="yellow" ></text>
+<text x="758" y="385" fill="yellow" ></text>
+<text x="757" y="384" fill="black" ></text>
+<text x="726" y="383" fill="yellow" ></text>
+<text x="726" y="384" fill="yellow" ></text>
+<text x="726" y="385" fill="yellow" ></text>
+<text x="727" y="383" fill="yellow" ></text>
+<text x="727" y="385" fill="yellow" ></text>
+<text x="728" y="383" fill="yellow" ></text>
+<text x="728" y="384" fill="yellow" ></text>
+<text x="728" y="385" fill="yellow" ></text>
+<text x="727" y="384" fill="black" ></text>
+<text x="779" y="419" fill="yellow" >arm345</text>
+<text x="779" y="420" fill="yellow" >arm345</text>
+<text x="779" y="421" fill="yellow" >arm345</text>
+<text x="780" y="419" fill="yellow" >arm345</text>
+<text x="780" y="421" fill="yellow" >arm345</text>
+<text x="781" y="419" fill="yellow" >arm345</text>
+<text x="781" y="420" fill="yellow" >arm345</text>
+<text x="781" y="421" fill="yellow" >arm345</text>
+<text x="780" y="420" fill="black" >arm345</text>
+<text x="789" y="439" fill="yellow" >finger999</text>
+<text x="789" y="440" fill="yellow" >finger999</text>
+<text x="789" y="441" fill="yellow" >finger999</text>
+<text x="790" y="439" fill="yellow" >finger999</text>
+<text x="790" y="441" fill="yellow" >finger999</text>
+<text x="791" y="439" fill="yellow" >finger999</text>
+<text x="791" y="440" fill="yellow" >finger999</text>
+<text x="791" y="441" fill="yellow" >finger999</text>
+<text x="790" y="440" fill="black" >finger999</text>
+<text x="839" y="439" fill="yellow" >finger2</text>
+<text x="839" y="440" fill="yellow" >finger2</text>
+<text x="839" y="441" fill="yellow" >finger2</text>
+<text x="840" y="439" fill="yellow" >finger2</text>
+<text x="840" y="441" fill="yellow" >finger2</text>
+<text x="841" y="439" fill="yellow" >finger2</text>
+<text x="841" y="440" fill="yellow" >finger2</text>
+<text x="841" y="441" fill="yellow" >finger2</text>
+<text x="840" y="440" fill="black" >finger2</text>
+<text x="639" y="419" fill="yellow" >arm4</text>
+<text x="639" y="420" fill="yellow" >arm4</text>
+<text x="639" y="421" fill="yellow" >arm4</text>
+<text x="640" y="419" fill="yellow" >arm4</text>
+<text x="640" y="421" fill="yellow" >arm4</text>
+<text x="641" y="419" fill="yellow" >arm4</text>
+<text x="641" y="420" fill="yellow" >arm4</text>
+<text x="641" y="421" fill="yellow" >arm4</text>
+<text x="640" y="420" fill="black" >arm4</text>
+<text x="649" y="439" fill="yellow" >finger1</text>
+<text x="649" y="440" fill="yellow" >finger1</text>
+<text x="649" y="441" fill="yellow" >finger1</text>
+<text x="650" y="439" fill="yellow" >finger1</text>
+<text x="650" y="441" fill="yellow" >finger1</text>
+<text x="651" y="439" fill="yellow" >finger1</text>
+<text x="651" y="440" fill="yellow" >finger1</text>
+<text x="651" y="441" fill="yellow" >finger1</text>
+<text x="650" y="440" fill="black" >finger1</text>
+<text x="699" y="439" fill="yellow" >finger2</text>
+<text x="699" y="440" fill="yellow" >finger2</text>
+<text x="699" y="441" fill="yellow" >finger2</text>
+<text x="700" y="439" fill="yellow" >finger2</text>
+<text x="700" y="441" fill="yellow" >finger2</text>
+<text x="701" y="439" fill="yellow" >finger2</text>
+<text x="701" y="440" fill="yellow" >finger2</text>
+<text x="701" y="441" fill="yellow" >finger2</text>
+<text x="700" y="440" fill="black" >finger2</text>
+<polygon points=" 150,475 1150,475 1150,475 150,475" style="fill:red;stroke:red;stroke-width:1" />
+<polygon points=" 150,470 150,480 150,480 150,480" style="fill:red;stroke:red;stroke-width:2.5" />
+<polygon points=" 1150,475 1145,480 1145,470" style="fill:red" />
+<circle cx="950" cy="365" r="5" fill="none" stroke="red" stroke-width="2" />
+<circle cx="925" cy="390" r="5" fill="none" stroke="red" stroke-width="2" />
+<circle cx="975" cy="390" r="5" fill="none" stroke="red" stroke-width="2" />
+<polygon points=" 150,475 1150,475 1150,475 150,475" style="fill:red;stroke:red;stroke-width:1" />
+<polygon points=" 150,470 150,480 150,480 150,480" style="fill:red;stroke:red;stroke-width:2.5" />
+<polygon points=" 1150,475 1145,480 1145,470" style="fill:red" />
+<circle cx="350" cy="388" r="5" fill="none" stroke="red" stroke-width="2" />
+<polygon points=" 150,475 1150,475 1150,475 150,475" style="fill:red;stroke:red;stroke-width:1" />
+<polygon points=" 150,470 150,480 150,480 150,480" style="fill:red;stroke:red;stroke-width:2.5" />
+<polygon points=" 1150,475 1145,480 1145,470" style="fill:red" />
+<polygon points=" 780,475 780,365 780,365 780,475" style="fill:red;stroke:red;stroke-width:1" />
+<polygon points=" 775,475 785,475 785,475 785,475" style="fill:red;stroke:red;stroke-width:2.5" />
+<polygon points=" 780,365 785,370 775,370" style="fill:red" />
+<polygon points=" 820,430 780,430 780,430 820,430" style="fill:red;stroke:red;stroke-width:1" />
+<polygon points=" 820,435 820,425 820,425 820,425" style="fill:red;stroke:red;stroke-width:2.5" />
+<polygon points=" 780,430 785,425 785,435" style="fill:red" />
+<polygon points=" 820,430 860,430 860,430 820,430" style="fill:red;stroke:red;stroke-width:1" />
+<polygon points=" 820,425 820,435 820,435 820,435" style="fill:red;stroke:red;stroke-width:2.5" />
+<polygon points=" 860,430 855,435 855,425" style="fill:red" />
+<polygon points=" 720,475 720,365 720,365 720,475" style="fill:red;stroke:red;stroke-width:1" />
+<polygon points=" 715,475 725,475 725,475 725,475" style="fill:red;stroke:red;stroke-width:2.5" />
+<polygon points=" 720,365 725,370 715,370" style="fill:red" />
+<polygon points=" 680,430 640,430 640,430 680,430" style="fill:red;stroke:red;stroke-width:1" />
+<polygon points=" 680,435 680,425 680,425 680,425" style="fill:red;stroke:red;stroke-width:2.5" />
+<polygon points=" 640,430 645,425 645,435" style="fill:red" />
+<polygon points=" 680,430 720,430 720,430 680,430" style="fill:red;stroke:red;stroke-width:1" />
+<polygon points=" 680,425 680,435 680,435 680,435" style="fill:red;stroke:red;stroke-width:2.5" />
+<polygon points=" 720,430 715,435 715,425" style="fill:red" />
 
 
 </svg>
