@@ -90,3 +90,22 @@ Coords Losange::squareposToLosangepos(const Coords &a)
 
     return resultat;
 }
+
+bool Losange::isIn(const Coords &point) const
+{
+    double area, s, t;
+    Coords p2 = getAbsolute("tc"), p0 = getAbsolute("mr"), p1 = getAbsolute("ml");
+
+    area = 0.5 *(-p1.getY()*p2.getX() + p0.getY()*(-p1.getX() + p2.getX()) + p0.getX()*(p1.getY() - p2.getY()) + p1.getX()*p2.getY());
+    s = 1/(2*area)*(p0.getY()*p2.getX() - p0.getX()*p2.getY() + (p2.getY() - p0.getY())*point.getX() + (p0.getX() - p2.getX())*point.getY());
+    t = 1/(2*area)*(p0.getX()*p1.getY() - p0.getY()*p1.getX() + (p0.getY() - p1.getY())*point.getX() + (p1.getX() - p0.getX())*point.getY());
+
+    double area1, s1, t1;
+    Coords p3 = getAbsolute("ml"), p5 = getAbsolute("mr"), p4 = getAbsolute("bc");
+
+    area1 = 0.5 *(-p4.getY()*p3.getX() + p5.getY()*(-p4.getX() + p3.getX()) + p5.getX()*(p4.getY() - p3.getY()) + p4.getX()*p3.getY());
+    s1 = 1/(2*area1)*(p5.getY()*p3.getX() - p5.getX()*p3.getY() + (p3.getY() - p5.getY())*point.getX() + (p5.getX() - p3.getX())*point.getY());
+    t1 = 1/(2*area1)*(p5.getX()*p4.getY() - p5.getY()*p4.getX() + (p5.getY() - p4.getY())*point.getX() + (p4.getX() - p5.getX())*point.getY());
+
+    return ((s>0 && t>0 && 1-s-t>0) || (s1>0 && t1>0 && 1-s1-t1>0));
+}

@@ -5,17 +5,17 @@ refpos=tl basepos=tl
 	refpos=bc basepos=tc 
 	[
 		id=bin shape=disk radius=25 color=lightblue
-		refpos=tr refposx=-25% basepos=bc rotate=90 
+		refpos=tr refposx=-25% basepos=bc rotate=0 
 		[
 			id=skuu shape=losange width=20 height=30 color=purple
-			refpos=tc basepos=bc rotate=0 
+			refpos=tc basepos=bc rotate=-226 
 		]
 
 		id=box1 width=30 height=20 color=peru
-		refpos=tc refposx=25% basepos=bc 
+		refpos=tc refposx=35% basepos=bc 
 
 		id=bot1 width=60 height=110 color=lightseagreen
-		refpos=tl endpos=tr basepos=bc translate=0.2 
+		refpos=tl endpos=tr basepos=bc translate=0 
 		[
 			width=8 height=8 color=orange
 			refpos=tr refposx=-15 refposy=15 
@@ -45,7 +45,7 @@ refpos=tl basepos=tl
 		]
 
 		id=bot2 width=60 height=110 color=lightseagreen
-		refpos=tl endpos=tr basepos=bc translate=0.6 
+		refpos=tl endpos=tr basepos=bc translate=0.62 
 		[
 			width=8 height=8 color=turquoise
 			refpos=tr refposx=-15 refposy=15 
@@ -64,7 +64,7 @@ refpos=tl basepos=tl
 			]
 
 			id=arm4 shape=losange width=100 height=30 color=turquoise
-			refpos=bl endpos=tl basepos=mr translate=0.45
+			refpos=bl endpos=tl basepos=mr translate=0.45 
 			[
 				id=finger1 width=10 height=20 color=lightgreen
 				refpos=bc endpos=bl basepos=tr 

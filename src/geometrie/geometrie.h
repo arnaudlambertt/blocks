@@ -31,6 +31,7 @@ class Geometrie
         virtual Coords convertRefposEnfant(const Coords &refposEnfant) const = 0;
         virtual Coords getAbsolute(const Coords &localPos) const;
         virtual Coords getAbsolute(const std::string &localPos) const = 0;
+        virtual bool isIn(const Coords &point) const = 0;
 
         static std::map<char,double> pos() { return std::map<char,double> {{'t',-0.5},{'m',0.0},{'b',0.5},{'l',-0.5},{'c',0.0},{'r',0.5}}; }
 

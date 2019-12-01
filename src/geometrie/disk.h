@@ -27,6 +27,7 @@ class Disk : public Geometrie
 
         using Geometrie::getAbsolute; //qualifier conflict fix
         virtual Coords getAbsolute(const std::string &localPos) const;
+        bool isIn(const Coords &point) const;
 
     protected:
         double m_radius;

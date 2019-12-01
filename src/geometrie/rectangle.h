@@ -22,6 +22,7 @@ class Rectangle : public Geometrie
 
         using Geometrie::getAbsolute; //qualifier conflict fix
         Coords getAbsolute(const std::string &localPos) const;
+        bool isIn(const Coords &point) const;
 
 
     protected:

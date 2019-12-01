@@ -43,4 +43,11 @@ void Rectangle::dessiner(Svgfile &svgout)
                         m_bloc->getColor(),1.25,m_bloc->getBorder());
 }
 
+bool Rectangle::isIn(const Coords &point) const
+{
+    Coords a = getAbsolute("tl"), b = getAbsolute("tr"), d = getAbsolute("bl");
+    Coords am = point - a, ab = b - a, ad = d - a;
+
+    return (0 < am*ab && am*ab < ab*ab && 0 < am*ad && am*ad < ad*ad);
+}
 

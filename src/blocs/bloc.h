@@ -68,10 +68,9 @@ class Bloc
         Coords getAbsolute(const std::string &localPos) const;
         void sauvegarde(std::ostream& ofs, int tabulation);
 
-        Bloc * getHighestParent();
         Bloc * getFirstMovableParent();
         std::list<Bloc*> getTousEnfants();
-        bool collision();
+        bool collision(std::list<Bloc*> tousEnfants);
 
     private:
         Bloc* m_parent; //pointeur parent
