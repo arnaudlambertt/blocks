@@ -1,4 +1,4 @@
-#include "src/blocs/interface_bloc.h"
+#include "src/scene/scene.h"
 #include "../geometrie/rectangle_translatable.h"
 #include "../geometrie/losange_translatable.h"
 #include "../geometrie/disk_translatable.h"
@@ -11,7 +11,7 @@
 
 int main()
 {
-    InterfaceBloc ib;
+    Scene ib;
     ib.userInterface();
     return 0;
 }
